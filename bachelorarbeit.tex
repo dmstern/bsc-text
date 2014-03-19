@@ -1,47 +1,52 @@
-\documentclass{article}
-\title{Plattformunabh\"{a}ngige App-Entwicklung f\"{u}r mobile Ger\"{a}te - Grenzen und M\"{o}glichkeiten}
+\documentclass{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+\title{Plattformunabh\"angige App-Entwicklung \\ f\"ur mobile Ger\"ate \\--\\ Grenzen und M\"oglichkeiten}
 \author{Daniel Morgenstern}
 \date{22. April 2014}
 \begin{document}
    \maketitle
-\section{Einleitung}
-\subsection{Ziel der Arbeit}
-\subsection{Motivation} % (Aktualität, Interesse, Nutzen)
-\subsection{Aufbau der Arbeit} % → NICHT Chronologisches Vorgehen!}
-\section{Theoretische Grundlagen}
-%1. Theoretische Grundlagen → als Grundlage f\"{u}r implementierung.
+   \tableofcontents
+\chapter{Einleitung}
+\section{Ziel der Arbeit}
+\section{Motivation} % (Aktualität, Interesse, Nutzen)
+\section{Aufbau der Arbeit} % → NICHT Chronologisches Vorgehen!}
+\chapter{Theoretische Grundlagen}
+%1. Theoretische Grundlagen → als Grundlage f\"ur implementierung.
 %Was muss der leser wissen, um die realisierung zu verstehen? 
-%1. Konkreter, technoloischer: Worum geht es bei plattformunabh\"{a}ngiglkeit, wie ist zu erreichen? → veschiedene grunds\"{a}tzliche Konzepte
-%2. \"{u}bersicht / Eigenschaften & Einordnung der vorgestellten L\"{o}sungen
+%1. Konkreter, technoloischer: Worum geht es bei plattformunabh\"angiglkeit, wie ist zu erreichen? → veschiedene grunds\"atzliche Konzepte
+%2. \"ubersicht / Eigenschaften & Einordnung der vorgestellten L\"osungen
 %3. Verwendete Technologien → wie macht das phonegap?
 %1. Knockout, jquerymobile, etc.
 
-\subsection{Ausgangsproblematik}
-Zumeist nutzen die verschiedenen Plattformen nicht nur unterschiedliche Dateiformate f\"{u}r ihre Anwendungen sondern auch unterschiedliche Programmiersprachen und Toolkits\footnote{welche technischen grundlagen kann ich denn vorraussetzen?} f\"{u}r die Programmierung. So verwendet beispielsweise Android die Programmiersprache Java in Kombination mit einem eigenen Android SDK, w\"{a}hrend Apps f\"{u}r Apples iOS mit ObjectiveC in der Firmeneigenen Entwicklungsumgebung Xcode (die auch nur auf dem firmeneigenen Betriebssystem Mac OSX l\"{a}uft) geschrieben werden. Somit ist die Plattformunabh\"{a}ngigkeit mit den herk\"{o}mmlichen Entwicklungsmethoden kaum zu erreichen, da die verschiedenen Produkte und Plattformen zueinander nicht kompatibel sind.\footnote{Notiz: Muss man das \"{u}berhaupt erw\"{a}hnen? schließlich wird das ja vermutlich auch inhalt von motivation und so.}
+\section{Ausgangsproblematik}
+Zumeist nutzen die verschiedenen Plattformen nicht nur unterschiedliche Dateiformate f\"ur ihre Anwendungen sondern auch unterschiedliche Programmiersprachen und Toolkits\footnote{welche technischen grundlagen kann ich denn vorraussetzen?} f\"ur die Programmierung. So verwendet beispielsweise Android die Programmiersprache Java in Kombination mit einem eigenen Android SDK, w\"ahrend Apps f\"ur Apples iOS mit ObjectiveC in der Firmeneigenen Entwicklungsumgebung Xcode (die auch nur auf dem firmeneigenen Betriebssystem Mac OSX l\"auft) geschrieben werden. Somit ist die Plattformunabhängigkeit mit den herk\"ommlichen Entwicklungsmethoden kaum zu erreichen, da die verschiedenen Produkte und Plattformen zueinander nicht kompatibel sind.\footnote{Notiz: Muss man das \"uberhaupt erw\"ahnen? schließlich wird das ja vermutlich auch inhalt von motivation und so.}
 
-Im Planungsprozess einer Softwarel\"{o}sung ist in bestimmten F\"{a}llen eine denkbare Alternative zur nativen App eine Webanwendung, die mithilfe des Browsers abrufbar ist, also konkret dynamische Website, wie man sie auch von der herk\"{o}mmlichen Internet-Nutzung eines Desktop-Systems kennt. 
+Im Planungsprozess einer Softwarel\"osung ist in bestimmten F\"allen eine denkbare Alternative zur nativen App eine Webanwendung, die mithilfe des Browsers abrufbar ist, also konkret dynamische Website, wie man sie auch von der herk\"ommlichen Internet-Nutzung eines Desktop-Systems kennt. 
 
-Diese Variante hat zwar den Vorteil, dass die Anwendung plattformunabh\"{a}ngig ist, da jedes moderne (moible) Betriebssystem einen Browser besitzt, der Entwicklungsaufwand also unabh\"{a}ngig von der Anzahl der Zielplattformen der gleiche bleibt, allerdings st\"{o}ßt der Entwickler schnell an seine Grenzen, wenn Hardware- oder betriebssystemnahe Anforderungen gestellt sind. So ist es beispielsweise mit Webtechnologien wie HTML oder Javascript nicht ohne weiteres m\"{o}glich, auf die Kamera oder das GPS-Modul eines Ger\"{a}tes oder das Adressbuch eines Betriebssystems zuzugreifen.\footnote{nachweis!}
+Diese Variante hat zwar den Vorteil, dass die Anwendung plattformunabh\"angig ist, da jedes moderne (mobile) Betriebssystem einen Browser besitzt, der Entwicklungsaufwand also unabh\"angig von der Anzahl der Zielplattformen der gleiche bleibt, allerdings st\"oßt der Entwickler schnell an seine Grenzen, wenn Hardware- oder betriebssystemnahe Anforderungen gestellt sind. So ist es beispielsweise mit Webtechnologien wie HTML oder Javascript nicht ohne weiteres m\"oglich, auf die Kamera oder das GPS-Modul eines Ger\"ates oder das Adressbuch eines Betriebssystems zuzugreifen.\footnote{nachweis!}
 
-Ebenso kommt die Webanwendung im Normalfall nicht f\"{u}r Offline-Andwendungen in Frage, da die meisten mobilen Betriebssysteme nicht vorsehen, dass der Nutzer aus dem Dateisystem eine HTML-Seite \"{o}ffnet.\footnote{nachweis!}
+Ebenso kommt die Webanwendung im Normalfall nicht f\"ur Offline-Andwendungen in Frage, da die meisten mobilen Betriebssysteme nicht vorsehen, dass der Nutzer aus dem Dateisystem eine HTML-Seite \"offnet.\footnote{nachweis!}
 
-Dahingehend liegt ein Ansatz zur plattformunabh\"{a}ngigen App-Entwicklung auf der Hand: Die Hybrid-App, also die Verwendung von Webtechnologien mithilfe einer Schnittstelle zwischen der Webanwendung und der nativen Ebene des Betriebssystems.
+Dahingehend liegt ein Ansatz zur plattformunabh\"angigen App-Entwicklung auf der Hand: Die Hybrid-App, also die Verwendung von Webtechnologien mithilfe einer Schnittstelle zwischen der Webanwendung und der nativen Ebene des Betriebssystems.
 
-\subsection{Technologien}
-Konkret heißt das, die Anwendung wird als Webanwendung mit den zugeh\"{o}rigen Technologien (HTML, Javascript, CSS) entwickelt und f\"{u}r die jeweiligen ben\"{o}tigten Plattformen in eine native App eingebettet, welche hier allerdings haupts\"{a}chlich aus einer Web-View, also einer abgespeckten Varante eines Web-Browsers zur Anzeige der Webanwendung, besteht. Da dieser Ansatz der am h\"{a}ufigsten von Cross-Platform-Frameworks genutzte ist,\footnote{nachweis!} stellt diser auch den Schwerpunkt der in dieser Arbeit explorierten Technologien dar und soll hier n\"{a}her erl\"{a}utert werden. 
+\section{Technologien}
+Konkret heißt das, die Anwendung wird als Webanwendung mit den zugeh\"origen Technologien (HTML, Javascript, CSS) entwickelt und f\"ur die jeweiligen ben\"otigten Plattformen in eine native App eingebettet, welche hier allerdings haupts\"achlich aus einer Web-View, also einer abgespeckten Varante eines Web-Browsers zur Anzeige der Webanwendung, besteht. Da dieser Ansatz der am h\"aufigsten von Cross-Platform-Frameworks genutzte ist,\footnote{nachweis!} stellt diser auch den Schwerpunkt der in dieser Arbeit explorierten Technologien dar und soll hier n\"aher erl\"autert werden. 
 
-\subsubsection{Phonegap}
-
-
-\subsubsection{JQueryMobile}
+\subsection{Phonegap}
 
 
-\subsubsection{Knockout.JS}
+\subsection{JQueryMobile}
+
+
+\subsection{Knockout.JS}
 
 
 
 
-\section{Praktische Umsetzung}
+\chapter{Praktische Umsetzung}
 
 
 \end{document}
