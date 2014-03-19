@@ -1,0 +1,47 @@
+\documentclass{article}
+\title{Plattformunabh\"{a}ngige App-Entwicklung f\"{u}r mobile Ger\"{a}te - Grenzen und M\"{o}glichkeiten}
+\author{Daniel Morgenstern}
+\date{22. April 2014}
+\begin{document}
+   \maketitle
+\section{Einleitung}
+\subsection{Ziel der Arbeit}
+\subsection{Motivation} % (Aktualität, Interesse, Nutzen)
+\subsection{Aufbau der Arbeit} % → NICHT Chronologisches Vorgehen!}
+\section{Theoretische Grundlagen}
+%1. Theoretische Grundlagen → als Grundlage f\"{u}r implementierung.
+%Was muss der leser wissen, um die realisierung zu verstehen? 
+%1. Konkreter, technoloischer: Worum geht es bei plattformunabh\"{a}ngiglkeit, wie ist zu erreichen? → veschiedene grunds\"{a}tzliche Konzepte
+%2. \"{u}bersicht / Eigenschaften & Einordnung der vorgestellten L\"{o}sungen
+%3. Verwendete Technologien → wie macht das phonegap?
+%1. Knockout, jquerymobile, etc.
+
+\subsection{Ausgangsproblematik}
+Zumeist nutzen die verschiedenen Plattformen nicht nur unterschiedliche Dateiformate f\"{u}r ihre Anwendungen sondern auch unterschiedliche Programmiersprachen und Toolkits\footnote{welche technischen grundlagen kann ich denn vorraussetzen?} f\"{u}r die Programmierung. So verwendet beispielsweise Android die Programmiersprache Java in Kombination mit einem eigenen Android SDK, w\"{a}hrend Apps f\"{u}r Apples iOS mit ObjectiveC in der Firmeneigenen Entwicklungsumgebung Xcode (die auch nur auf dem firmeneigenen Betriebssystem Mac OSX l\"{a}uft) geschrieben werden. Somit ist die Plattformunabh\"{a}ngigkeit mit den herk\"{o}mmlichen Entwicklungsmethoden kaum zu erreichen, da die verschiedenen Produkte und Plattformen zueinander nicht kompatibel sind.\footnote{Notiz: Muss man das \"{u}berhaupt erw\"{a}hnen? schließlich wird das ja vermutlich auch inhalt von motivation und so.}
+
+Im Planungsprozess einer Softwarel\"{o}sung ist in bestimmten F\"{a}llen eine denkbare Alternative zur nativen App eine Webanwendung, die mithilfe des Browsers abrufbar ist, also konkret dynamische Website, wie man sie auch von der herk\"{o}mmlichen Internet-Nutzung eines Desktop-Systems kennt. 
+
+Diese Variante hat zwar den Vorteil, dass die Anwendung plattformunabh\"{a}ngig ist, da jedes moderne (moible) Betriebssystem einen Browser besitzt, der Entwicklungsaufwand also unabh\"{a}ngig von der Anzahl der Zielplattformen der gleiche bleibt, allerdings st\"{o}ßt der Entwickler schnell an seine Grenzen, wenn Hardware- oder betriebssystemnahe Anforderungen gestellt sind. So ist es beispielsweise mit Webtechnologien wie HTML oder Javascript nicht ohne weiteres m\"{o}glich, auf die Kamera oder das GPS-Modul eines Ger\"{a}tes oder das Adressbuch eines Betriebssystems zuzugreifen.\footnote{nachweis!}
+
+Ebenso kommt die Webanwendung im Normalfall nicht f\"{u}r Offline-Andwendungen in Frage, da die meisten mobilen Betriebssysteme nicht vorsehen, dass der Nutzer aus dem Dateisystem eine HTML-Seite \"{o}ffnet.\footnote{nachweis!}
+
+Dahingehend liegt ein Ansatz zur plattformunabh\"{a}ngigen App-Entwicklung auf der Hand: Die Hybrid-App, also die Verwendung von Webtechnologien mithilfe einer Schnittstelle zwischen der Webanwendung und der nativen Ebene des Betriebssystems.
+
+\subsection{Technologien}
+Konkret heißt das, die Anwendung wird als Webanwendung mit den zugeh\"{o}rigen Technologien (HTML, Javascript, CSS) entwickelt und f\"{u}r die jeweiligen ben\"{o}tigten Plattformen in eine native App eingebettet, welche hier allerdings haupts\"{a}chlich aus einer Web-View, also einer abgespeckten Varante eines Web-Browsers zur Anzeige der Webanwendung, besteht. Da dieser Ansatz der am h\"{a}ufigsten von Cross-Platform-Frameworks genutzte ist,\footnote{nachweis!} stellt diser auch den Schwerpunkt der in dieser Arbeit explorierten Technologien dar und soll hier n\"{a}her erl\"{a}utert werden. 
+
+\subsubsection{Phonegap}
+
+
+\subsubsection{JQueryMobile}
+
+
+\subsubsection{Knockout.JS}
+
+
+
+
+\section{Praktische Umsetzung}
+
+
+\end{document}
