@@ -4,17 +4,36 @@
 \usepackage{lmodern}
 \usepackage[ngerman]{babel}
 \usepackage[textwidth=2.5cm]{todonotes}
-\usepackage{url} 
+\usepackage[obeyspaces]{url}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{verbatim}
+
 \title{Plattformunabhängige App-Entwicklung \\ für mobile Geräte \\--\\ Grenzen und Möglichkeiten}
 \author{Daniel Morgenstern}
 \date{22. April 2014}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
 \begin{document}
    \maketitle
    \tableofcontents
 \chapter{Einleitung}
 \section{Ziel der Arbeit}
 \section{Motivation} % (Aktualität, Interesse, Nutzen)
+\begin{comment}
+Bei der Entwicklung mobiler Anwendungen steht - besonders im Consumer-Bereich - neben vielen anderen Entscheidungen die Wahl der Ziel-Plattform an, wobei ein wichtiger Faktor sicher die Erreichbarkeit einer möglichst großen Nutzer-Anzahl darstellt.
+Vermutlich um den  Entwicklungsaufwand nicht ins Bodenlose \todo{Stil!} ausufern zu lassen beschränken sich dabei viele App-Hersteller (oder -anbieter) auf die größten, meist genutzten Plattformen wie Android oder iOS. \todo{darf man so eine Behauptung jetzt einfach machen? oder wie weißt man sowas nach?}
+
+Doch nicht nur, dass dadurch doppelter Wartungs- und Anpassungsaufwand für die Entwicklung entsteht, auch werden dadurch viele andere Betriebssysteme vernachlässigt, was letztlich zu Lasten der Nutzer geht, die auf einem vielfältigen aber auch diffundierten Markt - je nach Hersteller und Plattform - ein zum Teil eingeschränktes und ungleich verteiltes Angebot an Anwendungen vorfinden. 
+
+Auf der anderen Seite hat der Bereich der Webentwicklung und -gestaltung in den letzten Jahren seit Aufkommen von Smartphones und Tablets eine neue Anforderung hinzu bekommen: Websites müssen nicht mehr nur für die unterschiedlichsten Browser auf dem Desktop angepasst werden, sondern sollen sich auch auf Geräten, die für Touch-Bedienung ausgelegt sind unterschiedlicher Bildschirmgrößen gleich gut anfühlen und bedienen lassen. Da der Trend für viele Firmen in Sachen Öffentlichkeitsarbeit, Kundenbindung und -freundlichkeit neben der Firmen-Website und der eigenen Facebook-Seite auch eine eigene App zu fordern scheint, liegt vor dem zuvor genannten Hintergrund der stark variierenden App-Formate der Ansatz nahe, auch den Webbrowser als eine weitere Plattform im bunten Gefüge aus Deployment-Anforderungen zu sehen, die nach Verminderung und Zusammenführung des Entwicklungsaufwands im mobilen Bereich verlangt. 
+
+Letzterer Ansatz ist allerdings nur einer, den es zu Untersuchen gilt; Zentraler Forschungsgegenstand soll die Exploration der Möglichkeiten und Grenzen der plattformunabhängigen App-Entwicklung anhand eines beispielhaft implementierten Anwendungsfalls sein.
+\end{comment}
+
 \section{Aufbau der Arbeit} % → NICHT Chronologisches Vorgehen!}
+
+
 \chapter{Theoretische Grundlagen}
 %1. Theoretische Grundlagen → als Grundlage für implementierung.
 %Was muss der leser wissen, um die realisierung zu verstehen? 
@@ -36,7 +55,7 @@ Diese Variante hat zwar den Vorteil, dass die Anwendung plattformunabhängig ist
 Ebenso kommt die Webanwendung im Normalfall nicht für Offline-Anwendungen in Frage, da die meisten mobilen Betriebssysteme nicht vorsehen, dass der Nutzer aus dem Dateisystem eine HTML-Seite öffnet. \todo{nachweis!} 
 Dahingehend liegt ein Ansatz zur plattformunabhängigen App-Entwicklung auf der Hand: Die Hybrid-App, also die Verwendung von Webtechnologien mithilfe einer Schnittstelle zwischen der Webanwendung und der nativen Ebene des Betriebssystems.
 
-\section{Technologien}
+\section{Verwendete Technologien}
 \subsection{Grundlegende Technologien}
 Konkret heißt das, die Software wird als Webanwendung mit den zugehörigen Technologien (HTML, Javascript, CSS) entwickelt und für die jeweiligen benötigten Plattformen in eine native App eingebettet, welche hier allerdings hauptsächlich aus einer Web-View, also einer abgespeckten Variante eines Web-Browsers zur Anzeige der Webanwendung, besteht. Da dieser Ansatz der am häufigsten von Cross-Platform-Frameworks genutzte ist, \todo{nachweis!} stellt dieser auch den Schwerpunkt der in dieser Arbeit explorierten Technologien dar und soll hier näher erläutert werden. 
 
@@ -50,7 +69,8 @@ Für letzteres bietet PhoneGap eine Javascript-Bibliothek, die auf das Cross-Pla
 Bei der konkreten Verwendung von nativen Features muss jedoch teilweise wieder auf die Unterstützung durch die jeweiligen Plattformen geachtet werden.\todo{oder zumindest muss deklariert werden, was verwendet werden soll. -> checken!}
 
 Darüber hinaus übernimmt das Online-Portal \emph{PhoneGap~Build} den Bauprozess der App, also das Überführen in ein installierfähiges App-Format. 
-Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\footnote{\url{http://docs.phonegap.com/en/3.4.0/guide_cli_index.md.html#The Command-Line Interface}} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
+Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\footnote{\url{http://docs.phonegap.com/en/3.4.0/guide_cli_index.md.html\#The Command-Line Interface} % In Literatur-Verzeichnis (BibTeX) einfügen.
+} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
 
 Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.\todo{gehört vllt. eher woanders hin.}
 
@@ -73,6 +93,5 @@ programmatisch erweitert werden, definiert der Entwickler in einem separaten Jav
 
 
 \chapter{Praktische Umsetzung}
-
 
 \end{document}
