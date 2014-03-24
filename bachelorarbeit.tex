@@ -1,23 +1,28 @@
 \documentclass{scrreprt}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[ngerman]{babel}
-\usepackage[textwidth=2.5cm]{todonotes}
-\usepackage[obeyspaces]{url}
-\usepackage[pdfborder={0 0 0}]{hyperref}
-\usepackage{verbatim}
+
+% PACKAGES % % % % % % % % % % % % % % % % % % % %
+
+\usepackage[utf8]{inputenc} % Zeichensatz auf Unix-Standard
+\usepackage[T1]{fontenc}	% Schriftarten und Zeichensatz mit Umlauten und Akzenten
+\usepackage{lmodern} 		% Bessere Typografie
+\usepackage[ngerman]{babel} % Deutsche Zeichenunterstützung
+\usepackage[textwidth=2.5cm]{todonotes}		% ToDo-Notizen
+\usepackage[pdfborder={0 0 0}]{hyperref}	% Links for PDF
+\usepackage{verbatim} 		% Blockweise Kommentieren
+\usepackage{graphicx}		% Grafiken einfügen
+
+% METADATA % % % % % % % % % % % % % % % % % % % % 
 
 \title{Plattformunabhängige App-Entwicklung \\ für mobile Geräte \\--\\ Grenzen und Möglichkeiten}
+\subtitle{- Bachelorarbeit -}
 \author{Daniel Morgenstern}
 \date{22. April 2014}
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% DOCUMENT CONTENT % % % % % % % % % % % % % % % % % % % %
 
 \begin{document}
    \maketitle
    \tableofcontents
-
 
 \chapter{Einleitung}
 
@@ -74,8 +79,7 @@ Für letzteres bietet PhoneGap eine Javascript-Bibliothek, die auf das Cross-Pla
 Bei der konkreten Verwendung von nativen Features muss jedoch teilweise wieder auf die Unterstützung durch die jeweiligen Plattformen geachtet werden.\todo{oder zumindest muss deklariert werden, was verwendet werden soll. -> checken!}
 
 Darüber hinaus übernimmt das Online-Portal \emph{PhoneGap~Build} den Bauprozess der App, also das Überführen in ein installierfähiges App-Format. 
-Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\footnote{\url{http://docs.phonegap.com/en/3.4.0/guide_cli_index.md.html\#The Command-Line Interface} % In Literatur-Verzeichnis (BibTeX) einfügen.
-} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
+Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\footnote{\url{http://docs.phonegap.com/en/3.4.0/guide_cli_index.md.html\#The Command-Line Interface}} \todo{In Literatur-Verzeichnis (BibTeX) einfügen.} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
 
 Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.\todo{gehört vllt. eher woanders hin.}
 
