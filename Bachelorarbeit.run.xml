@@ -41,14 +41,14 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>bachelorarbeit.aux</file>
-      <file>bachelorarbeit-blx.bib</file>
+      <file>Bachelorarbeit.aux</file>
+      <file>Bachelorarbeit-blx.bib</file>
     </provides>
     <requires type="dynamic">
-      <file>bachelorarbeit.bbl</file>
+      <file>Bachelorarbeit.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-compat.def</file>
@@ -63,25 +63,25 @@
       <file>german.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="0">
+  <external package="biblatex" priority="5" active="1">
     <generic>bibtex</generic>
     <cmdline>
       <binary>bibtex</binary>
       <option>-min-crossrefs 2</option>
-      <infile>bachelorarbeit</infile>
+      <infile>Bachelorarbeit</infile>
     </cmdline>
     <input>
-      <file>bachelorarbeit.aux</file>
+      <file>Bachelorarbeit.aux</file>
     </input>
     <output>
-      <file>bachelorarbeit.bbl</file>
+      <file>Bachelorarbeit.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>bachelorarbeit.bbl</file>
+      <file>Bachelorarbeit.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>bachelorarbeit.aux</file>
-      <file>bachelorarbeit-blx.bib</file>
+      <file>Bachelorarbeit.aux</file>
+      <file>Bachelorarbeit-blx.bib</file>
     </requires>
     <requires type="editable">
       <file>literatur.bib</file>
