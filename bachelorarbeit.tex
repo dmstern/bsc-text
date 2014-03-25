@@ -1,4 +1,4 @@
-\documentclass{scrreprt}
+\documentclass[bibtotoc]{scrreprt}
 
 % PACKAGES % % % % % % % % % % % % % % % % % % % %
 
@@ -79,7 +79,7 @@ Für letzteres bietet PhoneGap eine Javascript-Bibliothek, die auf das Cross-Pla
 Bei der konkreten Verwendung von nativen Features muss jedoch teilweise wieder auf die Unterstützung durch die jeweiligen Plattformen geachtet werden.\todo{oder zumindest muss deklariert werden, was verwendet werden soll. -> checken!}
 
 Darüber hinaus übernimmt das Online-Portal \emph{PhoneGap~Build} den Bauprozess der App, also das Überführen in ein installierfähiges App-Format. 
-Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\footnote{\url{http://docs.phonegap.com/en/3.4.0/guide_cli_index.md.html\#The Command-Line Interface}} \todo{In Literatur-Verzeichnis (BibTeX) einfügen.} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
+Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\cite{www1} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
 
 Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.\todo{gehört vllt. eher woanders hin.}
 
@@ -102,5 +102,7 @@ programmatisch erweitert werden, definiert der Entwickler in einem separaten Jav
 
 
 \chapter{Praktische Umsetzung}
+
+\include{literaturverzeichnis}
 
 \end{document}
