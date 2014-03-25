@@ -1,4 +1,4 @@
-\documentclass[bibtotoc]{scrreprt}
+\documentclass{scrreprt}
 
 % PACKAGES % % % % % % % % % % % % % % % % % % % %
 
@@ -10,6 +10,7 @@
 \usepackage[pdfborder={0 0 0}]{hyperref}	% Links for PDF
 \usepackage{verbatim} 		% Blockweise Kommentieren
 \usepackage{graphicx}		% Grafiken einfügen
+\usepackage[style=trad-plain]{biblatex}		% (Mächtigere) Literaturdatenbank verwenden
 
 % METADATA % % % % % % % % % % % % % % % % % % % % 
 
@@ -17,6 +18,7 @@
 \subtitle{- Bachelorarbeit -}
 \author{Daniel Morgenstern}
 \date{22. April 2014}
+\bibliography{literatur}
 
 % DOCUMENT CONTENT % % % % % % % % % % % % % % % % % % % %
 
@@ -29,7 +31,6 @@
 \section{Ziel der Arbeit}
 
 \section{Motivation} % (Aktualität, Interesse, Nutzen)
-
 \begin{comment}
 Bei der Entwicklung mobiler Anwendungen steht - besonders im Consumer-Bereich - neben vielen anderen Entscheidungen die Wahl der Ziel-Plattform an, wobei ein wichtiger Faktor sicher die Erreichbarkeit einer möglichst großen Nutzer-Anzahl darstellt.
 Vermutlich um den  Entwicklungsaufwand nicht ins Bodenlose \todo{Stil!} ausufern zu lassen beschränken sich dabei viele App-Hersteller (oder -anbieter) auf die größten, meist genutzten Plattformen wie Android oder iOS. \todo{darf man so eine Behauptung jetzt einfach machen? oder wie weißt man sowas nach?}
@@ -54,6 +55,7 @@ Letzterer Ansatz ist allerdings nur einer, den es zu Untersuchen gilt; Zentraler
 
 \section{Ausgangsproblematik}
 \todo{bessere Einleitung finden!}
+
 Zumeist nutzen die verschiedenen Plattformen nicht nur unterschiedliche Dateiformate für ihre Anwendungen sondern auch unterschiedliche Programmiersprachen und Toolkits\marginpar{welche technischen grundlagen kann ich denn voraussetzen?} für die Programmierung. So verwendet beispielsweise Android die Programmiersprache Java in Kombination mit einem eigenen Android SDK, während Apps für Apples iOS mit ObjectiveC in der Firmeneigenen Entwicklungsumgebung Xcode (die auch nur auf dem firmeneigenen Betriebssystem Mac~OSX läuft) geschrieben werden. Somit ist die Plattformunabhängigkeit mit den herkömmlichen Entwicklungsmethoden kaum zu erreichen, da die verschiedenen Produkte und Plattformen zueinander nicht kompatibel sind.
 \todo[inline]{Muss man das überhaupt erwähnen? schließlich wird das ja vermutlich auch Inhalt von Motivation und so.}
 
@@ -79,7 +81,7 @@ Für letzteres bietet PhoneGap eine Javascript-Bibliothek, die auf das Cross-Pla
 Bei der konkreten Verwendung von nativen Features muss jedoch teilweise wieder auf die Unterstützung durch die jeweiligen Plattformen geachtet werden.\todo{oder zumindest muss deklariert werden, was verwendet werden soll. -> checken!}
 
 Darüber hinaus übernimmt das Online-Portal \emph{PhoneGap~Build} den Bauprozess der App, also das Überführen in ein installierfähiges App-Format. 
-Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\cite{www1} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
+Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden, \cite{pgdoc} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
 
 Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.\todo{gehört vllt. eher woanders hin.}
 
@@ -101,8 +103,8 @@ programmatisch erweitert werden, definiert der Entwickler in einem separaten Jav
 \marginpar{Konkreter, Beispiel, Grafik?}
 
 
-\chapter{Praktische Umsetzung}
+%\chapter{Praktische Umsetzung}
 
-\include{literaturverzeichnis}
+\printbibliography[heading=bibintoc]{}
 
 \end{document}
