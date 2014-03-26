@@ -26,84 +26,9 @@
    \maketitle
    \tableofcontents
 
-\chapter{Einleitung}
-
-\section{Ziel der Arbeit}
-
-\section{Motivation} % (Aktualität, Interesse, Nutzen)
-\begin{comment}
-Bei der Entwicklung mobiler Anwendungen steht - besonders im Consumer-Bereich - neben vielen anderen Entscheidungen die Wahl der Ziel-Plattform an, wobei ein wichtiger Faktor sicher die Erreichbarkeit einer möglichst großen Nutzer-Anzahl darstellt.
-Vermutlich um den  Entwicklungsaufwand nicht ins Bodenlose \todo{Stil!} ausufern zu lassen beschränken sich dabei viele App-Hersteller (oder -anbieter) auf die größten, meist genutzten Plattformen wie Android oder iOS. \todo{darf man so eine Behauptung jetzt einfach machen? oder wie weißt man sowas nach?}
-
-Doch nicht nur, dass dadurch doppelter Wartungs- und Anpassungsaufwand für die Entwicklung entsteht, auch werden dadurch viele andere Betriebssysteme vernachlässigt, was letztlich zu Lasten der Nutzer geht, die auf einem vielfältigen aber auch diffundierten Markt - je nach Hersteller und Plattform - ein zum Teil eingeschränktes und ungleich verteiltes Angebot an Anwendungen vorfinden. 
-
-Auf der anderen Seite hat der Bereich der Webentwicklung und -gestaltung in den letzten Jahren seit Aufkommen von Smartphones und Tablets eine neue Anforderung hinzu bekommen: Websites müssen nicht mehr nur für die unterschiedlichsten Browser auf dem Desktop angepasst werden, sondern sollen sich auch auf Geräten, die für Touch-Bedienung ausgelegt sind unterschiedlicher Bildschirmgrößen gleich gut anfühlen und bedienen lassen. Da der Trend für viele Firmen in Sachen Öffentlichkeitsarbeit, Kundenbindung und -freundlichkeit neben der Firmen-Website und der eigenen Facebook-Seite auch eine eigene App zu fordern scheint, liegt vor dem zuvor genannten Hintergrund der stark variierenden App-Formate der Ansatz nahe, auch den Webbrowser als eine weitere Plattform im bunten Gefüge aus Deployment-Anforderungen zu sehen, die nach Verminderung und Zusammenführung des Entwicklungsaufwands im mobilen Bereich verlangt. 
-
-Letzterer Ansatz ist allerdings nur einer, den es zu Untersuchen gilt; Zentraler Forschungsgegenstand soll die Exploration der Möglichkeiten und Grenzen der plattformunabhängigen App-Entwicklung anhand eines beispielhaft implementierten Anwendungsfalls sein.
-\end{comment}
-
-\section{Aufbau der Arbeit} % → NICHT Chronologisches Vorgehen!}
-
-
-\chapter{Theoretische Grundlagen}
-%1. Theoretische Grundlagen → als Grundlage für implementierung.
-%Was muss der leser wissen, um die realisierung zu verstehen? 
-%1. Konkreter, technoloischer: Worum geht es bei plattformunabhängiglkeit, wie ist zu erreichen? → veschiedene grundsätzliche Konzepte
-%2. übersicht / Eigenschaften & Einordnung der vorgestellten L\"osungen
-%3. Verwendete Technologien → wie macht das phonegap?
-%1. Knockout, jquerymobile, etc.
-
-\section{Ausgangsproblematik}
-\todo{bessere Einleitung finden!}
-
-Zumeist nutzen die verschiedenen Plattformen nicht nur unterschiedliche Dateiformate für ihre Anwendungen sondern auch unterschiedliche Programmiersprachen und Toolkits\marginpar{welche technischen grundlagen kann ich denn voraussetzen?} für die Programmierung. So verwendet beispielsweise Android die Programmiersprache Java in Kombination mit einem eigenen Android SDK, während Apps für Apples iOS mit ObjectiveC in der Firmeneigenen Entwicklungsumgebung Xcode (die auch nur auf dem firmeneigenen Betriebssystem Mac~OSX läuft) geschrieben werden. Somit ist die Plattformunabhängigkeit mit den herkömmlichen Entwicklungsmethoden kaum zu erreichen, da die verschiedenen Produkte und Plattformen zueinander nicht kompatibel sind.
-\todo[inline]{Muss man das überhaupt erwähnen? schließlich wird das ja vermutlich auch Inhalt von Motivation und so.}
-
-Im Planungsprozess einer Softwarelösung ist in bestimmten Fällen eine denkbare Alternative zur nativen App eine Webanwendung, die mithilfe des Browsers abrufbar ist, also konkret eine dynamische Website, wie man sie auch von der herkömmlichen Internet-Nutzung eines Desktop-Systems kennt. 
-
-Diese Variante hat zwar den Vorteil, dass die Anwendung plattformunabhängig ist, da jedes moderne (mobile) Betriebssystem einen Browser besitzt, der Entwicklungsaufwand also unabhängig von der Anzahl der Zielplattformen der gleiche bleibt, allerdings stößt der Entwickler schnell an seine Grenzen, wenn Hardware- oder betriebssystemnahe Anforderungen gestellt sind. So ist es beispielsweise mit Webtechnologien wie HTML oder Javascript nicht ohne weiteres möglich, auf die Kamera oder das GPS-Modul eines Gerätes oder das Adressbuch eines Betriebssystems zuzugreifen.
-\todo{nachweis!}
-
-Ebenso kommt die Webanwendung im Normalfall nicht für Offline-Anwendungen in Frage, da die meisten mobilen Betriebssysteme nicht vorsehen, dass der Nutzer aus dem Dateisystem eine HTML-Seite öffnet. \todo{nachweis!} 
-Dahingehend liegt ein Ansatz zur plattformunabhängigen App-Entwicklung auf der Hand: Die Hybrid-App, also die Verwendung von Webtechnologien mithilfe einer Schnittstelle zwischen der Webanwendung und der nativen Ebene des Betriebssystems.
-
-\section{Verwendete Technologien}
-\subsection{Grundlegende Technologien}
-Konkret heißt das, die Software wird als Webanwendung mit den zugehörigen Technologien (HTML, Javascript, CSS) entwickelt und für die jeweiligen benötigten Plattformen in eine native App eingebettet, welche hier allerdings hauptsächlich aus einer Web-View, also einer abgespeckten Variante eines Web-Browsers zur Anzeige der Webanwendung, besteht. Da dieser Ansatz der am häufigsten von Cross-Platform-Frameworks genutzte ist, \todo{nachweis!} stellt dieser auch den Schwerpunkt der in dieser Arbeit explorierten Technologien dar und soll hier näher erläutert werden. 
-
-\subsection{Phonegap}
-Die entscheidende Lücke auf dem Weg zur Hybrid-App zwischen Webanwendung und der nativen App schließt das Framework \emph{PhoneGap} von Adobe. 
-Bei der Webanwendung taten sich in der Herleitung zwei grundlegende Problemfelder gegenüber der nativen App-Entwicklung auf. 
-Zum Einen besteht eine Webanwendung aus mehreren Dokumenten, die auf einem Server liegen und nur über den Browser des Betriebssystems abgerufen werden, die Benutzung fühlt sich also für den Nutzer durch die ausbleibende Installation, die benötigte Internetverbindung und die optische Präsenz der Browser-Oberfläche nicht wie eine mobile App an. 
-Zum Anderen können die Anforderungen an die Anwendung einen Zugriff auf native Features des Geräts oder seines Betriebssystems erfordern, der mittels herkömmlicher Webtechnologien nicht oder nur sehr eingeschränkt möglich sind. 
-
-Für letzteres bietet PhoneGap eine Javascript-Bibliothek, die auf das Cross-Platform-Framework \emph{Cordova} von Apache aufbaut und den Zugriff auf native Features des jeweiligen Betriebssystems ermöglicht.\todo{wie genau, weiß ich noch nicht, noch rausfinden!}
-Bei der konkreten Verwendung von nativen Features muss jedoch teilweise wieder auf die Unterstützung durch die jeweiligen Plattformen geachtet werden.\todo{oder zumindest muss deklariert werden, was verwendet werden soll. -> checken!}
-
-Darüber hinaus übernimmt das Online-Portal \emph{PhoneGap~Build} den Bauprozess der App, also das Überführen in ein installierfähiges App-Format. 
-Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden, \cite{pgdoc} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
-
-Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.\todo{gehört vllt. eher woanders hin.}
-
-\subsection{JQueryMobile}
-Die Javascript-Bibliothek JQueryMobile baut auf JQuery auf und bietet ein Oberflächen-Toolkit für mobile Webseiten. Sie besteht zum Einen aus einer Javascript-Datei, die in die HTML-Seite eingebunden wird und zum Anderen aus einem CSS, das für das an mobile Touch-Geräte angepasste aussehen verantwortlich ist. 
-So können einerseits UI-Elementen explizit Style-Klassen aus dem JQueryMobile-CSS zugewiesen werden, andererseits sorgt das JQuery-Javascript ohnehin bei allen verwendeten HTML-Elementen dafür, dass die Style-Klassen dynamisch vergeben werden und die UI-Komponenten somit ihr App-typisches Aussehen erhalten.
-Lediglich mit dem zusätzlichen Attribut "data-role" werden den UI-Elementen Eigenschaftentypen zugewiesen, über die die JQueryMobile-Bibliothek erkennt, wie dieses dargestellt werden soll.
-\marginpar{Konkreter, Beispiel?}
-
-Dieser Mechanismus erleichtert es dem Frontend-Entwickler erheblich, eine auf Touchscreens ausgerichtete Oberfläche zu entwerfen, da er im Grunde neben einigen zusätzlichen Attributen sämtliche herkömmlichen HTML-Elemente verwenden kann. 
-
-\subsection{KnockoutJS}
-Auch bei \emph{Knockout} handelt es sich um eine Javascript-Bibliothek, die per \mbox{\texttt{<script>}-Tag} der HTML-Seite hinzugefügt wird. Knockout übernimmt mit einem MVVM (Model-View-ViewModel) das \emph{Data-Binding}, also die Verknüpfung zwischen Daten-Feldern im Programm und UI-Elementen.
-So lässt sich die UI (View) sehr klar von der Programmlogik (Model) trennen, was der Lesbarkeit, Erweiterbarkeit und Wartbarkeit der Software zugute kommt.
-
-Statt also Javascript mit HTML-String-Schnipseln zu vermischen, indem das DOM direkt manipuliert und UI-Elemente zur Laufzeit
-\todo{gibt es bei javascript überhaupt eine laufzeit?} 
-programmatisch erweitert werden, definiert der Entwickler in einem separaten Javascript ein View-Model und bindet mit dem HTML-Attribut \glqq data-bind\grqq \ eine bestimmte View-Eigenschaft an ein Datenfeld aus dem View-Model.
-\marginpar{Konkreter, Beispiel, Grafik?}
-
-
-%\chapter{Praktische Umsetzung}
+\include{einleitung}
+\include{grundlagen}
+%\include{umsetzung}
 
 \printbibliography[heading=bibintoc]{}
 
