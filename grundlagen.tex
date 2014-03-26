@@ -1,6 +1,6 @@
 \chapter{Theoretische Grundlagen}
 %1. Theoretische Grundlagen → als Grundlage für implementierung.
-%Was muss der leser wissen, um die realisierung zu verstehen? 
+% Was muss der leser wissen, um die realisierung zu verstehen? 
 %1. Konkreter, technoloischer: Worum geht es bei plattformunabhängiglkeit, wie ist zu erreichen? → veschiedene grundsätzliche Konzepte
 %2. übersicht / Eigenschaften & Einordnung der vorgestellten L\"osungen
 %3. Verwendete Technologien → wie macht das phonegap?
@@ -8,9 +8,19 @@
 
 \section{Apps für mobile Geräte}
 
-Unter mobilen Apps (Kurzform für engl. \glqq Application\grqq) versteht man im Allgemeinen Anwendungssoftware für Tablet-Comuter oder Smartphones. Im Laufe der letzten Jahre haben sich auf dem Markt für Mobilgeräte durch viele konkurierende Gerätehersteller eine Vielzahl von Smartphone- und Tablet-Betriebssystemen herausgebildet. Im Entwicklungsbereich wird in dem Zusammenhang auch von einer Plattform gesprochen.
+\subsection{Mobile (native) App}
+Unter mobilen Apps (Kurzform für engl. \glqq Application\grqq) versteht man im Allgemeinen Anwendungssoftware für Tablet-Comuter oder Smartphones. Im Laufe der letzten Jahre haben sich auf dem Markt für Mobilgeräte durch viele konkurierende Gerätehersteller eine Vielzahl von Smartphone- und Tablet-Betriebssystemen herausgebildet. Im Entwicklungsbereich wird in dem Zusammenhang auch von \emph{Plattformen} gesprochen.
 
-Zu den Plattformen mit dem höchsten Marktanteil zählen Googles Android, iOS von Apple, Microsoft Windows Phone und Blackberry OS des gleichnamigen Smartphone-Herstellers Blackberry. \cite{idc1}
+Zu den Plattformen mit dem höchsten Marktanteil zählen Googles Betriebssystem Android, iOS von Apple, Microsoft~Windows~Phone und Blackberry~OS des gleichnamigen Smartphone-Herstellers Blackberry. \cite{platforms-marketshare}
+
+% Nativ-Entwicklung für die jeweiligen Plattformen: Android / iOS
+% -> Dadurch entstehender Mehraufwand bei Anforderung mehrerer Plattformen
+
+\section{Web-Anwendung}
+
+
+\section{Hybrid-App}
+
 
 Zumeist nutzen die verschiedenen Plattformen nicht nur unterschiedliche Dateiformate für ihre Anwendungen sondern auch unterschiedliche Programmiersprachen und Toolkits für die Programmierung. So verwendet beispielsweise Android die Programmiersprache Java in Kombination mit einem eigenen Android SDK, während Apps für Apples iOS mit ObjectiveC in der Firmeneigenen Entwicklungsumgebung Xcode (die auch nur auf dem firmeneigenen Betriebssystem Mac~OSX läuft) geschrieben werden. Somit ist die Plattformunabhängigkeit mit den herkömmlichen Entwicklungsmethoden kaum zu erreichen, da die verschiedenen Produkte und Plattformen zueinander nicht kompatibel sind.
 
@@ -36,7 +46,7 @@ Für letzteres bietet PhoneGap eine Javascript-Bibliothek, die auf das Cross-Pla
 Bei der konkreten Verwendung von nativen Features muss jedoch teilweise wieder auf die Unterstützung durch die jeweiligen Plattformen geachtet werden.\todo{oder zumindest muss deklariert werden, was verwendet werden soll. -> checken!}
 
 Darüber hinaus übernimmt das Online-Portal \emph{PhoneGap~Build} den Bauprozess der App, also das Überführen in ein installierfähiges App-Format. 
-Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden, \cite{pgdoc1} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
+Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden, \cite{pg-doc-1} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
 
 Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.\todo{gehört vllt. eher woanders hin.}
 
