@@ -6,16 +6,16 @@
 \usepackage[T1]{fontenc}	% Schriftarten und Zeichensatz mit Umlauten und Akzenten
 \usepackage{lmodern} 		% Bessere Typografie
 \usepackage[ngerman]{babel} % Deutsche Zeichenunterstützung
-\usepackage[textwidth=2.5cm]{todonotes}		% ToDo-Notizen
+\usepackage{todonotes}		% ToDo-Notizen
 \usepackage[pdfborder={0 0 0}]{hyperref}	% Links for PDF
 \usepackage{verbatim} 		% Blockweise Kommentieren
 \usepackage{graphicx}		% Grafiken einfügen
-\usepackage[style=trad-plain]{biblatex}		% (Mächtigere) Literaturdatenbank verwenden
+\usepackage[style=trad-alpha]{biblatex}		% (Mächtigere) Literaturdatenbank verwenden
 
 % METADATA % % % % % % % % % % % % % % % % % % % % 
 
 \title{Plattformunabhängige App-Entwicklung \\ für mobile Geräte \\--\\ Grenzen und Möglichkeiten}
-\subtitle{- Bachelorarbeit -}
+%\subtitle{- Bachelorarbeit -}
 \author{Daniel Morgenstern}
 \date{22. April 2014}
 \bibliography{literatur}
@@ -28,8 +28,8 @@
 
 \include{einleitung}
 \include{grundlagen}
-%\include{umsetzung}
+\include{umsetzung}
 
-\printbibliography[heading=bibintoc]{}
+\printbibliography[heading=bibintoc]
 
 \end{document}
