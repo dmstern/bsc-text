@@ -1,6 +1,6 @@
 *.odt#
 *.ods#
-.*~
+*.*~
 *.aux
 *.glo
 *.idx
@@ -25,4 +25,3 @@
 *.out
 *.synctex.gz
 
-feedback
