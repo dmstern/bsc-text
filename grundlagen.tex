@@ -6,22 +6,54 @@
 %3. Verwendete Technologien → wie macht das phonegap?
 %1. Knockout, jquerymobile, etc.
 
-\section{Apps für mobile Geräte}
+\section{Apps für mobile Geräte} \todo{Um hier nicht ständig in der Gliederung zu springen: wie am besten aufteilen? 2 Dimensionen: nativ-wev-hybrid bzw. vor-/nachteile}
+
+\subsection{Web-Anwendung}
+% => Seit Smartphones werden fast alle Web-Dienste (ja beinahe jede größere Website) auch parallel als App angeboten (Tagesschau / Wikipedia / etc.). Deshalb hier erstmal Web-App (Mobile Website).
 
 \subsection{Mobile (native) App}
-Unter mobilen Apps (Kurzform für engl. \glqq Application\grqq) versteht man im Allgemeinen Anwendungssoftware für Tablet-Comuter oder Smartphones. Im Laufe der letzten Jahre haben sich auf dem Markt für Mobilgeräte durch viele konkurierende Gerätehersteller eine Vielzahl von Smartphone- und Tablet-Betriebssystemen herausgebildet. Im Entwicklungsbereich wird in dem Zusammenhang auch von \emph{Plattformen} gesprochen.
+Unter mobilen Apps (Kurzform für engl. \glqq Application\grqq) versteht man im Allgemeinen Anwendungssoftware für Tablet-Comuter oder Smartphones. 
+Im Laufe der letzten Jahre haben sich auf dem Markt für Mobilgeräte durch viele konkurierende Gerätehersteller eine Vielzahl von Smartphone- und Tablet-Betriebssystemen herausgebildet. 
+Im Entwicklungsbereich wird in dem Zusammenhang auch von \emph{Plattformen} gesprochen.
 
 Zu den Plattformen mit dem höchsten Marktanteil zählen Googles Betriebssystem Android, iOS von Apple, Microsoft~Windows~Phone und Blackberry~OS des gleichnamigen Smartphone-Herstellers Blackberry. \cite{platforms-marketshare}
-
 % Nativ-Entwicklung für die jeweiligen Plattformen: Android / iOS
-% -> Dadurch entstehender Mehraufwand bei Anforderung mehrerer Plattformen
+Die App-Entwicklung für diese mobilen Betriebssysteme erfolgt mehr oder weniger ähnlich und soll im Folgenden, um auf die beiden größten Vertreter einzugehen, anhand von Android beziehungsweise iOS näher beschrieben werden.
 
-\section{Web-Anwendung}
+%	-> SDKs verwalten
+Grundsätzlich muss der Entwickler die entsprechenden SDKs (Software Development Kit) der Plattform, für die entwickelt wird, in seiner Entwicklungsumgebung installiert haben. 
+Diese enthalten Softwarekomponenten, die zur Entwicklung der App notwendig sind, beispielsweise Klassen, die es einem erlauben, auf native Funktionalitäten des Betriebssystems wie zum Beispiel das Adressbuch, den Benachrichtigungsmechanismus oder auch auf Hardwarekomponenten wie die Kamera, den Bewegungssensor oder das GPS-Modul zuzugreifen sowie die entsprechenden plattformspezifischen Oberflächenkomponenten () zu nutzen.
+
+%	-> Code schreiben für die jeweilige Plattform
+Als Programmiersprache wird für die Android-App-Entwicklung Java verwendet. Das heißt, grundsätzlich kann jeder, der das Java- und das Android-SDK auf seinem Rechner installiert hat mit einer beliebigen geeigneten Entwicklungsumgebung wie \emph{Eclipse}, \emph{NetBeans IDE} oder \emph{IntelliJ~IDEA} Apps für Android entwickeln. 
+\todo{wie sieht es mit dem deployment, also der auslieferung in appstores etc aus?}
+Seit 2013 bietet Google darüberhinaus die auf IntelliJ IDE basierende und eigens für die Android-Entwicklung angepasste Entwicklungsumgebung \emph{Android~Studio} an, die bereits alle notwendigen Toolkits enthält. 
+
+% iOS: 
 
 
-\section{Hybrid-App}
+% 	-> Kompilieren / bauen
+% 	-> Deployment -> Verpacken
+%	-> Nutzer kann App (Paket / Dateiformat) installieren
+
+\subsection{Vergleich / Schlussfolgerung: Hybrid-App}
+
+% Native App
+% - Dadurch entstehender Mehraufwand bei Anforderung mehrerer Plattformen
+% + Alle Features des OS verfügbar, mehr Möglichkeiten 
+
+% Web
+% - Fehlende (native) Features
+% - Keine Offline-funnktionaltität
+% - Feeling: Man befindet sich im Browser: GUI, Ladezeiten, Menü-Taste bei Android
 
 
+
+\subsection{Hybrid-App}
+
+
+
+% ALT % % %
 Zumeist nutzen die verschiedenen Plattformen nicht nur unterschiedliche Dateiformate für ihre Anwendungen sondern auch unterschiedliche Programmiersprachen und Toolkits für die Programmierung. So verwendet beispielsweise Android die Programmiersprache Java in Kombination mit einem eigenen Android SDK, während Apps für Apples iOS mit ObjectiveC in der Firmeneigenen Entwicklungsumgebung Xcode (die auch nur auf dem firmeneigenen Betriebssystem Mac~OSX läuft) geschrieben werden. Somit ist die Plattformunabhängigkeit mit den herkömmlichen Entwicklungsmethoden kaum zu erreichen, da die verschiedenen Produkte und Plattformen zueinander nicht kompatibel sind.
 
 Im Planungsprozess einer Softwarelösung ist in bestimmten Fällen eine denkbare Alternative zur nativen App eine Webanwendung, die mithilfe des Browsers abrufbar ist, also konkret eine dynamische Website, wie man sie auch von der herkömmlichen Internet-Nutzung eines Desktop-Systems kennt. 
