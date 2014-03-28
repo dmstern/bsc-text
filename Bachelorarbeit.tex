@@ -1,6 +1,6 @@
 \documentclass{scrreprt}
 
-% PACKAGES % % % % % % % % % % % % % % % % % % % %
+% PACKAGES #################################################
 
 \usepackage[utf8]{inputenc} % Zeichensatz auf Unix-Standard
 \usepackage[T1]{fontenc}	% Schriftarten und Zeichensatz mit Umlauten und Akzenten
@@ -10,9 +10,9 @@
 \usepackage[pdfborder={0 0 0}]{hyperref}	% Links ins PDF
 \usepackage{verbatim} 		% Blockweise Kommentieren
 \usepackage{graphicx}		% Grafiken einfügen
-\usepackage[style=trad-alpha]{biblatex}		% (Mächtigere) Literaturdatenbank verwenden
+\usepackage[style=trad-plain]{biblatex}		% (Mächtigere) Literaturdatenbank verwenden
 
-% METADATA % % % % % % % % % % % % % % % % % % % % 
+% METADATA #################################################
 
 \title{Plattformunabhängige App-Entwicklung \\ für mobile Geräte \\--\\ Grenzen und Möglichkeiten}
 \subtitle{- Bachelorarbeit -}
@@ -20,12 +20,18 @@
 \date{22. April 2014}
 \bibliography{literatur}
 
-% DOCUMENT CONTENT % % % % % % % % % % % % % % % % % % % %
+% Hurenkinder und Schusterjungen verhindern
+\clubpenalty10000
+\widowpenalty10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty10000
+
+% DOCUMENT CONTENT #########################################
 
 \begin{document}
    \maketitle
    \tableofcontents
-
+   
 \include{einleitung}
 \include{grundlagen}
 \include{umsetzung}
@@ -33,3 +39,5 @@
 \printbibliography[heading=bibintoc]
 
 \end{document}
+
+% DEFINITIONS ##############################################

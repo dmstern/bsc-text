@@ -16,27 +16,30 @@ Unter mobilen Apps (Kurzform für engl. \glqq Application\grqq) versteht man im 
 Im Laufe der letzten Jahre haben sich auf dem Markt für Mobilgeräte durch viele konkurierende Gerätehersteller eine Vielzahl von Smartphone- und Tablet-Betriebssystemen herausgebildet. 
 Im Entwicklungsbereich wird in dem Zusammenhang auch von \emph{Plattformen} gesprochen.
 
-Zu den Plattformen mit dem höchsten Marktanteil zählen Googles Betriebssystem Android, iOS von Apple, Microsoft~Windows~Phone und Blackberry~OS des gleichnamigen Smartphone-Herstellers Blackberry. \cite{platforms-marketshare}
+Zu den Plattformen mit dem höchsten Marktanteil zählen Googles Betriebssystem Android, iOS von Apple, Microsoft~Windows~Phone und Blackberry~OS des gleichnamigen Smartphone-Herstellers Blackberry.\cite{platforms-marketshare}
 % Nativ-Entwicklung für die jeweiligen Plattformen: Android / iOS
 Die App-Entwicklung für diese mobilen Betriebssysteme erfolgt mehr oder weniger ähnlich und soll im Folgenden, um auf die beiden größten Vertreter einzugehen, anhand von Android beziehungsweise iOS näher beschrieben werden.
 
 %	-> SDKs verwalten
 Grundsätzlich muss der Entwickler die entsprechenden SDKs (Software Development Kit) der Plattform, für die entwickelt wird, in seiner Entwicklungsumgebung installiert haben. 
-Diese enthalten Softwarekomponenten, die zur Entwicklung der App notwendig sind, beispielsweise Klassen, die es einem erlauben, auf native Funktionalitäten des Betriebssystems wie zum Beispiel das Adressbuch, den Benachrichtigungsmechanismus oder auch auf Hardwarekomponenten wie die Kamera, den Bewegungssensor oder das GPS-Modul zuzugreifen sowie die entsprechenden plattformspezifischen Oberflächenkomponenten () zu nutzen.
+Diese enthalten Softwarekomponenten, die zur Entwicklung der App notwendig sind, beispielsweise Klassen, die es einem erlauben, auf native Funktionalitäten des Betriebssystems wie zum Beispiel das Adressbuch, den Benachrichtigungsmechanismus oder auch auf Hardwarekomponenten wie die Kamera, den Bewegungssensor oder das GPS-Modul zuzugreifen sowie die entsprechenden plattformspezifischen Oberflächenkomponenten (GUI-Toolkit) zu nutzen.
 
 %	-> Code schreiben für die jeweilige Plattform
-Als Programmiersprache wird für die Android-App-Entwicklung Java verwendet. Das heißt, grundsätzlich kann jeder, der das Java- und das Android-SDK auf seinem Rechner installiert hat mit einer beliebigen geeigneten Entwicklungsumgebung wie \emph{Eclipse}, \emph{NetBeans IDE} oder \emph{IntelliJ~IDEA} Apps für Android entwickeln. 
+Als Programmiersprache wird für die Android-App-Entwicklung Java verwendet. Das heißt, grundsätzlich kann jeder, der das Java- und das Android-SDK auf seinem Rechner installiert hat, mit einer beliebigen geeigneten Entwicklungsumgebung wie \emph{Eclipse}, \emph{NetBeans~IDE} oder \emph{IntelliJ~IDEA} Apps für Android entwickeln. 
 \todo{wie sieht es mit dem deployment, also der auslieferung in appstores etc aus?}
-Seit 2013 bietet Google darüberhinaus die auf IntelliJ IDE basierende und eigens für die Android-Entwicklung angepasste Entwicklungsumgebung \emph{Android~Studio} an, die bereits alle notwendigen Toolkits enthält. 
+Seit 2013 bietet Google darüberhinaus die auf IntelliJ~IDE basierende und eigens für die Android-Entwicklung angepasste Entwicklungsumgebung \emph{Android~Studio} an, die bereits alle notwendigen Toolkits enthält. 
 
-% iOS: 
+Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm gebaut werden (\seename\ \autoref{fig:hybrid-apps-schaubild}). Anschließend kann die App in dem für die Zielplattform vorgesehene Dateiformat ausgeliefert werden.
 
 
 % 	-> Kompilieren / bauen
 % 	-> Deployment -> Verpacken
 %	-> Nutzer kann App (Paket / Dateiformat) installieren
 
-\subsection{Vergleich / Schlussfolgerung: Hybrid-App}
+% iOS: 
+
+
+\subsection{Vergleich / Schlussfolgerung -> Entwicklung von Hybriden Apps}
 
 % Native App
 % - Dadurch entstehender Mehraufwand bei Anforderung mehrerer Plattformen
@@ -49,7 +52,12 @@ Seit 2013 bietet Google darüberhinaus die auf IntelliJ IDE basierende und eigen
 
 
 
-\subsection{Hybrid-App}
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{./images/hybrid-apps-schaubild}
+\caption[Schaubild Hybrid Apps]{Entwicklungsstufen der verschiedenen Arten von Apps. Während bei der nativen App der gesamte Entwicklungszyklus einmal pro Plattform durchlaufen werden muss, verringert sich der Aufwand für die Web-App erheblich. Bei der Hybride-App muss die Anwendung zwar einmal für jede Plattform gebaut und ausgeliefert werden um die Schnittstellen für die nativen Plattformen zu implementieren, aber der hauptsächliche Entwicklungsaufwand des Programmierens und testens fällt aufgrund des generischen Charakters nur einmal an.}
+\label{fig:hybrid-apps-schaubild}
+\end{figure}
 
 
 
@@ -78,7 +86,7 @@ Für letzteres bietet PhoneGap eine Javascript-Bibliothek, die auf das Cross-Pla
 Bei der konkreten Verwendung von nativen Features muss jedoch teilweise wieder auf die Unterstützung durch die jeweiligen Plattformen geachtet werden.\todo{oder zumindest muss deklariert werden, was verwendet werden soll. -> checken!}
 
 Darüber hinaus übernimmt das Online-Portal \emph{PhoneGap~Build} den Bauprozess der App, also das Überführen in ein installierfähiges App-Format. 
-Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden, \cite{pg-doc-1} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
+Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\cite{pg-doc-1} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
 
 Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.\todo{gehört vllt. eher woanders hin.}
 
