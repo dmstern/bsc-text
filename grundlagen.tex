@@ -6,12 +6,9 @@
 %3. Verwendete Technologien → wie macht das phonegap?
 %1. Knockout, jquerymobile, etc.
 
-\section{Apps für mobile Geräte} \todo{Um hier nicht ständig in der Gliederung zu springen: wie am besten aufteilen? 2 Dimensionen: nativ-wev-hybrid bzw. vor-/nachteile}
+\section{Apps für mobile Geräte} % \todo{Um hier nicht ständig in der Gliederung zu springen: wie am besten aufteilen? 2 Dimensionen: nativ-wev-hybrid bzw. vor-/nachteile}
 
-\subsection{Web-Anwendung}
-% => Seit Smartphones werden fast alle Web-Dienste (ja beinahe jede größere Website) auch parallel als App angeboten (Tagesschau / Wikipedia / etc.). Deshalb hier erstmal Web-App (Mobile Website).
-
-\subsection{Mobile (native) App}
+\subsection{Mobile (native) App} \label{native}
 Unter mobilen Apps (Kurzform für engl. \glqq Application\grqq) versteht man im Allgemeinen Anwendungssoftware für Tablet-Comuter oder Smartphones. 
 Im Laufe der letzten Jahre haben sich auf dem Markt für Mobilgeräte durch viele konkurierende Gerätehersteller eine Vielzahl von Smartphone- und Tablet-Betriebssystemen herausgebildet. 
 Im Entwicklungsbereich wird in dem Zusammenhang auch von \emph{Plattformen} gesprochen.
@@ -25,21 +22,40 @@ Grundsätzlich muss der Entwickler die entsprechenden SDKs (Software Development
 Diese enthalten Softwarekomponenten, die zur Entwicklung der App notwendig sind, beispielsweise Klassen, die es einem erlauben, auf native Funktionalitäten des Betriebssystems wie zum Beispiel das Adressbuch, den Benachrichtigungsmechanismus oder auch auf Hardwarekomponenten wie die Kamera, den Bewegungssensor oder das GPS-Modul zuzugreifen sowie die entsprechenden plattformspezifischen Oberflächenkomponenten (GUI-Toolkit) zu nutzen.
 
 %	-> Code schreiben für die jeweilige Plattform
+% Allgemein / Android
 Als Programmiersprache wird für die Android-App-Entwicklung Java verwendet. Das heißt, grundsätzlich kann jeder, der das Java- und das Android-SDK auf seinem Rechner installiert hat, mit einer beliebigen geeigneten Entwicklungsumgebung wie \emph{Eclipse}, \emph{NetBeans~IDE} oder \emph{IntelliJ~IDEA} Apps für Android entwickeln. 
 \todo{wie sieht es mit dem deployment, also der auslieferung in appstores etc aus?}
-Seit 2013 bietet Google darüberhinaus die auf IntelliJ~IDE basierende und eigens für die Android-Entwicklung angepasste Entwicklungsumgebung \emph{Android~Studio} an, die bereits alle notwendigen Toolkits enthält. 
+Seit 2013 bietet Google darüberhinaus die auf IntelliJ~IDE basierende und eigens für die Android-Entwicklung angepasste Entwicklungsumgebung \emph{Android~Studio} an,\cite{android-studio} die bereits alle notwendigen Toolkits enthält. 
 
-Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm gebaut werden (\seename\ \autoref{fig:hybrid-apps-schaubild}). Anschließend kann die App in dem für die Zielplattform vorgesehene Dateiformat ausgeliefert werden.
-
-
-% 	-> Kompilieren / bauen
-% 	-> Deployment -> Verpacken
-%	-> Nutzer kann App (Paket / Dateiformat) installieren
+Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm gebaut werden (\seename\ \autoref{fig:hybrid-apps-schaubild}). Anschließend kann die App in dem für die Zielplattform vorgesehene Dateiformat ausgeliefert und auf dem Zielgerät installiert werden.
 
 % iOS: 
+Auch Apple bietet mit \emph{Xcode} eine firmeneigene IDE zur App-Entwicklung für sein mobiles Betriebssystem iOS an. Anders als Google geht der iPhone-Hersteller hier allerdings etwas restriktiver vor. So läuft die Entwicklungsumgebung Xcode, die man für die native iOS-Entwicklung benötigt, nur unter dem hauseigenen Betriebssystem Mac~OSX und das wiederum nur auf den firmeneigenen Mac-Rechnern. So sichert sich Apple auch durch jeden Entwickler einen neuen Kunden.\todo{darf man so was hier anmerken, oder lieber weg?}
 
+Ansonsten verläuft der Entwicklungsprozess bei der iOS-Entwicklung im Prinzip ähnlich zur Android-Entwicklung. Als Programmiersprache wird \mbox{\emph{ObjectiveC}} verwendet, einer um objektorientierte Elemente erweiterte Variante von \emph{C} (\seename \autoref{fig:hybrid-apps-schaubild}).
 
-\subsection{Vergleich / Schlussfolgerung -> Entwicklung von Hybriden Apps}
+\subsection{Web-Anwendung}\todo{vielleicht auch eher nach \autoref{native}}
+
+% Zuerst gab es Websites, dann dynamische websites
+Eine Web-App (oder dt. \emph{Web-Anwendung}) ist eine Andwendungssoftware, die auf einem Web-Server läuft und auf die der Nutzer mittels eines Browsers zugreifen kann; also eine dynamische Website, wie man sie auch schon vor dem Aufkommen von Smartphones und modernen Tablets kannte. 
+
+% Dann für sämtliche INet-Dienste auch noch eine App
+Zwar gab es, durch damals eher im Business-Bereich verortete Internet-Handys und Palmtops, auch vor den heute üblichen mobilen Touch-Geräten bereits mobile Internetseiten, die speziell für Darstellung auf kleinen Displays ausgerichtet waren, doch mit der massenhaften Verbreitung von mobilen internetfähigen Geräten und deren strikten anwendungsorientierten Bedien-Konzept boten viele herkömmliche Web-Dienste nun auch zusätzlich eine native App für verschiedene mobile Plattformen an. \todo{nachweis}
+Das heißt, der Nutzer folgt einem geänderten Bedienungsmuster seines Mobilgeräts gegenüber der herkömmlichen Computer-Nutzung: um zu einem bestimmten Ergebnis zu gelangen (bspw. \glqq Nachrichten lesen \grqq) also die Frage zu beantworten, \emph{wie} er dahin gelangt (Einen Browser öffnen, zur gewünschten Seite navigieren: www.tagesschau.de), ist es für Anwender heutiger Mobilsysteme naheliegend, gleich die passende App zu starten (hier bspw. die Tagesschau-App).
+
+Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu einer Website bei der mobilen App nicht die komplette Oberfläche (HTML-, CSS und JavaScript-Dokumente sowie Grafiken) übertragen werden, sondern lediglich die Nutzdaten (also \todo{erklären!}).
+
+% - Feeling: Man befindet sich im Browser: GUI, Ladezeiten, Menü-Taste bei Android
+% Fehlende Features.
+% Bei Web-App muss immer alles (auch GUI und Logik-Scripte) übertragen werden.
+
+% Dann Hybrid (also beides in einem vereint).
+
+\subsection{}
+
+% Hybride-App: Begriff erläutern
+
+% Vor-/Nachteile der Hybriden App-Entwicklung
 
 % Native App
 % - Dadurch entstehender Mehraufwand bei Anforderung mehrerer Plattformen
@@ -48,10 +64,18 @@ Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen P
 % Web
 % - Fehlende (native) Features
 % - Keine Offline-funnktionaltität
-% - Feeling: Man befindet sich im Browser: GUI, Ladezeiten, Menü-Taste bei Android
+
+\todo{gehört der nativ-web-vergleich jetzt eher auch hierher oder in \autoref{native} ?}
+
+% Hybride App
+
+% Möglichkeiten zur hybriden App-entwicklung:
+% - PhoneGap
+% - 
 
 
-
+% Gibts hierfür auch so ne Art Grafik-Datenbank wie bei Bib? Dann müsste man den schmonsens nicht hier im Text verteilen.
+% Wie gibt man hier ne Bild-Quelle an?
 \begin{figure}
 \centering
 \includegraphics[width=1\linewidth]{./images/hybrid-apps-schaubild}
@@ -72,7 +96,7 @@ Diese Variante hat zwar den Vorteil, dass die Anwendung plattformunabhängig ist
 Ebenso kommt die Webanwendung im Normalfall nicht für Offline-Anwendungen in Frage, da die meisten mobilen Betriebssysteme nicht vorsehen, dass der Nutzer aus dem Dateisystem eine HTML-Seite öffnet. \todo{nachweis!} 
 Dahingehend liegt ein Ansatz zur plattformunabhängigen App-Entwicklung auf der Hand: Die Hybrid-App, also die Verwendung von Webtechnologien mithilfe einer Schnittstelle zwischen der Webanwendung und der nativen Ebene des Betriebssystems.
 
-\section{Verwendete Technologien}
+\section{Entwicklung von Hybriden Apps}
 \subsection{Grundlegende Technologien}
 Konkret heißt das, die Software wird als Webanwendung mit den zugehörigen Technologien (HTML, Javascript, CSS) entwickelt und für die jeweiligen benötigten Plattformen in eine native App eingebettet, welche hier allerdings hauptsächlich aus einer Web-View, also einer abgespeckten Variante eines Web-Browsers zur Anzeige der Webanwendung, besteht. Da dieser Ansatz der am häufigsten von Cross-Platform-Frameworks genutzte ist, \todo{nachweis!} stellt dieser auch den Schwerpunkt der in dieser Arbeit explorierten Technologien dar und soll hier näher erläutert werden. 
 

@@ -1,16 +1,17 @@
-\documentclass{scrreprt}
+\documentclass[ngerman]{scrreprt}
 
 % PACKAGES #################################################
 
 \usepackage[utf8]{inputenc} % Zeichensatz auf Unix-Standard
 \usepackage[T1]{fontenc}	% Schriftarten und Zeichensatz mit Umlauten und Akzenten
 \usepackage{lmodern} 		% Bessere Typografie
-\usepackage[ngerman]{babel} % Deutsche Zeichenunterstützung
+\usepackage{babel} % Deutsche Zeichenunterstützung
 \usepackage{todonotes}		% ToDo-Notizen
 \usepackage[pdfborder={0 0 0}]{hyperref}	% Links ins PDF
 \usepackage{verbatim} 		% Blockweise Kommentieren
 \usepackage{graphicx}		% Grafiken einfügen
 \usepackage[style=trad-plain]{biblatex}		% (Mächtigere) Literaturdatenbank verwenden
+\usepackage{color}
 
 % METADATA #################################################
 
@@ -19,12 +20,6 @@
 \author{Daniel Morgenstern}
 \date{22. April 2014}
 \bibliography{literatur}
-
-% Hurenkinder und Schusterjungen verhindern
-\clubpenalty10000
-\widowpenalty10000
-\displaywidowpenalty=10000
-\interfootnotelinepenalty10000
 
 % DOCUMENT CONTENT #########################################
 
@@ -38,6 +33,13 @@
 
 \printbibliography[heading=bibintoc]
 
+% DEFINITIONS ##############################################
+
+% Hurenkinder und Schusterjungen verhindern
+\clubpenalty10000
+\widowpenalty10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty10000
+
 \end{document}
 
-% DEFINITIONS ##############################################
