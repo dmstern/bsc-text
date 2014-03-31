@@ -1,17 +1,17 @@
-\documentclass[ngerman]{scrreprt}
+\documentclass{scrreprt}
 
 % PACKAGES #################################################
 
 \usepackage[utf8]{inputenc} % Zeichensatz auf Unix-Standard
 \usepackage[T1]{fontenc}	% Schriftarten und Zeichensatz mit Umlauten und Akzenten
 \usepackage{lmodern} 		% Bessere Typografie
-\usepackage{babel} % Deutsche Zeichenunterstützung
+\usepackage[ngerman]{babel}	% Deutsche Sprachunterstützung (Umlaute, Datumsformate)
 \usepackage{todonotes}		% ToDo-Notizen
 \usepackage[pdfborder={0 0 0}]{hyperref}	% Links ins PDF
-\usepackage{verbatim} 		% Blockweise Kommentieren
-\usepackage{graphicx}		% Grafiken einfügen
+\usepackage{verbatim} 						% Blockweise Kommentieren
+\usepackage{graphicx}						% Grafiken einfügen
 \usepackage[style=trad-plain]{biblatex}		% (Mächtigere) Literaturdatenbank verwenden
-\usepackage{color}
+\usepackage[babel,german=quotes]{csquotes}	% \enquote{}-Befehl umwandeln in deutsche Anführungszeichen.
 
 % METADATA #################################################
 

@@ -26,36 +26,39 @@ Diese enthalten Softwarekomponenten, die zur Entwicklung der App notwendig sind,
 Als Programmiersprache wird für die Android-App-Entwicklung Java verwendet. Das heißt, grundsätzlich kann jeder, der das Java- und das Android-SDK auf seinem Rechner installiert hat, mit einer beliebigen geeigneten Entwicklungsumgebung wie \emph{Eclipse}, \emph{NetBeans~IDE} oder \emph{IntelliJ~IDEA} Apps für Android entwickeln. 
 \todo{wie sieht es mit dem deployment, also der auslieferung in appstores etc aus?}
 Seit 2013 bietet Google darüberhinaus die auf IntelliJ~IDE basierende und eigens für die Android-Entwicklung angepasste Entwicklungsumgebung \emph{Android~Studio} an,\cite{android-studio} die bereits alle notwendigen Toolkits enthält. 
-
 Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm gebaut werden (\seename\ \autoref{fig:hybrid-apps-schaubild}). Anschließend kann die App in dem für die Zielplattform vorgesehene Dateiformat ausgeliefert und auf dem Zielgerät installiert werden.
 
 % iOS: 
 Auch Apple bietet mit \emph{Xcode} eine firmeneigene IDE zur App-Entwicklung für sein mobiles Betriebssystem iOS an. Anders als Google geht der iPhone-Hersteller hier allerdings etwas restriktiver vor. So läuft die Entwicklungsumgebung Xcode, die man für die native iOS-Entwicklung benötigt, nur unter dem hauseigenen Betriebssystem Mac~OSX und das wiederum nur auf den firmeneigenen Mac-Rechnern. So sichert sich Apple auch durch jeden Entwickler einen neuen Kunden.\todo{darf man so was hier anmerken, oder lieber weg?}
 
-Ansonsten verläuft der Entwicklungsprozess bei der iOS-Entwicklung im Prinzip ähnlich zur Android-Entwicklung. Als Programmiersprache wird \mbox{\emph{ObjectiveC}} verwendet, einer um objektorientierte Elemente erweiterte Variante von \emph{C} (\seename \autoref{fig:hybrid-apps-schaubild}).
+Ansonsten verläuft der Entwicklungsprozess bei der iOS-Entwicklung im Prinzip ähnlich zur Android-Entwicklung (\seename\ \autoref{fig:hybrid-apps-schaubild}).
+Als Programmiersprache wird \emph{ObjectiveC} verwendet, einer um objektorientierte Elemente erweiterte Variante von \emph{C}.
 
-\subsection{Web-Anwendung}\todo{vielleicht auch eher nach \autoref{native}}
+\subsection{Web-Anwendung}
 
 % Zuerst gab es Websites, dann dynamische websites
 Eine Web-App (oder dt. \emph{Web-Anwendung}) ist eine Andwendungssoftware, die auf einem Web-Server läuft und auf die der Nutzer mittels eines Browsers zugreifen kann; also eine dynamische Website, wie man sie auch schon vor dem Aufkommen von Smartphones und modernen Tablets kannte. 
 
 % Dann für sämtliche INet-Dienste auch noch eine App
-Zwar gab es, durch damals eher im Business-Bereich verortete Internet-Handys und Palmtops, auch vor den heute üblichen mobilen Touch-Geräten bereits mobile Internetseiten, die speziell für Darstellung auf kleinen Displays ausgerichtet waren, doch mit der massenhaften Verbreitung von mobilen internetfähigen Geräten und deren strikten anwendungsorientierten Bedien-Konzept boten viele herkömmliche Web-Dienste nun auch zusätzlich eine native App für verschiedene mobile Plattformen an. \todo{nachweis}
+\todo{woraus willst du hier eigentlich hinaus?}
+Zwar gab es, durch damals eher im Business-Bereich verortete Internet-Handys und Palmtops, auch vor den heute üblichen mobilen Touch-Geräten bereits mobile Internetseiten, die speziell für die Darstellung auf kleinen Displays ausgerichtet waren, doch mit der massenhaften Verbreitung von mobilen internetfähigen Geräten und deren strikten anwendungsorientierten Bedien-Konzept boten viele herkömmliche Web-Dienste nun auch zusätzlich eine native App für verschiedene mobile Plattformen an. \todo{nachweis}
 Das heißt, der Nutzer folgt einem geänderten Bedienungsmuster seines Mobilgeräts gegenüber der herkömmlichen Computer-Nutzung: um zu einem bestimmten Ergebnis zu gelangen (bspw. \glqq Nachrichten lesen \grqq) also die Frage zu beantworten, \emph{wie} er dahin gelangt (Einen Browser öffnen, zur gewünschten Seite navigieren: www.tagesschau.de), ist es für Anwender heutiger Mobilsysteme naheliegend, gleich die passende App zu starten (hier bspw. die Tagesschau-App).
+Auch E-Mail-Anbieter wie GMX\cite{gmx}, WEB.DE\cite{web.de} oder GMail\cite{gmail} sind seit dieser Entwicklung auch in Form einer eigenen App für Android und iOS vertreten, sodass der Nutzer, statt einen anbieterunabhängigen Mail-Client zu konfigurieren, über den er seine E-Mails abruft, unter umständen gleich die App des E-Mail-Anbieters startet. 
 
-Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu einer Website bei der mobilen App nicht die komplette Oberfläche (HTML-, CSS und JavaScript-Dokumente sowie Grafiken) übertragen werden, sondern lediglich die Nutzdaten (also \todo{erklären!}).
+\todo{das ist jetzt schon der nativ-web-vergleich. sollte der hier hin?}
+Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu einer Website bei der mobilen App nicht die komplette Oberfläche (HTML-, CSS- und JavaScript-Dokumente sowie Grafiken) übertragen werden, sondern lediglich die Nutzdaten (also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform), was dem Nutzer ein höheres Maß an Performanz einbrintgt.
+Zum Anderen können trotz Vollbildmodus in bestimmten Fällen GUI-Elemente des Webbrowsers bei der Benutzung einer Web-Anwendung störend sein, so ist beispielsweise die Adresszeile am Rand nicht unbedingt erwünscht, wenn der Nutzer statt im Internet zu surfen eigentlich eine bestimmte Anwendung im Internet Nutzen möchte. 
 
-% - Feeling: Man befindet sich im Browser: GUI, Ladezeiten, Menü-Taste bei Android
-% Fehlende Features.
-% Bei Web-App muss immer alles (auch GUI und Logik-Scripte) übertragen werden.
+Ein anderer wichtiger Punkt geht in die selbe Richtung\todo{oder ist er im prinzip der selbe?}: der Zugriff auf native Funktionalitäten des Geräts respektive des Betriebssystems werden nicht oder nur gering unterstützt.
+\todo{recherchieren: wird was unterstützt? gibt es möglichkeiten, per javascript etc.? Was wird \enquote{gering} unterstützt?}
+So kann beispielsweise auch die \emph{Menü}-Taste bei Android-Geräten im Falle der Nutzung einer Web-Anwendung über den Browser ein ungewünschtes Verhalten aufweisen,  nicht den Kontext der eigentlich benutzten Anwendung (hier also der Website) anzeigt, sondern lediglich den des Browsers.
+
 
 % Dann Hybrid (also beides in einem vereint).
 
-\subsection{}
-
 % Hybride-App: Begriff erläutern
 
-% Vor-/Nachteile der Hybriden App-Entwicklung
+% Vor-/Nachteile der hybriden App-Entwicklung
 
 % Native App
 % - Dadurch entstehender Mehraufwand bei Anforderung mehrerer Plattformen
@@ -85,7 +88,7 @@ Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu ei
 
 
 
-% ALT % % %
+\todo[inline]{[ALT]:}
 Zumeist nutzen die verschiedenen Plattformen nicht nur unterschiedliche Dateiformate für ihre Anwendungen sondern auch unterschiedliche Programmiersprachen und Toolkits für die Programmierung. So verwendet beispielsweise Android die Programmiersprache Java in Kombination mit einem eigenen Android SDK, während Apps für Apples iOS mit ObjectiveC in der Firmeneigenen Entwicklungsumgebung Xcode (die auch nur auf dem firmeneigenen Betriebssystem Mac~OSX läuft) geschrieben werden. Somit ist die Plattformunabhängigkeit mit den herkömmlichen Entwicklungsmethoden kaum zu erreichen, da die verschiedenen Produkte und Plattformen zueinander nicht kompatibel sind.
 
 Im Planungsprozess einer Softwarelösung ist in bestimmten Fällen eine denkbare Alternative zur nativen App eine Webanwendung, die mithilfe des Browsers abrufbar ist, also konkret eine dynamische Website, wie man sie auch von der herkömmlichen Internet-Nutzung eines Desktop-Systems kennt. 
