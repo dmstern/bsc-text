@@ -1,19 +1,24 @@
 \documentclass{scrreprt}
 
-% PACKAGES #################################################
+% PACKAGES =================================================
 
 \usepackage[utf8]{inputenc} % Zeichensatz auf Unix-Standard
 \usepackage[T1]{fontenc}	% Schriftarten und Zeichensatz mit Umlauten und Akzenten
 \usepackage{lmodern} 		% Bessere Typografie
 \usepackage[ngerman]{babel}	% Deutsche Sprachunterstützung (Umlaute, Datumsformate)
 \usepackage{todonotes}		% ToDo-Notizen
-\usepackage[pdfborder={0 0 0}]{hyperref}	% Links ins PDF
-\usepackage{verbatim} 						% Blockweise Kommentieren
-\usepackage{graphicx}						% Grafiken einfügen
-\usepackage[style=trad-plain]{biblatex}		% (Mächtigere) Literaturdatenbank verwenden
+\usepackage[pdfborder={0 0 0}]
+		{hyperref}			% Links ins PDF
+\usepackage{verbatim} 		% Blockweise Kommentieren
+\usepackage{graphicx}		% Grafiken einfügen
+\usepackage[	backref=true,
+				hyperref=true,
+				url=false,
+				style=trad-plain]
+				{biblatex}	% (Mächtigere) Literaturdatenbank verwenden
 \usepackage[babel,german=quotes]{csquotes}	% \enquote{}-Befehl umwandeln in deutsche Anführungszeichen.
 
-% METADATA #################################################
+% METADATA =================================================
 
 \title{Plattformunabhängige App-Entwicklung \\ für mobile Geräte \\--\\ Grenzen und Möglichkeiten}
 \subtitle{- Bachelorarbeit -}
@@ -21,7 +26,7 @@
 \date{22. April 2014}
 \bibliography{literatur}
 
-% DOCUMENT CONTENT #########################################
+% DOCUMENT CONTENT =========================================
 
 \begin{document}
    \maketitle
@@ -33,7 +38,7 @@
 
 \printbibliography[heading=bibintoc]
 
-% DEFINITIONS ##############################################
+% DEFINITIONS ==============================================
 
 % Hurenkinder und Schusterjungen verhindern
 \clubpenalty10000
