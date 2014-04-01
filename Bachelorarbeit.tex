@@ -8,7 +8,7 @@
 \usepackage[ngerman]{babel}	% Deutsche Sprachunterstützung (Umlaute, Datumsformate)
 \usepackage{todonotes}		% ToDo-Notizen
 \usepackage[pdfborder={0 0 0}]
-		{hyperref}			% Links ins PDF
+				{hyperref}	% Links ins PDF
 \usepackage{verbatim} 		% Blockweise Kommentieren
 \usepackage{graphicx}		% Grafiken einfügen
 \usepackage[	backref=true,
@@ -17,8 +17,8 @@
 				style=trad-plain]
 				{biblatex}	% (Mächtigere) Literaturdatenbank verwenden
 \usepackage[babel,german=quotes]{csquotes}	% \enquote{}-Befehl umwandeln in deutsche Anführungszeichen.
-\usepackage{anysize}
-\usepackage{setspace}
+\usepackage{anysize}		% Seitenrand frei bestimmen
+\usepackage{setspace}		% Zeilenabstand frei bestimmen
 
 % METADATA =================================================
 
@@ -28,9 +28,13 @@
 \date{22. April 2014}
 \bibliography{literatur}
 
-% Eher über geeignete Vorlage mit DocumentClass.
+%TODO Eher über geeignete Vorlage mit DocumentClass:
+
+% Seitenrand
 \marginsize{3.5cm}{3.5cm}{3.5cm}{3.5cm}
-%\renewcommand{\baselinestretch}{1.3} 
+
+% Zeilenabstand
+\renewcommand{\baselinestretch}{1.2} 
 
 % DOCUMENT CONTENT =========================================
 

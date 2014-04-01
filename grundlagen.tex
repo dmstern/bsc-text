@@ -19,14 +19,14 @@ Die App-Entwicklung für diese mobilen Betriebssysteme erfolgt mehr oder weniger
 
 %	-> SDKs verwalten
 Grundsätzlich müssen auf der Entwicklungsumgebung die entsprechenden SDKs (Software Development Kit) der Plattform, für die entwickelt wird, installiert sein. 
-Diese enthalten Softwarekomponenten, die zur Entwicklung der App notwendig sind, beispielsweise Klassen, die es einem erlauben, auf native Funktionalitäten des Betriebssystems wie zum Beispiel das Adressbuch, den Benachrichtigungsmechanismus oder auch auf Hardwarekomponenten wie die Kamera, den Bewegungssensor oder das GPS-Modul zuzugreifen sowie die entsprechenden plattformspezifischen Oberflächenkomponenten (GUI-Toolkit) zu nutzen.
+Diese enthalten Softwarekomponenten, die zur Entwicklung der App notwendig sind, beispielsweise Klassen, die es einem erlauben, auf native Funktionalitäten des Betriebssystems wie zum Beispiel das Adressbuch, den Benachrichtigungsmechanismus oder auch auf Hardwarekomponenten wie die Kamera, den Bewegungssensor oder das GPS-Modul zuzugreifen sowie die entsprechenden plattformspezifischen Oberflächenkomponenten des jeweiligen GUI-Toolkits zu nutzen.
 
 %	-> Code schreiben für die jeweilige Plattform
 % Allgemein / Android
 Als Programmiersprache wird für die Android-App-Entwicklung Java verwendet. Das heißt, grundsätzlich kann jeder, der das Java- und das Android-SDK auf seinem Rechner installiert hat, mit einer beliebigen geeigneten Entwicklungsumgebung wie \emph{Eclipse}, \emph{NetBeans~IDE} oder \emph{IntelliJ~IDEA} Apps für Android entwickeln. 
 \todo{wie sieht es mit dem deployment, also der auslieferung in appstores etc aus?}
 Seit 2013 bietet Google darüberhinaus die auf IntelliJ~IDEA basierende und eigens für die Android-Entwicklung angepasste Entwicklungsumgebung \emph{Android~Studio} an,\cite{android-studio} die bereits alle notwendigen Toolkits enthält. 
-Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm gebaut werden (\seename\ \autoref{fig:hybrid-apps-schaubild}). Anschließend kann die App in dem für die Zielplattform vorgesehene Dasteiformat ausgeliefert und auf dem Zielgerät installiert werden.
+Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm gebaut werden (\seename\ \autoref{fig:hybrid-apps-schaubild}). Anschließend kann die App in dem für die Zielplattform vorgesehenen Dateiformat ausgeliefert und auf dem Zielgerät installiert werden.
 
 % iOS: 
 Auch Apple bietet mit \emph{Xcode} eine firmeneigene IDE zur App-Entwicklung für sein mobiles Betriebssystem iOS an. Anders als Google geht der iPhone-Hersteller hier allerdings etwas restriktiver vor. So läuft die Entwicklungsumgebung Xcode, die man für die native iOS-Entwicklung benötigt, nur unter dem hauseigenen Betriebssystem Mac~OSX und das wiederum nur auf den firmeneigenen Mac-Rechnern. So sichert sich Apple auch durch jeden Entwickler einen neuen Kunden.\todo{darf man so was hier anmerken, oder lieber weg?}
@@ -35,35 +35,34 @@ Ansonsten verläuft der Entwicklungsprozess bei der iOS-Entwicklung im Prinzip �
 Als Programmiersprache wird \emph{ObjectiveC} verwendet, einer um objektorientierte Elemente erweiterte Variante der Programmiersprache \emph{C}.
 
 Möchte ein Auftraggeber einer Software also statt seinen Kunden nur eine App für ein Betriebssystem anzubieten, einen größeren Nutzerkreis erschließen, muss die zu entwicklende App für jede Zielplattform neu programmiert, getestet und gebaut werden, da jede mobile Plattform ihre eigenen Toolkits, Bibliotheken und Programmiersprachen verwendet, was die native App-Entwicklung für potenzielle Auftraggeber zu einem sehr kostenaufwändigen Projekt werden lassen kann.
-Andererseits bietet die native App-Entwicklung vollständige Unterstützung der betriebssystemeigenen Funktionalitäten wie den Zugriff auf Kamera, Adressbuch, Bewegungssensoren etc. der jeweiligen Plattform, sodass ein Softwareprojekt mit solchen besonders hardware- oder betriebssystemnahne Anforderungen die Entwicklung einer nativen (plattformspezifischen) App notwendig erscheinen lassen kann.\footnote{Mehr dazu in \autoref{hybrid}}
+Andererseits bietet die native App-Entwicklung vollständige Unterstützung der betriebssystemeigenen Funktionalitäten wie den Zugriff auf Kamera, Adressbuch, Bewegungssensoren etc. der jeweiligen Plattform, sodass ein Softwareprojekt mit solchen besonders hardware- oder betriebssystemnahnen Anforderungen die Entwicklung einer nativen (plattformspezifischen) App notwendig erscheinen lassen kann.\footnote{Mehr dazu in \autoref{hybrid}}
 
 \subsection{Web-Anwendung}
 
 % Zuerst gab es Websites, dann dynamische websites
 Eine Web-App (oder dt. \emph{Web-Anwendung}) ist eine Andwendungssoftware, die auf einem Web-Server läuft und auf die der Nutzer mittels eines Browsers zugreifen kann; also eine dynamische Website, wie man sie auch schon vor dem Aufkommen von Smartphones und modernen Tablets kannte. 
 
-Die Grundlage des langjährigen Standards für die Enwicklung von Internetseiten bietet HTML (Hyper Text Markup Language), mit der Webseiten und deren Aussehen textuell beschrieben werden kann. In Kombination mit CSS (Cascading Style Sheets) für das modulare Styling einer Website sowie Javascript, einer Skriptsprache zur Manipulation von DOM-Dokumenten\todo{dom-document richtig?} bietet die HTML-Spezifikation in ihrer neusten Version (HTML5) im Grunde alles, was für die Entwicklung einer modernen Benutzerschnittstelle am Computer notwendig ist. 
+Die Grundlage des langjährigen Standards für die Enwicklung von Internetseiten bildet HTML (Hyper Text Markup Language), mit der deren Aussehen, Inhalt und Struktur textuell beschrieben werden kann. In Kombination mit CSS (Cascading Style Sheets) für das modulare Styling einer Website sowie Javascript, einer Skriptsprache zur DOM-Manipulation bietet die HTML-Spezifikation in ihrer neusten Version (HTML5) im Grunde alles, was für die Entwicklung einer modernen Benutzerschnittstelle am Computer notwendig ist. 
 Die Fachlogik liegt, neben den Oberflächen-Komponenten in Form von HTML-, CSS- und Javascript-Dokumenten, auf einem Webserver und verarbeitet und reagiert auf Anfragen des Clients (Browser).
 Als Server-Technologie ist ein breites Spektrum an Programmiersprachen und Umgebungen einsetzbar (einige sind beispielsweise PHP, Java, ASP, CGI u.v.m).
 
 Somit ist die Entwicklung einer Web-App (abgesehen von einigen browser-spezifischen Eigenheiten) plattformunabhängig, da jedes moderne (mobile) Betriebssystem über einen Webbrowser verfügt. 
-Zwar müssen Entwickler in bestimmten Details bei der Erstellung des Codes auf die teilweise unterschiedliche Unterstützung (bspw. von HTML-Elementen) durch die verschiedenen Browser achten, aber darüberhinaus wird der Entwicklungsaufwand für eine Web-App unabhängig nicht von der Anzahl der Zielplattformen bestimmt, da von Client-Seite aus verschiedene Browser durch die Verbreitung und Beachtung von Web-Standards weitgehend einheitliche HTML-Dokumente lesen und interpretieren können und das Backend nicht auf Clients mit unterschiedlichen Plattformen, sondern auf Webservern liegt, deren Plattform bei der Entwicklung entweder schon bekannt oder nicht relevant ist (beispielsweise weil auch die Fachlogik plattformunabhängig mit PHP oder Java realisiert wurde).
+Zwar müssen Entwickler in bestimmten Details bei der Erstellung des Codes auf die teilweise unterschiedliche Unterstützung (bspw. von HTML-Elementen) durch die verschiedenen Browser achten, aber darüberhinaus wird der Entwicklungsaufwand für eine Web-App nicht von der Anzahl der Zielplattformen bestimmt, da von Client-Seite aus verschiedene Browser durch die Verbreitung und Beachtung von Web-Standards weitgehend einheitliche HTML-Dokumente lesen und interpretieren können und das Backend nicht auf Clients mit unterschiedlichen Plattformen, sondern auf Webservern liegt, deren Plattform bei der Entwicklung entweder schon bekannt oder nicht relevant ist (beispielsweise weil auch die Fachlogik plattformunabhängig mit PHP oder Java realisiert wurde).
 
 % Dann für sämtliche INet-Dienste auch noch eine App
-Obwohl es, durch damals eher im Business-Bereich verortete Internet-Handys und Palmtops, auch vor den heute üblichen mobilen Touch-Geräten bereits mobile Internetseiten gab, die speziell für die Darstellung auf kleinen Displays ausgerichtet waren, boten mit der massenhaften Verbreitung von mobilen, internetfähigen Geräten und deren (im Folgenden erläuterten) stark anwendungsorientierten Bedien-Konzept viele herkömmliche Web-Dienste nun auch zusätzlich eine native App für verschiedene mobile Plattformen an. \todo{nachweis}
-So sind beispielsweise auch E-Mail-Anbieter wie GMX\cite{gmx}, WEB.DE\cite{web.de} oder Gmail\cite{gmail} seit dieser Entwicklung auch in Form einer eigenen App für Android und iOS vertreten, sodass der Nutzer, statt, wie von der Desktop-Computer-Nutzung gewohnt, einen anbieterunabhängigen Mail-Client zu konfigurieren, über den er seine E-Mails abruft, unter Umständen gleich die App des E-Mail-Anbieters startet. 
+Obwohl es, durch damals eher im Business-Bereich verortete Internet-Handys und Palmtops, auch vor den heute üblichen mobilen Touch-Geräten bereits mobile Internetseiten gab, die speziell für die Darstellung auf kleinen Displays ausgerichtet waren, boten mit der massenhaften Verbreitung von mobilen, internetfähigen Geräten und deren (im Folgenden erläuterten) stark anwendungsorientierten Bedien-Konzept viele herkömmliche Web-Dienste nun auch zusätzlich eine native App für verschiedene mobile Plattformen an.
+So sind beispielsweise auch E-Mail-Anbieter wie GMX\cite{gmx}, WEB.DE\cite{web.de} oder Gmail\cite{gmail} seit dieser Entwicklung auch in Form einer eigenen App für Android und iOS vertreten, sodass der Nutzer, statt, wie von der Desktop-Computer-Nutzung gewohnt, einen anbieterunabhängigen Mail-Client zu konfigurieren, über den er seine E-Mails abruft, unter Umständen gleich die jeweilige App des E-Mail-Anbieters startet. 
 Das heißt, der Nutzer folgt einem geänderten Bedienungsmuster seines Mobilgeräts gegenüber der herkömmlichen Computer-Nutzung: um zu einem bestimmten Ergebnis zu gelangen (bspw. \emph{Nachrichten lesen}) also die Frage zu beantworten, \emph{wie} er dahin gelangt (Einen Browser öffnen, zur gewünschten Seite navigieren: www.tagesschau.de), ist es für Anwender heutiger Mobilsysteme naheliegend, gleich die passende App zu starten (hier bspw. die Tagesschau-App).
 
 % Gründe für App statt Web-Anwendung
-Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu einer Website bei der mobilen App nicht die komplette Oberfläche (HTML-, CSS- und JavaScript-Dokumente sowie Grafiken) übertragen werden, sondern lediglich die Nutzdaten (also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform), was dem Nutzer ein höheres Maß an Performanz einbrintgt.
+Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu einer Website bei der mobilen App nicht die komplette Oberfläche (HTML-, CSS- und JavaScript-Dokumente sowie Grafiken) übertragen werden, sondern lediglich die Nutzdaten (also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform), was dem Nutzer ein höheres Maß an Performanz einbringt.
 Zum Anderen können trotz Vollbildmodus in bestimmten Fällen GUI-Elemente des Webbrowsers bei der Benutzung einer Web-Anwendung störend sein, so ist beispielsweise die Adresszeile am Rand nicht unbedingt erwünscht, wenn der Nutzer statt im Internet zu surfen dort eigentlich eine bestimmte Anwendung nutzen möchte. 
-Ein anderes Beispiel für ein eventuell unerwünschtes Verhalten der Benutzerschnittstelle ist die \emph{Menü}-Taste bei Android-Geräten, die im Falle der Nutzung einer Web-Anwendung über den Browser nicht den Kontext der eigentlich benutzten Anwendung (hier also der Website) anzeigt, sondern lediglich den des Browsers.
+Ein anderes Beispiel für ein eventuell unerwünschtes Verhalten der Benutzerschnittstelle ist das der \emph{Menü}-Taste bei Android-Geräten, die im Falle der Nutzung einer Web-Anwendung über den Browser nicht den Kontext der eigentlich benutzten Anwendung (hier also der Website) anzeigt, sondern lediglich den des Browsers.
 
 
 
 Allgemein kann man sagen, dass der Zugriff auf native Funktionalitäten des Geräts respektive des Betriebssystems nicht oder nur gering unterstützt wird, sodass der geringere Enwicklungsaufwand einer solchen Web-App (\seename\  \autoref{fig:hybrid-apps-schaubild}) unter Umständen zu Lasten des Funktionsumfangs und der Usibility der Anwendung geht.
-\todo{recherchieren: wird was unterstützt? gibt es möglichkeiten, per javascript etc.? Was wird \enquote{gering} unterstützt?}
-\todo{sollte man das noch weiter ausführen? touch-gesten etc.?}
+\todo{recherchieren: wird was unterstützt? gibt es möglichkeiten, per javascript etc.? Was wird \enquote{gering} unterstützt? sollte man das noch weiter ausführen? touch-gesten etc.?}
 
 %TODO Web
 % --------
@@ -79,25 +78,25 @@ Allgemein kann man sagen, dass der Zugriff auf native Funktionalitäten des Ger�
 \begin{figure}
 \centering
 \includegraphics[width=1\linewidth]{./images/hybrid-apps-schaubild}
-\caption[Schaubild Hybrid Apps]{Entwicklungsstufen der verschiedenen Arten von Apps. Während bei der nativen App der gesamte Entwicklungszyklus einmal pro Plattform durchlaufen werden muss, verringert sich der Aufwand für die Web-App erheblich. Bei der Hybride-App muss die Anwendung zwar einmal für jede Plattform gebaut und ausgeliefert werden um die Schnittstellen für die nativen Plattformen zu implementieren, aber der hauptsächliche Entwicklungsaufwand des Programmierens und testens fällt aufgrund des generischen Charakters nur einmal an.}
+\caption[Schaubild Hybrid Apps]{Entwicklungsstufen der verschiedenen Arten von Apps. Während bei der nativen App der gesamte Entwicklungszyklus einmal pro Plattform durchlaufen werden muss, verringert sich der Aufwand für die Web-App erheblich. Bei der Hybrid-App muss die Anwendung zwar einmal für jede Plattform gebaut und ausgeliefert werden um die Schnittstellen für die nativen Plattformen zu implementieren, aber der hauptsächliche Entwicklungsaufwand des Programmierens und testens fällt aufgrund des generischen Charakters nur einmal an.}
 \label{fig:hybrid-apps-schaubild}
 \end{figure}
 
 \section{Entwicklung von Hybriden Apps}\label{hybrid}
 
-% Hybride-App: Begriff erläutern
+%TODO Hybride-App: Begriff erläutern
 
-% Vor-/Nachteile der hybriden App-Entwicklung
+%TODO Vor-/Nachteile der hybriden App-Entwicklung
 
-% Plattformunabhängige App: Möglichkeiten?
+%TODO Plattformunabhängige App: Möglichkeiten?
 %=========================================
 	% Hybride App
 	%------------
-	% Möglichkeiten zur hybriden App-entwicklung:
-	% - PhoneGap
+	%TODO Möglichkeiten zur hybriden App-entwicklung:
+	%TODO - PhoneGap
 	% - 
 
-
+\begin{comment}
 \subsection{Grundlegende Technologien}
 Konkret heißt das, die Software wird als Webanwendung mit den zugehörigen Technologien (HTML, Javascript, CSS) entwickelt und für die jeweiligen benötigten Plattformen in eine native App eingebettet, welche hier allerdings hauptsächlich aus einer Web-View, also einer abgespeckten Variante eines Web-Browsers zur Anzeige der Webanwendung, besteht. Da dieser Ansatz der am häufigsten von Cross-Platform-Frameworks genutzte ist, \todo{nachweis!} stellt dieser auch den Schwerpunkt der in dieser Arbeit explorierten Technologien dar und soll hier näher erläutert werden. 
 
@@ -131,3 +130,5 @@ Statt also Javascript mit HTML-String-Schnipseln zu vermischen, indem das DOM di
 \todo{gibt es bei javascript überhaupt eine laufzeit?} 
 programmatisch erweitert werden, definiert der Entwickler in einem separaten Javascript ein View-Model und bindet mit dem HTML-Attribut \enquote{data-bind} \ eine bestimmte View-Eigenschaft an ein Datenfeld aus dem View-Model.
 \marginpar{Konkreter, Beispiel, Grafik?}
+
+\end{comment}
