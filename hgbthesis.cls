@@ -165,17 +165,17 @@
     \vskip 10mm%
     {\Large B\,A\,C\,H\,E\,L\,O\,R\,A\,R\,B\,E\,I\,T}%
     \vskip 18mm%
-    {\large im Studiengang}
-    \vskip 1mm%
+    {\large im Studiengang}\\
+%    \vskip 1mm%
     {\large\sc\@studiengang}
     \vskip 8mm%
-    {\large des Fachbereichs}
-    \vskip 1mm%
-    {\large\sc\@fachbereich}
-    \vskip 1mm%
+    {\large des Fachbereichs}\\
+%    \vskip 1mm%
+    {\large\sc\@fachbereich}\\
+%    \vskip 1mm%
     {\large der \@hochschule}
     \vskip 12mm%
-    {\large Vorgelegt von}
+    {\large Vorgelegt von}\\
     \vskip 1mm%
 	{\Large\sc\@author}
 %    \vskip 8mm%
