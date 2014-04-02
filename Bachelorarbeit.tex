@@ -1,60 +1,62 @@
-\documentclass{scrreprt}
+\documentclass[bachelor,german]{hgbthesis}
 
 % PACKAGES =================================================
 
-\usepackage[utf8]{inputenc} % Zeichensatz auf Unix-Standard
-\usepackage[T1]{fontenc}	% Schriftarten und Zeichensatz mit Umlauten und Akzenten
-\usepackage{lmodern} 		% Bessere Typografie
-\usepackage[ngerman]{babel}	% Deutsche Sprachunterstützung (Umlaute, Datumsformate)
 \usepackage{todonotes}		% ToDo-Notizen
-\usepackage[pdfborder={0 0 0}]
-				{hyperref}	% Links ins PDF
-\usepackage{verbatim} 		% Blockweise Kommentieren
-\usepackage{graphicx}		% Grafiken einfügen
-\usepackage[	backref=true,
-				hyperref=true,
-				url=false,
-				style=trad-plain]
-				{biblatex}	% (Mächtigere) Literaturdatenbank verwenden
-\usepackage[babel,german=quotes]{csquotes}	% \enquote{}-Befehl umwandeln in deutsche Anführungszeichen.
-\usepackage{anysize}		% Seitenrand frei bestimmen
-\usepackage{setspace}		% Zeilenabstand frei bestimmen
+\usepackage{xcolor}
 
 % METADATA =================================================
 
-\title{Plattformunabhängige App-Entwicklung \\ für mobile Geräte \\--\\ Grenzen und Möglichkeiten}
-\subtitle{- Bachelorarbeit -}
-\author{Daniel Morgenstern}
-\date{22. April 2014}
+\graphicspath{{images/}}
+\nocite{*}
 \bibliography{literatur}
 
-%TODO Eher über geeignete Vorlage mit DocumentClass:
+\title{Plattformunabhängige App-Entwicklung für mobile Geräte \\--\\ Grenzen und Möglichkeiten}
+\author{Daniel Morgenstern}
 
-% Seitenrand
-\marginsize{3.5cm}{3.5cm}{3.5cm}{3.5cm}
+\studiengang{Medieninformatik}
+\studienort{Berlin}
+%TODO Wo kommt die Hochschule hin? Und wie? -> Eigener Befehl funktioniert leider nicht.
+\hochschule{Beuth Hochschule für Technik Berlin}
+\abgabedatum{2014}{04}{22}
+\nummer{756883-A}
+\betreuerin{Prof. Dr. Simone Strippgen}
+\gegenstand{Blablubberdiwapp -- Was soll hier hin?}
+\semester{Wintersemester 2013/2014}
 
-% Zeilenabstand
+% Zeilenabstand 
 \renewcommand{\baselinestretch}{1.2} 
-
-% DOCUMENT CONTENT =========================================
+%TODO soll nur in Textteil gelten, nicht in Bildunterschriften etc.
 
 \begin{document}
-   \maketitle
-   \tableofcontents
-   
-\include{einleitung}
-\include{grundlagen}
-\include{umsetzung}
-
-\printbibliography[heading=bibintoc]
 
 % DEFINITIONS ==============================================
 
+%TODO Funktioniert leider noch nicht.
 % Hurenkinder und Schusterjungen verhindern
 \clubpenalty10000
 \widowpenalty10000
 \displaywidowpenalty=10000
 \interfootnotelinepenalty10000
+
+%===========================================================
+\frontmatter		% Anfangsteil (Römische Seitenzahlen)
+\maketitle
+\tableofcontents
+%===========================================================
+
+%===========================================================
+\mainmatter			% Hauptteil (ab hier arab. Seitenzahlen)
+%===========================================================
+   
+\include{einleitung}
+\include{grundlagen}
+\include{umsetzung}
+
+%\printbibliography[heading=bibintoc]
+\MakeBibliography
+
+%===========================================================
 
 \end{document}
 
