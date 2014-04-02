@@ -8,7 +8,7 @@
 
 \section{Apps für mobile Geräte} %todo{Um hier nicht ständig in der Gliederung zu springen: wie am besten aufteilen? 2 Dimensionen: nativ-wev-hybrid bzw. vor-/nachteile}
 
-\subsection{Mobile (native) App} \label{native}
+\subsection{Mobile (native) Apps} \label{native}
 Unter mobilen Apps (Kurzform für engl. \enquote{Application}) versteht man im Allgemeinen Anwendungssoftware für Tablet-Comuter oder Smartphones. 
 Im Laufe der letzten Jahre haben sich auf dem Markt für Mobilgeräte durch viele konkurierende Gerätehersteller eine Vielzahl von Smartphone- und Tablet-Betriebssystemen herausgebildet. 
 Im Entwicklungsbereich wird in dem Zusammenhang auch von \emph{Plattformen} gesprochen.
@@ -37,7 +37,7 @@ Als Programmiersprache wird \emph{ObjectiveC} verwendet, einer um objektorientie
 Möchte ein Auftraggeber einer Software also statt seinen Kunden nur eine App für ein Betriebssystem anzubieten, einen größeren Nutzerkreis erschließen, muss die zu entwicklende App für jede Zielplattform neu programmiert, getestet und gebaut werden, da jede mobile Plattform ihre eigenen Toolkits, Bibliotheken und Programmiersprachen verwendet, was die native App-Entwicklung für potenzielle Auftraggeber zu einem sehr kostenaufwändigen Projekt werden lassen kann.
 Andererseits bietet die native App-Entwicklung vollständige Unterstützung der betriebssystemeigenen Funktionalitäten wie den Zugriff auf Kamera, Adressbuch, Bewegungssensoren etc. der jeweiligen Plattform, sodass ein Softwareprojekt mit solchen besonders hardware- oder betriebssystemnahnen Anforderungen die Entwicklung einer nativen (plattformspezifischen) App notwendig erscheinen lassen kann.\footnote{Mehr dazu in \autoref{hybrid}}
 
-\subsection{Web-Anwendung}
+\subsection{Web-Anwendungen}
 
 % Zuerst gab es Websites, dann dynamische websites
 Eine Web-App (oder dt. \emph{Web-Anwendung}) ist eine Andwendungssoftware, die auf einem Web-Server läuft und auf die der Nutzer mittels eines Browsers zugreifen kann; also eine dynamische Website, wie man sie auch schon vor dem Aufkommen von Smartphones und modernen Tablets kannte. 
@@ -67,10 +67,10 @@ Durch die Ausrichtung auf die Online-Nutzung einer Web-Anwendung ist diese im Ge
 Allgemein kann man sagen, dass der Zugriff auf native Funktionalitäten des Geräts respektive des Betriebssystems nicht oder nur gering unterstützt wird, sodass der geringere Enwicklungsaufwand einer solchen Web-App (\seename\  \autoref{fig:hybrid-apps-schaubild}) unter Umständen zu Lasten des Funktionsumfangs und der Usibility der Anwendung geht.
 \todo{recherchieren: wird was unterstützt? gibt es möglichkeiten, per javascript etc.? Was wird \enquote{gering} unterstützt? sollte man das noch weiter ausführen? touch-gesten etc.?}
 
-%TODO Web
-% --------
+\subsection{Hybride Apps}
+%TODO Hybride-App: Begriff erläutern
 
-
+%TODO Vor-/Nachteile der hybriden App-Entwicklung
 
 
 %TODO Gibts hierfür auch so ne Art Grafik-Datenbank wie bei Bib? Dann müsste man den schmonsens nicht hier im Text verteilen.
@@ -82,25 +82,19 @@ Allgemein kann man sagen, dass der Zugriff auf native Funktionalitäten des Ger�
 \label{fig:hybrid-apps-schaubild}
 \end{figure}
 
-\section{Entwicklung von Hybriden Apps}\label{hybrid}
+\section{Plattformunabhängige App-Entwicklung}
 
-%TODO Hybride-App: Begriff erläutern
+\subsection{Möglichkeiten des Erreichens von Plattformunabhängigkeit}
+\subsection{Lösungen für die hybride App-Entwicklung}
 
-%TODO Vor-/Nachteile der hybriden App-Entwicklung
-
-%TODO Plattformunabhängige App: Möglichkeiten?
-%=========================================
-	% Hybride App
-	%------------
-	%TODO Möglichkeiten zur hybriden App-entwicklung:
-	%TODO - PhoneGap
-	% - 
+\subsection{Entwicklung von hybriden Apps}\label{hybrid}
 
 \begin{comment}
 \subsection{Grundlegende Technologien}
 Konkret heißt das, die Software wird als Webanwendung mit den zugehörigen Technologien (HTML, Javascript, CSS) entwickelt und für die jeweiligen benötigten Plattformen in eine native App eingebettet, welche hier allerdings hauptsächlich aus einer Web-View, also einer abgespeckten Variante eines Web-Browsers zur Anzeige der Webanwendung, besteht. Da dieser Ansatz der am häufigsten von Cross-Platform-Frameworks genutzte ist, \todo{nachweis!} stellt dieser auch den Schwerpunkt der in dieser Arbeit explorierten Technologien dar und soll hier näher erläutert werden. 
+\end{comment}
 
-\subsection{Phonegap}
+\subsubsection{Phonegap}
 Die entscheidende Lücke auf dem Weg zur Hybrid-App zwischen Webanwendung und der nativen App schließt das Framework \emph{PhoneGap} von Adobe. 
 Bei der Webanwendung taten sich in der Herleitung zwei grundlegende Problemfelder gegenüber der nativen App-Entwicklung auf. 
 Zum Einen besteht eine Webanwendung aus mehreren Dokumenten, die auf einem Server liegen und nur über den Browser des Betriebssystems abgerufen werden, die Benutzung fühlt sich also für den Nutzer durch die ausbleibende Installation, die benötigte Internetverbindung und die optische Präsenz der Browser-Oberfläche nicht wie eine mobile App an. 
@@ -110,11 +104,11 @@ Für letzteres bietet PhoneGap eine Javascript-Bibliothek, die auf das Cross-Pla
 Bei der konkreten Verwendung von nativen Features muss jedoch teilweise wieder auf die Unterstützung durch die jeweiligen Plattformen geachtet werden.\todo{oder zumindest muss deklariert werden, was verwendet werden soll. -> checken!}
 
 Darüber hinaus übernimmt das Online-Portal \emph{PhoneGap~Build} den Bauprozess der App, also das Überführen in ein installierfähiges App-Format. 
-Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\{pg-doc-1} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
+Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\cite{pg-doc-1} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
 
-Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.\todo{gehört vllt. eher woanders hin.}
+Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.
 
-\subsection{JQueryMobile}
+\subsubsection{JQueryMobile}
 Die Javascript-Bibliothek JQueryMobile baut auf JQuery auf und bietet ein Oberflächen-Toolkit für mobile Webseiten. Sie besteht zum Einen aus einer Javascript-Datei, die in die HTML-Seite eingebunden wird und zum Anderen aus einem CSS, das für das an mobile Touch-Geräte angepasste aussehen verantwortlich ist. 
 So können einerseits UI-Elementen explizit Style-Klassen aus dem JQueryMobile-CSS zugewiesen werden, andererseits sorgt das JQuery-Javascript ohnehin bei allen verwendeten HTML-Elementen dafür, dass die Style-Klassen dynamisch vergeben werden und die UI-Komponenten somit ihr App-typisches Aussehen erhalten.
 Lediglich mit dem zusätzlichen Attribut "data-role" werden den UI-Elementen Eigenschaftentypen zugewiesen, über die die JQueryMobile-Bibliothek erkennt, wie dieses dargestellt werden soll.
@@ -122,7 +116,7 @@ Lediglich mit dem zusätzlichen Attribut "data-role" werden den UI-Elementen Eig
 
 Dieser Mechanismus erleichtert es dem Frontend-Entwickler erheblich, eine auf Touchscreens ausgerichtete Oberfläche zu entwerfen, da er im Grunde neben einigen zusätzlichen Attributen sämtliche herkömmlichen HTML-Elemente verwenden kann. 
 
-\subsection{KnockoutJS}
+\subsubsection{KnockoutJS}
 Auch bei \emph{Knockout} handelt es sich um eine Javascript-Bibliothek, die per \mbox{\texttt{<script>}-Tag} der HTML-Seite hinzugefügt wird. Knockout übernimmt mit einem MVVM (Model-View-ViewModel) das \emph{Data-Binding}, also die Verknüpfung zwischen Daten-Feldern im Programm und UI-Elementen.
 So lässt sich die UI (View) sehr klar von der Programmlogik (Model) trennen, was der Lesbarkeit, Erweiterbarkeit und Wartbarkeit der Software zugute kommt.
 
@@ -131,4 +125,3 @@ Statt also Javascript mit HTML-String-Schnipseln zu vermischen, indem das DOM di
 programmatisch erweitert werden, definiert der Entwickler in einem separaten Javascript ein View-Model und bindet mit dem HTML-Attribut \enquote{data-bind} \ eine bestimmte View-Eigenschaft an ein Datenfeld aus dem View-Model.
 \marginpar{Konkreter, Beispiel, Grafik?}
 
-\end{comment}

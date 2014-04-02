@@ -50,6 +50,11 @@
 	\renewcommand{\@hochschule}{#1}
 }
 
+\newcommand{\@fachbereich}{\@MissingArg{Fachbereich??}}
+\newcommand{\fachbereich}[1]{%
+	\renewcommand{\@fachbereich}{#1}
+}
+
 \newcommand{\@betreuerBez}{????}
 \newcommand{\@betreuerName}{\@MissingArg{Betreuer??}}
 
@@ -58,7 +63,7 @@
 	\renewcommand{\@betreuerName}{#1}
 }
 \newcommand{\betreuerin}[1]{%
-  \renewcommand{\@betreuerBez}{Betreuerin}
+  \renewcommand{\@betreuerBez}{Betreuende Lehrkraft}
 	\renewcommand{\@betreuerName}{#1}
 }
 
@@ -147,21 +152,41 @@
     \setlength{\baselineskip}{20pt}%
     \@title}}
   \end{picture}
+  
+%  Titelblatt:# (Von http://fb6.beuth-hochschule.de/pub/wiki/Abschlussarbeiten%20mit%20Softwareanteil)
+%  <Thema der Abschlussarbeit>
+%  Bachelorarbeit / Masterarbeit
+%  im Studiengang <Medieninformatik/Technische Informatik/Embedded Sytems/Druck und Medientechnik/...>
+%  des Fachbereichs Informatik und Medien
+%  der Beuth Hochschule für Technik Berlin
+%  Vorgelegt von <Vorname Nachname> im <WS/SS> <Jahr>
+%  Betreuende Lehrkraft: <Titel Vorname Name>
+  
     \vskip 10mm%
-    {\large\sc\@author}
-    \vskip 40mm%
     {\Large B\,A\,C\,H\,E\,L\,O\,R\,A\,R\,B\,E\,I\,T}%
+    \vskip 18mm%
+    {\large im Studiengang}
+    \vskip 1mm%
+    {\large\sc\@studiengang}
     \vskip 8mm%
-    {\large\sf Nr.~\@nummer}
+    {\large des Fachbereichs}
+    \vskip 1mm%
+    {\large\sc\@fachbereich}
+    \vskip 1mm%
+    {\large der \@hochschule}
+    \vskip 12mm%
+    {\large Vorgelegt von}
+    \vskip 1mm%
+	{\Large\sc\@author}
+%    \vskip 8mm%
+%    {\large\sf Nr.~\@nummer}
     \vskip 8mm%
-    {\large eingereicht am} \vskip 1mm {Fachhochschul-Bachelorstudiengang}%
-    \vskip 4mm%
-    {\large\sc\@studiengang}%
-    \vskip 4mm%
-%    {\large in \@studienort}%
-    {\large der} \vskip 1mm {\@hochschule}
+%    {\large im \monthname[\value{@abgabemonat}] \arabic{@abgabejahr}}%
+    {\large im \@semester}%
     \vskip 16mm%
-    {\large im \monthname[\value{@abgabemonat}] \arabic{@abgabejahr}}%
+    {\@betreuerBez:}\\
+    \vspace{2mm} 
+    {\Large \@betreuerName}
 \end{center}\par
   \vfil\null
 \end{titlepage}%
@@ -434,7 +459,7 @@ acknowledged. I further declare that this or similar work has not been submitted
 
 \renewcommand{\@batitelseiten}{
 \@batitel
-\@babetreuerseite
+%\@babetreuerseite
 %\@erklaerungsseite
 }
 
