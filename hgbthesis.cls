@@ -167,8 +167,8 @@
     \vskip 18mm%
     {\large im Studiengang}\\
 %    \vskip 1mm%
-    {\large\sc\@studiengang}
-    \vskip 8mm%
+    {\large\sc\@studiengang}\\
+    \vskip 2mm%
     {\large des Fachbereichs}\\
 %    \vskip 1mm%
     {\large\sc\@fachbereich}\\
@@ -183,9 +183,9 @@
     \vskip 8mm%
 %    {\large im \monthname[\value{@abgabemonat}] \arabic{@abgabejahr}}%
     {\large im \@semester}%
-    \vskip 16mm%
+    \vskip 12mm%
     {\@betreuerBez:}\\
-    \vspace{2mm} 
+    \vspace{1mm} 
     {\Large \@betreuerName}
 \end{center}\par
   \vfil\null
