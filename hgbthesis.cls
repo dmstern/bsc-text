@@ -130,7 +130,7 @@
 \renewcommand{\@license}{#1}
 }
 
-%% ----------------------------------------------------------
+%% ----------Abstände für Titelseite --------------
 
 \newcommand{\bindgap}{-1mm}
 \newcommand{\spacegap}{2mm}
@@ -187,7 +187,7 @@
 	{\Large\sc\@author}
     \vskip \bigspacegap
     {\large im \@semester}%
-    \vskip \hugespacegap
+    \vskip \bigspacegap
     {\@betreuerBez:}\\
     \vspace \bigbindgap 
     {\large \@betreuerName}
