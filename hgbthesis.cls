@@ -130,6 +130,13 @@
 \renewcommand{\@license}{#1}
 }
 
+%% ----------------------------------------------------------
+
+\newcommand{\bindgap}{-1mm}
+\newcommand{\spacegap}{2mm}
+\newcommand{\bigbindgap}{\spacegap}
+\newcommand{\bigspacegap}{8mm}
+\newcommand{\hugespacegap}{12mm}
 
 %------------------ Titelseiten -------------------
 
@@ -166,27 +173,24 @@
     {\Large B\,A\,C\,H\,E\,L\,O\,R\,A\,R\,B\,E\,I\,T}%
     \vskip 18mm%
     {\large im Studiengang}\\
-%    \vskip 1mm%
+    \vskip \bindgap
     {\large\sc\@studiengang}\\
-    \vskip 2mm%
+    \vskip \spacegap
     {\large des Fachbereichs}\\
-%    \vskip 1mm%
+    \vskip \bindgap
     {\large\sc\@fachbereich}\\
-%    \vskip 1mm%
+    \vskip \spacegap
     {\large der \@hochschule}
-    \vskip 12mm%
+    \vskip \hugespacegap
     {\large Vorgelegt von}\\
-    \vskip 1mm%
+    \vskip \bigbindgap
 	{\Large\sc\@author}
-%    \vskip 8mm%
-%    {\large\sf Nr.~\@nummer}
-    \vskip 8mm%
-%    {\large im \monthname[\value{@abgabemonat}] \arabic{@abgabejahr}}%
+    \vskip \bigspacegap
     {\large im \@semester}%
-    \vskip 12mm%
+    \vskip \hugespacegap
     {\@betreuerBez:}\\
-    \vspace{1mm} 
-    {\Large \@betreuerName}
+    \vspace \bigbindgap 
+    {\large \@betreuerName}
 \end{center}\par
   \vfil\null
 \end{titlepage}%
