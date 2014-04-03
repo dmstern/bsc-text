@@ -132,11 +132,11 @@
 
 %% ----------Abstände für Titelseite --------------
 
-\newcommand{\bindgap}{-1mm}
-\newcommand{\spacegap}{2mm}
-\newcommand{\bigbindgap}{\spacegap}
-\newcommand{\bigspacegap}{8mm}
-\newcommand{\hugespacegap}{12mm}
+\newcommand{\bindgap}{0mm}
+\newcommand{\spacegap}{3mm}
+\newcommand{\bigbindgap}{1mm}
+\newcommand{\bigspacegap}{4mm}
+\newcommand{\hugespacegap}{15mm}
 
 %------------------ Titelseiten -------------------
 
@@ -170,27 +170,40 @@
 %  Betreuende Lehrkraft: <Titel Vorname Name>
   
     \vskip 10mm%
+    
     {\Large B\,A\,C\,H\,E\,L\,O\,R\,A\,R\,B\,E\,I\,T}%
-    \vskip 18mm%
-    {\large im Studiengang}\\
+    
+    \vskip 24mm%
+    
+    { im Studiengang}\\
     \vskip \bindgap
     {\large\sc\@studiengang}\\
     \vskip \spacegap
-    {\large des Fachbereichs}\\
+    
+    { des Fachbereichs}\\
     \vskip \bindgap
     {\large\sc\@fachbereich}\\
     \vskip \spacegap
-    {\large der \@hochschule}
+    
+    { der}
+    \vskip \bindgap
+    {\large \@hochschule}
+    
     \vskip \hugespacegap
-    {\large Vorgelegt von}\\
+    
+    { Vorgelegt von}\\
     \vskip \bigbindgap
 	{\Large\sc\@author}
-    \vskip \bigspacegap
+    
+    \vskip \hugespacegap
+    
     {\large im \@semester}%
-    \vskip \bigspacegap
+    \vskip \spacegap
+    
     {\@betreuerBez:}\\
-    \vspace \bigbindgap 
+    \vspace \bindgap 
     {\large \@betreuerName}
+    
 \end{center}\par
   \vfil\null
 \end{titlepage}%
