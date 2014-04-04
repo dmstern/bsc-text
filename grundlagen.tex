@@ -6,7 +6,7 @@
 %3. Verwendete Technologien → wie macht das phonegap?
 %1. Knockout, jquerymobile, etc.
 
-\section{Apps für mobile Geräte} %todo{Um hier nicht ständig in der Gliederung zu springen: wie am besten aufteilen? 2 Dimensionen: nativ-wev-hybrid bzw. vor-/nachteile}
+\section{Apps für mobile Geräte}
 
 \subsection{Mobile (native) Apps} \label{native}
 Unter mobilen Apps (Kurzform für engl. \enquote{Application}) versteht man im Allgemeinen Anwendungssoftware für Tablet-Comuter oder Smartphones. 
@@ -29,7 +29,7 @@ Seit 2013 bietet Google darüberhinaus die auf IntelliJ~IDEA basierende und eige
 Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm gebaut werden (\seename\ \autoref{fig:hybrid-apps-schaubild}). Anschließend kann die App in dem für die Zielplattform vorgesehenen Dateiformat ausgeliefert und auf dem Zielgerät installiert werden.
 
 % iOS: 
-Auch Apple bietet mit \textsl{Xcode} eine firmeneigene IDE zur App-Entwicklung für sein mobiles Betriebssystem iOS an. Anders als Google geht der iPhone-Hersteller hier allerdings etwas restriktiver vor. So läuft die Entwicklungsumgebung Xcode, die man für die native iOS-Entwicklung benötigt, nur unter dem hauseigenen Betriebssystem Mac~OSX und das wiederum nur auf den firmeneigenen Mac-Rechnern. So sichert sich Apple auch durch jeden Entwickler einen neuen Kunden.\todo{darf man so was hier anmerken, oder lieber weg?}
+Auch der Software- und Computer-Hersteller Apple bietet mit \textsl{Xcode} eine firmeneigene IDE zur App-Entwicklung für sein mobiles Betriebssystem iOS an. Anders als Google geht der iPhone-Hersteller hier allerdings etwas restriktiver vor. So läuft die Entwicklungsumgebung Xcode, die man für die native iOS-Entwicklung benötigt, nur unter dem hauseigenen Betriebssystem Mac~OSX und das wiederum nur auf den firmeneigenen Mac-Rechnern. So sichert sich Apple auch durch jeden Entwickler einen neuen Kunden.\todo{darf man so was hier anmerken, oder lieber weg?}
 
 Ansonsten verläuft der Entwicklungsprozess bei der iOS-Entwicklung im Prinzip ähnlich zur Android-Entwicklung (\seename\ \autoref{fig:hybrid-apps-schaubild}).
 Als Programmiersprache wird \emph{ObjectiveC} verwendet, einer um objektorientierte Elemente erweiterte Variante der Programmiersprache \emph{C}.
@@ -46,11 +46,11 @@ Die Grundlage des langjährigen Standards für die Enwicklung von Internetseiten
 Die Fachlogik liegt, neben den Oberflächen-Komponenten in Form von HTML-, CSS- und Javascript-Dokumenten, auf einem Webserver und verarbeitet und reagiert auf Anfragen des Clients (Browser).
 Als Server-Technologie ist ein breites Spektrum an Programmiersprachen und Umgebungen einsetzbar (einige sind beispielsweise PHP, Java, ASP, CGI u.v.m).
 
-Somit ist die Entwicklung einer Web-App (abgesehen von einigen browser-spezifischen Eigenheiten) plattformunabhängig, da jedes moderne (mobile) Betriebssystem über einen Webbrowser verfügt. 
-Zwar müssen Entwickler in bestimmten Details bei der Erstellung des Codes auf die teilweise unterschiedliche Unterstützung (bspw. von HTML-Elementen) durch die verschiedenen Browser achten, aber darüberhinaus wird der Entwicklungsaufwand für eine Web-App nicht von der Anzahl der Zielplattformen bestimmt, da von Client-Seite aus verschiedene Browser durch die Verbreitung und Beachtung von Web-Standards weitgehend einheitliche HTML-Dokumente lesen und interpretieren können und das Backend nicht auf Clients mit unterschiedlichen Plattformen, sondern auf Webservern liegt, deren Plattform bei der Entwicklung entweder schon bekannt oder nicht relevant ist (beispielsweise weil auch die Fachlogik plattformunabhängig mit PHP oder Java realisiert wurde).
+Somit bietet die Entwicklung einer Web-App (abgesehen von einigen browser-spezifischen Eigenheiten) bereits eine gewisse Plattformunabhängigkeit, da jedes moderne (mobile) Betriebssystem über einen Webbrowser verfügt. 
+Zwar müssen Entwickler in bestimmten Details bei der Erstellung des Codes auf die teilweise unterschiedliche Unterstützung (bspw. von HTML-Elementen)\todo{genauer?} durch die verschiedenen Browser achten, aber darüberhinaus wird der Entwicklungsaufwand für eine Web-App nicht von der Anzahl der Zielplattformen bestimmt, da von Client-Seite aus verschiedene Browser durch die Verbreitung und Beachtung von Web-Standards weitgehend einheitliche HTML-Dokumente lesen und interpretieren können und das Backend nicht auf Clients mit unterschiedlichen Plattformen, sondern auf Webservern liegt, deren Plattform bei der Entwicklung entweder schon bekannt oder nicht relevant ist (beispielsweise weil auch die Fachlogik plattformunabhängig mit PHP oder Java realisiert wurde).
 
 % Dann für sämtliche INet-Dienste auch noch eine App
-Obwohl es, durch damals eher im Business-Bereich verortete Internet-Handys und Palmtops, auch vor den heute üblichen mobilen Touch-Geräten bereits mobile Internetseiten gab, die speziell für die Darstellung auf kleinen Displays ausgerichtet waren, boten mit der massenhaften Verbreitung von mobilen, internetfähigen Geräten und deren (im Folgenden erläuterten) stark anwendungsorientierten Bedien-Konzept viele herkömmliche Web-Dienste nun auch zusätzlich eine native App für verschiedene mobile Plattformen an.
+Obwohl es, durch damals eher im Business-Bereich verortete Internet-Handys und Palmtops, auch vor den heute üblichen mobilen Touch-Geräten bereits mobile Internetseiten gab, die speziell für die Darstellung auf kleinen Displays ausgerichtet waren, boten mit der massenhaften Verbreitung von mobilen, internetfähigen Geräten und deren (im Folgenden erläuterten) stark anwendungsorientierten Bedien-Konzepten viele herkömmliche Internet-Dienste nun auch zusätzlich eine native App für verschiedene mobile Plattformen an.
 So sind beispielsweise auch E-Mail-Dienste wie \textsc{gmx}\cite{gmx}, \textsc{web.de}\cite{web.de} oder \textsc{Gmail}\cite{gmail} seit dieser Entwicklung auch in Form einer eigenen App für Android und iOS vertreten, sodass der Nutzer, statt, wie von der Desktop-Computer-Nutzung gewohnt, einen anbieterunabhängigen Mail-Client zu konfigurieren, über den er seine E-Mails abruft, unter Umständen gleich die jeweilige App des E-Mail-Anbieters startet. 
 Das heißt, der Nutzer folgt einem geänderten Bedienungsmuster seines Mobilgeräts gegenüber der herkömmlichen Computer-Nutzung: um zu einem bestimmten Ergebnis zu gelangen (bspw. \emph{Nachrichten lesen}) also die Frage zu beantworten, \emph{wie} er dahin gelangt (Einen Browser öffnen, zur gewünschten Seite navigieren: www.tagesschau.de), ist es für Anwender heutiger Mobilsysteme naheliegend, gleich die passende App zu starten (hier bspw. die Tagesschau-App).
 
@@ -59,10 +59,15 @@ Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu ei
 Zum Anderen können trotz Vollbildmodus in bestimmten Fällen GUI-Elemente des Webbrowsers bei der Benutzung einer Web-Anwendung störend sein, so ist beispielsweise die Adresszeile am Rand nicht unbedingt erwünscht, wenn der Nutzer statt im Internet zu surfen dort eigentlich eine bestimmte Anwendung nutzen möchte. 
 Ein anderes Beispiel für ein eventuell unerwünschtes Verhalten der Benutzerschnittstelle ist das der \emph{Menü}-Taste bei Android-Geräten, die im Falle der Nutzung einer Web-Anwendung über den Browser nicht den Kontext der eigentlich benutzten Anwendung (hier also der Website) anzeigt, sondern lediglich den des Browsers.
 
-%TODO nicht für Offline-Anwendungen, da die meisten mobilen Betriebssysteme nicht vorsehen, dass der Nutzer aus dem Dateisystem eine HTML-Seite öffnet. nachweis!
-Durch die Ausrichtung auf die Online-Nutzung einer Web-Anwendung ist diese im Gegensatz zu vielen nativen Apps, sofern sie nicht zwingend mit einem Server kommunizieren müssen, außerdem nicht ohne weiteres offline nutzbar.
 %TODO Stimmt so nicht ganz: offline websites gehen schon, aber logischerweise nur, wenn noch im browser-tab offen oder irgendwie runtergeladen und zu app-verknüpfung gepackt oder so...
+In bestimmten Fällen kann eine nützliche Funktion einer App die Offline-Nutzung sein, wenn beispielsweise durch die abgedeckten Anwendungsfälle keine Verbindung oder Synchronisation mit einem Server nötig ist. Beispiele hierfür könnten, um nur einige zu nennen, ein Taschenrechner, kleine Spiele, oder eine Bildverarbeitungs-App sein. 
+Für diese Offline-Nutzung einer App zeichnet die Web-Anwendung ein geteiltes Bild: Zwar wurden in den letzten Jahren mehrere Methoden entwickelt, eine Web-Anwendung auch offline nutzen zu können, doch durch ihre (bereits am Namen erkennbare) Ausrichtung auf die Nutzung via Internet stellt die Implementierung dieser Funktionalität für Entwickler einen Zusatzaufwand dar. 
+%TODO Wie offline: welche Thechnologien (nur erwähnen)
+%TODO Quelle
+Einige Möglichkeiten, eine Web-Anwendung offline-fähig zu machen, sind beispielsweise die aus der HTML5-Spezifikation hervorgehenden Technologien \textsl{localStorage} (oder \textsl{WebStorage})\cite{webstorage}, ein Mechanismus zum lokalen Speichern von größeren Datenmengen in Form von Schlüssel-Wert-Paaren sowie \textsl{WebSQL}\cite{webssql} bzw. \textsl{IndexedDB}\cite{indexedDB}, beides auf Web-Anwendungen otimierte Datenbanken-Spezifikationen des {\sc World Wide Web Consortiums}.
+%TODO Auch hier: Abhängig von Browser (Hersteller + Version)
 
+%TODO Formatierung / Befehle: Semantisch statt explizite Formatierung!
 
 Allgemein kann man sagen, dass der Zugriff auf native Funktionalitäten des Geräts respektive des Betriebssystems nicht oder nur gering unterstützt wird, sodass der geringere Enwicklungsaufwand einer solchen Web-App (\seename\  \autoref{fig:hybrid-apps-schaubild}) unter Umständen zu Lasten des Funktionsumfangs und der Usibility der Anwendung geht.
 \todo{recherchieren: wird was unterstützt? gibt es möglichkeiten, per javascript etc.? Was wird \enquote{gering} unterstützt? sollte man das noch weiter ausführen? touch-gesten etc.?}
@@ -123,5 +128,5 @@ So lässt sich die UI (View) sehr klar von der Programmlogik (Model) trennen, wa
 Statt also Javascript mit HTML-String-Schnipseln zu vermischen, indem das DOM direkt manipuliert und UI-Elemente zur Laufzeit
 \todo{gibt es bei javascript überhaupt eine laufzeit?} 
 programmatisch erweitert werden, definiert der Entwickler in einem separaten Javascript ein View-Model und bindet mit dem HTML-Attribut \enquote{data-bind} \ eine bestimmte View-Eigenschaft an ein Datenfeld aus dem View-Model.
-\marginpar{Konkreter, Beispiel, Grafik.}
+\todo{Konkreter, Beispiel, Grafik.}
 
