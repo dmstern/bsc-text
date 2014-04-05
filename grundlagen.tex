@@ -64,7 +64,7 @@ In bestimmten Fällen kann eine nützliche Funktion einer App die Offline-Nutzun
 Für diese Offline-Nutzung einer App zeichnet die Web-Anwendung ein geteiltes Bild: Zwar wurden in den letzten Jahren mehrere Methoden entwickelt, eine Web-Anwendung auch offline nutzen zu können, doch durch ihre (bereits am Namen erkennbare) Ausrichtung auf die Nutzung via Internet stellt die Implementierung dieser Funktionalität für Entwickler einen Zusatzaufwand dar. 
 %TODO Wie offline: welche Thechnologien (nur erwähnen)
 %TODO Quelle
-Einige Möglichkeiten, eine Web-Anwendung offline-fähig zu machen, sind beispielsweise die aus der HTML5-Spezifikation hervorgehenden Technologien \textsl{localStorage} (oder \textsl{WebStorage})\cite{webstorage}, ein Mechanismus zum lokalen Speichern von größeren Datenmengen in Form von Schlüssel-Wert-Paaren sowie \textsl{WebSQL}\cite{webssql} bzw. \textsl{IndexedDB}\cite{indexedDB}, beides auf Web-Anwendungen otimierte Datenbanken-Spezifikationen des {\sc World Wide Web Consortiums}.
+Einige Möglichkeiten, eine Web-Anwendung offline-fähig zu machen, sind beispielsweise die aus der HTML5-Spezifikation hervorgehenden Technologien \textsl{localStorage} (oder \textsl{WebStorage})\cite{w3c_webstorage}, ein Mechanismus zum lokalen Speichern von größeren Datenmengen in Form von Schlüssel-Wert-Paaren sowie \textsl{WebSQL}\cite{w3c_websql} bzw. \textsl{IndexedDB}\cite{w3c_indexedDB}, beides auf Web-Anwendungen otimierte Datenbanken-Spezifikationen des {\sc World Wide Web Consortiums}.
 %TODO Auch hier: Abhängig von Browser (Hersteller + Version)
 
 %TODO Formatierung / Befehle: Semantisch statt explizite Formatierung!
@@ -109,7 +109,7 @@ Für letzteres bietet PhoneGap eine Javascript-Bibliothek, die auf das Cross-Pla
 Bei der konkreten Verwendung von nativen Features muss jedoch teilweise wieder auf die Unterstützung durch die jeweiligen Plattformen geachtet werden. \todo{oder zumindest muss deklariert werden, was verwendet werden soll. -> checken!}
 
 Darüber hinaus übernimmt das Online-Portal \emph{PhoneGap~Build} den Bauprozess der App, also das Überführen in ein installierfähiges App-Format. 
-Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\cite{pg-doc-1} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
+Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\cite{phonegap-doc-cordova} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen Apps auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
 
 Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.
 
