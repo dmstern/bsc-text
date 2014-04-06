@@ -1,5 +1,6 @@
 ## Basic: backup files
 *~
+*.bak
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -91,4 +92,3 @@ sympy-plots-for-*.tex/
 # xindy
 *.xdy
 
-*.bak
