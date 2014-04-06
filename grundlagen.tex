@@ -17,20 +17,22 @@ Zu den Plattformen mit dem höchsten Marktanteil zählen Googles Betriebssystem 
 % Nativ-Entwicklung für die jeweiligen Plattformen: Android / iOS
 Die App-Entwicklung für diese mobilen Betriebssysteme erfolgt mehr oder weniger ähnlich und soll im Folgenden, um auf die beiden größten Vertreter einzugehen, anhand von Android beziehungsweise iOS näher beschrieben werden.
 
-%	-> SDKs verwalten
-Grundsätzlich müssen auf der Entwicklungsumgebung die entsprechenden SDKs (Software Development Kit) der Plattform, für die entwickelt wird, installiert sein. 
-Diese enthalten Softwarekomponenten, die zur Entwicklung der App notwendig sind, beispielsweise Klassen, die es einem erlauben, auf native Funktionalitäten des Betriebssystems wie zum Beispiel das Adressbuch, den Benachrichtigungsmechanismus oder auch auf Hardwarekomponenten wie die Kamera, den Bewegungssensor oder das GPS-Modul zuzugreifen sowie die entsprechenden plattformspezifischen Oberflächenkomponenten des jeweiligen GUI-Toolkits zu nutzen.
+%	-> \gls{sdk}s verwalten
+Grundsätzlich müssen auf der Entwicklungsumgebung die entsprechenden \glspl{glos:sdk} der Plattform, für die entwickelt wird, installiert sein. 
+
+Diese enthalten Softwarekomponenten, die zur Entwicklung der App notwendig sind, beispielsweise Klassen, die es einem erlauben, auf native Funktionalitäten des Betriebssystems wie zum Beispiel das Adressbuch, den Benachrichtigungsmechanismus oder auch auf Hardwarekomponenten wie die Kamera, den Bewegungssensor oder das \gls{glos:gps}-Modul zuzugreifen sowie die entsprechenden plattformspezifischen Oberflächenkomponenten des jeweiligen \gls{glos:gui}-Toolkits zu nutzen.
 
 %	-> Code schreiben für die jeweilige Plattform
 % Allgemein / Android
-Als Programmiersprache für die Android-App-Entwicklung wird Java verwendet. Das heißt, als Voraussetzung für die Entwicklung von Android-Apps ist lediglich eine geeignete Entwicklungsumgebung wie \textsl{Eclipse}, \textsl{NetBeans\ IDE} oder \textsl{IntelliJ\ IDEA} sowie eine Installation des Java- und des Android-SDK nötig. 
+Als Programmiersprache für die Android-App-Entwicklung wird Java verwendet. Das heißt, als Voraussetzung für die Entwicklung von Android-Apps ist lediglich eine geeignete Entwicklungsumgebung wie \gls{glos:eclipse}, \textsl{NetBeans IDE} oder \textsl{IntelliJ IDEA} sowie eine Installation des Java- und des Android-\gls{sdk} nötig. 
+%TODO Vereinheitlichen: Glossar-Ausdrücke statt slanted? BZW:: Noch einen Befehl für Markennamen???
+
 \todo{wie sieht es mit dem deployment, also der auslieferung in appstores etc aus?}
-Seit 2013 bietet Google darüberhinaus die auf IntelliJ~IDEA basierende und eigens für die Android-Entwicklung angepasste Entwicklungsumgebung \emph{Android~Studio} an,\cite{android-studio} die bereits alle notwendigen Toolkits enthält. 
+Seit 2013 bietet Google darüberhinaus die auf IntelliJ~IDEA basierende und eigens für die Android-Entwicklung angepasste Entwicklungsumgebung \emph{Android Studio} an,\cite{android-studio} die bereits alle notwendigen Toolkits enthält. 
 Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm gebaut werden (\seename\ \autoref{fig:hybrid-apps-schaubild}). Anschließend kann die App in dem für die Zielplattform vorgesehenen Dateiformat ausgeliefert und auf dem Zielgerät installiert werden.
 
 % iOS: 
-Auch der Software- und Computer-Hersteller Apple bietet mit \textsl{Xcode} eine firmeneigene IDE zur App-Entwicklung für sein mobiles Betriebssystem iOS an. Anders als Google geht der iPhone-Hersteller hier allerdings etwas restriktiver vor. So läuft die Entwicklungsumgebung Xcode, die man für die native iOS-Entwicklung benötigt, nur unter dem hauseigenen Betriebssystem Mac~OSX und das wiederum nur auf den firmeneigenen Mac-Rechnern. So sichert sich Apple auch durch jeden Entwickler einen neuen Kunden.\todo{darf man so was hier anmerken, oder lieber weg?}
-
+Auch der Software- und Computer-Hersteller Apple bietet mit \textsl{Xcode} eine firmeneigene \gls{glos:ide} zur App-Entwicklung für sein mobiles Betriebssystem iOS an. Anders als Google geht der iPhone-Hersteller hier allerdings etwas restriktiver vor. So läuft die Entwicklungsumgebung Xcode, die man für die native iOS-Entwicklung benötigt, nur unter dem hauseigenen Betriebssystem Mac~OSX und das wiederum nur auf den firmeneigenen Mac-Rechnern. So sichert sich Apple auch durch jeden Entwickler einen neuen Kunden. \todo{darf man so was hier anmerken, oder lieber weg?}
 Ansonsten verläuft der Entwicklungsprozess bei der iOS-Entwicklung im Prinzip ähnlich zur Android-Entwicklung (\seename\ \autoref{fig:hybrid-apps-schaubild}).
 Als Programmiersprache wird \emph{ObjectiveC} verwendet, einer um objektorientierte Elemente erweiterte Variante der Programmiersprache \emph{C}.
 
@@ -42,12 +44,13 @@ Andererseits bietet die native App-Entwicklung vollständige Unterstützung der 
 % Zuerst gab es Websites, dann dynamische websites
 Eine Web-App (oder dt. \emph{Web-Anwendung}) ist eine Andwendungssoftware, die auf einem Web-Server läuft und auf die der Nutzer mittels eines Browsers zugreifen kann; also eine dynamische Website, wie man sie auch schon vor dem Aufkommen von Smartphones und modernen Tablets kannte. 
 
-Die Grundlage des langjährigen Standards für die Enwicklung von Internetseiten bildet HTML (Hyper Text Markup Language), mit der deren Aussehen, Inhalt und Struktur textuell beschrieben werden kann. In Kombination mit CSS (Cascading Style Sheets) für das modulare Styling einer Website sowie Javascript, einer Skriptsprache zur DOM-Manipulation bietet die HTML-Spezifikation in ihrer neusten Version (HTML5) im Grunde alles, was für die Entwicklung einer modernen Benutzerschnittstelle am Computer notwendig ist. 
-Die Fachlogik liegt, neben den Oberflächen-Komponenten in Form von HTML-, CSS- und Javascript-Dokumenten, auf einem Webserver und verarbeitet und reagiert auf Anfragen des Clients (Browser).
-Als Server-Technologie ist ein breites Spektrum an Programmiersprachen und Umgebungen einsetzbar (einige sind beispielsweise PHP, Java, ASP, CGI u.v.m).
+Die Grundlage des langjährigen Standards für die Enwicklung von Internetseiten bildet \gls{html}, mit der deren Aussehen, Inhalt und Struktur textuell beschrieben werden kann. 
+In Kombination mit \gls{css} für das modulare Styling einer Website sowie Javascript, einer Skriptsprache zur \gls{dom}-Manipulation bietet die HTML-Spezifikation in ihrer neusten Version (\gls{html}5) im Grunde alles, was für die Entwicklung einer modernen Benutzerschnittstelle am Computer notwendig ist. 
+Die Fachlogik liegt, neben den Oberflächen-Komponenten in Form von \gls{html}-, \gls{css}- und Javascript-Dokumenten, auf einem Webserver und verarbeitet und reagiert auf Anfragen des Clients (Browser).
+Als Server-Technologie ist ein breites Spektrum an Programmiersprachen und Umgebungen einsetzbar (einige sind beispielsweise \gls{php}, Java, \gls{asp} u.v.m).
 
 Somit bietet die Entwicklung einer Web-App (abgesehen von einigen browser-spezifischen Eigenheiten) bereits eine gewisse Plattformunabhängigkeit, da jedes moderne (mobile) Betriebssystem über einen Webbrowser verfügt. 
-Zwar müssen Entwickler in bestimmten Details bei der Erstellung des Codes auf die teilweise unterschiedliche Unterstützung (bspw. von HTML-Elementen)\todo{genauer?} durch die verschiedenen Browser achten, aber darüberhinaus wird der Entwicklungsaufwand für eine Web-App nicht von der Anzahl der Zielplattformen bestimmt, da von Client-Seite aus verschiedene Browser durch die Verbreitung und Beachtung von Web-Standards weitgehend einheitliche HTML-Dokumente lesen und interpretieren können und das Backend nicht auf Clients mit unterschiedlichen Plattformen, sondern auf Webservern liegt, deren Plattform bei der Entwicklung entweder schon bekannt oder nicht relevant ist (beispielsweise weil auch die Fachlogik plattformunabhängig mit PHP oder Java realisiert wurde).
+Zwar müssen Entwickler in bestimmten Details bei der Erstellung des Codes auf die teilweise unterschiedliche Unterstützung (bspw. von \gls{html}-Elementen)\todo{genauer?} durch die verschiedenen Browser achten, aber darüberhinaus wird der Entwicklungsaufwand für eine Web-App nicht von der Anzahl der Zielplattformen bestimmt, da von Client-Seite aus verschiedene Browser durch die Verbreitung und Beachtung von Web-Standards weitgehend einheitliche \gls{html}-Dokumente lesen und interpretieren können und das Backend nicht auf Clients mit unterschiedlichen Plattformen, sondern auf Webservern liegt, deren Plattform bei der Entwicklung entweder schon bekannt oder nicht relevant ist (beispielsweise weil auch die Fachlogik plattformunabhängig mit \gls{php} oder Java realisiert wurde).
 
 % Dann für sämtliche INet-Dienste auch noch eine App
 Obwohl es, durch damals eher im Business-Bereich verortete Internet-Handys und Palmtops, auch vor den heute üblichen mobilen Touch-Geräten bereits mobile Internetseiten gab, die speziell für die Darstellung auf kleinen Displays ausgerichtet waren, boten mit der massenhaften Verbreitung von mobilen, internetfähigen Geräten und deren (im Folgenden erläuterten) stark anwendungsorientierten Bedien-Konzepten viele herkömmliche Internet-Dienste nun auch zusätzlich eine native App für verschiedene mobile Plattformen an.
@@ -55,8 +58,8 @@ So sind beispielsweise auch E-Mail-Dienste wie \textsc{gmx}\cite{gmx}, \textsc{w
 Das heißt, der Nutzer folgt einem geänderten Bedienungsmuster seines Mobilgeräts gegenüber der herkömmlichen Computer-Nutzung: um zu einem bestimmten Ergebnis zu gelangen (bspw. \emph{Nachrichten lesen}) also die Frage zu beantworten, \emph{wie} er dahin gelangt (Einen Browser öffnen, zur gewünschten Seite navigieren: www.tagesschau.de), ist es für Anwender heutiger Mobilsysteme naheliegend, gleich die passende App zu starten (hier bspw. die Tagesschau-App).
 
 % Gründe für App statt Web-Anwendung
-Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu einer Website bei der mobilen App nicht die komplette Oberfläche (HTML-, CSS- und JavaScript-Dokumente sowie Grafiken) übertragen werden, sondern lediglich die Nutzdaten (also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform), was dem Nutzer ein höheres Maß an Performanz einbringt.
-Zum Anderen können trotz Vollbildmodus in bestimmten Fällen GUI-Elemente des Webbrowsers bei der Benutzung einer Web-Anwendung störend sein, so ist beispielsweise die Adresszeile am Rand nicht unbedingt erwünscht, wenn der Nutzer statt im Internet zu surfen dort eigentlich eine bestimmte Anwendung nutzen möchte. 
+Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu einer Website bei der mobilen App nicht die komplette Oberfläche (\gls{html}-, \gls{css}- und JavaScript-Dokumente sowie Grafiken) übertragen werden, sondern lediglich die Nutzdaten (also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform), was dem Nutzer ein höheres Maß an Performanz einbringt.
+Zum Anderen können trotz Vollbildmodus in bestimmten Fällen \gls{gui}-Elemente des Webbrowsers bei der Benutzung einer Web-Anwendung störend sein, so ist beispielsweise die Adresszeile am Rand nicht unbedingt erwünscht, wenn der Nutzer statt im Internet zu surfen dort eigentlich eine bestimmte Anwendung nutzen möchte. 
 Ein anderes Beispiel für ein eventuell unerwünschtes Verhalten der Benutzerschnittstelle ist das der \emph{Menü}-Taste bei Android-Geräten, die im Falle der Nutzung einer Web-Anwendung über den Browser nicht den Kontext der eigentlich benutzten Anwendung (hier also der Website) anzeigt, sondern lediglich den des Browsers.
 
 %TODO Stimmt so nicht ganz: offline websites gehen schon, aber logischerweise nur, wenn noch im browser-tab offen oder irgendwie runtergeladen und zu app-verknüpfung gepackt oder so...
@@ -64,7 +67,7 @@ In bestimmten Fällen kann eine nützliche Funktion einer App die Offline-Nutzun
 Für diese Offline-Nutzung einer App zeichnet die Web-Anwendung ein geteiltes Bild: Zwar wurden in den letzten Jahren mehrere Methoden entwickelt, eine Web-Anwendung auch offline nutzen zu können, doch durch ihre (bereits am Namen erkennbare) Ausrichtung auf die Nutzung via Internet stellt die Implementierung dieser Funktionalität für Entwickler einen Zusatzaufwand dar. 
 %TODO Wie offline: welche Thechnologien (nur erwähnen)
 %TODO Quelle
-Einige Möglichkeiten, eine Web-Anwendung offline-fähig zu machen, sind beispielsweise die aus der HTML5-Spezifikation hervorgehenden Technologien \textsl{localStorage} (oder \textsl{WebStorage})\cite{w3c_webstorage}, ein Mechanismus zum lokalen Speichern von größeren Datenmengen in Form von Schlüssel-Wert-Paaren sowie \textsl{WebSQL}\cite{w3c_websql} bzw. \textsl{IndexedDB}\cite{w3c_indexedDB}, beides auf Web-Anwendungen otimierte Datenbanken-Spezifikationen des {\sc World Wide Web Consortiums}.
+Einige Möglichkeiten, eine Web-Anwendung offline-fähig zu machen, sind beispielsweise die aus der \gls{html}5-Spezifikation hervorgehenden Technologien \textsl{localStorage} (auch \textsl{\enquote{WebStorage}})\cite{w3c_webstorage}, ein Mechanismus zum lokalen Speichern von größeren Datenmengen in Form von Schlüssel-Wert-Paaren sowie \textsl{WebSQL}\cite{w3c_websql} bzw. \textsl{IndexedDB}\cite{w3c_indexedDB}, beides auf Web-Anwendungen otimierte Datenbanken-Spezifikationen des {\sc World Wide Web Consortiums}.
 %TODO Auch hier: Abhängig von Browser (Hersteller + Version)
 
 %TODO Formatierung / Befehle: Semantisch statt explizite Formatierung!
@@ -82,7 +85,7 @@ Allgemein kann man sagen, dass der Zugriff auf native Funktionalitäten des Ger�
 %TODO Wie gibt man hier ne Bild-Quelle an?
 \begin{figure}
 \centering
-\includegraphics[width=1\linewidth]{./images/hybrid-apps-schaubild}
+\includegraphics[width=1\linewidth,natwidth=1,natheight=1]{hybrid-apps-schaubild.jpg}
 \caption[Schaubild Hybrid Apps]{Entwicklungsstufen der verschiedenen Arten von Apps. Während bei der nativen App der gesamte Entwicklungszyklus einmal pro Plattform durchlaufen werden muss, verringert sich der Aufwand für die Web-App erheblich. Bei der Hybrid-App muss die Anwendung zwar einmal für jede Plattform gebaut und ausgeliefert werden um die Schnittstellen für die nativen Plattformen zu implementieren, aber der hauptsächliche Entwicklungsaufwand des Programmierens und testens fällt aufgrund des generischen Charakters nur einmal an.}
 \label{fig:hybrid-apps-schaubild}
 \end{figure}
@@ -96,7 +99,7 @@ Allgemein kann man sagen, dass der Zugriff auf native Funktionalitäten des Ger�
 
 \begin{comment}
 \subsection{Grundlegende Technologien}
-Konkret heißt das, die Software wird als Webanwendung mit den zugehörigen Technologien (HTML, Javascript, CSS) entwickelt und für die jeweiligen benötigten Plattformen in eine native App eingebettet, welche hier allerdings hauptsächlich aus einer Web-View, also einer abgespeckten Variante eines Web-Browsers zur Anzeige der Webanwendung, besteht. Da dieser Ansatz der am häufigsten von Cross-Platform-Frameworks genutzte ist, \todo{nachweis!} stellt dieser auch den Schwerpunkt der in dieser Arbeit explorierten Technologien dar und soll hier näher erläutert werden. 
+Konkret heißt das, die Software wird als Webanwendung mit den zugehörigen Technologien (\gls{html}, Javascript, \gls{css}) entwickelt und für die jeweiligen benötigten Plattformen in eine native App eingebettet, welche hier allerdings hauptsächlich aus einer Web-View, also einer abgespeckten Variante eines Web-Browsers zur Anzeige der Webanwendung, besteht. Da dieser Ansatz der am häufigsten von Cross-Platform-Frameworks genutzte ist, \todo{nachweis!} stellt dieser auch den Schwerpunkt der in dieser Arbeit explorierten Technologien dar und soll hier näher erläutert werden. 
 \end{comment}
 
 \subsubsection{Phonegap}
@@ -114,19 +117,19 @@ Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits all
 Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.
 
 \subsubsection{JQueryMobile}
-Die Javascript-Bibliothek JQueryMobile baut auf JQuery auf und bietet ein Oberflächen-Toolkit für mobile Webseiten. Sie besteht zum Einen aus einer Javascript-Datei, die in die HTML-Seite eingebunden wird und zum Anderen aus einem CSS, das für das an mobile Touch-Geräte angepasste aussehen verantwortlich ist. 
-So können einerseits UI-Elementen explizit Style-Klassen aus dem JQueryMobile-CSS zugewiesen werden, andererseits sorgt das JQuery-Javascript ohnehin bei allen verwendeten HTML-Elementen dafür, dass die Style-Klassen dynamisch vergeben werden und die UI-Komponenten somit ihr App-typisches Aussehen erhalten.
+Die Javascript-Bibliothek JQueryMobile baut auf JQuery auf und bietet ein Oberflächen-Toolkit für mobile Webseiten. Sie besteht zum Einen aus einer Javascript-Datei, die in die \gls{html}-Seite eingebunden wird und zum Anderen aus einem \gls{css}, das für das an mobile Touch-Geräte angepasste aussehen verantwortlich ist. 
+So können einerseits UI-Elementen explizit Style-Klassen aus dem JQueryMobile-\gls{css} zugewiesen werden, andererseits sorgt das JQuery-Javascript ohnehin bei allen verwendeten \gls{html}-Elementen dafür, dass die Style-Klassen dynamisch vergeben werden und die UI-Komponenten somit ihr App-typisches Aussehen erhalten.
 Lediglich mit dem zusätzlichen Attribut "data-role" werden den UI-Elementen Eigenschaftentypen zugewiesen, über die die JQueryMobile-Bibliothek erkennt, wie dieses dargestellt werden soll.
 \todo{Konkreter, Beispiel!}
 
-Dieser Mechanismus erleichtert es dem Frontend-Entwickler erheblich, eine auf Touchscreens ausgerichtete Oberfläche zu entwerfen, da er im Grunde neben einigen zusätzlichen Attributen sämtliche herkömmlichen HTML-Elemente verwenden kann. 
+Dieser Mechanismus erleichtert es dem Frontend-Entwickler erheblich, eine auf Touchscreens ausgerichtete Oberfläche zu entwerfen, da er im Grunde neben einigen zusätzlichen Attributen sämtliche herkömmlichen \gls{html}-Elemente verwenden kann. 
 
 \subsubsection{KnockoutJS}
-Auch bei \emph{Knockout} handelt es sich um eine Javascript-Bibliothek, die per \mbox{\texttt{<script>}-Tag} der HTML-Seite hinzugefügt wird. Knockout übernimmt mit einem MVVM (Model-View-ViewModel) das \emph{Data-Binding}, also die Verknüpfung zwischen Daten-Feldern im Programm und UI-Elementen.
+Auch bei \emph{Knockout} handelt es sich um eine Javascript-Bibliothek, die per \mbox{\texttt{<script>}-Tag} der \gls{html}-Seite hinzugefügt wird. Knockout übernimmt mit einem MVVM (Model-View-ViewModel) das \emph{Data-Binding}, also die Verknüpfung zwischen Daten-Feldern im Programm und UI-Elementen.
 So lässt sich die UI (View) sehr klar von der Programmlogik (Model) trennen, was der Lesbarkeit, Erweiterbarkeit und Wartbarkeit der Software zugute kommt.
 
-Statt also Javascript mit HTML-String-Schnipseln zu vermischen, indem das DOM direkt manipuliert und UI-Elemente zur Laufzeit
+Statt also Javascript mit \gls{html}-String-Schnipseln zu vermischen, indem das \gls{dom} direkt manipuliert und UI-Elemente zur Laufzeit
 \todo{gibt es bei javascript überhaupt eine laufzeit?} 
-programmatisch erweitert werden, definiert der Entwickler in einem separaten Javascript ein View-Model und bindet mit dem HTML-Attribut \enquote{data-bind} \ eine bestimmte View-Eigenschaft an ein Datenfeld aus dem View-Model.
+programmatisch erweitert werden, definiert der Entwickler in einem separaten Javascript ein View-Model und bindet mit dem \gls{html}-Attribut \enquote{data-bind} eine bestimmte View-Eigenschaft an ein Datenfeld aus dem View-Model.
 \todo{Konkreter, Beispiel, Grafik.}
 
