@@ -59,15 +59,16 @@ Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu ei
 Zum Anderen können trotz Vollbildmodus in bestimmten Fällen \gls{gui}-Elemente des Webbrowsers bei der Benutzung einer Web-Anwendung störend sein, so ist beispielsweise die Adresszeile am Rand nicht unbedingt erwünscht, wenn der Nutzer statt im Internet zu surfen dort eigentlich eine bestimmte Anwendung nutzen möchte. 
 Ein anderes Beispiel für ein eventuell unerwünschtes Verhalten der Benutzerschnittstelle ist das der \emph{Menü}-Taste bei \gls{android}-Geräten, die im Falle der Nutzung einer Web-Anwendung über den Browser nicht den Kontext der eigentlich benutzten Anwendung (hier also der Website) anzeigt, sondern lediglich den des Browsers.
 
-%TODO Stimmt so nicht ganz: offline websites gehen schon, aber logischerweise nur, wenn noch im browser-tab offen oder irgendwie runtergeladen und zu app-verknüpfung gepackt oder so...
 In bestimmten Fällen kann eine nützliche Funktion einer \gls{app} die Offline-Nutzung sein, wenn beispielsweise durch die abgedeckten Anwendungsfälle keine Verbindung oder Synchronisation mit einem Server nötig ist. Beispiele hierfür könnten, um nur einige zu nennen, ein Taschenrechner, kleine Spiele, oder eine Bildverarbeitungs-\gls{app} sein. 
 Für diese Offline-Nutzung einer \gls{app} zeichnet die Web-Anwendung ein geteiltes Bild: Zwar wurden in den letzten Jahren mehrere Methoden entwickelt, eine Web-Anwendung auch offline nutzen zu können, doch durch ihre (bereits am Namen erkennbare) Ausrichtung auf die Nutzung via Internet stellt die Implementierung dieser Funktionalität für Entwickler einen Zusatzaufwand dar. 
-%TODO Wie offline: welche Thechnologien (nur erwähnen)
-%TODO Quelle
-Einige Möglichkeiten, eine Web-Anwendung offline-fähig zu machen, sind beispielsweise die aus der \gls{html}5-Spezifikation hervorgehenden Technologien \enquote{\gls{webstorage}}, ein Mechanismus zum lokalen Speichern von größeren Datenmengen in Form von Schlüssel-Wert-Paaren \cite{w3c_webstorage} sowie \gls{websql} bzw. \gls{indexed-db}, beides auf Web-Anwendungen otimierte Datenbanken-Spezifikationen, die vom \gls{w3c} herausgegeben werden \cite{w3c_websql, w3c_indexedDB}.
-%TODO Auch hier: Abhängig von Browser (Hersteller + Version)
 
-%TODO Formatierung / Befehle: Semantisch statt explizite Formatierung!
+Einige Möglichkeiten, eine Web-Anwendung offline-fähig zu machen, sind beispielsweise die aus der \gls{html}5-Spezifikation hervorgehenden Technologien \gls{webstorage}, ein Mechanismus zum lokalen Speichern von größeren Datenmengen in Form von Schlüssel-Wert-Paaren \cite{w3c_webstorage} sowie \gls{websql} bzw. \gls{indexed-db}, beides auf Web-Anwendungen otimierte Datenbanken-Spezifikationen, die vom \gls{w3c} herausgegeben werden \cite{w3c_websql, w3c_indexedDB}.
+Allerdings bestehen auch bei diesen Mechanismen teilweise Einschränkungen durch die Browservielfalt beziehungsweise deren Versionen. So wird \gls{indexed-db} beispielsweise nicht von \gls{safari} oder \gls{ios} unterstützt, \gls{chrome} muss für die Nutzung mindestens in Version 23 oder höher vorliegen, \gls{firefox} in 10 oder höher. 
+Auch bei \gls{websql} zeichnet sich ein ähnlich diffuses Bild ab \todo{stil!}: Während \gls{chrome} die Technologie ab der Version 4 und \gls{ios} ab Version 3.2 unterstützt, ist für Nutzer der Browser \gls{firefox} und \gls{ie} die Technik gar nicht verfügbar.
+Lediglich \gls{webstorage} wird weitgehend von allen gängigen Browsern unterstützt \cite{html5-rocks_offline}.
+Weiterhin wird die Offline-Funktionalität gegenüber der nativen \gls{app} dadurch eingeschränkt, dass der Nutzer diese ohne weiteren zusätzlichen Entwicklungsaufwand nur dann nutzen kann, wenn die entsprechende Internet-Seite im Offline-Zustand des Geräts bereits im Browser geöffnet ist, da diese nicht lokal auf dem Gerät, sondern auf einem Webserver gespeichert ist.
+Für vollständigen Offline-Zugriff müsste der Entwickler die komplette Website so paketieren, dass der Nutzer sie -- wie eine native App -- von seinem Gerät aus starten und nutzen kann.\footnote{Möglichkeiten dafür werden in \autoref{hybrid} erläutert.}
+%TODO Fussnote auf der übernächsten Seite????
 
 Allgemein kann man sagen, dass der Zugriff auf native Funktionalitäten des Geräts respektive des Betriebssystems nicht oder nur gering unterstützt wird, sodass der geringere Enwicklungsaufwand einer solchen \gls{web-app} (\seename\  \autoref{fig:hybrid-apps-schaubild}) unter Umständen zu Lasten des Funktionsumfangs und der Usibility der Anwendung geht.
 \todo{recherchieren: wird was unterstützt? gibt es möglichkeiten, per javascript etc.? Was wird \enquote{gering} unterstützt? sollte man das noch weiter ausführen? touch-gesten etc.?}
@@ -75,12 +76,15 @@ Allgemein kann man sagen, dass der Zugriff auf native Funktionalitäten des Ger�
 \subsection{Hybride Apps}
 %TODO Hybride-App: Begriff erläutern
 
-%TODO Vor-/Nachteile der hybriden App-Entwicklung
+
+
+
+
 
 
 %TODO Gibts hierfür auch so ne Art Grafik-Datenbank wie bei Bib? Dann müsste man den schmonsens nicht hier im Text verteilen.
 %TODO Wie gibt man hier ne Bild-Quelle an?
-
+%TODO Positionierung der Grafik!
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,natwidth=1,natheight=1]{hybrid-apps-schaubild.jpg}
