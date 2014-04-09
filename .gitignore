@@ -92,3 +92,10 @@ sympy-plots-for-*.tex/
 # xindy
 *.xdy
 
+# Selbstdefinierte Endungen fuer Tmp-Dateien fuer eigene Verzeichnisse:
+*.techlg
+*.tchi
+*.tcho
+*.ignlg
+*.igni
+*.igno
