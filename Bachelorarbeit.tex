@@ -10,19 +10,13 @@
 	ngerman
 	]	{translator}
 \usepackage[
-	nonumberlist,		%keine Seitenzahlen anzeigen
-	acronym,			%ein Abkürzungsverzeichnis erstellen
-	toc,					%Einträge im Inhaltsverzeichnis
-%	section				%im Inhaltsverzeichnis auf section-Ebene erscheinen
+	nonumberlist,		% keine Seitenzahlen anzeigen
+%	acronym,			% ein Abkürzungsverzeichnis erstellen
+	toc,				% Einträge im Inhaltsverzeichnis
+%	section				% im Inhaltsverzeichnis auf section-Ebene erscheinen
 	]	{glossaries}
 
 % METADATA =================================================
-
-\graphicspath{{images/}}
-\bibliography{literatur}
-\loadglsentries{glossar}
-\loadglsentries{akronyme}
-\makeglossaries
 
 \title{Plattformunabhängige App-Entwicklung für mobile Geräte \\--\\ Grenzen und Möglichkeiten}
 \author{Daniel Morgenstern}
@@ -33,53 +27,72 @@
 \studienort{Berlin}
 \abgabedatum{2014}{04}{22}
 \betreuerin{Prof. Dr. Simone Strippgen}
-\semester{Wintersemester 2013/2014}
-
-% Zeilenabstand 
-\renewcommand{\baselinestretch}{1.2} 
-%TODO soll nur in Textteil gelten, nicht in Bildunterschriften etc
-
-% Customize the format of the first use.  See the manual for details if
-% you want to include more information here such as the definition.
-\defglsdisplayfirst[\glsdefaulttype]{\textit{#1}}
-
-\begin{document}
+\semester{Sommersemester 2014}
 
 % DEFINITIONS ==============================================
 
-%TODO Funktioniert leider noch nicht.
-% Hurenkinder und Schusterjungen verhindern
+% Eigenes Symbolverzeichnis erstellen
+\newglossary[techlg]{technologies}{tchi}{tcho}{Technologien}
+\newglossary[ignlg]{ignored}{igni}{igno}{Ausgeblendetes Glossar}
+
+% Ressourcen ----------------------------------------------
+\graphicspath{{images/}}
+\bibliography{literatur}
+\loadglsentries{glossar}
+%-----------------------------------------------------------
+
+\makeglossaries
+
+% Zeilenabstand:
+\renewcommand{\baselinestretch}{1.2} 
+%TODO soll nur in Textteil gelten, nicht in Bildunterschriften etc
+
+% Farben für Hyperlinks:
+\definecolor{@darkblue}{RGB}{0,0,0}
+\definecolor{@darkgreen}{RGB}{0,0,0}
+
+% Style für erste Terminus-Nennung:
+\defglsdisplayfirst[\glsdefaulttype]{\textsl{#1}}
+\defglsdisplayfirst[technologies]{\textsl{#1}}
+\defglsdisplayfirst[ignored]{\textsl{#1}}
+
+% Hurenkinder und Schusterjungen verhindern:
 \clubpenalty10000
 \widowpenalty10000
 \displaywidowpenalty=10000
 \interfootnotelinepenalty10000
 
 %===========================================================
+
+\begin{document}
+
+%-----------------------------------------------------------
 \frontmatter		% Anfangsteil (Römische Seitenzahlen)
 \maketitle
 \tableofcontents
-%===========================================================
+%-----------------------------------------------------------
 
-%===========================================================
+%-----------------------------------------------------------
 \mainmatter			% Hauptteil (ab hier arab. Seitenzahlen)
-%===========================================================
+%-----------------------------------------------------------
    
 \include{einleitung}
 \include{grundlagen}
 \include{umsetzung}
 
-%Glossar ausgeben
-\printglossary[style=altlist]
- 
-%Abkürzungen ausgeben
-\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
-\printglossary[type=\acronymtype,style=long]
-%TODO Abkürzungen statt in eigenes Abkürzungsverzeichnis lieber mit ins Glossar???
- 
-% Literaturverzeichnis ausgeben
+% Verzeichnisse --------------------------------------------
+
+% Glossar ausgeben:
+\printglossary[style=long]
+
+% Technologienverzeichnis ausgeben:
+\printglossary[type=technologies,style=long]
+
+% Literaturverzeichnis ausgeben:
 \MakeBibliography
 
-%===========================================================
+%-----------------------------------------------------------
 
 \end{document}
 
+%===========================================================
