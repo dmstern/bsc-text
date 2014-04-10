@@ -1,6 +1,7 @@
-## Basic: backup files
+## Basic: backup an lock files
 *~
 *.bak
+.$*$
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
