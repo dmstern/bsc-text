@@ -36,7 +36,7 @@ Als Programmiersprache wird \gls{obj-c} verwendet, einer um objektorientierte El
 Möchte ein Auftraggeber einer Software also statt seinen Kunden nur eine \gls{app} für ein Betriebssystem anzubieten, einen größeren Nutzerkreis erschließen, muss die zu entwicklende \gls{app} für jede Zielplattform neu programmiert, getestet und gebaut werden, da jede mobile Plattform ihre eigenen Toolkits, Bibliotheken und Programmiersprachen verwendet, was die native \gls{app}-Entwicklung für potenzielle Auftraggeber zu einem sehr kostenaufwändigen Projekt werden lassen kann.
 Andererseits bietet die native \gls{app}-Entwicklung vollständige Unterstützung der betriebssystemeigenen Funktionalitäten wie den Zugriff auf Kamera, Adressbuch, Bewegungssensoren etc. der jeweiligen Plattform, sodass ein Softwareprojekt mit solchen besonders hardware- oder betriebssystemnahnen Anforderungen die Entwicklung einer nativen (plattformspezifischen) \gls{app} notwendig erscheinen lassen kann.\footnote{Mehr dazu in \autoref{hybrid}}
 
-\subsection{Web-Anwendungen}
+\subsection{Web-Anwendungen}\label{web-app}
 
 % Zuerst gab es Websites, dann dynamische websites
 Eine \gls{web-app} ist eine Andwendungssoftware, die auf einem Web-Server läuft und auf die der Nutzer mittels eines Browsers zugreifen kann; also eine dynamische Website, wie man sie auch schon vor dem Aufkommen von Smartphones und modernen Tablets kannte. 
@@ -78,7 +78,7 @@ Die \gls{hybrid-app} verbindet Eigenschaften der Nutzung einer nativen \gls{app}
 Da jede moderne mobile Betriebssystem für Entwickler auch die Möglichkeit bietet, eine Web-View in die zu entwicklende App einzubinden, also eine \gls{gui}-Komponente, in die \gls{html}-Seiten hineingeladen werden können, liegt der Ansatz für hybride Apps auf der Hand: Auf Entwicklungsebene wird die Anwendung als Web-App entwickelt, gleichzeitig mithilfe von entsprechenden APIs und Frameworks zur Anbindung an die native Ebene der Zielplattform in eine App für die jeweiligen Plattformen integriert, sodass auf Benutzerseite die Nutzung einer Web-Anwendung, die in puncto Funktionsumfang, Usability und Look-And-Feel einer nativen mobilen App sehr nahe kommt, möglich wird.
 
 Dieses Vorgehen bietet unter anderem für Web-Entwickler den Vorteil, ihre bisherigen Programmierkenntnisse im Web-Bereich im Wesentlichen auch für die Entwicklung von hybriden \glspl{app} nutzen zu können. 
-So wird in der Regel der grundlegende Teil des Codes für das Frontend, wie bei der Web-Entwicklung, in \gls{html} in Kombination mit \gls{css} und \glossary{js} geschrieben und getestet. 
+So wird in der Regel der grundlegende Teil des Codes für das Frontend, wie bei der Web-Entwicklung, in \gls{html} in Kombination mit \gls{css} und \gls{js} geschrieben und getestet. 
 Da allerdings auf dem mobilen Gerät für das Backend, also die Verarbeitungsinstanzen, nicht, wie bei einer herkömmlichen Web-Anwendung, ein Server mit einer entsprechenden Server-Technologie wie \gls{php} oder \gls{asp} läuft, wird auch dieser Teil der App bei der hybriden Entwicklung meist mit \gls{js} bewerkstelligt. Aber auch andere Skriptsprachen, die lokal auf einem Mobilgerät ausführbar sind, sind denkbar. \todo{recherchieren!!! Kann man Perl oder poython oder so auf einem android laufen lassen?} %TODO CHECKEN!!
 Anschließend muss die Anwendung für die verschiedenen Zielplattformen gebaut werden, um in das jeweilige Container-Format für Apps der verschiedenen Plattformen eingebunden werden zu können und den Zugriff auf die plattformspezifischen Toolkits durch die Cross-Platform-APIs zu ermöglichen (\seename\ \autoref{fig:hybrid-apps-schaubild}).
 Hierfür kann es erforderlich sein, dass auf der Entwicklungsplattform die jeweiligen \glspl{sdk} installiert sind, was gegenüber der Web-Entwicklung einen administrativen Mehraufwand darstellt.
@@ -88,7 +88,6 @@ Desweiteren kann der Betreiber des Build-Services unter Umständen Restriktionen
 
 %TODO Gibts hierfür auch so ne Art Grafik-Datenbank wie bei Bib? Dann müsste man den schmonsens nicht hier im Text verteilen.
 %TODO Wie gibt man hier ne Bild-Quelle an?
-%TODO Positionierung der Grafik!
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth,natwidth=1,natheight=1]{hybrid-apps-schaubild.jpg}
@@ -104,26 +103,49 @@ Desweiteren kann der Betreiber des Build-Services unter Umständen Restriktionen
 
 \subsection{Entwicklung von hybriden Apps}\label{hybrid}
 
-\begin{comment}
-\subsection{Grundlegende Technologien}
-Konkret heißt das, die Software wird als Webanwendung mit den zugehörigen Technologien (\gls{html}}, Javascript, \gls{css}) entwickelt und für die jeweiligen benötigten Plattformen in eine native \gls{app} eingebettet, welche hier allerdings hauptsächlich aus einer Web-View, also einer abgespeckten Variante eines Web-Browsers zur Anzeige der Webanwendung, besteht. Da dieser Ansatz der am häufigsten von Cross-Platform-Frameworks genutzte ist, \todo{nachweis!} stellt dieser auch den Schwerpunkt der in dieser Arbeit explorierten Technologien dar und soll hier näher erläutert werden. 
-\end{comment}
+Wie in \ref{hybrid-app} beschrieben, bildet die hybride App-Entwicklung die Schnittmenge aus der nativen App-Entwicklung und der Web-Entwicklung mithilfe von Web-Technologien und zusätzlichen Frameworks und Bibliotheken. 
+Hier soll mit \gls{phonegap} die konkrete Nutzung eines dieser Frameworks und weitere verwendete Technologien wie \gls{ko} oder \gls{jqm} erläutert werden.
+
+Bereits für die Entwicklung von reinen Web-Anwendungen stellen neben den grundlegenden Web-Technologien \gls{html}, \gls{css} und \gls{js} Erweiterungen wie die JavaScript-Bibliothek \gls{jq} nützliche Hilfsmittel dar, die viele Funktionen gegenüber der Verwendung von \enquote{reinem} \gls{js} deutlich vereinfacht. %TODO BSP.!!
+\todo{sollte das hier eher in \autoref{web-app}? Da es hier um die konkrete Erläuterung der Entwicklung geht, passt es aber vielleicht auch.}
+
+\begin{lstlisting}[caption=Einbinden von JQuery in eine HTML-Seite, language=HTML, label=jq]
+<html>
+	<head>
+		<title>Titel</title>
+		<!-- hallo asdlfkj sdf -->
+		<script src="lib/jquery-1.10.2.min.js"></script
+	</head>
+	<body>
+	[...]
+	</body>
+</html>
+\end{lstlisting}
+
+\subsubsection{JQueryMobile}
+
+
+
+\subsubsection{KnockoutJS}
 
 
 
 \subsubsection{Phonegap}
-Die entscheidende Lücke auf dem Weg zur \gls{hybrid-app} zwischen Webanwendung und der nativen \gls{app} schließt das Framework \gls{phonegap} von Adobe. 
-Bei der Webanwendung taten sich in der Herleitung zwei grundlegende Problemfelder gegenüber der nativen \gls{app}-Entwicklung auf. 
-Zum Einen besteht eine Webanwendung aus mehreren Dokumenten, die auf einem Server liegen und nur über den Browser des Betriebssystems abgerufen werden, die Benutzung fühlt sich also für den Nutzer durch die ausbleibende Installation, die benötigte Internetverbindung und die optische Präsenz der Browser-Oberfläche nicht wie eine mobile \gls{app} an. 
-Zum Anderen können die Anforderungen an die Anwendung einen Zugriff auf native Features des Geräts oder seines Betriebssystems erfordern, der mittels herkömmlicher Webtechnologien nicht oder nur sehr eingeschränkt möglich sind. 
 
+\gls{phonegap} ist ein Framework zur hybriden App-Entwicklung von \gls{adobe} und baut auf…
+
+\subsubsection{PhoneGap Build}
+
+
+
+
+\begin{comment}
 Für letzteres bietet PhoneGap eine Javascript-Bibliothek, die auf das Cross-Platform-Framework \gls{cordova} von Apache aufbaut und den Zugriff auf native Features des jeweiligen Betriebssystems ermöglicht. \todo{wie genau, weiß ich noch nicht, noch rausfinden!}
 Bei der konkreten Verwendung von nativen Features muss jedoch teilweise wieder auf die Unterstützung durch die jeweiligen Plattformen geachtet werden. \todo{oder zumindest muss deklariert werden, was verwendet werden soll. -> checken!}
 
 Darüber hinaus übernimmt das Online-Portal \gls{pg-build} den Bauprozess der \gls{app}, also das Überführen in ein installierfähiges \gls{app}-Format. 
 Während der Entwickler ohne diesen Build-Service die verschiedenen Toolkits aller Zielplattformen lokal verwalten müsste, um Cordova zu verwenden,\cite{phonegap-doc-cordova} reicht es hier aus, die Web-Anwendung (beispielsweise per öffentlichem Git-Repository) auf das Portal hoch zu laden, den Build-Prozess im Browser abzuwarten und die fertigen \glspl{app} auf das gewünschten Zielgerät herunterzuladen und zu installieren. 
 
-Für Auftraggeber oder Entwickler, die ihren Code als sehr sensibel und vertraulich ansehen, könnte diese Variante allerdings ein Problem darstellen sein, da der Quellcode dann stets auch auf den Servern von Adobe liegt.
 
 \subsubsection{JQueryMobile}
 Die Javascript-Bibliothek JQueryMobile baut auf JQuery auf und bietet ein Oberflächen-Toolkit für mobile Webseiten. Sie besteht zum Einen aus einer Javascript-Datei, die in die \gls{html}-Seite eingebunden wird und zum Anderen aus einem \gls{css}, das für das an mobile Touch-Geräte angepasste aussehen verantwortlich ist. 
@@ -141,4 +163,5 @@ Statt also Javascript mit \gls{html}-String-Schnipseln zu vermischen, indem das 
 \todo{gibt es bei javascript überhaupt eine laufzeit?} 
 programmatisch erweitert werden, definiert der Entwickler in einem separaten Javascript ein View-Model und bindet mit dem \gls{html}-Attribut \enquote{data-bind} eine bestimmte View-Eigenschaft an ein Datenfeld aus dem View-Model.
 \todo{Konkreter, Beispiel, Grafik.}
+\end{comment}
 
