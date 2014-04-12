@@ -100,3 +100,5 @@ sympy-plots-for-*.tex/
 *.ignlg
 *.igni
 *.igno
+
+*.project
