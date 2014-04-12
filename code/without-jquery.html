@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<script>
+			function hideParagraphs() {
+				var paragraphs = document.getElementsByTagName("p");
+				for (i in paragraphs ) {
+					paragraphs[i].style.display = "none";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h2>This is a heading</h2>
+		<p>This is a paragraph.</p>
+		<p>This is another paragraph.</p>
+		<button onclick="hideParagraphs()">Click me</button>
+	</body>
+</html>
