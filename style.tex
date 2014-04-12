@@ -1,4 +1,10 @@
-% Style-Definitions =======================================
+% COMMANDS==================================================
+
+\newcommand{\linename}{Zeile~}
+\newcommand{\linenamepl}{Zeilen~}
+%TODO Auch \seename und andere autorefnamen müssten so ein geschütztes leerzeichen angehängt bekommen.
+
+% Style-Definitions ========================================
 
 % Zeilenabstand:
 \renewcommand{\baselinestretch}{1.2} 
@@ -27,10 +33,10 @@
 \definecolor{lila}{HTML}{891A44}
 \definecolor{xlightgray}{HTML}{FAFAFA}
 
-\lstset{ %
+\lstset{ %TODO Box-Größe
   % BASIC---------------------
   title=\lstname,					% show the filename of files included with \lstinputlisting; also try caption instead of title
-  captionpos=b,						% sets the caption-position to bottom
+%  captionpos=b,						% sets the caption-position to bottom
   % COLORS--------------------
   backgroundcolor=\color{xlightgray},	% choose the background color
   stringstyle=\color{mymauve},		% string literal style
@@ -41,11 +47,11 @@
   frame=single,						% adds a frame around the code
   % KEYWORDS------------------
   deletekeywords={...},				% if you want to delete keywords from the given language
-  morekeywords={*,...},				% if you want to add more keywords to the set
+  morekeywords={function,click,hide,document,ready,var},				% if you want to add more keywords to the set
   escapeinside={\%*}{*\%},			% if you want to add LaTeX within your code
-%  basicstyle=\footnotesize,		% the size of the fonts that are used for the code
+%  basicstyle=\footnotesize,			% the size of the fonts that are used for the code
 %  breaklines=true,					% sets automatic line breaking
-%  keepspaces=true,					% keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keepspaces=true,					% keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
 %  breakatwhitespace=false,			% sets if automatic breaks should only happen at whitespace
 %  extendedchars=true,				% lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
 %  numbers=left,						% where to put the line-numbers; possible values are (none, left, right)
