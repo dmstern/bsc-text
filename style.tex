@@ -4,21 +4,11 @@
 \newcommand{\linenamepl}{Zeilen~}
 %TODO Auch \seename und andere autorefnamen müssten so ein geschütztes leerzeichen angehängt bekommen.
 
-% Style-Definitions ========================================
+% Layout ===================================================
 
 % Zeilenabstand:
 \renewcommand{\baselinestretch}{1.2} 
 %TODO soll nur in Textteil gelten, nicht in Bildunterschriften etc
-
-% Farben für Hyperlinks:
-\definecolor{@darkblue}{RGB}{0,0,0}
-\definecolor{@darkgreen}{RGB}{0,0,0}
-
-% Style für erste Terminus-Nennung:
-\defglsdisplayfirst[\glsdefaulttype]{\textit{#1}}
-\defglsdisplayfirst[technologies]{\textit{#1}}
-%\defglsdisplayfirst[ignored]{#1}
-%\defglsdisplay[ignored]{{#1}}
 
 % Hurenkinder und Schusterjungen verhindern:
 \clubpenalty10000
@@ -26,39 +16,89 @@
 \displaywidowpenalty=10000
 \interfootnotelinepenalty10000
 
-% Einstellungen für Code-Listings:
-\definecolor{mygreen}{rgb}{0,0.6,0}
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
-\definecolor{mymauve}{rgb}{0.58,0,0.82}
+%-----------------------------------------------------------
+
+% Style für Glossar-Begriffe:
+\defglsdisplayfirst[\glsdefaulttype]{\textit{#1}}
+\defglsdisplayfirst[technologies]{\textit{#1}}
+%\defglsdisplayfirst[ignored]{#1}
+%\defglsdisplay[ignored]{{#1}}
+
+% COLORS ===================================================
+
+% Farben für Hyperlinks ------------------------------------
+\definecolor{@darkblue}{RGB}{0,0,0}
+\definecolor{@darkgreen}{RGB}{0,0,0}
+
+% Code-Farben ----------------------------------------------
+% EIGENE
+\definecolor{mygreen}{HTML}{6E7917}
+\definecolor{xdarkgray}{HTML}{202020}
 \definecolor{lila}{HTML}{891A44}
 \definecolor{xlightgray}{HTML}{FAFAFA}
+\definecolor{mycyan}{HTML}{056A70}
+\definecolor{darkcyan}{HTML}{1B353B}
+\definecolor{cyan-black}{HTML}{0D2025}
 
-\lstset{ %TODO Box-Größe
-  % BASIC---------------------
-  title=\lstname,					% show the filename of files included with \lstinputlisting; also try caption instead of title
-%  captionpos=b,						% sets the caption-position to bottom
-  % COLORS--------------------
-  backgroundcolor=\color{xlightgray},	% choose the background color
-  stringstyle=\color{mymauve},		% string literal style
-  commentstyle=\color{mygreen},		% comment style
-  keywordstyle=\color{lila},		% keyword style
-  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
-  rulecolor=\color{lightgray},			% if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-  frame=single,						% adds a frame around the code
-  % KEYWORDS------------------
-  deletekeywords={...},				% if you want to delete keywords from the given language
-  morekeywords={function,click,hide,document,ready,var},				% if you want to add more keywords to the set
-  escapeinside={\%*}{*\%},			% if you want to add LaTeX within your code
-%  basicstyle=\footnotesize,			% the size of the fonts that are used for the code
-%  breaklines=true,					% sets automatic line breaking
-  keepspaces=true,					% keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-%  breakatwhitespace=false,			% sets if automatic breaks should only happen at whitespace
-%  extendedchars=true,				% lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-%  numbers=left,						% where to put the line-numbers; possible values are (none, left, right)
-%  numbersep=5pt,					% how far the line-numbers are from the code
-%  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-%  showstringspaces=false,			% underline spaces within strings only
-%  showtabs=false,					% show tabs within strings adding particular underscores
-%  tabsize=2,						% sets default tabsize to 2 spaces
+% AUS VORLAGE
+\definecolor{lightgray}{rgb}{0.9, 0.9, 0.9}
+\definecolor{darkgray}{rgb}{0.4, 0.4, 0.4}
+%\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+\definecolor{editorGreen}{HTML}{619A0E} % #007C00 -> rgb(0, 124, 0)
+\definecolor{orange}{rgb}{1,0.45,0.13}		
+\definecolor{olive}{rgb}{0.17,0.59,0.20}
+\definecolor{brown}{rgb}{0.69,0.31,0.31}
+\definecolor{purple}{rgb}{0.38,0.18,0.81}
+\definecolor{lightblue}{rgb}{0.1,0.57,0.7}
+\definecolor{lightred}{rgb}{1,0.4,0.5}
+
+\lstdefinestyle{htmlcssjs} {%
+  % General design
+  backgroundcolor=\color{xlightgray},
+  basicstyle={\footnotesize\ttfamily},   
+  numberstyle=\tiny\color{darkgray},
+  frame=single,
+  rulecolor=\color{lightgray},
+  % line-numbers
+  xleftmargin={0.75cm},
+  numbers=left,
+  stepnumber=1,
+  firstnumber=1,
+  numberfirstline=true,	
+  % Code design
+  identifierstyle=\color{xdarkgray},
+  keywordstyle=\color{lila}\bfseries,
+  ndkeywordstyle=\color{editorGreen}\bfseries,
+  stringstyle=\color{mycyan}\ttfamily,
+  commentstyle=\color{mygreen}\ttfamily,
+%
+  % Code
+  language=HTML5,
+  alsolanguage=JavaScript,
+  alsodigit={.:;},	
+  tabsize=2,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  extendedchars=true,
+  breaklines=true,
+  % German umlauts
+  literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+% Listing Settings =========================================
+%
+\lstset{
+  caption=\lstname,
+  escapeinside={\%*}{*\%},
 }
 

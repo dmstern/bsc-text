@@ -112,12 +112,12 @@ Bereits für die Entwicklung von reinen Web-Anwendungen stellen neben den grundl
 So ist beispielsweise der Programmieraufwand für den Zugriff auf Elemente einer \gls{html}-Seite durch \gls{jq} wesentlich geringer als ohne die Bibliothek.
 Besonders deutlich wird dies an den unten aufgeführten Code-Beispielen, in denen ein Button exemplarisch die Funktionalität übernehmen soll, alle Absätze einer \gls{html}-Seite auszublenden.
 Während bei herkömmlichem \gls{js} für die Selektion aller Elemente die Funktion \verb|getElementsByTagName()| aufgerufen werden muss (\seename~\autoref{lst:js}), ist bei \gls{jq} der Zugriff auf alle Elemente eines \glspl{tag} per Dollar(\verb|$|)-Notation deutlich verkürzt (\seename~\autoref{lst:jq}).
-Auch die nächste Anweisung zur Ausführung einer Operation für alle ausgewählten Elemente (hier: \verb|hide()|, also \textit{ausblenden}) fällt bei \gls{jq} wesentlich kürzer aus, indem die Funktion noch in der selben Zeile für den vorherigen Selektor aufgerufen werden kann (\verb|$("p").hide();|).
+Auch die nächste Anweisung zur Ausführung einer Operation für alle ausgewählten Elemente (hier: \verb|hide()|, also \textit{ausblenden}) fällt bei \gls{jq} wesentlich kürzer aus, indem die Funktion noch in der selben Zeile wie der vorherigen Selektor aufgerufen werden kann (\verb|$("p").hide();|).
 Bei der reinen \gls{js}-Variante ist nach der Selektion aller Absätze zunächsteinmal ein Array ausgewählt, sodass, um auf den einzelnen Elementen Oparationen ausführen zu können, durch alle Elemente des Arrays iteriert und die Funktion für jedes Element aufgerufen werden muss (\seename~\autoref{lst:js}, \linenamepl 6-8). 
 
-\lstinputlisting[caption=\gls{jq}-Beispiel-Code zum Ausblenden aller Absätze \cite{jQuery_Examples_Tryit_Editor_v1.9_2014-04-11}., language=HTML, label=lst:jq]{code/jquery.html}
+\lstinputlisting[style=htmlcssjs, caption=\gls{jq}-Beispiel-Code zum Ausblenden aller Absätze \cite{jQuery_Examples_Tryit_Editor_v1.9_2014-04-11}., label=lst:jq]{code/jquery.html}
 
-\lstinputlisting[caption=Die selbe Funktionalität wie in \autoref{lst:jq} mit reinem \gls{js}., language=HTML, label=lst:js]{code/without-jquery.html}
+\lstinputlisting[style=htmlcssjs, caption=Die selbe Funktionalität wie in \autoref{lst:jq} mit reinem \gls{js}., label=lst:js]{code/without-jquery.html}
 
 \subsubsection{JQueryMobile}
 
