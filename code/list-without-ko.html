@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<script>
+			var items = new Array();;
+
+			function addItem() {
+				var itemToAdd = document.getElementById("itemToAdd").value;
+
+				var opt = document.createElement('option');
+				opt.value = itemToAdd;
+				opt.innerHTML = itemToAdd;
+				listView.appendChild(opt);
+			}
+		</script>
+	</head>
+	<body>
+		New item:
+		<input id="itemToAdd" />
+		<button onclick="addItem()">Add</button>
+		<p>Your items:</p>
+		<select multiple="multiple" width="50" id="listView"> </select>
+	</body>
+</html>
