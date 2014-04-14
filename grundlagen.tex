@@ -91,6 +91,8 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 %TODO Gibts hierfür auch so ne Art Grafik-Datenbank wie bei Bib? Dann müsste man den schmonsens nicht hier im Text verteilen.
 %TODO Wie gibt man hier ne Bild-Quelle an?
 %TODO Positionierung!
+%TODO Grafiken ohne fileextension
+%TODO Eigenschaften wie Größe etc. zentral definieren statt in jedem Bild!!
 \begin{figure}[h]
 \centering
 \includegraphics[
@@ -280,14 +282,54 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\a
 
 \subsubsection{\gls{pg-build}}
 
-Mit \gls{pg-build} bietet \gls{adobe} einen webbasierten Build-Service für \gls{phonegap}-Apps an, der den Bau-Prozesss, im Falle der hybriden \glspl{app} also die eigentliche Anbindung an plattformspezifische Toolkits auf nativer Ebene, auslagert und damit deutlich vereinfacht.
+Mit seinem Online-Portal \gls{pg-build} bietet \gls{adobe} einen webbasierten Build-Service für \gls{phonegap}-Apps an, der den Bau-Prozesss, im Falle der hybriden \glspl{app} also die eigentliche Anbindung an plattformspezifische Toolkits auf nativer Ebene, auslagert und damit deutlich vereinfacht.
 Wie in \autoref{fig:hybrid-apps-schaubild} beschrieben, muss dieser Entwicklungsschritt im Gegensatz zu den vorherigen (Entwicklung des Codes und der Oberfläche) trotz (oder gerade wegen) des plattformunabhängigen Charakters mehrfach (also einmal für jede Zielplattform) ausgeführt werden, um die vorher entwickelte Web-App in die Umgebung einer native App einzubetten (\seename\ \autoref{sec:hybrid-app}).
 Um also nicht auf jedem Entwicklungsrechner sämtliche Toolkits aller Zielplattformen verwalten zu müssen, können \gls{phonegap}-Entwickler hier ihren Quellcode hochladen und die App für die verschiedenen Zielplattformen im jeweiligen Format zusammenbauen bauen lassen.
 
+Abhängig vom jeweiligen Bezahlpaket haben \gls{phonegap}-Entwickler die Möglichkeit, ihre Anwendung als private oder öffentliche \gls{app} hochzuladen. 
+Die öffentliche oder \gls{opensource}-\gls{app} muss in Form eines \gls{github}-Repositorys zugänglich gemacht werden. 
+\begin{quote}
+\enquote{We only allow open-source apps to be built from public Github repos} \cite{PhoneGap_Build_Apps}
+\end{quote}
+Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \gls{app} beinhaltet, bei der kostenpflichtigen Variante sind bis zu 25 private App enthalten (\seename\ \autoref{fig:phonegap-build_plans}).
+\gls{opensource}-\glspl{app} können bei allen Paketen unbegrenzt angelegt werden.
+
+%TODO Zum Workflow: jeweilige PG-JS-Lib wird injected (Quelle: Docs)
+%TODO Grafik Workflow evtl. nochmal in text erläutern und referenzieren.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[
+	width=1\textwidth,
+	natwidth=1,
+	natheight=1,
+	]{./images/phonegap-build_plans.png}
+	\caption
+		[\Gls{pg-build}-Pakete]
+		{Übersicht über die verschiedenen Bezahlpakete von \gls{pg-build}: Ab 9,99\,\$ im Monat können Entwickler bis zu 25 private \glspl{app} anlegen, in der kostenlosen Variante nur eine.}
+		\label{fig:phonegap-build_plans}
+\end{figure}
 
 
 
-%TODO Grafik: Workflow
+%TODO GitHub oder EIGENES Git-Repo oder App hochladen.
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[
+	width=1\textwidth,
+	natwidth=1,
+	natheight=1,
+	]{./images/PhoneGap_Build_Workflow.png}
+	\caption[\Gls{pg-build}-Workflow]{Schematische Darstellung eines möglichen Entwicklungsworkflows mit \gls{pg-build}: Der Code wird als Web-Anwendung auf \gls{github} hochgeladen, bei \gls{pg-build} über das \gls{github}-Repository aktualisiert und für die jeweiligen Plattformen gebaut, sodass die plattformspezisichen \glspl{app} heruntergeladen und auf den Zielgeräten installiert werden können.}
+	\label{fig:phonegap_build_workflow}
+\end{figure}
+%TODO Als SVG einbinden! -> Funzt noch nicht.
+
+
+
 %TODO Git-Repo
 	%TODO Wie sieht es aus mit dieser halböffentlichkeit? Rechte an Adobe?
 		%TODO -> Zumindest liegt der code bei Adobe (andererseits ist er ja auch sonst offen durch apk-Paket + JS...!)
