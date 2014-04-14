@@ -93,7 +93,7 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 %TODO Positionierung!
 %TODO Grafiken ohne fileextension
 %TODO Eigenschaften wie Größe etc. zentral definieren statt in jedem Bild!!
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[
 	width=1\textwidth,
@@ -182,7 +182,7 @@ Stattdessen übernimmt das \gls{ko}-Framework die Durchreichung aller Änderunge
 	caption=Einfaches Anwendungsbeispiel für die Verwendung der \gls{js}-Bibliothek \gls{ko}.,
 	]{code/ko.html}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[
 	width=1\textwidth,
@@ -232,7 +232,7 @@ Somit wird dem Entwickler ermöglicht, ohne zusätzlichen Entwicklungsaufwand f�
 Neben der Zuweisung von Rollen über das \verb|data-role|-Attribut, durch die das Framework den \gls{gui}-Komponenten automatisch entsprechende Style-Definitionen zuweist, können weiterhin über das \verb|class|-Attribut direkt Style-Klassen aus dem \gls{jq}-Stylesheet verwendet werden.
 Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\autoref{lst:jqm}, \linename 12) für ein besseres Layout des \verb|<div>|-Inhalts, wie der Vergleich ohne das \verb|class|-Attribut in \autoref{fig:without-ui-content-class} zeigt.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 	\includegraphics[
 	width=1\textwidth,
@@ -243,7 +243,7 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\a
 	\label{fig:jqm}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[
 	width=1\textwidth,
@@ -254,7 +254,7 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\a
 	\label{fig:without-ui-content-class}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[
 	width=1\textwidth,
@@ -265,7 +265,7 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\a
 	\label{fig:without-jqm}
 \end{figure}
 
-\subsubsection{\gls{phonegap}}
+\subsubsection{\gls{phonegap}} \label{sec:phonegap}
 
 %\gls{phonegap} ist ein Framework zur hybriden App-Entwicklung von \gls{adobe} und baut auf…
 
@@ -286,16 +286,34 @@ Mit seinem Online-Portal \gls{pg-build} bietet \gls{adobe} einen webbasierten Bu
 Wie in \autoref{fig:hybrid-apps-schaubild} beschrieben, muss dieser Entwicklungsschritt im Gegensatz zu den vorherigen (Entwicklung des Codes und der Oberfläche) trotz (oder gerade wegen) des plattformunabhängigen Charakters mehrfach (also einmal für jede Zielplattform) ausgeführt werden, um die vorher entwickelte Web-App in die Umgebung einer native App einzubetten (\seename\ \autoref{sec:hybrid-app}).
 Um also nicht auf jedem Entwicklungsrechner sämtliche Toolkits aller Zielplattformen verwalten zu müssen, können \gls{phonegap}-Entwickler hier ihren Quellcode hochladen und die App für die verschiedenen Zielplattformen im jeweiligen Format zusammenbauen bauen lassen.
 
+Um den Build-Prozess über das den Cloud-Build-Service einzuleiten, erstellt der Entwickler eine \gls{web-app} in seiner gewohnten \gls{ide} in Form von \gls{html}-, \gls{js}- und \gls{css}-Dokumenten, die er anschließend auf \gls{pg-build} hochlädt.
+Hierfür muss zunächst über die Web-Oberfläche des Portals eine neue \gls{app} angelegt werden.
+
 Abhängig vom jeweiligen Bezahlpaket haben \gls{phonegap}-Entwickler die Möglichkeit, ihre Anwendung als private oder öffentliche \gls{app} hochzuladen. 
-Die öffentliche oder \gls{opensource}-\gls{app} muss in Form eines \gls{github}-Repositorys zugänglich gemacht werden. 
+Während private \glspl{app} entweder als Zip-Paket hochgeladen oder als Link zu einem (bspw. eigenen) \gls{git}-Repository in \gls{pg-build} eingestellt werden können (\seename\ \autoref{fig:phonegap-build_create-public}), müssen öffentliche (also \gls{opensource}-) \glspl{app} in Form eines \gls{github}-Repositorys zugänglich gemacht werden.
+
 \begin{quote}
 \enquote{We only allow open-source apps to be built from public Github repos} \cite{PhoneGap_Build_Apps}
 \end{quote}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[
+	width=1\textwidth,
+	natwidth=1,
+	natheight=1,
+	]{./images/phonegap-build_create-public.png}
+	\caption
+		[Erstellung einer neuen App auf \Gls{pg-build}]
+		{Dialog für die Erstellung einer neuen privaten \gls{app} auf \gls{pg-build}. Links das Eingabefeld zum Eintragen eines \gls{git}-Repository-Links und rechts der Button zum Hochladen von Zip-Archiven.}
+		\label{fig:phonegap-build_create-public}
+\end{figure}
+
+
 Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \gls{app} beinhaltet, bei der kostenpflichtigen Variante sind bis zu 25 private App enthalten (\seename\ \autoref{fig:phonegap-build_plans}).
 \gls{opensource}-\glspl{app} können bei allen Paketen unbegrenzt angelegt werden.
 
-%TODO Zum Workflow: jeweilige PG-JS-Lib wird injected (Quelle: Docs)
-%TODO Grafik Workflow evtl. nochmal in text erläutern und referenzieren.
 
 \begin{figure}[h!]
 \centering
@@ -306,17 +324,16 @@ Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \g
 	]{./images/phonegap-build_plans.png}
 	\caption
 		[\Gls{pg-build}-Pakete]
-		{Übersicht über die verschiedenen Bezahlpakete von \gls{pg-build}: Ab 9,99\,\$ im Monat können Entwickler bis zu 25 private \glspl{app} anlegen, in der kostenlosen Variante nur eine.}
+		{Übersicht über die verschiedenen Bezahlpakete von \gls{pg-build}: Ab 9,99\,\$ im Monat können Entwickler bis zu 25 private \glspl{app} anlegen, in der kostenlosen Variante nur eine private, aber unbegrenzt öffentliche \cite{Adobe_PhoneGap_Build_Plans}.}
 		\label{fig:phonegap-build_plans}
 \end{figure}
 
 
+Nach dem Hochgeladen des Codes auf \gls{pg-build}, wird dort automatisch der Build-Prozess für die \glspl{hybrid-app} initiiert.
+Dabei sorgt \gls{pg-build} dafür, dass für jede Plattform die entsprechende \gls{phonegap}-\gls{js}-Bibliothek injiziert wird, welche die \gls{api} zur nativen Betriebssystemebene enthält (\seename\ \autoref{sec:phonegap}) \cite{PhoneGap_Build_Documentation_getting-started}.
+Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format für die verschiedenen Plattformen als Direkt-Link oder per \gls{qr} heruntergeladen werden (\seename\ \autoref{fig:phonegap_build_workflow} und \ref{fig:phonegap-build_apps}).
 
-%TODO GitHub oder EIGENES Git-Repo oder App hochladen.
-
-
-
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[
 	width=1\textwidth,
@@ -329,38 +346,22 @@ Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \g
 %TODO Als SVG einbinden! -> Funzt noch nicht.
 
 
+%TODO Evtl. Screenshot Test-App im Desktop-Browser und dann als mobile App.
 
-%TODO Git-Repo
-	%TODO Wie sieht es aus mit dieser halböffentlichkeit? Rechte an Adobe?
-		%TODO -> Zumindest liegt der code bei Adobe (andererseits ist er ja auch sonst offen durch apk-Paket + JS...!)
-%TODO Screenshots PG Build:
-	%TODO -> Verschiedene Plattform-Formate zum Runterladen
-%TODO Screenshot Test-App im Desktop-Browser und dann als mobile App.
-
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[
 	width=1\textwidth,
 	natwidth=1,
 	natheight=1,
-	]{./images/phonegap-build.png}
-	\caption[]{Screenshot des \gls{pg-build}-Portals}
-	\label{fig:phonegap-build}
+	]{./images/phonegap-build_apps.png}
+	\caption[\Gls{pg-build}-Oberfläche]{Oberfläche des \gls{pg-build}-Portals: Detailansicht für eine Beispiel-\gls{app}. Hier können verschiedene Einstellungen vorgenommen werden, sowie der Code aus einem Repository aktualisert und die fertig gebaute \gls{app} per Download-Button oder \gls{qr} heruntergeladen werden.}
+	\label{fig:phonegap-build_apps}
 \end{figure}
 
 
 [\ldots] %TODO Fertig schreiben
 
-%\begin{figure}[h]
-%\centering
-%\includegraphics[
-%	width=1\textwidth,
-%	natwidth=1,
-%	natheight=1,
-%	]{./images/phonegap-build-schaubild.png}
-%	\caption[]{Schaubild des Workflows mit \gls{pg-build}}
-%	\label{fig:phonegap-build-schaubild}
-%\end{figure}
 
 
 \begin{comment}
