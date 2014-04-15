@@ -48,15 +48,15 @@ Die Fachlogik liegt, neben den Oberflächen-Komponenten in Form von \mbox{\gls{h
 Als Server-Technologie ist ein breites Spektrum an Programmiersprachen und Umgebungen einsetzbar.\footnote{Einige sind beispielsweise \gls*{php}, \gls*{java}, \gls*{asp} u.\,v.\,a.\,m.}
 
 Somit bietet die Entwicklung einer \gls{web-app} (abgesehen von einigen Browser-spezifischen Eigenheiten) bereits eine gewisse Plattformunabhängigkeit, da jedes moderne Betriebssystem über einen Webbrowser verfügt. 
-Zwar müssen Entwickler in bestimmten Details bei der Erstellung des Codes auf die teilweise unterschiedliche Unterstützung (bspw. von \gls{html}-Elementen) \todo{genauer?} durch die verschiedenen Browser achten, aber darüber hinaus wird der Entwicklungsaufwand für eine \gls{web-app} nicht von der Anzahl der Zielplattformen bestimmt, da von Client-Seite aus verschiedene Browser durch die Verbreitung und Beachtung von Web-Standards weitgehend einheitliche \gls{html}-Dokumente lesen und interpretieren können und das Backend nicht auf Clients mit unterschiedlichen \gls{plattform}en, sondern auf Webservern liegt, deren \gls{plattform} bei der Entwicklung entweder schon bekannt oder nicht relevant ist.\footnote{beispielsweise weil auch die Fachlogik plattformunabhängig mit \gls*{php} oder \gls*{java} realisiert wurde}
+Zwar müssen Entwickler in bestimmten Details bei der Erstellung des Codes auf die teilweise unterschiedliche Unterstützung (bspw. von \gls{html}-Elementen) \todo{genauer?} durch die verschiedenen Browser achten, aber darüber hinaus wird der Entwicklungsaufwand für eine \gls{web-app} nicht von der Anzahl der Zielplattformen bestimmt, da von Client-Seite aus verschiedene Browser durch die Verbreitung und Beachtung von Web-Standards weitgehend einheitliche \gls{html}-Dokumente lesen und interpretieren können und das Backend nicht auf Clients mit unterschiedlichen \gls{plattform}en, sondern auf Webservern liegt, deren \gls{plattform} bei der Entwicklung entweder schon bekannt oder nicht relevant ist.\footnote{Beispielsweise weil auch die Fachlogik plattformunabhängig mit \gls*{php} oder \gls*{java} realisiert wurde.}
 
 % Dann für sämtliche INet-Dienste auch noch eine \gls{app}
 Obwohl es, durch damals eher im Business-Bereich verortete Internet-Handys und Palmtops, auch vor den heute üblichen mobilen Touch-Geräten bereits mobile Internetseiten gab, die speziell für die Darstellung auf kleinen Displays ausgerichtet waren, boten mit der massenhaften Verbreitung von mobilen, internetfähigen Geräten und deren (im Folgenden erläuterten) stark anwendungsorientierten Bedien-Konzepten viele herkömmliche Internet-Dienste nun auch zusätzlich eine native \gls{app} für verschiedene mobile \glspl{plattform} an.
 So sind beispielsweise auch E-Mail-Dienste wie \gls{gmx}, \gls{web-de} oder \gls{gmail} seit der Verbreitung von Smartphones und Tablets auch in Form einer eigenen \gls{app} für \gls{android} und \gls{ios} vertreten, sodass der Nutzer, statt, wie von der Desktop-Computer-Nutzung gewohnt, einen anbieterunabhängigen Mail-Client zu konfigurieren, über den er seine E-Mails abruft, unter Umständen gleich die jeweilige \gls{app} des E-Mail-Anbieters startet \cite{gmx, web.de, gmail}.
-Das heißt, der Nutzer folgt einem geänderten Bedienungsmuster seines Mobilgeräts gegenüber der herkömmlichen Computer-Nutzung: um zu einem bestimmten Ergebnis zu gelangen (bspw. \emph{Nachrichten lesen}) also die Frage zu beantworten, \emph{wie} er dahin gelangt (Einen Browser öffnen und zur gewünschten Seite navigieren: www.tagesschau.de), ist es für Anwender heutiger Mobilsysteme naheliegend, gleich die passende \gls{app} zu starten\footnote{hier bspw. die Tagesschau-\gls{app}}.
+Das heißt, der Nutzer folgt einem geänderten Bedienungsmuster seines Mobilgeräts gegenüber der herkömmlichen Computer-Nutzung: um zu einem bestimmten Ergebnis zu gelangen (bspw. \emph{Nachrichten lesen}) also die Frage zu beantworten, \emph{wie} er dahin gelangt (Einen Browser öffnen und zur gewünschten Seite navigieren: www.tagesschau.de), ist es für Anwender heutiger Mobilsysteme naheliegend, gleich die passende \gls{app} zu starten (Hier bspw. die Tagesschau-\gls{app}).
 
 % Gründe für App statt Web-Anwendung
-Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu einer Website bei der mobilen \gls{app} nicht die komplette Oberfläche\footnote{\gls{html}-, \gls{css}- und JavaScript-Dokumente sowie Grafiken} übertragen werden, sondern lediglich die Nutzdaten,\footnote{also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform.} was dem Nutzer ein höheres Maß an Performanz einbringt.
+Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu einer Website bei der mobilen \gls{app} nicht die komplette Oberfläche\footnote{\gls{html}-, \gls{css}- und JavaScript-Dokumente sowie Grafiken} übertragen werden, sondern lediglich die Nutzdaten,\footnote{Also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform.} was dem Nutzer ein höheres Maß an Performanz einbringt.
 Zum Anderen können trotz Vollbildmodus in bestimmten Fällen \gls{gui}-Elemente des Webbrowsers bei der Benutzung einer Web-Anwendung störend sein, so ist beispielsweise die Adresszeile am Rand nicht unbedingt erwünscht, wenn der Nutzer statt im Internet zu surfen dort eigentlich eine bestimmte Anwendung nutzen möchte. 
 Ein anderes Beispiel für ein eventuell unerwünschtes Verhalten der Benutzerschnittstelle ist das der \emph{Menü}-Taste bei \gls{android}-Geräten, die im Falle der Nutzung einer Web-Anwendung über den Browser nicht den Kontext der eigentlich benutzten Anwendung \footnote{hier also der Website} anzeigt, sondern lediglich den des Browsers.
 
@@ -211,7 +211,6 @@ Zwar lässt sich diese Anforderung ohne Probleme mit einfachem \gls{js} lösen, 
 
 \end{comment}
 
-
 \subsubsection{\Gls{jqm}}
 
 Um das Erscheinungsbild und Verhalten von Webseiten an eine bessere Benutzung für mobile Geräte anzupassen, bietet sich der Einsatz eines entsprechenden \gls{gui}-Toolkits an. 
@@ -267,30 +266,39 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\a
 
 \subsubsection{\gls{phonegap}} \label{sec:phonegap}
 
-%\gls{phonegap} ist ein Framework zur hybriden App-Entwicklung von \gls{adobe} und baut auf…
+\gls{phonegap} ist ein \gls{opensource}-Framework von \gls{adobe} zur Erstellung von hybriden \glspl{app} und bildet damit die Grundlage für den hier explorierte Ansatz zur plattformunabhängigen \gls{app}-Entwicklung.
+Die Software wurde ursprünglich von der Firma \gls{nitobi} entwickelt, die 2011 von \gls{adobe} aufgekauft wurde \cite{Adobe_Announces_Agreement_to_Acquire_Nitobi_Creator_of_PhoneGap}. 
+Später wurde die Code-Basis der \gls{apache} übergeben und dort in \gls{cordova} umbenannt, wodurch das Framework in den Quellen stellenweise unter beiden Namen erscheint.
+\Gls{adobe} \gls{phonegap} baut also als dessen Distribution auf \gls{cordova} auf, wobei derzeit der einzige wesentliche Unterschied im Namen des Pakets besteht (Stand: \citedate{PhoneGap_Cordova_and_whats_in_a_name}), nach eigenen Angaben aber durchaus weitere Tools mit Bezug auf andere \gls{adobe}-Dienste in die \gls{phonegap}-Distribution einfließen können \cite{PhoneGap_Cordova_and_whats_in_a_name}.
+Sowohl der Software-Kern \gls{apache} \gls{cordova} als auch dessen Distribution \gls{phonegap} von \gls{adobe} sind \gls{opensource}-Projekte \cite{PhoneGap_Cordova_and_whats_in_a_name}.
 
-[\ldots]%TODO Fertig schreiben
 
-%TODO Cordova
-%TODO Cross-Platform-Framework
-%TODO Beispiele aus Docs!
+
+%TODO Wie wird PhoneGap verwendet und wie funktioniert es?
+%TODO -> Beispiele aus Docs!
+	%TODO phonegap.js
+	%TODO Kommandozeilen-Tool
+	%TODO SDKs der jeweiligen Zielplattformen
+
+
+%TODO Feature-Unterstützung
+
 %TODO Plattformunterstützung: 
 	%TODO -> Welche? Was?
-%TODO Feature-Unterstützung
 
 
 
 \subsubsection{\gls{pg-build}}
 
 Mit seinem Online-Portal \gls{pg-build} bietet \gls{adobe} einen webbasierten Build-Service für \gls{phonegap}-Apps an, der den Bau-Prozesss, im Falle der hybriden \glspl{app} also die eigentliche Anbindung an plattformspezifische Toolkits auf nativer Ebene, auslagert und damit deutlich vereinfacht.
-Wie in \autoref{fig:hybrid-apps-schaubild} beschrieben, muss dieser Entwicklungsschritt im Gegensatz zu den vorherigen (Entwicklung des Codes und der Oberfläche) trotz (oder gerade wegen) des plattformunabhängigen Charakters mehrfach (also einmal für jede Zielplattform) ausgeführt werden, um die vorher entwickelte Web-App in die Umgebung einer native App einzubetten (\seename\ \autoref{sec:hybrid-app}).
+Wie in \autoref{fig:hybrid-apps-schaubild} beschrieben, muss dieser Entwicklungsschritt im Gegensatz zu den vorherigen\footnote{Also die Entwicklung des Codes sowie Tests.} und der Oberfläche) trotz (oder gerade wegen) des plattformunabhängigen Charakters mehrfach\footnote{Also einmal für jede Zielplattform} ausgeführt werden, um die vorher entwickelte Web-App in die Umgebung einer native App einzubetten (\seename\ \autoref{sec:hybrid-app}).
 Um also nicht auf jedem Entwicklungsrechner sämtliche Toolkits aller Zielplattformen verwalten zu müssen, können \gls{phonegap}-Entwickler hier ihren Quellcode hochladen und die App für die verschiedenen Zielplattformen im jeweiligen Format zusammenbauen bauen lassen.
 
 Um den Build-Prozess über das den Cloud-Build-Service einzuleiten, erstellt der Entwickler eine \gls{web-app} in seiner gewohnten \gls{ide} in Form von \gls{html}-, \gls{js}- und \gls{css}-Dokumenten, die er anschließend auf \gls{pg-build} hochlädt.
 Hierfür muss zunächst über die Web-Oberfläche des Portals eine neue \gls{app} angelegt werden.
 
 Abhängig vom jeweiligen Bezahlpaket haben \gls{phonegap}-Entwickler die Möglichkeit, ihre Anwendung als private oder öffentliche \gls{app} hochzuladen. 
-Während private \glspl{app} entweder als Zip-Paket hochgeladen oder als Link zu einem (bspw. eigenen) \gls{git}-Repository in \gls{pg-build} eingestellt werden können (\seename\ \autoref{fig:phonegap-build_create-public}), müssen öffentliche (also \gls{opensource}-) \glspl{app} in Form eines \gls{github}-Repositorys zugänglich gemacht werden.
+Während private \glspl{app} entweder als Zip-Paket hochgeladen oder als Link zu einem \gls{git}-Repository\footnote{Beispielsweise wie die öffentlichen Apps auf \gls{github} gehosted oder einem eigenen \gls{git}-Repository} in \gls{pg-build} eingestellt werden können (\seename\ \autoref{fig:phonegap-build_create-public}), müssen öffentliche (also \gls{opensource}-) \glspl{app} in Form eines \gls{github}-Repositorys zugänglich gemacht werden.
 
 \begin{quote}
 \enquote{We only allow open-source apps to be built from public Github repos} \cite{PhoneGap_Build_Apps}
@@ -311,9 +319,8 @@ Während private \glspl{app} entweder als Zip-Paket hochgeladen oder als Link zu
 \end{figure}
 
 
-Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \gls{app} beinhaltet, bei der kostenpflichtigen Variante sind bis zu 25 private App enthalten (\seename\ \autoref{fig:phonegap-build_plans}).
-\gls{opensource}-\glspl{app} können bei allen Paketen unbegrenzt angelegt werden.
-
+Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \gls{app} beinhaltet, bei der kostenpflichtigen Variante sind bis zu 25 private App enthalten.
+\gls{opensource}-\glspl{app} können bei allen Paketen unbegrenzt angelegt werden (\seename\ \autoref{fig:phonegap-build_plans}).
 
 \begin{figure}[h!]
 \centering
@@ -346,7 +353,6 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 %TODO Als SVG einbinden! -> Funzt noch nicht.
 
 
-%TODO Evtl. Screenshot Test-App im Desktop-Browser und dann als mobile App.
 
 \begin{figure}[h!]
 \centering
@@ -360,8 +366,7 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 \end{figure}
 
 
-[\ldots] %TODO Fertig schreiben
-
+%TODO Evtl. Screenshot Test-App im Desktop-Browser und dann als mobile App.
 
 
 \begin{comment}
