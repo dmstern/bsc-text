@@ -9,29 +9,34 @@
 
 \ExecuteBibliographyOptions{bibwarn=true,sortcites=true,defernumbers=true,isbn=false,doi=false,backref=true}
 
-%% titles of reference section + 3 categories of references:
+%% titles of reference section + 4 categories of references:
 \newcommand{\@bibtitle}{Quellenverzeichnis}
 \newcommand{\@bibtitleLiteratur}{Literatur}
 \newcommand{\@bibtitleAvmedia}{Filme und audiovisuelle Medien}
 \newcommand{\@bibtitleOnline}{Online-Quellen}	
+\newcommand{\@bibtitleManual}{Software-Quellen und Dokumentationen}	 
 
 \ifthenelse{\equal{\hgb@MainLanguage}{english}}{%
 	\renewcommand{\@bibtitle}{References}
 	\renewcommand{\@bibtitleLiteratur}{Literature}
 	\renewcommand{\@bibtitleAvmedia}{Films and audio-visual media}
-	\renewcommand{\@bibtitleOnline}{Online sources}	
+	\renewcommand{\@bibtitleOnline}{Online sources}
+	\renewcommand{\@bibtitleManual}{Software Documentation} 
 }{}
 
 \defbibfilter{literature}{
 	not ( type=movie or type=video or type=music or type=audio or 
-				type=online or type=electronic or type=www or type=software )}
+				type=online or type=electronic or type=www or type=software or type=manual )}
 
 \defbibfilter{avmedia}{%
-	( type=movie or type=video or type=music or type=audio or type=software )}
+	( type=movie or type=video or type=music or type=audio )}
 
 \defbibfilter{online}{%
 	( type=online or type=electronic or type=www )}
-
+	
+\defbibfilter{manual}{%
+	( type=manual or type=software )}
+	
 
 \defbibheading{noheader}[]{}	% 'none' should be defined but isn't
 
@@ -132,6 +137,7 @@
 			\begin{bibhyphenation}
 			\printbibliography[filter=literature,heading=subbibintoc,title={\@bibtitleLiteratur}]
 			\printbibliography[filter=avmedia,heading=subbibintoc,title={\@bibtitleAvmedia}]
+			\printbibliography[filter=manual,heading=subbibintoc,title={\@bibtitleManual}]
 			\printbibliography[filter=online,heading=subbibintoc,title={\@bibtitleOnline}]
 			\end{bibhyphenation}
 		}%
