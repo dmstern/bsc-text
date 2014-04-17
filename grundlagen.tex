@@ -26,7 +26,7 @@ Diese enthalten Softwarekomponenten, die zur Entwicklung der \gls{app} notwendig
 Als Programmiersprache für die \gls{android}-\gls{app}-Entwicklung wird \gls{java} verwendet. Das heißt, als Voraussetzung für die Entwicklung von \gls{android}-\glspl{app} ist lediglich eine geeignete \gls{ide} wie \gls{eclipse}, \gls{netbeans} oder \gls{intellij} sowie eine Installation des \gls{java}- und des \gls{android}-\gls{sdk} nötig. 
 \todo{wie sieht es mit dem deployment, also der Auslieferung in appstores etc. aus?}
 Seit 2013 bietet Google darüber hinaus die auf \gls{intellij} basierende und eigens für die \gls{android}-Entwicklung angepasste \gls{ide} \gls{android-studio} an \cite{android-studio}, die bereits alle notwendigen Toolkits enthält. 
-Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm gebaut werden (\seename~\autoref{fig:hybrid-apps-schaubild}). Anschließend kann die \gls{app} in dem für die Zielplattform vorgesehenen Dateiformat ausgeliefert und auf dem Zielgerät installiert werden.
+Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm gebaut werden (\seename\ \autoref{fig:hybrid-apps-schaubild}). Anschließend kann die \gls{app} in dem für die Zielplattform vorgesehenen Dateiformat ausgeliefert und auf dem Zielgerät installiert werden.
 
 % iOS: 
 Auch der Software- und Computer-Hersteller Apple bietet mit \gls{xcode} eine firmeneigene \gls{ide} zur \gls{app}-Entwicklung für sein mobiles Betriebssystem \gls{ios} an. Anders als Google geht der iPhone-Hersteller hier allerdings etwas restriktiver vor. So läuft die \gls{ide} \gls{xcode}, die man für die native \gls{ios}-Entwicklung benötigt, nur unter dem hauseigenen Betriebssystem \gls{osx} und das wiederum nur auf den firmeneigenen Mac-Rechnern. So sichert sich Apple auch durch jeden Entwickler einen neuen Kunden. \todo{darf man so was hier anmerken, oder lieber weg?}
@@ -67,7 +67,7 @@ Allerdings bestehen auch bei diesen Mechanismen teilweise Einschränkungen durch
 Auch bei \gls{websql} zeichnet sich ein ähnlich diffuses Bild ab: Während \gls{chrome} die Technologie ab der Version 4 und \gls{ios} ab Version 3.2 unterstützt, ist für Nutzer der Browser \gls{firefox} und \gls{ie} die Technik gar nicht verfügbar.
 Lediglich \gls{webstorage} wird weitgehend von allen gängigen Browsern unterstützt \cite{html5-rocks_offline}.
 Weiterhin wird die Offline-Funktionalität gegenüber der nativen \gls{app} dadurch eingeschränkt, dass der Nutzer diese ohne weiteres Zutun des Entwicklers nur dann nutzen kann, wenn die entsprechende Internet-Seite im Offline-Zustand des Geräts bereits im Browser geöffnet ist, da diese nicht lokal auf dem Gerät, sondern auf einem Webserver gespeichert ist.
-Für vollständigen Offline-Zugriff müsste der Entwickler die komplette Website so paketieren, dass der Nutzer sie -- wie eine native App -- von seinem Gerät aus starten und nutzen kann.\footnote{\seename~\autoref{sec:hybrid-app} und \ref{sec:hybrid}.}
+Für vollständigen Offline-Zugriff müsste der Entwickler die komplette Website so paketieren, dass der Nutzer sie -- wie eine native App -- von seinem Gerät aus starten und nutzen kann.\footnote{\seename\ \autoref{sec:hybrid-app} und \ref{sec:hybrid}.}
 
 Allgemein kann man sagen, dass der Zugriff auf native Funktionalitäten des Geräts respektive des Betriebssystems nicht oder nur gering unterstützt wird, sodass der geringere Entwicklungsaufwand einer solchen \gls{web-app} (\seename~ \autoref{fig:hybrid-apps-schaubild}) unter Umständen zu Lasten des Funktionsumfangs und der Usability der Anwendung geht.
 \todo{recherchieren: wird was unterstützt? gibt es Möglichkeiten, per Javascript etc.? Was wird \enquote{gering} unterstützt? sollte man das noch weiter ausführen? Touch-Gesten etc.?}
@@ -190,8 +190,8 @@ Stattdessen übernimmt das \gls{ko}-Framework die Durchreichung aller Änderunge
 	natheight=1
 	]{./images/ko-hello-world.png}
 	\caption
-		[\Gls{ko}-Beispiel im Browser.]
-		{\Gls{ko}-Beispiel aus \autoref{lst:ko} im Browser. Links im Bild: Anzeige bei Initialisierung der Oberfläche, rechts: Benutzereingabe ins Eingabefeld: \enquote{Mars}. \\ Änderungen in der \gls{ui} (Hier: im Eingabefeld) werden sofort im \gls{view-model} registriert und automatisch an alle verknüpften Anzeigen weitergereicht (Hier an das fettgedruckte Begrüßungselement).}
+		[\gls{ko}-Beispiel im Browser.]
+		{\gls{ko}-Beispiel aus \autoref{lst:ko} im Browser. Links im Bild: Anzeige bei Initialisierung der Oberfläche, rechts: Benutzereingabe ins Eingabefeld: \enquote{Mars}. \\ Änderungen in der \gls{ui} (Hier: im Eingabefeld) werden sofort im \gls{view-model} registriert und automatisch an alle verknüpften Anzeigen weitergereicht (Hier an das fettgedruckte Begrüßungselement).}
 	\label{fig:ko-hello-world}
 \end{figure}
 
@@ -238,7 +238,7 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\a
 	natwidth=1,
 	natheight=1
 	]{./images/jqm.png}
-	\caption[\Gls{jqm}-Beispiel]{\Gls{jqm}-Beispiel aus \autoref{lst:jqm} im Browser.}
+	\caption[\gls{jqm}-Beispiel]{\gls{jqm}-Beispiel aus \autoref{lst:jqm} im Browser.}
 	\label{fig:jqm}
 \end{figure}
 
@@ -312,7 +312,7 @@ Während private \glspl{app} entweder als Zip-Paket hochgeladen oder als Link zu
 	natheight=1,
 	]{./images/phonegap-build_create-public.png}
 	\caption
-		[Erstellung einer neuen App auf \Gls{pg-build}]
+		[Erstellung einer neuen App auf \gls{pg-build}]
 		{Dialog für die Erstellung einer neuen privaten \gls{app} auf \gls{pg-build}. Links das Eingabefeld zum Eintragen eines \gls{git}-Repository-Links und rechts der Button zum Hochladen von Zip-Archiven.}
 		\label{fig:phonegap-build_create-public}
 \end{figure}
@@ -329,7 +329,7 @@ Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \g
 	natheight=1,
 	]{./images/phonegap-build_plans.png}
 	\caption
-		[\Gls{pg-build}-Pakete]
+		[\gls{pg-build}-Pakete]
 		{Übersicht über die verschiedenen Bezahlpakete von \gls{pg-build}: Ab 9,99\,\$ im Monat können Entwickler bis zu 25 private \glspl{app} anlegen, in der kostenlosen Variante nur eine private, aber unbegrenzt öffentliche \cite{Adobe_PhoneGap_Build_Plans}.}
 		\label{fig:phonegap-build_plans}
 \end{figure}
@@ -346,7 +346,7 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 	natwidth=1,
 	natheight=1,
 	]{./images/PhoneGap_Build_Workflow.png}
-	\caption[\Gls{pg-build}-Workflow]{Schematische Darstellung eines möglichen Entwicklungsworkflows mit \gls{pg-build}: Der Code wird als Web-Anwendung auf \gls{github} hochgeladen, bei \gls{pg-build} über das \gls{github}-Repository aktualisiert und für die jeweiligen Plattformen gebaut, sodass die plattformspezisichen \glspl{app} heruntergeladen und auf den Zielgeräten installiert werden können.}
+	\caption[\gls{pg-build}-Workflow]{Schematische Darstellung eines möglichen Entwicklungsworkflows mit \gls{pg-build}: Der Code wird als Web-Anwendung auf \gls{github} hochgeladen, bei \gls{pg-build} über das \gls{github}-Repository aktualisiert und für die jeweiligen Plattformen gebaut, sodass die plattformspezisichen \glspl{app} heruntergeladen und auf den Zielgeräten installiert werden können.}
 	\label{fig:phonegap_build_workflow}
 \end{figure}
 %TODO Als SVG einbinden! -> Funzt noch nicht.
@@ -360,7 +360,7 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 	natwidth=1,
 	natheight=1,
 	]{./images/phonegap-build_apps.png}
-	\caption[\Gls{pg-build}-Oberfläche]{Oberfläche des \gls{pg-build}-Portals: Detailansicht für eine Beispiel-\gls{app}. Hier können verschiedene Einstellungen vorgenommen werden, sowie der Code aus einem Repository aktualisert und die fertig gebaute \gls{app} per Download-Button oder \gls{qr} heruntergeladen werden.}
+	\caption[\gls{pg-build}-Oberfläche]{Oberfläche des \gls{pg-build}-Portals: Detailansicht für eine Beispiel-\gls{app}. Hier können verschiedene Einstellungen vorgenommen werden, sowie der Code aus einem Repository aktualisert und die fertig gebaute \gls{app} per Download-Button oder \gls{qr} heruntergeladen werden.}
 	\label{fig:phonegap-build_apps}
 \end{figure}
 

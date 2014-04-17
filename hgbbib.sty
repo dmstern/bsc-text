@@ -14,19 +14,21 @@
 \newcommand{\@bibtitleLiteratur}{Literatur}
 \newcommand{\@bibtitleAvmedia}{Filme und audiovisuelle Medien}
 \newcommand{\@bibtitleOnline}{Online-Quellen}	
-\newcommand{\@bibtitleManual}{Software-Quellen und Dokumentationen}	 
+\newcommand{\@bibtitleSoftware}{Software-Quellen und Dokumentationen}	 
+\newcommand{\@bibtitleImages}{Bildquellen}	 
 
 \ifthenelse{\equal{\hgb@MainLanguage}{english}}{%
 	\renewcommand{\@bibtitle}{References}
 	\renewcommand{\@bibtitleLiteratur}{Literature}
 	\renewcommand{\@bibtitleAvmedia}{Films and audio-visual media}
 	\renewcommand{\@bibtitleOnline}{Online sources}
-	\renewcommand{\@bibtitleManual}{Software Documentation} 
+	\renewcommand{\@bibtitleSoftware}{Software Documentation} 
+	\renewcommand{\@bibtitleImages}{Image Sources} 
 }{}
 
 \defbibfilter{literature}{
 	not ( type=movie or type=video or type=music or type=audio or 
-				type=online or type=electronic or type=www or type=software or type=manual )}
+				type=online or type=electronic or type=www or type=software or type=manual or type=image )}
 
 \defbibfilter{avmedia}{%
 	( type=movie or type=video or type=music or type=audio )}
@@ -34,8 +36,11 @@
 \defbibfilter{online}{%
 	( type=online or type=electronic or type=www )}
 	
-\defbibfilter{manual}{%
+\defbibfilter{software}{%
 	( type=manual or type=software )}
+	
+\defbibfilter{images}{%
+	( type=image )}
 	
 
 \defbibheading{noheader}[]{}	% 'none' should be defined but isn't
@@ -137,7 +142,8 @@
 			\begin{bibhyphenation}
 			\printbibliography[filter=literature,heading=subbibintoc,title={\@bibtitleLiteratur}]
 			\printbibliography[filter=avmedia,heading=subbibintoc,title={\@bibtitleAvmedia}]
-			\printbibliography[filter=manual,heading=subbibintoc,title={\@bibtitleManual}]
+			\printbibliography[filter=images,heading=subbibintoc,title={\@bibtitleImages}]
+			\printbibliography[filter=software,heading=subbibintoc,title={\@bibtitleSoftware}]
 			\printbibliography[filter=online,heading=subbibintoc,title={\@bibtitleOnline}]
 			\end{bibhyphenation}
 		}%
