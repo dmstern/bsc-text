@@ -49,7 +49,7 @@
 
 \begin{document}
 
-%-----------------------------------------------------------
+%-----------------------------------------------------------,s
 \frontmatter		% Anfangsteil (Römische Seitenzahlen)
 \maketitle
 \tableofcontents
@@ -66,12 +66,14 @@
 % Verzeichnisse --------------------------------------------
 
 % Glossar
+\chapter*{\glossaryname}
+% Begriffe
 \addcontentsline{toc}{chapter}{\glossaryname}
 \printglossary[style=long,title=Begriffe]
-
 % Technologien
 \printglossary[type=technologies,style=long]
 
+% ----------------------------------------------------------
 % Abbildungsverzeichnis
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
