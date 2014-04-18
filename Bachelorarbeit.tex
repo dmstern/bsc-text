@@ -13,7 +13,7 @@
 	nonumberlist,		% keine Seitenzahlen anzeigen
 %	acronym,			% ein Abkürzungsverzeichnis erstellen
 	toc,				% Einträge im Inhaltsverzeichnis
-%	section				% im Inhaltsverzeichnis auf section-Ebene erscheinen
+	section				% im Inhaltsverzeichnis auf section-Ebene erscheinen
 	]	{glossaries}
 
 % METADATA =================================================
@@ -66,12 +66,14 @@
 % Verzeichnisse --------------------------------------------
 
 % Glossar
-\printglossary[style=long]
+\addcontentsline{toc}{chapter}{\glossaryname}
+\printglossary[style=long,title=Begriffe]
 
 % Technologien
 \printglossary[type=technologies,style=long]
 
 % Abbildungsverzeichnis
+\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 
 % Literaturverzeichnis

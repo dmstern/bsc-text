@@ -111,7 +111,7 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 
 %\subsection{Möglichkeiten des Erreichens von Plattformunabhängigkeit}
 
-\subsection{Lösungen für die plattformunabhängige App-Entwicklung}
+\subsection[Lösungen]{Lösungen für die plattformunabhängige App-Entwicklung}
 
 [\ldots]%TODO Fertig schreiben
 
@@ -149,7 +149,7 @@ Bei der reinen \gls{js}-Variante ist nach der Selektion aller Absätze zunächst
 	caption=Die selbe Funktionalität wie in \autoref{lst:jq} mit reinem \gls{js}.,
 	]{code/without-jquery.html}
 
-\subsubsection{\gls{ko}} \todo{evtl. andere Überschriften}
+\subsubsection{Knockout} \todo{evtl. andere Überschriften}
 
 Neben \gls{jq} bietet das \gls{ko}-Framework ein weiteres nützliches Hilfsmittel für die Entwicklung von Web-Anwendungen, das ebenso wie \gls{jq} und \gls{jqm} aus einer \gls{js}-Bibliothek besteht und die Verbindung der \gls{html}-Oberfläche mit der Programmlogik der Anwendung mittels \gls{data-binding}, also der dynamischen Anbindung von \gls{ui}-Komponenten zu Datenfeldern auf Programmebene, erheblich vereinfacht.
 Das \gls{data-binding} wird bei \gls{ko} durch das \gls{mvvm}-Pattern realisiert, das Entwicklern eine Trennung zwischen Benutzeroberfläche und \gls{ui}-Logik ermöglicht.
@@ -211,7 +211,7 @@ Zwar lässt sich diese Anforderung ohne Probleme mit einfachem \gls{js} lösen, 
 
 \end{comment}
 
-\subsubsection{\Gls{jqm}}
+\subsubsection{JQuery\,Mobile}
 
 Um das Erscheinungsbild und Verhalten von Webseiten an eine bessere Benutzung für mobile Geräte anzupassen, bietet sich der Einsatz eines entsprechenden \gls{gui}-Toolkits an. 
 Die von der \gls{jq-foundation} entwickelte \gls{gui}-Bibliothek \gls{jqm} bietet hier Möglichkeiten für Entwickler von mobilen Webseiten, ihre Dokumente an verschiedene Eigenschaften anzupassen, die gemeinhin unter dem Begriff \gls{laf} zusammengefasst werden, wie dem äußeren Erscheinungsbild, der Fähigkeit, mit Touch-Gesten umzugehen, der Anpassung an die geringere Display-Größe sowie von vielen mobilen \glspl{app} gewohnten Animationen, und somit erwartungskonform zu gestalten.
@@ -264,7 +264,7 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\a
 	\label{fig:without-jqm}
 \end{figure}
 
-\subsubsection{\gls{phonegap}} \label{sec:phonegap}
+\subsubsection{Phonegap\,/\,Cordova} \label{sec:phonegap}
 
 % Vorstellung
 \gls{phonegap} ist ein \gls{opensource}-Framework von \gls{adobe} zur Erstellung von hybriden \glspl{app} und bildet damit die Grundlage für den hier explorierte Ansatz zur plattformunabhängigen \gls{app}-Entwicklung.
@@ -287,7 +287,7 @@ Sowohl der Software-Kern \gls{apache} \gls{cordova} als auch dessen Distribution
 	%TODO -> Welche? Was?
 \cite{GitHub_Logo}
 
-\subsubsection{\gls{pg-build}}
+\subsubsection{PhoneGap\,Build}
 
 Mit seinem Online-Portal \gls{pg-build} bietet \gls{adobe} einen webbasierten Build-Service für \gls{phonegap}-Apps an, der den Bau-Prozesss, im Falle der hybriden \glspl{app} also die eigentliche Anbindung an plattformspezifische Toolkits auf nativer Ebene, auslagert und damit deutlich vereinfacht.
 Wie in \autoref{fig:hybrid-apps-schaubild} dargestellt, muss dieser Entwicklungsschritt im Gegensatz zu den vorherigen\footnote{Also die Entwicklung des Codes sowie Tests.} und der Oberfläche) trotz (oder gerade wegen) des plattformunabhängigen Charakters mehrfach\footnote{Also einmal für jede Zielplattform} ausgeführt werden, um die vorher entwickelte Web-App in die Umgebung einer native App einzubetten (\seename\ \autoref{sec:hybrid-app}).
@@ -372,7 +372,7 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 	natheight=1,
 	]{./images/screenshot_app_android.png}
 	\caption
-	[KURZ]
+	[Tablet-Screenshot mit installierter \gls{phonegap}-\gls{app}]
 	{Die Beispiel-App (\enquote{HelloWorld}) aus \autoref{fig:phonegap-build_apps} aus \gls{pg-build} auf einem \gls{android}-Gerät installiert.}
 	\label{fig:screenshot_app_android}
 \end{figure}

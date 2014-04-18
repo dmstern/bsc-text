@@ -136,7 +136,7 @@
 \newcommand{\spacegap}{3mm}
 \newcommand{\bigbindgap}{1mm}
 \newcommand{\bigspacegap}{4mm}
-\newcommand{\hugespacegap}{15mm}
+\newcommand{\hugespacegap}{14mm}
 
 %------------------ Titelseiten -------------------
 
