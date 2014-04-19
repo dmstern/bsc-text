@@ -7,19 +7,22 @@
 % Layout ===================================================
 
 % Zeilenabstand:
-\renewcommand{\baselinestretch}{1.25} 
-%TODO soll nur in Textteil gelten, nicht in Bildunterschriften, Fußnoten etc.
-%TODO Abstand von Fußnotennummer zu Fußnotentext vergrößern!
+\onehalfspacing
 
 % Hurenkinder- und Schusterjungen-Regel:
 \widowpenalties 3 10000 10000 100
 \clubpenalties 3 10000 10000 100
 \displaywidowpenalty=10000
+
+% Fußnoten auf einer Seite behalten:
 \interfootnotelinepenalty10000
+
+% Abstand von Ziffer zu Fußnotentext:
+\setlength{\footnotemargin}{1.2em}
 
 %-----------------------------------------------------------
 
-%TODO GraphicsSet??? Width und so.
+%TODO GraphicsSet??? Width und so global einstellen.
 
 % Style für Glossar-Begriffe:
 \defglsdisplayfirst[\glsdefaulttype]{\textit{#1}}
