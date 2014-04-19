@@ -89,6 +89,7 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 
 %TODO Gibts hierfür auch so ne Art Grafik-Datenbank wie bei Bib? Dann müsste man den schmonsens nicht hier im Text verteilen.
 %TODO Wie gibt man hier ne Bild-Quelle an?
+	%TODO Eine Referenz für die Grafik (von mir) und alle Referenzen der verwendeten Bilder?
 %TODO Positionierung!
 %TODO Grafiken ohne fileextension
 %TODO Eigenschaften wie Größe etc. zentral definieren statt in jedem Bild!!
@@ -267,12 +268,14 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\a
 \subsubsection{Phonegap\,/\,Cordova} \label{sec:phonegap}
 
 % Vorstellung
-\gls{phonegap} ist ein \gls{opensource}-Framework von \gls{adobe} zur Erstellung von hybriden \glspl{app} und bildet damit die Grundlage für den hier explorierte Ansatz zur plattformunabhängigen \gls{app}-Entwicklung.
-Die Software wurde ursprünglich von der Firma \gls{nitobi} entwickelt, die 2011 von \gls{adobe} aufgekauft wurde \cite{Adobe_Announces_Agreement_to_Acquire_Nitobi_Creator_of_PhoneGap}. 
+\gls{cordova} ist ein \gls{opensource}-Framework von \gls{adobe} zur Erstellung von hybriden \glspl{app} und bildet damit die Grundlage für den hier explorierten Ansatz zur plattformunabhängigen \gls{app}-Entwicklung.
+Die Software wurde ursprünglich unter dem Namen \gls{phonegap} von der Firma \gls{nitobi} entwickelt, die 2011 von \gls{adobe} aufgekauft wurde \cite{Adobe_Announces_Agreement_to_Acquire_Nitobi_Creator_of_PhoneGap}. 
 Später wurde die Code-Basis der \gls{apache} übergeben und dort in \gls{cordova} umbenannt, wodurch das Framework in den Quellen stellenweise unter beiden Namen erscheint.
 \Gls{adobe} \gls{phonegap} baut also als dessen Distribution auf \gls{cordova} auf, wobei derzeit der einzige wesentliche Unterschied im Namen des Pakets besteht (Stand: \citedate{PhoneGap_Cordova_and_whats_in_a_name}), nach eigenen Angaben aber durchaus weitere Tools mit Bezug auf andere \gls{adobe}-Dienste in die \gls{phonegap}-Distribution einfließen können \cite{PhoneGap_Cordova_and_whats_in_a_name}.
-Sowohl der Software-Kern \gls{apache} \gls{cordova} als auch dessen Distribution \gls{phonegap} von \gls{adobe} sind \gls{opensource}-Projekte \cite{PhoneGap_Cordova_and_whats_in_a_name}.
 
+Da das \gls{apache}-Framework als \gls{opensource}-Basis\footnote{Laut \gls{adobe} wird auch \gls{phonegap} immer \gls{opensource}-Software und eine freie Distribution von \gls{apache} \gls{cordova} bleiben \cite{PhoneGap_Cordova_and_whats_in_a_name}.} 
+auch die Grundlage für weitere \gls{cordova}-Distributionen bildet und so auch die Community-Anlaufstelle zur Mitwirkung am \gls{cordova}-Projekt darstellt~\cite{PhoneGap_Cordova_and_whats_in_a_name}, wird im Folgenden weitgehend der Begriff \enquote{\gls{cordova}} verwendet, die meisten Inhalte treffen aber ebenso auf die \gls{adobe}-Version \gls{phonegap} zu. 
+%TODO Nach praktischem Teil nochmal checken!
 
 % Verwendung und Funktionsweise
 %TODO -> Beispiele aus Docs!
@@ -285,7 +288,6 @@ Sowohl der Software-Kern \gls{apache} \gls{cordova} als auch dessen Distribution
 
 %TODO Plattformunterstützung: 
 	%TODO -> Welche? Was?
-\cite{GitHub_Logo}
 
 \subsubsection{PhoneGap\,Build}
 
