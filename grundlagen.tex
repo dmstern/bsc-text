@@ -104,6 +104,10 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 		[Schaubild Hybrid Apps]
 		{Entwicklungsstufen der verschiedenen Arten von \glspl{app}. Während bei der nativen \gls{app} der gesamte Entwicklungszyklus einmal pro \gls{plattform} durchlaufen werden muss, verringert sich der Aufwand für die \gls{web-app} erheblich. Bei der \gls{hybrid-app} muss die Anwendung zwar einmal für jede \gls{plattform} gebaut und ausgeliefert werden um die Schnittstellen für die nativen \glspl{plattform} u implementieren, aber der hauptsächliche Entwicklungsaufwand des Programmierens und Testens fällt aufgrund des generischen Charakters nur einmal an.}
 	\label{fig:hybrid-apps-schaubild}
+	\imagesourcefont
+	\vspace{\imagesourcespace}
+	\imagesourcefont{}
+	\caption*{\imagesourcelabel Eigene Grafik.}
 \end{figure}
 
 \section{Plattformunabhängige App-Entwicklung}
@@ -163,8 +167,12 @@ Diese Aufteilung dient unter anderem der Übersichtlichkeit des Codes und kann b
 	natwidth=1,
 	natheight=1
 	]{./images/mvvm-pattern.png}
-\caption[\gls{mvvm}-Pattern]{Schematische Darstellung des Entwurfsmusters \gls{mvvm}: Die View ist über das \gls{data-binding} mit dem ViewModel verbunden, indem die \gls{ui}-Logik implementiert ist und das mit der Geschäftslogik (Model) interagiert \cite{File:MVVMPattern.png_-_Wikimedia_Commons}.}
+\caption[\gls{mvvm}-Pattern]{Schematische Darstellung des Entwurfsmusters \gls{mvvm}: Die View ist über das \gls{data-binding} mit dem ViewModel verbunden, indem die \gls{ui}-Logik implementiert ist und das mit der Geschäftslogik (Model) interagiert.}
 \label{fig:mvvm-pattern}
+	\imagesourcefont
+	\vspace{\imagesourcespace}
+	\imagesourcefont{}
+	\caption*{\imagesourcelabel Wikimedia Commons \cite{File:MVVMPattern.png_-_Wikimedia_Commons}.}
 \end{figure}
 
 Das \gls{mvvm}-Pattern stellt eine Gliederung der Software in drei Grundlegende Komponenten dar:
@@ -194,6 +202,10 @@ Stattdessen übernimmt das \gls{ko}-Framework die Durchreichung aller Änderunge
 		[\gls{ko}-Beispiel im Browser.]
 		{\gls{ko}-Beispiel aus \autoref{lst:ko} im Browser. Links im Bild: Anzeige bei Initialisierung der Oberfläche, rechts: Benutzereingabe ins Eingabefeld: \enquote{Mars}. \\ Änderungen in der \gls{ui} (Hier: im Eingabefeld) werden sofort im \gls{view-model} registriert und automatisch an alle verknüpften Anzeigen weitergereicht (Hier an das fettgedruckte Begrüßungselement).}
 	\label{fig:ko-hello-world}
+	\imagesourcefont
+	\vspace{\imagesourcespace}
+	\imagesourcefont{}
+	\caption*{\imagesourcelabel Eigener Screenshot.}
 \end{figure}
 
 \begin{comment} % Evtl. später mal, eigentlich doch nicht so eindrücklich wie gedacht.
@@ -241,6 +253,10 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\a
 	]{./images/jqm.png}
 	\caption[\gls{jqm}-Beispiel]{\gls{jqm}-Beispiel aus \autoref{lst:jqm} im Browser.}
 	\label{fig:jqm}
+	\imagesourcefont
+	\vspace{\imagesourcespace}
+	\imagesourcefont{}
+	\caption*{\imagesourcelabel Eigener Screenshot.}
 \end{figure}
 
 \begin{figure}[h!]
@@ -252,6 +268,10 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\a
 	]{./images/without-ui-content-class.png}
 	\caption[Beispiel ohne class-Attribut]{Beispiel-Oberfläche wie in \autoref{fig:jqm}, ohne das class-Attribut in \autoref{lst:ko}, \linename 12.}
 	\label{fig:without-ui-content-class}
+	\imagesourcefont
+	\vspace{\imagesourcespace}
+	\imagesourcefont{}
+	\caption*{\imagesourcelabel Eigener Screenshot.}
 \end{figure}
 
 \begin{figure}[h!]
@@ -263,18 +283,22 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \verb|class="ui-content"| (\a
 	]{./images/without-jqm.png}
 	\caption[Beispiel ohne \gls{jqm}]{Beispiel-Oberfläche wie in \autoref{fig:jqm}, aber ohne die \gls{jqm}-Bibliotheken.}
 	\label{fig:without-jqm}
+	\imagesourcefont
+	\vspace{\imagesourcespace}
+	\imagesourcefont{}
+	\caption*{\imagesourcelabel Eigener Screenshot.}
 \end{figure}
 
 \subsubsection{Phonegap\,/\,Cordova} \label{sec:phonegap}
 
 % Vorstellung
-\gls{cordova} ist ein \gls{opensource}-Framework von \gls{adobe} zur Erstellung von hybriden \glspl{app} und bildet damit die Grundlage für den hier explorierten Ansatz zur plattformunabhängigen \gls{app}-Entwicklung.
+\gls{phonegap} ist ein \gls{opensource}-Framework von \gls{adobe} zur Erstellung von hybriden \glspl{app} und bildet damit die Grundlage für den hier explorierten Ansatz zur plattformunabhängigen \gls{app}-Entwicklung.
 Die Software wurde ursprünglich unter dem Namen \gls{phonegap} von der Firma \gls{nitobi} entwickelt, die 2011 von \gls{adobe} aufgekauft wurde \cite{Adobe_Announces_Agreement_to_Acquire_Nitobi_Creator_of_PhoneGap}. 
 Später wurde die Code-Basis der \gls{apache} übergeben und dort in \gls{cordova} umbenannt, wodurch das Framework in den Quellen stellenweise unter beiden Namen erscheint.
 \Gls{adobe} \gls{phonegap} baut also als dessen Distribution auf \gls{cordova} auf, wobei derzeit der einzige wesentliche Unterschied im Namen des Pakets besteht (Stand: \citedate{PhoneGap_Cordova_and_whats_in_a_name}), nach eigenen Angaben aber durchaus weitere Tools mit Bezug auf andere \gls{adobe}-Dienste in die \gls{phonegap}-Distribution einfließen können \cite{PhoneGap_Cordova_and_whats_in_a_name}.
 
-Da das \gls{apache}-Framework als \gls{opensource}-Basis\footnote{Laut \gls{adobe} wird auch \gls{phonegap} immer \gls{opensource}-Software und eine freie Distribution von \gls{apache} \gls{cordova} bleiben \cite{PhoneGap_Cordova_and_whats_in_a_name}.} 
-auch die Grundlage für weitere \gls{cordova}-Distributionen bildet und so auch die Community-Anlaufstelle zur Mitwirkung am \gls{cordova}-Projekt darstellt~\cite{PhoneGap_Cordova_and_whats_in_a_name}, wird im Folgenden weitgehend der Begriff \enquote{\gls{cordova}} verwendet, die meisten Inhalte treffen aber ebenso auf die \gls{adobe}-Version \gls{phonegap} zu. 
+Da das \gls{apache}-Framework als \gls{opensource}-Basis auch die allgemeine Grundlage für weitere \gls{cordova}-Distributionen bildet und so auch die Community-Anlaufstelle zur Mitwirkung am \gls{cordova}-Projekt darstellt~\cite{PhoneGap_Cordova_and_whats_in_a_name}, wird im Folgenden weitgehend der Begriff \enquote{\gls{cordova}} verwendet, die meisten Inhalte treffen aber ebenso auf die \gls{adobe}-Version \gls{phonegap} zu.
+\todo{Oder ist das nicht eigentlich eh klar, da Cordova du \emph{Grundlage} bildet?}
 %TODO Nach praktischem Teil nochmal checken!
 
 % Verwendung und Funktionsweise
@@ -291,8 +315,10 @@ auch die Grundlage für weitere \gls{cordova}-Distributionen bildet und so auch 
 
 \subsubsection{PhoneGap\,Build}
 
-Mit seinem Online-Portal \gls{pg-build} bietet \gls{adobe} einen webbasierten Build-Service für \gls{phonegap}-Apps an, der den Bau-Prozesss, im Falle der hybriden \glspl{app} also die eigentliche Anbindung an plattformspezifische Toolkits auf nativer Ebene, auslagert und damit deutlich vereinfacht.
-Wie in \autoref{fig:hybrid-apps-schaubild} dargestellt, muss dieser Entwicklungsschritt im Gegensatz zu den vorherigen\footnote{Also die Entwicklung des Codes sowie Tests.} und der Oberfläche) trotz (oder gerade wegen) des plattformunabhängigen Charakters mehrfach\footnote{Also einmal für jede Zielplattform} ausgeführt werden, um die vorher entwickelte Web-App in die Umgebung einer native App einzubetten (\seename\ \autoref{sec:hybrid-app}).
+%TODO Welche Plattformen werden von Build unterstützt?
+
+Mit seinem Online-Portal \gls{pg-build} bietet \gls{adobe} einen webbasierten Build-Service für \gls{phonegap}-Apps an, der den Bau-Prozess, im Falle der hybriden \glspl{app} also die eigentliche Anbindung an plattformspezifische Toolkits auf nativer Ebene, auslagert und damit deutlich vereinfacht.
+Wie in \autoref{fig:hybrid-apps-schaubild} dargestellt, muss dieser Entwicklungsschritt im Gegensatz zu den vorherigen\footnote{Also der Entwicklung des Codes und der Oberfläche sowie Tests.} trotz (oder gerade wegen) des plattformunabhängigen Charakters mehrfach (also einmal für jede Zielplattform) ausgeführt werden, um die vorher entwickelte Web-App in die Umgebung einer native App einzubetten (\seename\ \autoref{sec:hybrid-app}).
 Um also nicht auf jedem Entwicklungsrechner sämtliche Toolkits aller Zielplattformen verwalten zu müssen, können \gls{phonegap}-Entwickler hier ihren Quellcode hochladen und die App für die verschiedenen Zielplattformen im jeweiligen Format zusammenbauen bauen lassen.
 
 Um den Build-Prozess über das den Cloud-Build-Service einzuleiten, erstellt der Entwickler eine \gls{web-app} in seiner gewohnten \gls{ide} in Form von \gls{html}-, \gls{js}- und \gls{css}-Dokumenten, die er anschließend auf \gls{pg-build} hochlädt.
@@ -317,6 +343,10 @@ Während private \glspl{app} entweder als Zip-Paket hochgeladen oder als Link zu
 		[Erstellung einer neuen App auf \gls{pg-build}]
 		{Dialog für die Erstellung einer neuen privaten \gls{app} auf \gls{pg-build}. Links das Eingabefeld zum Eintragen eines \gls{git}-Repository-Links und rechts der Button zum Hochladen von Zip-Archiven.}
 		\label{fig:phonegap-build_create-public}
+	\imagesourcefont
+	\vspace{\imagesourcespace}
+	\imagesourcefont{}
+	\caption*{\imagesourcelabel Eigener Screenshot.}
 \end{figure}
 
 
@@ -332,8 +362,12 @@ Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \g
 	]{./images/phonegap-build_plans.png}
 	\caption
 		[\gls{pg-build}-Pakete]
-		{Übersicht über die verschiedenen Bezahlpakete von \gls{pg-build}: Ab 9,99\,\$ im Monat können Entwickler bis zu 25 private \glspl{app} anlegen, in der kostenlosen Variante nur eine private, aber unbegrenzt öffentliche \cite{Adobe_PhoneGap_Build_Plans}.}
+		{Übersicht über die verschiedenen Bezahlpakete von \gls{pg-build}: Ab 9,99\,\$ im Monat können Entwickler bis zu 25 private \glspl{app} anlegen, in der kostenlosen Variante nur eine private, aber unbegrenzt öffentliche.}
 		\label{fig:phonegap-build_plans}
+	\imagesourcefont
+	\vspace{\imagesourcespace}
+	\imagesourcefont{}
+	\caption*{\imagesourcelabel Eigener Screenshot \cite{Adobe_PhoneGap_Build_Plans}.}
 \end{figure}
 
 
@@ -348,11 +382,15 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 	natwidth=1,
 	natheight=1,
 	]{./images/PhoneGap_Build_Workflow.png}
-	\caption[\gls{pg-build}-Workflow]{Schematische Darstellung eines möglichen Entwicklungsworkflows mit \gls{pg-build}: Der Code wird als Web-Anwendung auf \gls{github} hochgeladen, bei \gls{pg-build} über das \gls{github}-Repository aktualisiert und für die jeweiligen Plattformen gebaut, sodass die plattformspezisichen \glspl{app} heruntergeladen und auf den Zielgeräten installiert werden können.}
+	\caption[\gls{pg-build}-Workflow]{Schematische Darstellung eines möglichen Entwicklungsworkflows mit \gls{pg-build}: Der Code wird als Web-Anwendung auf \gls{github} hochgeladen, bei \gls{pg-build} über das \gls{github}-Repository aktualisiert und für die jeweiligen Plattformen gebaut, sodass die plattformspezifischen \glspl{app} heruntergeladen und auf den Zielgeräten installiert werden können.}
 	\label{fig:phonegap_build_workflow}
+	\imagesourcefont
+	\vspace{\imagesourcespace}
+	\imagesourcefont{}
+	\caption*{\imagesourcelabel Eigene Grafik.}
 \end{figure}
 %TODO Als SVG einbinden! -> Funzt noch nicht.
-
+%TODO Bildquellen (innerhalb des Bilder angeben.)
 
 
 \begin{figure}[h!]
@@ -362,8 +400,12 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 	natwidth=1,
 	natheight=1,
 	]{./images/phonegap-build_apps.png}
-	\caption[\gls{pg-build}-Oberfläche]{Oberfläche des \gls{pg-build}-Portals: Detailansicht für eine Beispiel-\gls{app}. Hier können verschiedene Einstellungen vorgenommen werden, sowie der Code aus einem Repository aktualisert und die fertig gebaute \gls{app} per Download-Button oder \gls{qr} heruntergeladen werden.}
+	\caption[\gls{pg-build}-Oberfläche]{Oberfläche des \gls{pg-build}-Portals: Detailansicht für eine Beispiel-\gls{app}. Hier können verschiedene Einstellungen vorgenommen werden, sowie der Code aus einem Repository aktualisiert und die fertig gebaute \gls{app} per Download-Button oder \gls{qr} heruntergeladen werden.}
 	\label{fig:phonegap-build_apps}
+	\imagesourcefont
+	\vspace{\imagesourcespace}
+	\imagesourcefont{}
+	\caption*{\imagesourcelabel Eigener Screenshot.}
 \end{figure}
 
 \begin{figure}[h!]
@@ -377,14 +419,12 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 	[Tablet-Screenshot mit installierter \gls{phonegap}-\gls{app}]
 	{Die Beispiel-App (\enquote{HelloWorld}) aus \autoref{fig:phonegap-build_apps} aus \gls{pg-build} auf einem \gls{android}-Gerät installiert.}
 	\label{fig:screenshot_app_android}
+	\imagesourcefont
+	\vspace{\imagesourcespace}
+	\imagesourcefont{}
+	\caption*{\imagesourcelabel Eigener Screenshot.}
 \end{figure}
 
 
 %TODO Evtl. Screenshot Test-App im Desktop-Browser und dann als mobile App.
-
-
-\begin{comment}
-Für letzteres bietet PhoneGap eine Javascript-Bibliothek, die auf das Cross-Platform-Framework \gls{cordova} von Apache aufbaut und den Zugriff auf native Features des jeweiligen Betriebssystems ermöglicht. \todo{wie genau, weiß ich noch nicht, noch herausfinden!}
-Bei der konkreten Verwendung von nativen Features muss jedoch teilweise wieder auf die Unterstützung durch die jeweiligen\glspl{plattform}geachtet werden. \todo{oder zumindest muss deklariert werden, was verwendet werden soll. -> checken!}
-\end{comment}
 

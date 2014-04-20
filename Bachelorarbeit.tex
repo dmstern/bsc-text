@@ -8,15 +8,19 @@
 	]	{todonotes}		% ToDo-Notizen
 \usepackage[
 	ngerman
-	]	{translator}
+	]	{translator}	% Übersetzungen ändern
 \usepackage[
 	nonumberlist,		% keine Seitenzahlen anzeigen
 %	acronym,			% ein Abkürzungsverzeichnis erstellen
 	toc,				% Einträge im Inhaltsverzeichnis
 	section				% im Inhaltsverzeichnis auf section-Ebene erscheinen
 	]	{glossaries}
-\usepackage{setspace}
-\usepackage[bottom,hang]{footmisc}
+\usepackage
+		{setspace}		% Abstandseinstellungen (Bspw. Zeilen)
+\usepackage[
+	bottom,
+	hang
+	]	{footmisc}		% Fußnotenformatierung
 
 % METADATA =================================================
 
@@ -71,7 +75,7 @@
 \chapter*{\glossaryname}
 % Begriffe
 \addcontentsline{toc}{chapter}{\glossaryname}
-\printglossary[style=long,title=Begriffe]
+\printglossary[style=long,title=Begriffe und Abkürzungen]
 % Technologien
 \printglossary[type=technologies,style=long]
 
