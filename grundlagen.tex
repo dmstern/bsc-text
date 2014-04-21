@@ -42,7 +42,7 @@ Andererseits bietet die native \gls{app}-Entwicklung vollständige Unterstützun
 Eine \gls{web-app} ist eine Anwendungssoftware, die auf einem Web-Server läuft und auf die der Nutzer mittels eines Browsers zugreifen kann; also eine dynamische Website, wie man sie auch schon vor dem Aufkommen von Smartphones und modernen Tablets kannte. 
 
 Die Grundlage für die Entwicklung von Internetseiten bildet der langjährige Standard \gls{html}, mit dem deren Aussehen, Inhalt und Struktur textuell beschrieben werden kann. 
-In Kombination mit \gls{css} für die modulare Gestaltung einer Website sowie \gls{js}, einer Skriptsprache zur \gls{dom}-Manipulation, bietet die \gls{html}-Spezifikation in ihrer neusten Version \textit{(\gls{html5})} im Grunde alles, was für die Entwicklung einer modernen Benutzerschnittstelle am Computer notwendig ist. 
+In Kombination mit \gls{css} für die modulare Gestaltung einer Website sowie \gls{js}, einer Skriptsprache zur \gls{dom}-Manipulation, bietet die \gls{html}-Spezifikation in ihrer neusten Version \textit{(\gls{html5})} im Grunde alles, was für die Entwicklung einer modernen grafischen Benutzerschnittstelle notwendig ist. 
 Die Fachlogik liegt, neben den Oberflächen-Komponenten in Form von \mbox{\gls{html}-,} \gls{css}- und Javascript-Dokumenten, auf einem Webserver und verarbeitet und reagiert auf Anfragen des Clients.\footnote{Die Rolle des Clients übernimmet hier also der Browser.}
 Als Server-Technologie ist ein breites Spektrum an Programmiersprachen und Umgebungen einsetzbar.\footnote{Einige sind beispielsweise \gls*{php}, \gls*{java}, \gls*{asp} u.\,v.\,a.\,m.}
 
@@ -142,19 +142,24 @@ Während bei herkömmlichem \gls{js} für die Selektion aller Elemente die Funkt
 Auch die nächste Anweisung zur Ausführung einer Operation für alle ausgewählten Elemente (hier: \verb|hide()|, also \textit{ausblenden}) fällt bei \gls{jq} wesentlich kürzer aus, indem die Funktion noch in der selben Zeile wie der vorherigen Selektor aufgerufen werden kann (\verb|$("p").hide();|).
 Bei der reinen \gls{js}-Variante ist nach der Selektion aller Absätze zunächst einmal ein Array ausgewählt, sodass, um auf den einzelnen Elementen Operationen ausführen zu können, durch alle Elemente des Arrays iteriert und die Funktion für jedes Element aufgerufen werden muss (\seename~\autoref{lst:js}, \linenamepl 5\,-\,7). 
 
+%TODO Zentral definieren!!
+\par\noindent\begin{minipage}{\linewidth}
 \lstinputlisting[
 	label=lst:jq,
 	style=htmlcssjs, 
 	caption=\gls{jq}-Beispiel-Code zum Ausblenden aller Absätze \cite{w3schools_jq_hide}.,
 	]{code/jquery.html}
+\end{minipage}\par\addvspace{\topskip}
 
+\par\noindent\begin{minipage}{\linewidth}
 \lstinputlisting[
 	label=lst:js,
 	style=htmlcssjs, 
 	caption=Die selbe Funktionalität wie in \autoref{lst:jq} mit reinem \gls{js}.,
 	]{code/without-jquery.html}
-
-\subsubsection{Knockout} \todo{evtl. andere Überschriften}
+\end{minipage}\par\addvspace{\topskip}
+	
+\subsubsection{Knockout} \todo{evtl. andere Überschriften} \label{ko}
 
 Neben \gls{jq} bietet das \gls{ko}-Framework ein weiteres nützliches Hilfsmittel für die Entwicklung von Web-Anwendungen, das ebenso wie \gls{jq} und \gls{jqm} aus einer \gls{js}-Bibliothek besteht und die Verbindung der \gls{html}-Oberfläche mit der Programmlogik der Anwendung mittels \gls{data-binding}, also der dynamischen Anbindung von \gls{ui}-Komponenten zu Datenfeldern auf Programmebene, erheblich vereinfacht.
 Das \gls{data-binding} wird bei \gls{ko} durch das \gls{mvvm}-Pattern realisiert, das Entwicklern eine Trennung zwischen Benutzeroberfläche und \gls{ui}-Logik ermöglicht.
@@ -185,11 +190,14 @@ Im Code-Beispiel unten (\autoref{lst:ko}) wird ein einfaches \gls{view-model} mi
 Durch den Aufruf der \gls{ko}-Funktion \verb|observable()| ist es nicht notwendig, bei einer Änderung der Daten an der Oberfläche, die Änderung der Anzeige der Daten (\linename 27) explizit anzustoßen (Beispielsweise per EventListener auf einer \gls{ui}-Komponente).
 Stattdessen übernimmt das \gls{ko}-Framework die Durchreichung aller Änderungen im \gls{view-model}, sodass bei einer Benutzereingabe in eines der \verb|<input>|-Felder eine Änderung der Daten im \gls{view-model} registriert wird und automatisch alle damit verbundenen \glspl{view} aktualisiert werden (\seename\ \autoref{fig:ko-hello-world}).\footnote{Hier das \texttt{<h2>}-Element, das mit der \gls{view-model}-Eigenschaft \texttt{fullName} verknüpft ist.}
 
+\par\noindent\begin{minipage}{\linewidth}
 \lstinputlisting[
+%	float,floatplacement=H,
 	label=lst:ko,
 	style=htmlcssjs, 
 	caption=Einfaches Anwendungsbeispiel für die Verwendung der \gls{js}-Bibliothek \gls{ko}.,
 	]{code/ko.html}
+\end{minipage}\par\addvspace{\topskip}
 
 \begin{figure}[h!]
 \centering
@@ -232,11 +240,14 @@ Die von der \gls{jq-foundation} entwickelte \gls{gui}-Bibliothek \gls{jqm} biete
 \Gls{jqm} besteht mit einer \gls{js}-Bibliothek und einem zusätzlichen Stylesheet in \gls{css}, aus zwei Dokumenten, deren Einbindung in die \gls{html}-Seite analog zu der von \gls{jq} per Verlinkung als \verb|<script>|- beziehungsweise \verb|<link>|-\gls{tag} funktioniert.
 Da \gls{jqm} auf \gls{jq} aufbaut, muss auch der Link zum \gls{jq}-Script gesetzt sein, um auf die benötigten Funktionen zugreifen zu können (\seename\ \autoref{lst:jqm}, \linenamepl 3\,-\,5).
 
+\par\noindent\begin{minipage}{\linewidth}
 \lstinputlisting[
+%	float,floatplacement=H,
 	label=lst:jqm,
 	style=htmlcssjs,
 	caption=Einbindung von \gls{jqm} in eine \gls{html}-Seite \cite{w3schools_jqm_start}.,
 	]{code/jquerymobile.html}
+\end{minipage}\par\addvspace{\topskip}
 	
 Die Definition von \gls{gui}-Elementen geschieht hierbei über das \gls{html}-Attribut \verb|data-role|, dem vordefinierte Werte wie \verb|page|, \verb|header|, \verb|footer|, \verb|button| u.\,v.\,a.\,m. zugeteilt werden können, anhand derer das \gls{jqm}-Framework den \gls{html}-Elementen die jeweilige Style-Definition aus dem Stylesheet zuweisen kann (\seename\ \autoref{lst:jqm}, \linenamepl 8, 9, 12 und 15).
 Somit wird dem Entwickler ermöglicht, ohne zusätzlichen Entwicklungsaufwand für die Programmierung von \gls{gui}-Komponenten oder Erstellung von Style-Definitionen Webseiten mit zeitgemäßem und adäquaten \gls{laf} für mobile Geräte anzupassen (\seename\ \autoref{fig:jqm} und \ref{fig:without-jqm}).
