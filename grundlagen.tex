@@ -26,7 +26,7 @@ Diese enthalten Softwarekomponenten, die zur Entwicklung der \gls{app} notwendig
 Als Programmiersprache für die \gls{android}-\gls{app}-Entwicklung wird \gls{java} verwendet. Das heißt, als Voraussetzung für die Entwicklung von \gls{android}-\glspl{app} ist lediglich eine geeignete \gls{ide} wie \gls{eclipse}, \gls{netbeans} oder \gls{intellij} sowie eine Installation des \gls{java}- und des \gls{android}-\gls{sdk} nötig. 
 \todo{wie sieht es mit dem deployment, also der Auslieferung in appstores etc. aus?}
 Seit 2013 bietet Google darüber hinaus die auf \gls{intellij} basierende und eigens für die \gls{android}-Entwicklung angepasste \gls{ide} \gls{android-studio} an \cite{android-studio}, die bereits alle notwendigen Toolkits enthält. 
-Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm \emph{gebaut} (engl. \enquote{build}) %TODO ins Glossar, allerdings eigentlich mit beugung und so
+Nachdem der Code geschrieben ist, kann er kompiliert und zu einem lauffähigen Programm \emph{gebaut} (engl. \enquote{build}) %TODO ins Glossar, allerdings eigentlich mit Beugung und so
  werden (\seeref{fig:hybrid-apps-schaubild}). Anschließend kann die \gls{app} in dem für die Zielplattform vorgesehenen Dateiformat ausgeliefert und auf dem Zielgerät installiert werden.
 
 % iOS: 
@@ -44,16 +44,16 @@ Eine \gls{web-app} ist eine Anwendungssoftware, die auf einem Web-Server läuft 
 
 Die Grundlage für die Entwicklung von Internetseiten bildet der langjährige Standard \gls{html}, mit dem deren Aussehen, Inhalt und Struktur textuell beschrieben werden kann. 
 In Kombination mit \gls{css} für die modulare Gestaltung einer Website sowie \gls{js}, einer Skriptsprache zur \gls{dom}-Manipulation, bietet die \gls{html}-Spezifikation in ihrer neusten Version \textit{(\gls{html5})} im Grunde alles, was für die Entwicklung einer modernen grafischen Benutzerschnittstelle notwendig ist. 
-Die Fachlogik liegt, neben den Oberflächen-Komponenten in Form von \mbox{\gls{html}-,} \gls{css}- und Javascript-Dokumenten, auf einem Webserver und verarbeitet und reagiert auf Anfragen des Clients.\footnote{Die Rolle des Clients übernimmet hier also der Browser.}
+Die Fachlogik liegt, neben den Oberflächen-Komponenten in Form von \mbox{\gls{html}-,} \gls{css}- und Javascript-Dokumenten, auf einem Webserver und verarbeitet und reagiert auf Anfragen des Clients.\footnote{Die Rolle des Clients übernimmt hier also der Browser.}
 Als Server-Technologie ist ein breites Spektrum an Programmiersprachen und Umgebungen einsetzbar.\footnote{Einige sind beispielsweise \gls*{php}, \gls*{java}, \gls*{asp} u.\,v.\,a.\,m.}
 
 Somit bietet die Entwicklung einer \gls{web-app} (abgesehen von einigen Browser-spezifischen Eigenheiten) bereits eine gewisse Plattformunabhängigkeit, da jedes moderne Betriebssystem über einen Webbrowser verfügt. 
-Zwar müssen Entwickler in bestimmten Details bei der Erstellung des Codes auf die teilweise unterschiedliche Unterstützung (bspw. von \gls{html}-Elementen) \todo{genauer?} durch die verschiedenen Browser achten, aber darüber hinaus wird der Entwicklungsaufwand für eine \gls{web-app} nicht von der Anzahl der Zielplattformen bestimmt, da von Client-Seite aus verschiedene Browser durch die Verbreitung und Beachtung von Web-Standards weitgehend einheitliche \gls{html}-Dokumente lesen und interpretieren können und das Back\-end nicht auf Clients mit unterschiedlichen \gls{plattform}en, sondern auf Webservern liegt, deren \gls{plattform} bei der Entwicklung entweder schon bekannt oder nicht relevant ist.\footnote{Beispielsweise weil auch die Fachlogik plattformunabhängig mit \gls*{php} oder \gls*{java} realisiert wurde.}
+Zwar müssen Entwickler in bestimmten Details bei der Erstellung des Codes auf die teilweise unterschiedliche Unterstützung (beispielsweise von \gls{html}-Elementen) \todo{genauer?} durch die verschiedenen Browser achten, aber darüber hinaus wird der Entwicklungsaufwand für eine \gls{web-app} nicht von der Anzahl der Zielplattformen bestimmt, da von Client-Seite aus verschiedene Browser durch die Verbreitung und Beachtung von Web-Standards weitgehend einheitliche \gls{html}-Dokumente lesen und interpretieren können und das Back\-end nicht auf Clients mit unterschiedlichen \glspl{plattform}, sondern auf Webservern liegt, deren \gls{plattform} bei der Entwicklung entweder schon bekannt oder nicht relevant ist.\footnote{Beispielsweise weil auch die Fachlogik plattformunabhängig mit \gls*{php} oder \gls*{java} realisiert wurde.}
 
-% Dann für sämtliche INet-Dienste auch noch eine \gls{app}
+% Dann für sämtliche Internet-Dienste auch noch eine \gls{app}
 Obwohl es, durch damals eher im Business-Bereich verortete Internet-Handys und Palmtops, auch vor den heute üblichen mobilen Touch-Geräten bereits mobile Internetseiten gab, die speziell für die Darstellung auf kleinen Displays ausgerichtet waren, boten mit der massenhaften Verbreitung von mobilen, internetfähigen Geräten und deren (im Folgenden erläuterten) stark anwendungsorientierten Bedien-Konzepten viele herkömmliche Internet-Dienste nun auch zusätzlich eine native \gls{app} für verschiedene mobile \glspl{plattform} an.
 So sind beispielsweise auch E-Mail-Dienste wie \gls{gmx}, \gls{web-de} oder \gls{gmail} seit der Verbreitung von Smartphones und Tablets auch in Form einer eigenen \gls{app} für \gls{android} und \gls{ios} vertreten, sodass der Nutzer, statt, wie von der Desktop-Computer-Nutzung gewohnt, einen anbieterunabhängigen Mail-Client zu konfigurieren, über den er seine E-Mails abruft, unter Umständen gleich die jeweilige \gls{app} des E-Mail-Anbieters startet \cite{gmx, web.de, gmail}.
-Das heißt, der Nutzer folgt einem geänderten Bedienungsmuster seines Mobilgeräts gegenüber der herkömmlichen Computer-Nutzung: um zu einem bestimmten Ergebnis zu gelangen (bspw. \emph{Nachrichten lesen}) also die Frage zu beantworten, \emph{wie} er dahin gelangt (Einen Browser öffnen und zur gewünschten Seite navigieren: www.tagesschau.de), ist es für Anwender heutiger Mobilsysteme naheliegend, gleich die passende \gls{app} zu starten (Hier bspw. die Tagesschau-\gls{app}).
+Das heißt, der Nutzer folgt einem geänderten Bedienungsmuster seines Mobilgeräts gegenüber der herkömmlichen Computer-Nutzung: um zu einem bestimmten Ergebnis zu gelangen (beispielsweise \emph{Nachrichten lesen}) also die Frage zu beantworten, \emph{wie} er dahin gelangt (Einen Browser öffnen und zur gewünschten Seite navigieren: www.tagesschau.de), ist es für Anwender heutiger Mobilsysteme naheliegend, gleich die passende \gls{app} zu starten (Hier \zB die Tagesschau-\gls{app}).
 
 % Gründe für App statt Web-Anwendung
 Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu einer Website bei der mobilen \gls{app} nicht die komplette Oberfläche\footnote{\gls{html}-, \gls{css}- und JavaScript-Dokumente sowie Grafiken} übertragen werden, sondern lediglich die Nutzdaten,\footnote{Also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform.} was dem Nutzer ein höheres Maß an Performanz einbringt.
@@ -79,20 +79,20 @@ Die \gls{hybrid-app} verbindet Eigenschaften der Nutzung einer nativen \gls{app}
 Da jedes moderne mobile Betriebssystem für Entwickler auch die Möglichkeit bietet, eine Web-View in die zu entwickelnde App einzubinden, also eine \gls{gui}-Komponente, in die \gls{html}-Inhalte hinein geladen werden können, liegt der Ansatz für hybride Apps auf der Hand: Auf Entwicklungsebene wird die Anwendung als Web-App entwickelt, gleichzeitig mithilfe von entsprechenden APIs und Frameworks zur Anbindung an die native Ebene der Zielplattform in eine App für die jeweiligen \glspl{plattform} integriert, sodass auf Benutzerseite die Nutzung einer Web-Anwendung, die in puncto Funktionsumfang, Usability und Look-And-Feel einer nativen mobilen App sehr nahe kommt, möglich wird.
 
 Dieses Vorgehen bietet unter anderem für Web-Entwickler den Vorteil, ihre bisherigen Programmierkenntnisse im Web-Bereich im Wesentlichen auch für die Entwicklung von hybriden \glspl{app} nutzen zu können. 
-So wird in der Regel der grundlegende Teil des Codes für das Frontend, wie bei der Web-Entwicklung, in \gls{html} in Kombination mit \gls{css} und \gls{js} geschrieben und getestet. 
+So wird in der Regel der grundlegende Teil des Codes für das Frontend, wie bei der Web-Entwicklung, mit \gls{html} in Kombination mit \gls{css} und \gls{js} geschrieben und getestet. 
 Da allerdings auf dem mobilen Gerät für das Backend, also die Verarbeitungsinstanzen, nicht, wie bei einer herkömmlichen Web-Anwendung, ein Server mit einer entsprechenden Server-Technologie wie \gls{php} oder \gls{asp} läuft, wird auch dieser Teil der App bei der hybriden Entwicklung meist mit \gls{js} bewerkstelligt. 
-\todo{recherchieren! Kann man Perl oder Python oder so auf einem Android laufen lassen?}
+\todo{Recherchieren! Kann man Perl oder Python oder so auf einem Android laufen lassen?}
 Anschließend muss die Anwendung für die verschiedenen Zielplattformen gebaut werden, um in das jeweilige Container-Format für Apps der verschiedenen \glspl{plattform} eingebunden werden zu können und den Zugriff auf die plattformspezifischen Toolkits durch die Cross-Platform-APIs zu ermöglichen (\autoref{fig:hybrid-apps-schaubild}).
 Hierfür kann es erforderlich sein, dass auf der Entwicklungsplattform die jeweiligen \glspl{sdk} installiert sind, was gegenüber der Web-Entwicklung einen administrativen Mehraufwand darstellt.
 Eine andere Variante ist die Auslagerung des Bauprozesses auf einen externen Build-Server, beispielsweise mithilfe eines externen Web-Service eines Drittanbieters, was den Vorteil hat, die \glspl{sdk} für die Zielplattformen nicht auf jedem Entwicklungsrechner verwalten zu müssen. 
 Allerdings hat der Entwickler durch die Herausgabe des Codes an einen solchen Dienstleister nicht mehr die vollständige Kontrolle über den Code, sodass die Variante der Auslagerung des Build-Prozesses gerade für Closed-Source-Projekte unter Umständen nicht in Frage kommt. 
-Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktionen bezüglich der Plattformunterstützung erteilen, wodurch eventuell eine geringere Anzahl von Zielplattformen unterstützt wird, als von Entwicklerseite gewünscht oder erfordert.\footnote{Beispielsweise unterstützt \gls{pg-build} in der neusten Version 3 nur nur noch die drei großen Mobilplattformen \gls{android}, \gls{ios}, und \gls{win-phone}.}
+Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktionen bezüglich der Plattformunterstützung erteilen, wodurch eventuell eine geringere Anzahl von Zielplattformen unterstützt wird, als von Entwicklerseite gewünscht oder erfordert.\footnote{Beispielsweise unterstützt \gls{pg-build} in der neusten Version 3 nur noch die drei großen Mobilplattformen \gls{android}, \gls{ios}, und \gls{win-phone}.}
 
-%TODO Gibts hierfür auch so ne Art Grafik-Datenbank wie bei Bib? Dann müsste man den schmonsens nicht hier im Text verteilen.
-%TODO Wie gibt man hier ne Bild-Quelle an?
+%TODO Gibt es hierfür auch so eine Art Grafik-Datenbank wie bei Bibliothek? Dann müsste man den Quatsch nicht hier im Text verteilen.
+%TODO Wie gibt man hier eine Bild-Quelle an?
 	%TODO Eine Referenz für die Grafik (von mir) und alle Referenzen der verwendeten Bilder?
 %TODO Positionierung!
-%TODO Grafiken ohne fileextension
+%TODO Grafiken ohne fileextension -> Funktioniert leider nicht mit latexmk.
 %TODO Eigenschaften wie Größe etc. zentral definieren statt in jedem Bild!!
 \begin{figure}[h!]
 \centering
@@ -122,15 +122,13 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 \subsection[Lösungen]{Lösungen für die plattformunabhängige App-Entwicklung}
 %TODO Ergebnisse aus GoogleDocs-Recherche Zusammentragen
 
-[\ldots]%TODO Fertig schreiben
-
 %TODO Gibts es andere Ansätze als den hybriden?
 
 %TODO Lösungen beschreiben und Ansätze kurz erläutern
 %TODO Titanium
 %TODO PhoneGap
 %TODO Appcelarator
-%TODO etc.
+%TODO Weitere Lösungen?
 
 \end{comment}
 
@@ -148,7 +146,6 @@ Während bei herkömmlichem \gls{js} für die Selektion aller Elemente die Funkt
 Auch die nächste Anweisung zur Ausführung einer Operation für alle ausgewählten Elemente (hier: \lstinline|hide()|, also \textit{ausblenden}) fällt bei \gls{jq} wesentlich kürzer aus, indem die Funktion noch in der selben Zeile wie der vorherigen Selektor aufgerufen werden kann (\lstinline|$("p").hide();|).
 Bei der reinen \gls{js}-Variante ist nach der Selektion aller Absätze zunächst einmal ein Array ausgewählt, sodass, um auf den einzelnen Elementen Operationen ausführen zu können, durch alle Elemente des Arrays iteriert und die Funktion für jedes Element aufgerufen werden muss (\seeref{lst:js}, \linenamepl 5\,-\,7).
 
-%TODO Zentral definieren!!
 \par\noindent\begin{minipage}{\linewidth}
 \lstinputlisting[
 	label=lst:jq,
@@ -161,7 +158,7 @@ Bei der reinen \gls{js}-Variante ist nach der Selektion aller Absätze zunächst
 \lstinputlisting[
 	label=lst:js,
 	style=htmlcssjs, 
-	caption=Die selbe Funktionalität wie in \autoref{lst:jq} mit reinem \gls{js}.,
+	caption=Die gleiche Funktionalität wie in \autoref{lst:jq} mit reinem \gls{js}.,
 	]{code/without-jquery.html}
 \end{minipage}\par\addvspace{\topskip}
 	
@@ -190,7 +187,7 @@ Das \gls{mvvm}-Pattern stellt eine Gliederung der Software in drei Grundlegende 
 Die \gls{view} Repräsentiert die Präsentationsschicht, also die Benutzeroberfläche, im Falle der Web-Anwendung also die \gls{html}-Seite, deren Elemente per \gls{data-binding} an Eigenschaften des \glspl{view-model} gebunden werden können. 
 Das \gls{model} steht für die Geschäftslogik und beinhaltet das Datenmodell und die Funktionen, die vom \gls{view-model} angefragt werden können, um beispielsweise Benutzereingaben zu validieren oder Daten für die Anzeige in der Oberfläche zu erhalten (\seeref{fig:mvvm-pattern}).
 
-Ein wesentlicher Menchanismus für die Aktualisierung der Oberfläche bei einer Änderung des \glspl{view-model} von \gls{ko} ist die Verwendung von \glspl{obs}, also Objekten oder Datenfeldern, welche bei Änderungen ihres Inhalts eine Nachricht aussenden, sodass andere Objekte automatisch auf die Zustandsänderung des \glspl{obs} reagieren können, beispielsweise, um die Anzeige auf der Oberfläche zu aktualisieren.
+Ein wesentlicher Mechanismus für die Aktualisierung der Oberfläche bei einer Änderung des \glspl{view-model} von \gls{ko} ist die Verwendung von \glspl{obs}, also Objekten oder Datenfeldern, welche bei Änderungen ihres Inhalts eine Nachricht aussenden, sodass andere Objekte automatisch auf die Zustandsänderung des \glspl{obs} reagieren können, beispielsweise, um die Anzeige auf der Oberfläche zu aktualisieren.
 
 Im Code-Beispiel unten (\autoref{lst:ko}) wird ein einfaches \gls{view-model} mit drei Eigenschaften erstellt: \lstinline|firstName|, \lstinline|lastName|, und \lstinline|fullName|, wobei die ersten beiden \emph{\glspl{obs}} darstellen und letztere aus den anderen beiden Feldern generiert wird (\linenamepl 10\,-\,13).
 Durch den Aufruf der \gls{ko}-Funktion \lstinline|observable()| ist es nicht notwendig, bei einer Änderung der Daten an der Oberfläche, die Änderung der Anzeige der Daten (\linename 27) explizit anzustoßen (Beispielsweise per EventListener auf einer \gls{ui}-Komponente).
@@ -290,7 +287,7 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \lstinline|class="ui-content"
 	\caption*{\imagesourcelabel Eigener Screenshot.}
 \end{figure}
 
-\subsection{Phonegap\,/\,Cordova} \label{sec:phonegap}
+\subsection{Phonegap\,/\,Cordova} \label{sec:cordova}
 
 % Vorstellung ----------------------------------------------
 
@@ -304,19 +301,19 @@ Da das \gls{apache}-Framework als \gls{opensource}-Basis auch die allgemeine Gru
 
 % Beschreibung / Übersicht: Komponenten --------------------
 
-Wie in \autoref{sec:hybrid-app} beschrieben, wird bei der hybriden App-Entwicklung eine Web-App programmiert, die dann in eine native WebView "verpackt" werden kann und somit auf dem jeweiligen Monbilgerät alsl mobile App ausgeführt werden kann. 
-Das \gls{cordova}-Framework besteht darüberhinaus im Wesentlichen aus einer \gls{api} in Form einer \gls{js}-Bibliothek, die es dem Entwickler ermöglicht, auf native Funktionaltitäten des mobilen Betriebsystems zuzugreifen sowie einem mitgelieferten \gls{cli}, das für die Erstellung, Erweiterung und Anpassung der Anwendung, zur Bewerkstelligung des Build-Prozesses für die verschiedenen Plattformen sowie auch der Ausführung in einem Emulator oder auf einem Mobilgerät zum Testen der Anwendung dient \cite{Cordova-Docs_Overview}.
+Wie in \autoref{sec:hybrid-app} beschrieben, wird bei der hybriden App-Entwicklung eine Web-App programmiert, die dann in eine native WebView \enquote{verpackt} werden und somit auf dem jeweiligen Mobilgerät als mobile App ausgeführt werden kann. 
+Das \gls{cordova}-Framework besteht darüber hinaus im Wesentlichen aus einer \gls{api} in Form einer \gls{js}-Bibliothek, die es dem Entwickler ermöglicht, auf native Funktionalitäten des mobilen Betriebssystems zuzugreifen sowie einem mitgelieferten \gls{cli}, das für die Erstellung, Erweiterung und Anpassung der Anwendung, zur Bewerkstelligung des Build-Prozesses für die verschiedenen \glspl{plattform} sowie auch der Ausführung in einem Emulator oder auf einem Mobilgerät zum Testen der Anwendung dient \cite{Cordova-Docs_Overview}.
 
 % Entwicklungsworkflows ------------------------------------
 
-In der Cordova-Dokumentaiton werden zwei grundlegende Entwicklungsszenarien beschrieben, für die das Framework verwendet werden kann. 
-Mit der Version 3.0 wurde das cli Teil des Software-Paktes, das viele Arbeitsschritte automatisiert ausführt und damit den Cordova-Entwicklungsprozess vereinfacht. 
-Der Hauptfokus dieses Wekrzeugs liegt im für die hybride App-Entwicklung grundlegenden Entwicklungsworkflows, oder auch emph{Web-Entwicklungsansatz}.
-Dieser Ansatz bietet die breiteste Plattformunterstützung bei möglichst geringem Mehraufwand für unterschiedliche Plattformen und damit den hier hauptsächlich fokussierten Ansatz \cite{Cordova-Docs_CLI}.
+In der Cordova-Dokumentation werden zwei grundlegende Entwicklungsszenarien beschrieben, für die das Framework verwendet werden kann. 
+Mit der Version 3.0 wurde das \gls{cli} Teil des Software-Paktes, das viele Arbeitsschritte automatisiert ausführt und damit den Cordova-Entwicklungsprozess vereinfacht. 
+Der Hauptfokus dieses Werkzeugs liegt im für die hybride App-Entwicklung grundlegenden Entwicklungsworkflows, dem \emph{Web-Ent\-wick\-lungs\-an\-satz}. %TODO Trennregel checken!
+Dieser Ansatz bietet die breiteste Plattformunterstützung bei möglichst geringem Mehraufwand für unterschiedliche \glspl{plattform} und bildet damit die Grundlage für den hier hauptsächlich fokussierten Ansatz \cite{Cordova-Docs_CLI}.
 
 Soll nur eine bestimmte Zielplattform bedient werden, kann auch nach dem \emph{Nativen-Plattformansatz} entwickelt werden.
-Dieser kann bspw. sinnvoll sein, wenn Entwickler mobiler Apps ihre Kenntnisse im Web-Bereich für die Entwicklung mobiler Apps nutzen möchten und sehr plattformspezifische Eigenschaften angepasst werden sollen, ist aber aufgrund des Mangels an entsprechenden Tools nicht oder nur gering für die Entwicklung plattformunabhängiger apps geeignet. 
-Dabei wird das \gls{cli} in erster Linie für die Erstellung des Grundgerüsts der App verwendet, dessen Web-Teil dann mithilfe einer entsprechenden \gls{ide} in Kombination mit einem SDK der jeweiligen Plattform weiter verarbeitet und kompiliert werden kann \cite{Cordova-Docs_CLI}. 
+Dieser kann beispielsweise sinnvoll sein, wenn Entwickler mobiler Apps ihre Kenntnisse im Web-Bereich für die Entwicklung mobiler Apps nutzen möchten und sehr plattformspezifische Eigenschaften angepasst werden sollen, ist aber aufgrund des Mangels an entsprechenden Tools nicht oder nur gering für die Entwicklung plattformunabhängiger \glspl{app} geeignet. 
+Dabei wird das \gls{cli} in erster Linie für die Erstellung des Grundgerüsts der App verwendet, dessen Web-Teil dann mithilfe einer entsprechenden \gls{ide} in Kombination mit einem SDK der jeweiligen \gls{plattform} weiter verarbeitet und kompiliert werden kann \cite{Cordova-Docs_CLI}. 
 
 % Plattform- / Feature-Unterstützung -----------------------
 
@@ -330,9 +327,8 @@ Dabei wird das \gls{cli} in erster Linie für die Erstellung des Grundgerüsts d
 	\caption
 	[\gls{cordova} Plattform- und Feature-Unterstützung]
 	{Plattform- und Feature-Unterstützung des \gls{cordova}-Frameworks: \\ 
-	Bis auf wenige (\enquote{kleinere}) mobile Betriebssysteme bietet \gls{cordova} mit auch über die am weitesten verbreiteten Plattformen wie \gls{android}, \gls{ios} und \gls{win-phone} hinaus die volle Feature-Unterstützung für \gls{amazon-fireos}, \gls{ubuntu-phone} und eine fast vollständige für \gls{blackberry-os}.\\
+	Bis auf wenige (\enquote{kleinere}) mobile Betriebssysteme bietet \gls{cordova} auch über die am weitesten verbreiteten \glspl{plattform} wie \gls{android}, \gls{ios} und \gls{win-phone} hinaus die volle Feature-Unterstützung für \gls{amazon-fireos}, \gls{ubuntu-phone} und eine fast vollständige für \gls{blackberry-os}.\\
 	Für Entwickler von hybriden \glspl{app} dürfte hier auch vor allem die erste Zeile \emph{cordova CLI} interessant sein, da durch die Kompatibilität der jeweiligen Plattform-\glspl{sdk} nur bestimmte Kombinationen von Entwicklungs- und Zielplattform möglich sind.
-	%TODO Erläuternden Text bspw. hier rein.
 	}
 	\label{fig:cordova-platform-support}
 		\imagesourcefont
@@ -344,14 +340,14 @@ Dabei wird das \gls{cli} in erster Linie für die Erstellung des Grundgerüsts d
 
 % Voraussetzungen ------------------------------------------
 
-\gls{cordova} stellt für die Verwendung von nativen Funktionalitäten des mobilen Betriebssystems mit seiner \gls{js}-Plattform-\gls{api} eine Verbindung von der Web-Anwendungsebene zu den jeweiligen SDKs der Zielplattformen her.
-somit müssen, um mit auf plattformspezifische Features zugreifen zu können, auf der Entwicklungsplattform alle \glspl{sdk} der gewünschten Zielplattformen installiert sein.
-Da die \glspl{sdk} jedoch teilweise nur von bestimmten Desktop-Betriebssystemen unterstützt werden, muss das \gls{cli} unter Umständen auf mehreren Rechnern ausgeführt werden, die jeweils nur bestimmte mobile Plattformen bedienen (\seeref{fig:cordova-platform-support}).
+\gls{cordova} stellt für die Verwendung von nativen Funktionalitäten des mobilen Betriebssystems mit seiner \gls{js}-Plattform-\gls{api} eine Verbindung von der Web-Anwendungsebene zu den jeweiligen \glspl{sdk} der Zielplattformen her.
+Somit müssen, um mit auf plattformspezifische Features zugreifen zu können, auf der Entwicklungsplattform alle \glspl{sdk} der gewünschten Zielplattformen installiert sein.
+Da die \glspl{sdk} jedoch teilweise nur von bestimmten Desktop-Betriebssystemen unterstützt werden, muss das \gls{cli} unter Umständen auf mehreren Rechnern ausgeführt werden, die jeweils nur bestimmte mobile \glspl{plattform} bedienen (\seeref{fig:cordova-platform-support}).
 
 % Funktionsweise -------------------------------------------
 
 Nachdem das \gls{cordova}-Framework auf dem Entwicklungsrechner installiert ist, kann mit dem \gls{cli} ein neues App-Projekt angelegt werden. 
-Dazu muss auf der Kommandozeile in das Entwicklungsverzeichnis für das zu erstellende Projekt navigiert werden und der das Cordova-Tool mit dem \lstinline|create|-Befehl aufgerufen werden (\seeref{lst:create}).
+Dazu muss auf der Kommandozeile in das Entwicklungsverzeichnis für das zu erstellende Projekt navigiert und das \gls{cordova}-Tool mit dem \lstinline|create|-Befehl aufgerufen werden (\seeref{lst:create}).
 
 \begin{lstlisting}[
 	language=bash,
@@ -361,12 +357,12 @@ Dazu muss auf der Kommandozeile in das Entwicklungsverzeichnis für das zu erste
 \end{lstlisting}
 
 Das erste Argument \lstinline|hello-beuth| spezifiziert dabei den Namen des Ordners für das zu erstellende App-Projekt, der mit dem \lstinline|create|-Befehl angelegt wird.
-Der zweite und dritte Parameter sind optional und geben mit der \gls{id} in der wückwärts geschriebenen Domain-Bezeichnung und dem Namen ({\mbox{\enquote{HelloBeuth}}), der später für die App angezeigt wird, weitere Informationen für die App an, die einer \gls{xml}-Datei im neu angelegten Projekt-Ordner hinterlegt werden \cite{Cordova-Docs_CLI}.
+Die anderen beiden Parameter sind optional und geben mit der \gls{id} in der rückwärts geschriebenen Domain-Bezeichnung und dem Namen ({\mbox{\enquote{HelloBeuth}}), der später für die App angezeigt wird, weitere Informationen für die App an, die in einer \gls{xml}-Datei im neu angelegten Projekt-Ordner gespeichert werden \cite{Cordova-Docs_CLI}.
 
-Dabei erstellt das Tool in einem neuen Ordner ein Grundgerüst für die \gls{app}, das die nötige Struktur für den weiteren Entwicklungsprozess enthält (\seeref{fig:cordova-directory}).
+Mit der Ausführung dieses Skripts erstellt das Tool in einem neuen Ordner ein Grundgerüst für die \gls{app}, das die nötige Struktur für den weiteren Entwicklungsprozess enthält (\seeref{fig:cordova-directory}).
 Auf oberster Ebene liegt die Konfigurationsdatei \filename{config.xml}, in der grundlegende Eigenschaften sowie Informationen für den Build-Prozess hinterlegt werden können (\seeref{lst:config.xml}).
 Daneben werden unter anderem (zu diesem Zeitpunkt noch leere) Ordner für Plugins und plattformspezifischen Code sowie ein \filename{www}-Ordner angelegt, der das Grundgerüst für den Web-Teil der \gls{hybrid-app} beinhaltet.
-Neben der Datei \filename{index.html}, die die Beschreibung der Web-Oberfläche für die Anwendung darstellt werden nach üblichen Konventionen in der Webentwicklung weiterhin die Unterordner \filename{js}, \filename{css} und \filename{img} angelegt, worin die zur \gls{app} gehörigen \gls{js}- und \gls{css}-Dateien bzw. Bilder gespeichert werden.
+Neben der Datei \filename{index.html}, die die Beschreibung der Web-Oberfläche für die Anwendung darstellt werden nach üblichen Konventionen in der Webentwicklung weiterhin die Unterordner \filename{js}, \filename{css} und \filename{img} angelegt, worin die zur \gls{app} gehörigen \gls{js}- und \gls{css}-Dateien bzw. Bilder gespeichert werden \cite{Cordova-Docs_CLI}.
 
 %\begin{wrapfigure}{r}{0.4\textwidth} %TODO Soll an richtigem Absatz hängen!!
 \begin{figure}
@@ -397,7 +393,7 @@ Neben der Datei \filename{index.html}, die die Beschreibung der Web-Oberfläche 
 	]{code/hello-beuth/config.xml}
 \end{minipage}\par\addvspace{\topskip}
 
-Die Initialisierung der \gls{app} erfolgt über den \filename{deviceready}-Eventhandler, der standardmäßig von \filename{www/js/index.js} referenziert wird (\seeref{lst:index.html} \linename 40 und \autoref{lst:index.js} \linename 29).
+Die Initialisierung der \gls{app} erfolgt über den \filename{deviceready}-Eventhandler, der standardmäßig von \filename{www/js/index.js} referenziert wird (\seeref{lst:index.html}, \linename 40 und \autoref{lst:index.js}, \linename 29).
 
 
 \par\noindent\begin{minipage}{\linewidth}
@@ -423,7 +419,7 @@ Die Initialisierung der \gls{app} erfolgt über den \filename{deviceready}-Event
 
 Um die Oberfläche der \gls{app} anzuzeigen, lässt sie sich, da sie im Wesentlichen aus einer \gls{html}-Seite besteht, in einem herkömmlichen Browser öffnen (\seeref{fig:cordova-app-browser}).
 Da jedoch das bei der hybriden \gls{app} darunterliegende mobile Betriebssystem hier nicht zur Verfügung steht, ist hier auch keine Anbindung an dessen Funktionalitäten möglich.
-Dafür muss die Anwendung entweder direkt auf einem mobilen Gerät, dessen Plattform die \gls{app} und das \gls{cordova}-\gls{api} unterstützen, oder mithilfe eines Emulators ausgeführt werden (\seeref{fig:android_emulate_install}) \cite{Cordova-Docs_CLI}.
+Dafür muss die Anwendung entweder direkt auf einem mobilen Gerät, dessen \gls{plattform} die \gls{app} und das \gls{cordova}-\gls{api} unterstützen, oder mithilfe eines Emulators ausgeführt werden (\seeref{fig:android_emulate_install}) \cite{Cordova-Docs_CLI}.
 
 \begin{figure}[h!]
 \centering
@@ -460,43 +456,48 @@ Dafür muss die Anwendung entweder direkt auf einem mobilen Gerät, dessen Platt
 \end{figure}
 
 
-Befor die \gls{hybrid-app} mit \gls{cordova} zum Laufen gebracht werden kann, muss sie, wie die meisten Computerprogramme, in ein ausführbares Format überführt, also \emph{gebaut} werden.
-Im Falle der \gls{hybrid-app} bedeutet das, dass diejenigen plattformspezifischen Komponenten der \gls{app} hinzugefügt werden, die nötig sind, um die Verbindung zwischen der plattformunabhängigen Web-Schicht und der nativen Schicht des jeweiligen Zielbetriebsystems herzustellen.
+Bevor die \gls{hybrid-app} mit \gls{cordova} zum Laufen gebracht werden kann, muss sie, wie die meisten Computerprogramme, in ein ausführbares Format überführt, also \emph{gebaut} werden.
+Im Falle der \gls{hybrid-app} bedeutet das, dass diejenigen plattformspezifischen Komponenten der \gls{app} hinzugefügt werden, die nötig sind, um die Verbindung zwischen der plattformunabhängigen Web-Schicht und der nativen Schicht des jeweiligen Zielbetriebssystems herzustellen.
 
 Damit das \gls{cordova}-Framework die entsprechenden Schnittstellen in die Anwendung einfügen kann, muss vor dem Build-Prozess ein Satz an Zielplattformen angegeben werden. 
-Voraussetzung hierfür ist, dass die \glspl{sdk} der jeweiligen Zielplattformen zu der verwendeten Entwicklungsplattform kompatibel installiert sind \cite{Cordova-Docs_CLI}.
+Voraussetzung hierfür ist, dass die \glspl{sdk} der jeweiligen Zielplattformen zu der verwendeten Entwicklungsplattform kompatibel und installiert sind \cite{Cordova-Docs_CLI}.
 
-Über den \lstinline|cordova|-Befehl \lstinline|platform| lassen sich mit den Optionen \lstinline|add| und \lstinline|remove| Plattformen zur Projekt-Konfiguration der Anwendung hinzufügen bzw. entfernen (\seeref{lst:platform-add-remove}).
+Über den \gls{cordova}-Befehl \lstinline|platform| lassen sich mit den Optionen \lstinline|add| und \lstinline|remove| \glspl{plattform} zur Projektkonfiguration der Anwendung hinzufügen bzw. entfernen (\seeref{lst:platform-add-remove}).
 Die Ausführung dieser Befehle wirkt sich auf den Inhalt des \filename{platforms}-Ordners innerhalb der Projektstruktur aus \cite{Cordova-Docs_CLI}.
 
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[
 	language=bash,
-	caption={\gls{cordova}-Skript um Plattformen zum Projekt hinzuzufügen bzw. zu entfernen. \linename 1 fügt die Plattform \gls{android} hinzu, \linename 2 entfernt diese wieder.},
+	caption={\gls{cordova}-Skript um \glspl{plattform} zum Projekt hinzuzufügen bzw. zu entfernen. \linename 1 fügt die \gls{plattform} \gls{android} hinzu, \linename 2 entfernt diese wieder.},
 	label=lst:platform-add-remove]
 	$ cordova platform add android
 	$ cordova platform remove android
 \end{lstlisting}
+\end{minipage}\par\addvspace{\topskip}
 
-Um eine Liste aller Plattformen des Projekts auszugeben, dient der \lstinline|list|-Befehl. Wie bei den meisten anderen Befehlen auch, kann synonym auch eine Kurzschreibweise (\lstinline|ls|) verwendet werden.
+Der \lstinline|list|-Befehl dient dazu, eine Liste aller \glspl{plattform} des Projekts auszugeben. Wie bei den meisten anderen Befehlen auch, kann synonym auch eine Kurzschreibweise (\lstinline|ls|) verwendet werden (\seeref{lst:platform-list}).
 
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[
 	language=bash,
-	caption={\gls{cordova}-Skript zum Auflisten aller Plattformen des Projekts.},
+	caption={\gls{cordova}-Skript zum Auflisten aller \glspl{plattform} des Projekts.},
 	label=lst:platform-list]
 	$ cordova platforms list
 \end{lstlisting}
+\end{minipage}\par\addvspace{\topskip}
 
+\par\noindent\begin{minipage}{\linewidth}
 Anschließend kann mit dem \lstinline|build|-Befehl die \gls{app} gebaut werden:
-
 \begin{lstlisting}[
 	language=bash,
 	caption={Bauen der \gls{cordova}-\gls{app} für \gls{android}.},
 	label=lst:cordova-build]
 	$ cordova build android
 \end{lstlisting}
+\end{minipage}\par\addvspace{\topskip}
 
 Der \lstinline|build|-Befehl stellt dabei eine Kurzform für die beiden Befehle \lstinline|prepare| und  \lstinline|compile| dar (\seeref{lst:prepare-compile}).
-Diese Aufteilung kann beispielsweise sinnvoll sein, um erst den \lstinline|prepare|- Befehl auszuführen und den plattformspezischen Code, den Cordova in \filename{platforms/android} generiert, anschließend mit einer entsprechenden \gls{ide} (wie bspw. \gls{android-studio}) und deren nativem SDK anzupassen und zu kompilieren.\footnote{\vgl Nativ-Entwicklungsansatz, \so.}
+Diese Aufteilung kann beispielsweise sinnvoll sein, um erst den \lstinline|prepare|- Befehl auszuführen und den plattformspezifischen Code, den Cordova in \filename{platforms/android} generiert, anschließend mit einer entsprechenden \gls{ide} (wie beispielsweise \gls{android-studio}) und deren nativem SDK anzupassen und zu kompilieren.\footnote{\vgl Nativ-Entwicklungsansatz, \so.}
 
 \begin{lstlisting}[
 	language=bash,
@@ -525,7 +526,7 @@ Für letzteres müssen unter Umständen noch entsprechende Einstellungen auf dem
 \end{lstlisting}
 
 Um den eigentlichen Mehrwert des \gls{cordova}-Frameworks zu nutzen, also auf native Features der Zielplattformen zuzugreifen, sind verschiedene Plugins nötig, die ebenfalls mit dem \gls{cli} verwaltet werden können.
-\gls{cordova} bietet von Haus aus eine ganze Reihe von Plugins an, es können aber auch eigene entwickelt werden.\footnote{So bietet \zB \gls{adobe} mit seiner \gls{phonegap}-Variante noch einige weitere Plugins wie bspw. den Zugriff auf einen angeschlossenen Barcode-Scanner an, die über die Grundausstattung von \gls{cordova} hinausgehen \cite{Cordova-Docs_CLI}.}
+\gls{cordova} bietet von Haus aus eine ganze Reihe von Plugins an, es können aber auch eigene entwickelt werden.\footnote{So bietet \zB \gls{adobe} mit seiner \gls{phonegap}-Variante noch einige weitere Plugins wie beispielsweise den Zugriff auf einen angeschlossenen Barcode-Scanner an, die über die Grundausstattung von \gls{cordova} hinausgehen \cite{Cordova-Docs_CLI}.}
 
 Plugins bestehen aus einem zusätzlichen Stück Code, der die Kommunikation zu den nativen Komponenten herstellt.
 Das \gls{cordova}-\gls{cli} bietet auch die Möglichkeit, alle verfügbaren Plugins zu durchsuchen, hinzuzufügen, aufzulisten und zu entfernen (\seeref{lst:plugin-search}, \ref{lst:plugin-add}, \ref{lst:plugin-ls} und \ref{lst:plugin-rm}).
@@ -547,7 +548,7 @@ Plugin suchen:
 
 \begin{lstlisting}[
 	language=bash,
-	caption={Analog zum \lstinline|list|-Befehl für Plattformen (\seeref{lst:platform-list}) können auch Plugins des aktuellen Projekts aufgelistet werden.},
+	caption={Analog zum \lstinline|list|-Befehl für \glspl{plattform} (\seeref{lst:platform-list}) können auch Plugins des aktuellen Projekts aufgelistet werden.},
 	label=lst:plugin-ls]
 	$ cordova plugin ls
 \end{lstlisting}
@@ -560,19 +561,16 @@ Plugin suchen:
 \end{lstlisting}
 
 
-
-
-%TODO Referenzen einfügen!!
-
-
-
 \subsection{PhoneGap\,Build}
 
-%TODO Welche Plattformen werden von Build unterstützt?
+Mit seinem Online-Portal \gls{pg-build} bietet \gls{adobe} einen webbasierten Build-Service für \gls{phonegap}-Apps an, der den Bau-Prozess, im Falle der hybriden \glspl{app} also die eigentliche Anbindung an plattformspezifische Toolkits auf nativer Ebene sowie das Einbetten der \gls{web-app} in eine native WebView, auslagert und damit deutlich vereinfacht.
+Wie in \autoref{fig:hybrid-apps-schaubild} dargestellt, muss dieser Entwicklungsschritt im Gegensatz zu den vorherigen\footnote{Also der Entwicklung des Codes und der Oberfläche sowie Tests.} trotz (oder gerade wegen) des plattformunabhängigen Charakters mehrfach (also einmal für jede Zielplattform) ausgeführt werden, um die vorher entwickelte Web-App in die Umgebung einer nativen App einzubetten (\seeref{sec:hybrid-app}).
+Dabei kann unter anderem besonderer Mehraufwand auf der administrativen Ebene entstehen, da, wie im \autoref{sec:cordova} beschrieben, nicht jede Entwicklungsplattform zu den gewünschten Zielplattformen kompatibel ist, und somit für die Verwaltung der verschiedenen \glspl{sdk} und das Bauen der jeweiligen hybriden \glspl{app} der Einsatz mehrerer Entwicklungsplattformen nötig sein kann, sofern ein breites Spektrum an Zielplattformen angestrebt wird
 
-Mit seinem Online-Portal \gls{pg-build} bietet \gls{adobe} einen webbasierten Build-Service für \gls{phonegap}-Apps an, der den Bau-Prozess, im Falle der hybriden \glspl{app} also die eigentliche Anbindung an plattformspezifische Toolkits auf nativer Ebene, auslagert und damit deutlich vereinfacht.
-Wie in \autoref{fig:hybrid-apps-schaubild} dargestellt, muss dieser Entwicklungsschritt im Gegensatz zu den vorherigen\footnote{Also der Entwicklung des Codes und der Oberfläche sowie Tests.} trotz (oder gerade wegen) des plattformunabhängigen Charakters mehrfach (also einmal für jede Zielplattform) ausgeführt werden, um die vorher entwickelte Web-App in die Umgebung einer native App einzubetten (\seeref{sec:hybrid-app}). %TODO Auf die unterschiedlichen Entw.-Plattformen eingehen, die nötig sind, um ein möglichst breites Spektrum an Zielplattformen zu erreichen!! -> S. Cordova / PhoneGap [Dieses "mehrfach" hier heißt ja eigentlich nicht zeitlicher mehraufwand, sondern vor allem administrativen!]
-Um also nicht auf jedem Entwicklungsrechner sämtliche Toolkits aller Zielplattformen verwalten zu müssen, können \gls{phonegap}-Entwickler hier ihren Quellcode hochladen und die App für die verschiedenen Zielplattformen im jeweiligen Format zusammenbauen bauen lassen.
+Um also nicht auf gar mehreren Entwicklungsrechnern sämtliche Toolkits aller erforderlichen Zielplattformen verwalten zu müssen, können \gls{phonegap}-Entwickler hier ihren Quellcode hochladen und die App für die verschiedenen Zielplattformen im jeweiligen Format zusammenbauen bauen lassen.
+Allerdings bietet auch \gls{pg-build} nicht für sämtliche mobilen \glspl{plattform}, die von \gls{cordova}\,/\,\gls{phonegap} unterstützt werden, seinen Service an.
+Während bis Version 2.9 noch \glspl{app} für \gls{ios}, \gls{android}, \gls{win-phone}, \gls{blackberry-os}, \gls{webos} und \gls{symbian} in dem Portal gebaut werden konnten,
+sind ab der Version 3.0 nur die drei größten Betriebssysteme \gls{ios}, \gls{android} und \gls{win-phone} verfügbar \cite{PhoneGap_Build_Documentation_Supported-Platforms}. 
 
 Um den Build-Prozess über das den Cloud-Build-Service einzuleiten, erstellt der Entwickler eine \gls{web-app} in seiner gewohnten \gls{ide} in Form von \gls{html}-, \gls{js}- und \gls{css}-Dokumenten, die er anschließend auf \gls{pg-build} hochlädt.
 Hierfür muss zunächst über die Web-Oberfläche des Portals eine neue \gls{app} angelegt werden.
@@ -625,8 +623,8 @@ Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \g
 
 
 Nach dem Hochgeladen des Codes auf \gls{pg-build}, wird dort automatisch der Build-Prozess für die \glspl{hybrid-app} initiiert.
-Dabei sorgt \gls{pg-build} dafür, dass für jede Plattform die entsprechende \gls{phonegap}-\gls{js}-Bibliothek injiziert wird, welche die \gls{api} zur nativen Betriebssystemebene enthält (\seeref{sec:phonegap}) \cite{PhoneGap_Build_Documentation_getting-started}.
-Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format für die verschiedenen Plattformen als Direkt-Link oder per \gls{qr} heruntergeladen werden (\seeref{fig:phonegap_build_workflow} und \ref{fig:phonegap-build_apps}).
+Dabei sorgt \gls{pg-build} dafür, dass für jede \gls{plattform} die entsprechende \gls{phonegap}-\gls{js}-Bibliothek injiziert wird, welche die \gls{api} zur nativen Betriebssystemebene enthält (\seeref{sec:cordova}) \cite{PhoneGap_Build_Documentation_getting-started}.
+Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format für die verschiedenen \glspl{plattform} als Direkt-Link oder per \gls{qr} heruntergeladen werden (\seeref{fig:phonegap_build_workflow} und \ref{fig:phonegap-build_apps}).
 
 \begin{figure}[h!]
 \centering
@@ -635,15 +633,15 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 	natwidth=1,
 	natheight=1,
 	]{PhoneGap_Build_Workflow}
-	\caption[\gls{pg-build}-Workflow]{Schematische Darstellung eines möglichen Entwicklungsworkflows mit \gls{pg-build}: Der Code wird als Web-Anwendung auf \gls{github} hochgeladen, bei \gls{pg-build} über das \gls{github}-Repository aktualisiert und für die jeweiligen Plattformen gebaut, sodass die plattformspezifischen \glspl{app} heruntergeladen und auf den Zielgeräten installiert werden können.}
+	\caption[\gls{pg-build}-Workflow]{Schematische Darstellung eines möglichen Entwicklungsworkflows mit \gls{pg-build}: Der Code wird als Web-Anwendung auf \gls{github} hochgeladen, bei \gls{pg-build} über das \gls{github}-Repository aktualisiert und für die jeweiligen \glspl{plattform} gebaut, sodass die plattformspezifischen \glspl{app} heruntergeladen und auf den Zielgeräten installiert werden können.}
 	\label{fig:phonegap_build_workflow}
 	\imagesourcefont
 	\vspace{\imagesourcespace}
 	\imagesourcefont{}
 	\caption*{\imagesourcelabel Eigene Grafik.}
 \end{figure}
-%TODO Als SVG einbinden! -> Funzt noch nicht.
-%TODO Bildquellen (innerhalb des Bilder angeben.)
+%TODO Als SVG einbinden! -> Funktioniert noch nicht.
+%TODO Bildquellen (auch die *innerhalb* des Bilder angeben.)
 
 
 \begin{figure}[h!]
@@ -677,7 +675,4 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 	\imagesourcefont{}
 	\caption*{\imagesourcelabel Eigener Screenshot.}
 \end{figure}
-
-
-%TODO Evtl. Screenshot Test-App im Desktop-Browser und dann als mobile App.
 
