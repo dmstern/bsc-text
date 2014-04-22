@@ -1,8 +1,10 @@
 % COMMANDS =================================================
 
+% Querverweise:
 \newcommand{\linename}{Zeile~}
 \newcommand{\linenamepl}{Zeilen~}
-%TODO Auch \seename und andere autorefnamen müssten so ein geschütztes leerzeichen angehängt bekommen.
+%TODO Als Option für neues Kommando "seelst" oder so. -> Siehe Seiten-Option bei Zitationen.
+\newcommand{\seeref}[1]{\seename\ \autoref{#1}}
 
 % Bildunterschrift:
 \newcommand{\imagesourcespace}{-1.5em}
@@ -10,10 +12,16 @@
 \newcommand{\imagesourcename}{Quelle}
 \newcommand{\imagesourcelabel}{\imagesourcename:\ }
 
+\newcommand{\screenshotRes}{140}
+
+% Style für Dateinamen:
+\newcommand{\filename}[1]{\textsf{#1}}
+
 % Layout ===================================================
 
 % Zeilenabstand:
 \onehalfspacing
+%TODO Zeilenabstand in Listings-Beschriftungen muss dem von Abbildungen entpsrechen!!
 
 % Hurenkinder- und Schusterjungen-Regel:
 \widowpenalties 3 10000 10000 100
@@ -69,50 +77,54 @@
 \definecolor{lightred}{rgb}{1,0.4,0.5}
 
 \lstdefinestyle{htmlcssjs} {%
-  % General design
-  backgroundcolor=\color{xlightgray},
-  basicstyle={\footnotesize\ttfamily},   
-  numberstyle=\tiny\color{darkgray},
-  frame=single,
-  rulecolor=\color{lightgray},
-  % line-numbers
-  xleftmargin={0.75cm},
-  numbers=left,
-  stepnumber=1,
-  firstnumber=1,
-  numberfirstline=true,	
-  % Code design
-  identifierstyle=\color{xdarkgray},
-  keywordstyle=\color{lila}\bfseries,
-  ndkeywordstyle=\color{editorGreen}\bfseries,
-  stringstyle=\color{mycyan}\ttfamily,
-  commentstyle=\color{mygreen}\ttfamily,
-%
-  % Code
-  language=HTML5,
-  alsolanguage=JavaScript,
-  alsodigit={.:;},	
-  tabsize=2,
-  showtabs=false,
-  showspaces=false,
-  showstringspaces=false,
-  extendedchars=true,
-  breaklines=true,
-  % German umlauts
-  literate=%
-  {Ö}{{\"O}}1
-  {Ä}{{\"A}}1
-  {Ü}{{\"U}}1
-  {ß}{{\ss}}1
-  {ü}{{\"u}}1
-  {ä}{{\"a}}1
-  {ö}{{\"o}}1
+	% Code
+	language=HTML5,
+	alsolanguage=JavaScript,
+	alsodigit={.:;},	
+	tabsize=2,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	extendedchars=true,
+	breaklines=true,
+	%
+	% Code design
+	identifierstyle=\color{xdarkgray},
+	keywordstyle=\color{lila}\bfseries,
+	ndkeywordstyle=\color{editorGreen}\bfseries,
+	stringstyle=\color{mycyan}\ttfamily,
+	commentstyle=\color{mygreen}\ttfamily,
+	%
+	% German umlauts
+	literate=%
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
 }
 
 % Listing Settings =========================================
 %
 \lstset{
-  caption=\lstname,
-  escapeinside={\%*}{*\%},
+ 	caption=\lstname,
+	escapeinside={\%*}{*\%},
+%	captionpos=b,
+	%
+	% General Design
+	backgroundcolor=\color{xlightgray},
+	basicstyle={\footnotesize\ttfamily},   
+	numberstyle=\tiny\color{darkgray},
+	frame=single,
+	rulecolor=\color{lightgray},
+	%
+	% Line Numbers
+	xleftmargin={0.75cm},
+	numbers=left,
+	stepnumber=1,
+	firstnumber=1,
+	numberfirstline=true,	
 }
 
