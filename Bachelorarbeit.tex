@@ -3,8 +3,8 @@
 % PACKAGES =================================================
 
 \usepackage[
-	textwidth=3.7cm,
-	disable
+	textwidth=3.7cm,	% Breite der Notizen
+	disable				% Nicht drucken 
 	]	{todonotes}		% ToDo-Notizen
 \usepackage[
 	ngerman
@@ -21,6 +21,7 @@
 	bottom,
 	hang
 	]	{footmisc}		% Fußnotenformatierung
+\usepackage{wrapfig}
 
 % METADATA =================================================
 
@@ -71,12 +72,15 @@
 
 % Verzeichnisse --------------------------------------------
 
+%TODO Für alle ignored-Glossar-Begriffe: Hyperlinks entfernen.
 % Glossar
-\chapter*{\glossaryname}
+\chapter*{\glossaryname} 	% Glossar-Überschrift ohne Nummerierung
+
 % Begriffe
 \addcontentsline{toc}{chapter}{\glossaryname}
 \printglossary[style=long,title=Begriffe und Abkürzungen]
-\pagebreak %TODO Besser irgendwie über Glossar-Einstellungen!
+\pagebreak %TODO Besser irgendwie über Glossar-Einstellungen oder Style!
+
 % Technologien
 \printglossary[type=technologies,style=long]
 
@@ -85,6 +89,7 @@
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 
+%TODO Code-Quellen evtl. unter Abschnitt "Software"
 % Literaturverzeichnis
 \MakeBibliography
 %TODO Bildquellenverzeichnis??
