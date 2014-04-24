@@ -88,32 +88,15 @@ Eine andere Variante ist die Auslagerung des Bauprozesses auf einen externen Bui
 Allerdings hat der Entwickler durch die Herausgabe des Codes an einen solchen Dienstleister nicht mehr die vollständige Kontrolle über den Code, sodass die Variante der Auslagerung des Build-Prozesses gerade für Closed-Source-Projekte unter Umständen nicht in Frage kommt. 
 Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktionen bezüglich der Plattformunterstützung erteilen, wodurch eventuell eine geringere Anzahl von Zielplattformen unterstützt wird, als von Entwicklerseite gewünscht oder erfordert.\footnote{Beispielsweise unterstützt \gls{pg-build} in der neusten Version 3 nur noch die drei großen Mobilplattformen \gls{android}, \gls{ios}, und \gls{win-phone}.}
 
-%TODO Gibt es hierfür auch so eine Art Grafik-Datenbank wie bei Bibliothek? Dann müsste man den Quatsch nicht hier im Text verteilen.
-%TODO Wie gibt man hier eine Bild-Quelle an?
-	%TODO Eine Referenz für die Grafik (von mir) und alle Referenzen der verwendeten Bilder?
-%TODO Positionierung!
-%TODO Grafiken ohne fileextension -> Funktioniert leider nicht mit latexmk.
-%TODO Eigenschaften wie Größe etc. zentral definieren statt in jedem Bild!!
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1
-	]{hybrid-apps-schaubild}
-	\caption
-		[Schaubild Hybrid Apps]
+\image{hybrid-apps-schaubild}
+	{width=\fullimagesize}
+	{Schaubild Hybrid Apps}
 		{Entwicklungsstufen der verschiedenen Arten von \glspl{app}. Während bei der nativen \gls{app} der gesamte Entwicklungszyklus einmal pro \gls{plattform} durchlaufen werden muss, verringert sich der Aufwand für die \gls{web-app} erheblich. Bei der \gls{hybrid-app} muss die Anwendung zwar einmal für jede \gls{plattform} gebaut und ausgeliefert werden, um die Schnittstellen für die nativen \glspl{plattform} zu implementieren, aber der hauptsächliche Entwicklungsaufwand des Programmierens und Testens fällt aufgrund des generischen Charakters nur einmal an.}
-	\label{fig:hybrid-apps-schaubild}
-	\imagesourcefont
-	\vspace{\imagesourcespace}
-	\imagesourcefont{}
-	\caption*{\imagesourcelabel Eigene Grafik.}
-\end{figure}
-
+	{Eigene Grafik.}
 
 \begin{comment}
-%TODO Ein Andermal, wenn noch Zeit ist....
+
+%TODO MUSS AUF JEDEN FALL NOCH REIN!!! ::::::::::::::::::::::::
 
 \section{Plattformunabhängige App-Entwicklung}
 
@@ -146,21 +129,15 @@ Während bei herkömmlichem \gls{js} für die Selektion aller Elemente die Funkt
 Auch die nächste Anweisung zur Ausführung einer Operation für alle ausgewählten Elemente (hier: \lstinline|hide()|, also \textit{ausblenden}) fällt bei \gls{jq} wesentlich kürzer aus, indem die Funktion noch in der selben Zeile wie der vorherigen Selektor aufgerufen werden kann (\lstinline|$("p").hide();|).
 Bei der reinen \gls{js}-Variante ist nach der Selektion aller Absätze zunächst einmal ein Array ausgewählt, sodass, um auf den einzelnen Elementen Operationen ausführen zu können, durch alle Elemente des Arrays iteriert und die Funktion für jedes Element aufgerufen werden muss (\seeref{lst:js}, \linenamepl 5\,-\,7).
 
-\par\noindent\begin{minipage}{\linewidth}
-\lstinputlisting[
+\includehtml{
 	label=lst:jq,
-	style=htmlcssjs, 
 	caption=\gls{jq}-Beispiel-Code zum Ausblenden aller Absätze \cite{w3schools_jq_hide}.,
-	]{code/jquery.html}
-\end{minipage}\par\addvspace{\topskip}
+	}{code/jquery.html}
 
-\par\noindent\begin{minipage}{\linewidth}
-\lstinputlisting[
+\includehtml{
 	label=lst:js,
-	style=htmlcssjs, 
 	caption=Die gleiche Funktionalität wie in \autoref{lst:jq} mit reinem \gls{js}.,
-	]{code/without-jquery.html}
-\end{minipage}\par\addvspace{\topskip}
+	}{code/without-jquery.html}
 	
 \subsection{Knockout} \todo{evtl. andere Überschriften} \label{ko}
 
@@ -168,20 +145,12 @@ Neben \gls{jq} bietet das \gls{ko}-Framework ein weiteres nützliches Hilfsmitte
 Das \gls{data-binding} wird bei \gls{ko} durch das \gls{mvvm}-Pattern realisiert, das Entwicklern eine Trennung zwischen Benutzeroberfläche und \gls{ui}-Logik ermöglicht.
 Diese Aufteilung dient unter anderem der Übersichtlichkeit des Codes und kann beispielsweise die Aufteilung der Entwicklung von Benutzerschnittstellen erleichtern, indem die \gls{ui}- und die Geschäftslogik von Softwareentwicklern übernommen werden kann, während Designer den Schwerpunkt auf die Gestaltung der Oberfläche legen können \cite{Model_View_ViewModel__Wikipedia}.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1
-	]{mvvm-pattern}
-\caption[\gls{mvvm}-Pattern]{Schematische Darstellung des Entwurfsmusters \gls{mvvm}: Die View ist über das \gls{data-binding} mit dem ViewModel verbunden, indem die \gls{ui}-Logik implementiert ist und das mit der Geschäftslogik (Model) interagiert.}
-\label{fig:mvvm-pattern}
-	\imagesourcefont
-	\vspace{\imagesourcespace}
-	\imagesourcefont{}
-	\caption*{\imagesourcelabel Wikimedia Commons \cite{MVVMPattern}.}
-\end{figure}
+\image{mvvm-pattern}
+	{width=1\textwidth}
+	{\gls{mvvm}-Pattern}
+		{Schematische Darstellung des Entwurfsmusters \gls{mvvm}: Die View ist über das \gls{data-binding} mit dem ViewModel verbunden, indem die \gls{ui}-Logik implementiert ist und das mit der Geschäftslogik (Model) interagiert.}
+	{Wikimedia Commons \cite{MVVMPattern}.}
+
 
 Das \gls{mvvm}-Pattern stellt eine Gliederung der Software in drei Grundlegende Komponenten dar:
 Die \gls{view} Repräsentiert die Präsentationsschicht, also die Benutzeroberfläche, im Falle der Web-Anwendung also die \gls{html}-Seite, deren Elemente per \gls{data-binding} an Eigenschaften des \glspl{view-model} gebunden werden können. 
@@ -193,31 +162,19 @@ Im Code-Beispiel unten (\autoref{lst:ko}) wird ein einfaches \gls{view-model} mi
 Durch den Aufruf der \gls{ko}-Funktion \lstinline|observable()| ist es nicht notwendig, bei einer Änderung der Daten an der Oberfläche, die Änderung der Anzeige der Daten (\linename 27) explizit anzustoßen (Beispielsweise per EventListener auf einer \gls{ui}-Komponente).
 Stattdessen übernimmt das \gls{ko}-Framework die Durchreichung aller Änderungen im \gls{view-model}, sodass bei einer Benutzereingabe in eines der \lstinline|<input>|-Felder eine Änderung der Daten im \gls{view-model} registriert wird und automatisch alle damit verbundenen \glspl{view} aktualisiert werden (\seeref{fig:ko-hello-world}).\footnote{Hier das \texttt{<h2>}-Element, das mit der \gls{view-model}-Eigenschaft \texttt{fullName} verknüpft ist.}
 
-\par\noindent\begin{minipage}{\linewidth}
-\lstinputlisting[
-%	float,floatplacement=H,
+\includehtml{
 	label=lst:ko,
-	style=htmlcssjs, 
 	caption=Einfaches Anwendungsbeispiel für die Verwendung der \gls{js}-Bibliothek \gls{ko}.,
-	]{code/ko.html}
-\end{minipage}\par\addvspace{\topskip}
+}{code/ko.html}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1
-	]{ko-hello-world}
-	\caption
-		[\gls{ko}-Beispiel im Browser.]
+
+
+\image{ko-hello-world}
+	{width=1\textwidth}
+	{\gls{ko}-Beispiel im Browser.}
 		{\gls{ko}-Beispiel aus \autoref{lst:ko} im Browser. Links im Bild: Anzeige bei Initialisierung der Oberfläche, rechts: Benutzereingabe ins Eingabefeld: \enquote{Mars}. \\ Änderungen in der \gls{ui} (Hier: im Eingabefeld) werden sofort im \gls{view-model} registriert und automatisch an alle verknüpften Anzeigen weitergereicht (Hier an das fettgedruckte Begrüßungselement).}
-	\label{fig:ko-hello-world}
-	\imagesourcefont
-	\vspace{\imagesourcespace}
-	\imagesourcefont{}
-	\caption*{\imagesourcelabel Eigener Screenshot.}
-\end{figure}
+	{Eigener Screenshot.}
+
 
 \subsection{JQuery\,Mobile}
 
@@ -227,14 +184,10 @@ Die von der \gls{jq-foundation} entwickelte \gls{gui}-Bibliothek \gls{jqm} biete
 \Gls{jqm} besteht mit einer \gls{js}-Bibliothek und einem zusätzlichen Stylesheet in \gls{css}, aus zwei Dokumenten, deren Einbindung in die \gls{html}-Seite analog zu der von \gls{jq} per Verlinkung als \lstinline|<script>|- beziehungsweise \lstinline|<link>|-\gls{tag} funktioniert.
 Da \gls{jqm} auf \gls{jq} aufbaut, muss auch der Link zum \gls{jq}-Script gesetzt sein, um auf die benötigten Funktionen zugreifen zu können (\seeref{lst:jqm}, \linenamepl 3\,-\,5).
 
-\par\noindent\begin{minipage}{\linewidth}
-\lstinputlisting[
-%	float,floatplacement=H,
+\includehtml{
 	label=lst:jqm,
-	style=htmlcssjs,
 	caption=Einbindung von \gls{jqm} in eine \gls{html}-Seite \cite{w3schools_jqm_start}.,
-	]{code/jquerymobile.html}
-\end{minipage}\par\addvspace{\topskip}
+	}{code/jquerymobile.html}
 	
 Die Definition von \gls{gui}-Elementen geschieht hierbei über das \gls{html}-Attribut \lstinline|data-role|, dem vordefinierte Werte wie \lstinline|page|, \lstinline|header|, \lstinline|footer|, \lstinline|button| u.\,v.\,a.\,m. zugeteilt werden können, anhand derer das \gls{jqm}-Framework den \gls{html}-Elementen die jeweilige Style-Definition aus dem Stylesheet zuweisen kann (\seeref{lst:jqm}, \linenamepl 8, 9, 12 und 15).
 Somit wird dem Entwickler ermöglicht, ohne zusätzlichen Entwicklungsaufwand für die Programmierung von \gls{gui}-Komponenten oder Erstellung von Style-Definitionen Webseiten mit zeitgemäßem und adäquaten \gls{laf} für mobile Geräte anzupassen (\seeref{fig:jqm} und \ref{fig:without-jqm}).
@@ -242,50 +195,22 @@ Somit wird dem Entwickler ermöglicht, ohne zusätzlichen Entwicklungsaufwand f�
 Neben der Zuweisung von Rollen über das \lstinline|data-role|-Attribut, durch die das Framework den \gls{gui}-Komponenten automatisch entsprechende Style-Definitionen zuweist, können weiterhin über das \lstinline|class|-Attribut direkt Style-Klassen aus dem \gls{jq}-Stylesheet verwendet werden.
 Beispielsweise sorgt im obigen Beispiel der Zusatz \lstinline|class="ui-content"| (\autoref{lst:jqm}, \linename 12) für ein besseres Layout des \lstinline|<div>|-Inhalts, wie der Vergleich ohne das \lstinline|class|-Attribut in \autoref{fig:without-ui-content-class} zeigt.
 
-\begin{figure}[h!]
-\centering
-	\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1
-	]{jqm}
-	\caption[\gls{jqm}-Beispiel]{\gls{jqm}-Beispiel aus \autoref{lst:jqm} im Browser.}
-	\label{fig:jqm}
-	\imagesourcefont
-	\vspace{\imagesourcespace}
-	\imagesourcefont{}
-	\caption*{\imagesourcelabel Eigener Screenshot.}
-\end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1
-	]{without-ui-content-class}
-	\caption[Beispiel ohne class-Attribut]{Beispiel-Oberfläche wie in \autoref{fig:jqm}, ohne das class-Attribut in \autoref{lst:ko}, \linename 12.}
-	\label{fig:without-ui-content-class}
-	\imagesourcefont
-	\vspace{\imagesourcespace}
-	\imagesourcefont{}
-	\caption*{\imagesourcelabel Eigener Screenshot.}
-\end{figure}
+\image{jqm}
+	{width=1\textwidth}
+	{\gls{jqm}-Beispiel}
+	{\gls{jqm}-Beispiel aus \autoref{lst:jqm} im Browser.}
+	{Eigener Screenshot.}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1
-	]{without-jqm}
-	\caption[Beispiel ohne \gls{jqm}]{Beispiel-Oberfläche wie in \autoref{fig:jqm}, aber ohne die \gls{jqm}-Bibliotheken.}
-	\label{fig:without-jqm}
-	\imagesourcefont
-	\vspace{\imagesourcespace}
-	\imagesourcefont{}
-	\caption*{\imagesourcelabel Eigener Screenshot.}
-\end{figure}
+\image{without-ui-content-class}
+	{width=1\textwidth}
+	{Beispiel ohne class-Attribut}{Beispiel-Oberfläche wie in \autoref{fig:jqm}, ohne das class-Attribut in \autoref{lst:ko}, \linename 12.}
+	{Eigener Screenshot.}
+
+\image{without-jqm}
+	{width=1\textwidth}
+	{Beispiel ohne \gls{jqm}}{Beispiel-Oberfläche wie in \autoref{fig:jqm}, aber ohne die \gls{jqm}-Bibliotheken.}
+	{Eigener Screenshot.}
 
 \subsection{Phonegap\,/\,Cordova} \label{sec:cordova}
 
@@ -317,26 +242,13 @@ Dieser Ansatz kann beispielsweise sinnvoll sein, wenn Entwickler mobiler Apps ih
 
 % Plattform- / Feature-Unterstützung -----------------------
 
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1,
-	]{cordova-platform-support}
-	\caption
-	[\gls{cordova} Plattform- und Feature-Unterstützung]
+\image{cordova-platform-support}
+	{width=\fullimagesize}
+	{\gls{cordova} Plattform- und Feature-Unterstützung}
 	{Plattform- und Feature-Unterstützung des \gls{cordova}-Frameworks: \\ 
 	Bis auf wenige (\enquote{kleinere}) mobile Betriebssysteme bietet \gls{cordova} auch über die am weitesten verbreiteten \glspl{plattform} wie \gls{android}, \gls{ios} und \gls{win-phone} hinaus die volle Feature-Unterstützung für \gls{amazon-fireos}, \gls{ubuntu-phone} und eine fast vollständige für \gls{blackberry-os}.\\
-	Für Entwickler von hybriden \glspl{app} dürfte hier auch vor allem die erste Zeile \emph{cordova CLI} interessant sein, da durch die Kompatibilität der jeweiligen Plattform-\glspl{sdk} nur bestimmte Kombinationen von Entwicklungs- und Zielplattform möglich sind.
-	}
-	\label{fig:cordova-platform-support}
-		\imagesourcefont
-		\vspace{\imagesourcespace}
-		\imagesourcefont{}
-		\caption*{\imagesourcelabel Screenshot aus der \gls{cordova}-Dokumentation \cite{Cordova-Docs_Platform-Support}.}
-\end{figure}
-
+	Für Entwickler von hybriden \glspl{app} dürfte hier auch vor allem die erste Zeile \emph{cordova CLI} interessant sein, da durch die Kompatibilität der jeweiligen Plattform-\glspl{sdk} nur bestimmte Kombinationen von Entwicklungs- und Zielplattform möglich sind.}
+	{Screenshot aus der \gls{cordova}-Dokumentation \cite{Cordova-Docs_Platform-Support}.}
 
 % Voraussetzungen ------------------------------------------
 
@@ -364,98 +276,54 @@ Auf oberster Ebene liegt die Konfigurationsdatei \filename{config.xml}, in der g
 Daneben werden unter anderem (zu diesem Zeitpunkt noch leere) Ordner für Plugins und plattformspezifischen Code sowie ein \filename{www}-Ordner angelegt, der das Grundgerüst für den Web-Teil der \gls{hybrid-app} beinhaltet.
 Neben der Datei \filename{index.html}, die die Beschreibung der Web-Oberfläche für die Anwendung darstellt werden nach üblichen Konventionen in der Webentwicklung weiterhin die Unterordner \filename{js}, \filename{css} und \filename{img} angelegt, worin die zur \gls{app} gehörigen \gls{js}- und \gls{css}-Dateien bzw. Bilder gespeichert werden~\cite{Cordova-Docs_CLI}.
 
-%\begin{wrapfigure}{r}{0.4\textwidth} %TODO Soll an richtigem Absatz hängen!!
-\begin{figure}
-\centering
-\includegraphics[
-%	width=1\textwidth,
-	natwidth=1,
-	natheight=1,
-	resolution=\screenshotRes,
-	]{cordova-directory}
-	\caption
-	[Cordova-Dateistruktur]
-	{Dateistruktur einer mit \gls{cordova} erstellten \gls{app}. Das Grundgerüst für die \gls{hybrid-app} wird automatisch angelegt und entspricht den üblichen Web-Entwicklungskonventionen.}
-	\label{fig:cordova-directory}
-		\imagesourcefont
-		\vspace{\imagesourcespace}
-		\imagesourcefont{}
-		\caption*{\imagesourcelabel Eigener Screenshot.}
-\end{figure}
-%\end{wrapfigure}
 
-\par\noindent\begin{minipage}{\linewidth}
-\lstinputlisting[
+\image{cordova-directory}
+	{resolution=\screenshotRes}
+	{\gls{cordova}-Dateistruktur}
+		{Dateistruktur einer mit \gls{cordova} erstellten \gls{app}. Das Grundgerüst für die \gls{hybrid-app} wird automatisch angelegt und entspricht den üblichen Web-Entwicklungskonventionen.}
+	{Eigener Screenshot.}
+
+
+\includehtml{
 	label=lst:config.xml,
 %	language=xml,
-	style=htmlcssjs, 
 	caption={Die Konfigurationsdatei \filename{config.xml}, in der allgemeine Informationen über die \gls{hybrid-app} gespeichert werden. In \linename 2 und 4 tauchen die in \autoref{lst:create} angegebenen optionalen  Parameter \emph{Id} und \emph{Name} wieder auf.},
-	]{code/hello-beuth/config.xml}
-\end{minipage}\par\addvspace{\topskip}
+	}
+	{code/hello-beuth/config.xml}
 
 Die Initialisierung der \gls{app} erfolgt über den \filename{deviceready}-Eventhandler, der standardmäßig von \filename{www/js/index.js} referenziert wird (\seeref{lst:index.html}, \linename 21 und \autoref{lst:index.js}, \linenamepl 11\,u.\,12).
 
 Das in \linename 18 referenzierte Script \lstinline|cordova.js| stellt die \og wesentliche \gls{api} zur nativen Betriebssystemebene dar, ist hier im \filename{www}-Ordner jedoch noch nicht vorhanden, sondern wird erst nach Ausführung des \lstinline|build|-Befehls in seiner jeweiligen plattformspezifischen Ausführung in das entsprechende Unterverzeichnis im Ordner \filename{platforms} eingefügt. 
 
-\par\noindent\begin{minipage}{\linewidth}
-\lstinputlisting[
+\includehtml{
 	firstline=20,
 	lastline=43,
 	label=lst:index.html,
-	style=htmlcssjs, 
 	caption={Startseite der von \gls{cordova} erzeugten \gls{app}, die auf das \lstinline|deviceready|-Event reagiert.},
-	]{code/hello-beuth/www/index.html}
-\end{minipage}\par\addvspace{\topskip}
+	}{code/hello-beuth/www/index.html}
 
-
-\par\noindent\begin{minipage}{\linewidth}
-\lstinputlisting[
+\includehtml{
 	firstline=19,
 	lastline=49,
 	label=lst:index.js,
-	style=htmlcssjs, 
 	caption={Standardmäßig von \gls{cordova} angelegte \gls{js}-Datei \filename{index.js}},
-	]{code/hello-beuth/www/js/index.js}
-\end{minipage}\par\addvspace{\topskip}
+	}{code/hello-beuth/www/js/index.js}
 
 Um die Oberfläche der \gls{app} anzuzeigen, lässt sie sich, da sie im Wesentlichen aus einer \gls{html}-Seite besteht, in einem herkömmlichen Browser öffnen (\seeref{fig:cordova-app-browser}).
 Da jedoch das bei der hybriden \gls{app} darunterliegende mobile Betriebssystem hier nicht zur Verfügung steht, ist hier auch keine Anbindung an dessen Funktionalitäten möglich.
 Dafür muss die Anwendung entweder direkt auf einem mobilen Gerät, dessen \gls{plattform} die \gls{app} und das \gls{cordova}-\gls{api} unterstützen, oder mithilfe eines Emulators ausgeführt werden (\seeref{fig:android_emulate_install}) \cite{Cordova-Docs_CLI}.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	resolution=\screenshotRes,
-	natwidth=1,
-	natheight=1,
-	]{cordova-app-browser}
-	\caption
-	[\gls{cordova}-Beispiel-\gls{app} im Browser]
-	{Die Startseite der Beispiel-\gls{app} aus \autoref{lst:index.html} lässt sich auch im Desktop-Browser öffnen und anzeigen, allerdings kann hier kein \lstinline|deviceready|-Event empfangen werden.}
-	\label{fig:cordova-app-browser}
-		\imagesourcefont
-		\vspace{\imagesourcespace}
-		\imagesourcefont{}
-		\caption*{\imagesourcelabel Eigener Screenshot.}
-\end{figure}
+\image{cordova-app-browser}
+	{resolution=\screenshotRes}
+	{\gls{cordova}-Beispiel-\gls{app} im Browser}
+		{Die Startseite der Beispiel-\gls{app} aus \autoref{lst:index.html} lässt sich auch im Desktop-Browser öffnen und anzeigen, allerdings kann hier kein \lstinline|deviceready|-Event empfangen werden.}
+	{Eigener Screenshot.}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1,
-	]{android_emulate_install}
-	\caption
-	[\gls{cordova}-Beispiel-\gls{app} im \gls{android}-Emulator]
-	{Anzeige in der \glspl{app}-Übersicht (links) und Ausführung der \gls{cordova}-Beispiel-\gls{app} in einem \gls{android}-Emulator (rechts). Das grüne Label zeigt den Empfang des \lstinline|deviceready|-Events an.}
-	\label{fig:android_emulate_install}
-		\imagesourcefont
-		\vspace{\imagesourcespace}
-		\imagesourcefont{}
-		\caption*{\imagesourcelabel \gls{cordova}-Dokumentation \cite{android_emulate_install.png}}
-\end{figure}
-
+\image{android_emulate_install}
+	{width=1\textwidth}
+	{\gls{cordova}-Beispiel-\gls{app} im \gls{android}-Emulator}
+		{Anzeige in der \glspl{app}-Übersicht (links) und Ausführung der \gls{cordova}-Beispiel-\gls{app} in einem \gls{android}-Emulator (rechts). Das grüne Label zeigt den Empfang des \lstinline|deviceready|-Events an.}
+	{\gls{cordova}-Dokumentation \cite{android_emulate_install.png}}
 
 Bevor die \gls{hybrid-app} mit \gls{cordova} zum Laufen gebracht werden kann, muss sie, wie die meisten Computerprogramme, in ein ausführbares Format überführt, also \emph{gebaut} werden.
 Im Falle der \gls{hybrid-app} bedeutet das, dass diejenigen plattformspezifischen Komponenten der \gls{app} hinzugefügt werden, die nötig sind, um die Verbindung zwischen der plattformunabhängigen Web-Schicht und der nativen Schicht des jeweiligen Zielbetriebssystems herzustellen.
@@ -466,7 +334,6 @@ Voraussetzung hierfür ist, dass die \glspl{sdk} der jeweiligen Zielplattformen 
 Über den \gls{cordova}-Befehl \lstinline|platform| lassen sich mit den Optionen \lstinline|add| und \lstinline|remove| \glspl{plattform} zur Projektkonfiguration der Anwendung hinzufügen bzw. entfernen (\seeref{lst:platform-add-remove}).
 Die Ausführung dieser Befehle wirkt sich auf den Inhalt des \filename{platforms}-Ordners innerhalb der Projektstruktur aus \cite{Cordova-Docs_CLI}.
 
-\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[
 	language=bash,
 	caption={\gls{cordova}-Skript um \glspl{plattform} zum Projekt hinzuzufügen bzw. zu entfernen. \linename 1 fügt die \gls{plattform} \gls{android} hinzu, \linename 2 entfernt diese wieder.},
@@ -474,20 +341,20 @@ Die Ausführung dieser Befehle wirkt sich auf den Inhalt des \filename{platforms
 	$ cordova platform add android
 	$ cordova platform remove android
 \end{lstlisting}
-\end{minipage}\par\addvspace{\topskip}
+
 
 Der \lstinline|list|-Befehl dient dazu, eine Liste aller \glspl{plattform} des Projekts auszugeben. Wie bei den meisten anderen Befehlen auch, kann synonym auch eine Kurzschreibweise (\lstinline|ls|) verwendet werden (\seeref{lst:platform-list}).
 
-\par\noindent\begin{minipage}{\linewidth}
+
 \begin{lstlisting}[
 	language=bash,
 	caption={\gls{cordova}-Skript zum Auflisten aller \glspl{plattform} des Projekts.},
 	label=lst:platform-list]
 	$ cordova platforms list
 \end{lstlisting}
-\end{minipage}\par\addvspace{\topskip}
 
-\par\noindent\begin{minipage}{\linewidth}
+
+
 Anschließend kann mit dem \lstinline|build|-Befehl die \gls{app} gebaut werden:
 \begin{lstlisting}[
 	language=bash,
@@ -495,12 +362,12 @@ Anschließend kann mit dem \lstinline|build|-Befehl die \gls{app} gebaut werden:
 	label=lst:cordova-build]
 	$ cordova build android
 \end{lstlisting}
-\end{minipage}\par\addvspace{\topskip}
+
 
 Der \lstinline|build|-Befehl stellt dabei eine Kurzform für die beiden Befehle \lstinline|prepare| und  \lstinline|compile| dar (\seeref{lst:prepare-compile}).
 Diese Aufteilung kann beispielsweise sinnvoll sein, um erst den \lstinline|prepare|- Befehl auszuführen und den plattformspezifischen Code, den Cordova in \filename{platforms/android} generiert, anschließend mit einer entsprechenden \gls{ide} (wie beispielsweise \gls{android-studio}) und deren nativem SDK anzupassen und zu kompilieren.\footnote{\vgl Nativ-Entwicklungsansatz, \so.}
 
-\par\noindent\begin{minipage}{\linewidth}
+
 \begin{lstlisting}[
 	language=bash,
 	caption={Ausführlichere Schreibweise für den \lstinline|build|-Befehl aus \autoref{lst:cordova-build}.},
@@ -508,13 +375,13 @@ Diese Aufteilung kann beispielsweise sinnvoll sein, um erst den \lstinline|prepa
 	$ cordova prepare android
 	$ cordova compile android
 \end{lstlisting}
-\end{minipage}\par\addvspace{\topskip}
+
 
 Ist der Build-Prozess abgeschlossen, kann die fertige \gls{app} auch mit dem \gls{cordova}-\gls{cli} getestet werden. 
 Die Anwendung kann dafür entweder an einen Emulator, der in vielen Fällen mit dem jeweiligen \gls{sdk} mitgeliefert wird, übergeben (\seeref{lst:emulate}) oder direkt auf einem an den Entwicklungsrechner angeschlossenen Mobilgerät ausgeführt werden (\seeref{lst:run}).
 Für letzteres müssen unter Umständen noch entsprechende Einstellungen auf dem Gerät vorgenommen werden \cite{Cordova-Docs_CLI}.
 
-\par\noindent\begin{minipage}{\linewidth}
+
 \begin{lstlisting}[
 	language=bash,
 	caption={Übergibt die \gls{app} an den Emulator des \gls{android}-\glspl{sdk}.},
@@ -528,7 +395,7 @@ Für letzteres müssen unter Umständen noch entsprechende Einstellungen auf dem
 	label=lst:run]
 	$ cordova run android
 \end{lstlisting}
-\end{minipage}\par\addvspace{\topskip}
+
 
 Um den eigentlichen Mehrwert des \gls{cordova}-Frameworks zu nutzen, also auf native Features der Zielplattformen zuzugreifen, sind verschiedene Plugins nötig, die ebenfalls mit dem \gls{cli} verwaltet werden können.
 \gls{cordova} bietet von Haus aus eine ganze Reihe von Plugins an, es können aber auch eigene entwickelt werden.\footnote{So bietet \zB \gls{adobe} mit seiner \gls{phonegap}-Variante noch einige weitere Plugins wie beispielsweise den Zugriff auf einen angeschlossenen Barcode-Scanner an, die über die Grundausstattung von \gls{cordova} hinausgehen \cite{Cordova-Docs_CLI}.}
@@ -536,7 +403,7 @@ Um den eigentlichen Mehrwert des \gls{cordova}-Frameworks zu nutzen, also auf na
 Plugins bestehen aus einem zusätzlichen Stück Code, der die Kommunikation zu den nativen Komponenten herstellt.
 Das \gls{cordova}-\gls{cli} bietet auch die Möglichkeit, alle verfügbaren Plugins zu durchsuchen, hinzuzufügen, aufzulisten und zu entfernen (\seeref{lst:plugin-search}, \ref{lst:plugin-add}, \ref{lst:plugin-ls} und \ref{lst:plugin-rm}).
 
-\par\noindent\begin{minipage}{\linewidth}
+
 \begin{lstlisting}[
 	language=bash,
 	caption={Suchen von verfügbaren Plugins.},
@@ -564,7 +431,7 @@ Das \gls{cordova}-\gls{cli} bietet auch die Möglichkeit, alle verfügbaren Plug
 	label=lst:plugin-rm]
 	$ cordova plugin rm org.apache.cordova.contacts
 \end{lstlisting}
-\end{minipage}\par\addvspace{\topskip}
+
 
 \subsection{PhoneGap\,Build}
 
@@ -589,96 +456,44 @@ Während private \glspl{app} entweder als Zip-Paket hochgeladen oder als Link zu
 \end{quote}
 
 
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1,
-	]{phonegap-build_create-public}
-	\caption
-		[Erstellung einer neuen App auf \gls{pg-build}]
-		{Dialog für die Erstellung einer neuen privaten \gls{app} auf \gls{pg-build}. Links das Eingabefeld zum Eintragen eines \gls{git}-Repository-Links und rechts der Button zum Hochladen von Zip-Archiven.}
-		\label{fig:phonegap-build_create-public}
-	\imagesourcefont
-	\vspace{\imagesourcespace}
-	\imagesourcefont{}
-	\caption*{\imagesourcelabel Eigener Screenshot.}
-\end{figure}
 
+
+\image{phonegap-build_create-public}
+	{width=1\textwidth}
+	{Erstellung einer neuen App auf \gls{pg-build}}
+		{Dialog für die Erstellung einer neuen privaten \gls{app} auf \gls{pg-build}. Links das Eingabefeld zum Eintragen eines \gls{git}-Repository-Links und rechts der Button zum Hochladen von Zip-Archiven.}
+	{Eigener Screenshot.}
 
 Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \gls{app} beinhaltet, bei der kostenpflichtigen Variante sind bis zu 25 private App enthalten.
 \gls{opensource}-\glspl{app} können bei allen Paketen unbegrenzt angelegt werden (\seeref{fig:phonegap-build_plans}).
 
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1,
-	]{phonegap-build_plans}
-	\caption
-		[\gls{pg-build}-Pakete]
+\image{phonegap-build_plans}
+	{width=1\textwidth}
+	{\gls{pg-build}-Pakete}
 		{Übersicht über die verschiedenen Bezahlpakete von \gls{pg-build}: Ab 9,99\,\$ im Monat können Entwickler bis zu 25 private \glspl{app} anlegen, in der kostenlosen Variante nur eine private, aber unbegrenzt öffentliche.}
-		\label{fig:phonegap-build_plans}
-	\imagesourcefont
-	\vspace{\imagesourcespace}
-	\imagesourcefont{}
-	\caption*{\imagesourcelabel Eigener Screenshot \cite{Adobe_PhoneGap_Build_Plans}.}
-\end{figure}
-
+	{Eigener Screenshot \cite{Adobe_PhoneGap_Build_Plans}.}
 
 Nach dem Hochgeladen des Codes auf \gls{pg-build}, wird dort automatisch der Build-Prozess für die \glspl{hybrid-app} initiiert.
 Dabei sorgt \gls{pg-build} dafür, dass für jede \gls{plattform} die entsprechende \gls{phonegap}-\gls{js}-Bibliothek injiziert wird, welche die \gls{api} zur nativen Betriebssystemebene enthält (\seeref{sec:cordova}) \cite{PhoneGap_Build_Documentation_getting-started}.
 Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format für die verschiedenen \glspl{plattform} als Direkt-Link oder per \gls{qr} heruntergeladen werden (\seeref{fig:phonegap_build_workflow} und \ref{fig:phonegap-build_apps}).
 
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1,
-	]{PhoneGap_Build_Workflow}
-	\caption[\gls{pg-build}-Workflow]{Schematische Darstellung eines möglichen Entwicklungsworkflows mit \gls{pg-build}: Der Code wird als Web-Anwendung auf \gls{github} hochgeladen, bei \gls{pg-build} über das \gls{github}-Repository aktualisiert und für die jeweiligen \glspl{plattform} gebaut, sodass die plattformspezifischen \glspl{app} heruntergeladen und auf den Zielgeräten installiert werden können.}
-	\label{fig:phonegap_build_workflow}
-	\imagesourcefont
-	\vspace{\imagesourcespace}
-	\imagesourcefont{}
-	\caption*{\imagesourcelabel Eigene Grafik.}
-\end{figure}
+\image{phonegap_build_workflow}
+	{width=1\textwidth}
+	{\gls{pg-build}-Workflow}
+		{Schematische Darstellung eines möglichen Entwicklungsworkflows mit \gls{pg-build}: Der Code wird als Web-Anwendung auf \gls{github} hochgeladen, bei \gls{pg-build} über das \gls{github}-Repository aktualisiert und für die jeweiligen \glspl{plattform} gebaut, sodass die plattformspezifischen \glspl{app} heruntergeladen und auf den Zielgeräten installiert werden können.}
+	{Eigene Grafik.}
+
 %TODO Als SVG einbinden! -> Funktioniert noch nicht.
 %TODO Bildquellen (auch die *innerhalb* des Bilder angeben.)
 
+\image{phonegap-build_apps}
+	{width=1\textwidth}
+	{\gls{pg-build}-Oberfläche}
+		{Oberfläche des \gls{pg-build}-Portals: Detailansicht für eine Beispiel-\gls{app}. Hier können verschiedene Einstellungen vorgenommen werden, sowie der Code aus einem Repository aktualisiert und die fertig gebaute \gls{app} per Download-Button oder \gls{qr} heruntergeladen werden.}
+	{Eigener Screenshot.}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1,
-	]{phonegap-build_apps}
-	\caption[\gls{pg-build}-Oberfläche]{Oberfläche des \gls{pg-build}-Portals: Detailansicht für eine Beispiel-\gls{app}. Hier können verschiedene Einstellungen vorgenommen werden, sowie der Code aus einem Repository aktualisiert und die fertig gebaute \gls{app} per Download-Button oder \gls{qr} heruntergeladen werden.}
-	\label{fig:phonegap-build_apps}
-	\imagesourcefont
-	\vspace{\imagesourcespace}
-	\imagesourcefont{}
-	\caption*{\imagesourcelabel Eigener Screenshot.}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[
-	width=1\textwidth,
-	natwidth=1,
-	natheight=1,
-	]{screenshot_app_android}
-	\caption
-	[Tablet-Screenshot mit installierter \gls{phonegap}-\gls{app}]
+\image{screenshot_app_android}
+	{width=1\textwidth}
+	{Tablet-Screenshot mit installierter \gls{phonegap}-\gls{app}}
 	{Die Beispiel-App (\enquote{HelloWorld}) aus \autoref{fig:phonegap-build_apps} aus \gls{pg-build} auf einem \gls{android}-Gerät installiert.}
-	\label{fig:screenshot_app_android}
-	\imagesourcefont
-	\vspace{\imagesourcespace}
-	\imagesourcefont{}
-	\caption*{\imagesourcelabel Eigener Screenshot.}
-\end{figure}
-
+	{Eigener Screenshot.}

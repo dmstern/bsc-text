@@ -15,8 +15,9 @@
 	toc,				% Einträge im Inhaltsverzeichnis
 	section				% im Inhaltsverzeichnis auf section-Ebene erscheinen
 	]	{glossaries}
-\usepackage
-		{setspace}		% Abstandseinstellungen (Bspw. Zeilen)
+\usepackage[
+	onehalfspacing		% Zeilen abstand ca. 1.25%
+	]	{setspace}		% Abstandseinstellungen
 \usepackage[
 	bottom,
 	hang
@@ -72,7 +73,7 @@
 
 % Verzeichnisse --------------------------------------------
 
-%TODO Für alle ignored-Glossar-Begriffe: Hyperlinks entfernen.
+%TODO Für alle ignored (und evtl. auch technologies)-Glossar-Begriffe: Hyperlinks entfernen.
 % Glossar
 \chapter*{\glossaryname} 	% Glossar-Überschrift ohne Nummerierung
 
@@ -92,8 +93,6 @@
 %TODO Code-Quellen evtl. unter Abschnitt "Software"
 % Literaturverzeichnis
 \MakeBibliography
-%TODO Bildquellenverzeichnis??
-%TODO auch subsubsection ins inhaltverzeichnis!!
 
 %-----------------------------------------------------------
 

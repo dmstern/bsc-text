@@ -6,22 +6,66 @@
 %TODO Als Option für neues Kommando "seelst" oder so. -> Siehe Seiten-Option bei Zitationen.
 \newcommand{\seeref}[1]{\seename\ \autoref{#1}}
 
-% Bildunterschrift:
+% Style für Dateinamen:
+\newcommand{\filename}[1]{\textsf{#1}}
+
+% Image-Layout ---------------------------------------------
+
+\newcommand{\fullimagesize}{1\linewidth}
+\newcommand{\screenshotRes}{140}
+
+% Bildunterschrift für Quellenangabe:
 \newcommand{\imagesourcespace}{-1.5em}
 \newcommand{\imagesourcefont}{\captionsetup{font={footnotesize,it}}}
 \newcommand{\imagesourcename}{Quelle}
 \newcommand{\imagesourcelabel}{\imagesourcename:\ }
 
-\newcommand{\screenshotRes}{140}
-
-% Style für Dateinamen:
-\newcommand{\filename}[1]{\textsf{#1}}
+% Neuer Befehl für Bilder:
+\newcommand{\image}[5]{
+	\begin{figure}[h!]
+	\centering
+	\includegraphics[
+		#2,								% 	#4:	Größe: entweder 
+										% 			'width=1\textwidth,' = gesamte Breite 
+										% 			'resolution=\screenshotRes' = Orig.-gr.
+		natwidth=1,						% 		Parameter für latexmk
+		natheight=1						% 		Parameter für latexmk
+		]{#1}							%	#1: Label und Dateiname
+		\caption
+			[#3]						%	#2: Kurzbeschriftung (im Verzeichnis)
+			{#4}						%	#3: Beschriftung (am Bild)
+		\label{fig:#1}					% 		Label: 'fig:' + 'DATEINAME'
+		\vspace{\imagesourcespace}		% 		Abstand zur Quellenangabe
+		\imagesourcefont{}				% 		Schrift f. Quellenangabe
+		\caption*{\imagesourcelabel #5}	%	#5: Quellenangabe
+	\end{figure}
+}
 
 % Layout ===================================================
 
-% Zeilenabstand:
-\onehalfspacing
-%TODO Zeilenabstand in Listings-Beschriftungen muss dem von Abbildungen entpsrechen!!
+% Layout für Code-Listings ---------------------------------
+\newenvironment{code}{
+	\par\noindent\begin{minipage}{\linewidth}	% Code auf einer Seite zusammenhalten
+	\begin{singlespace}							% Einfacher Zeilenabstand
+	}{
+	\end{singlespace}
+	\end{minipage}\par\addvspace{\topskip}
+}
+
+% Neuer Befehl für HTML-Inludes:
+\newcommand{\includehtml}[2]{
+	\begin{code}
+		\lstinputlisting[style=htmlcssjs,#1]{#2} % #1: Weitere Optionen / #2: Code-Datei
+	\end{code}
+}
+
+% Befehl lstlisting zwischenspeichern:
+\let\oldlstlisting=\lstlisting
+% Erweiterter lstlisting-Befehl:
+\renewcommand{\lstlisting}{
+	\singlespacing							% Einfacher Zeilenabstand
+	\oldlstlisting							% Listing Ausgeben
+}
 
 % Hurenkinder- und Schusterjungen-Regel:
 \widowpenalties 3 10000 10000 100
@@ -35,8 +79,6 @@
 \setlength{\footnotemargin}{1.2em}
 
 %-----------------------------------------------------------
-
-%TODO GraphicsSet??? Width und so global einstellen.
 
 % Style für Glossar-Begriffe:
 \defglsdisplayfirst[\glsdefaulttype]{\textit{#1}}
