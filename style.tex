@@ -9,6 +9,12 @@
 % Style für Dateinamen:
 \newcommand{\filename}[1]{\textsf{#1}}
 
+% Variable für Pfad zu Code-Listings:
+\newcommand{\pathtolistings}{codelistings}
+\newcommand{\listingpath}[1]{
+	\renewcommand{\pathtolistings}{#1}
+}
+
 % Image-Layout ---------------------------------------------
 
 \newcommand{\fullimagesize}{1\linewidth}
@@ -52,20 +58,27 @@
 	\end{minipage}\par\addvspace{\topskip}
 }
 
-% Neuer Befehl für HTML-Inludes:
-\newcommand{\includehtml}[2]{
+% Neuer Befehl für include-Code-Listings:
+\newcommand{\includecode}[3]{
 	\begin{code}
-		\lstinputlisting[style=htmlcssjs,#1]{#2} % #1: Weitere Optionen / #2: Code-Datei
+		\lstinputlisting[#1,#2]{\pathtolistings#3} % #1: Weitere Optionen / #2: Code-Datei
 	\end{code}
 }
 
-% Befehl lstlisting zwischenspeichern:
-\let\oldlstlisting=\lstlisting
-% Erweiterter lstlisting-Befehl:
-\renewcommand{\lstlisting}{
-	\singlespacing							% Einfacher Zeilenabstand
-	\oldlstlisting							% Listing Ausgeben
+% Neuer Befehl für HTML-Inludes:
+\newcommand{\includehtml}[2]{
+	\includecode{style=htmlcssjs}{#2}{#1}
 }
+
+% Neuer Befehl für Bash-Inlcudes:
+\newcommand{\includebash}[2]{
+	\includecode{
+		language=bash,
+		label=lst:#1
+	}{#2}{#1}
+}
+
+%-----------------------------------------------------------
 
 % Hurenkinder- und Schusterjungen-Regel:
 \widowpenalties 3 10000 10000 100
