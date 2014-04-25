@@ -28,7 +28,7 @@
 
 % Neuer Befehl für Bilder:
 \newcommand{\image}[5]{
-	\begin{figure}[h!]
+	\begin{figure}[]
 	\centering
 	\includegraphics[
 		#2,								% 	#4:	Größe: entweder 
@@ -73,7 +73,7 @@
 % Neuer Befehl für Bash-Inlcudes:
 \newcommand{\includebash}[2]{
 	\includecode{
-		language=bash,
+		style=shellscript,
 		label=lst:#1
 	}{#2}{#1}
 }
@@ -109,10 +109,10 @@
 
 % Code-Farben ----------------------------------------------
 % EIGENE
-\definecolor{mygreen}{HTML}{6E7917}
+\definecolor{mygreen}{HTML}{93A83C}
 \definecolor{xdarkgray}{HTML}{202020}
 \definecolor{lila}{HTML}{891A44}
-\definecolor{xlightgray}{HTML}{FAFAFA}
+\definecolor{xlightgray}{HTML}{FCFCFC}
 \definecolor{mycyan}{HTML}{056A70}
 \definecolor{darkcyan}{HTML}{1B353B}
 \definecolor{cyan-black}{HTML}{0D2025}
@@ -161,6 +161,38 @@
 	{ö}{{\"o}}1
 }
 
+\lstdefinestyle{shellscript} {%
+	% Code
+	language=bash,
+%	alsolanguage=,
+	alsodigit={.:;},	
+%	otherkeywords={"cordova ", create, add, remove, ls, list, search, rm, run, build},
+%	ndkeywords={platform, platforms, plugin, plugins},
+	tabsize=2,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	extendedchars=true,
+	breaklines=true,
+	%
+	% Code design
+	identifierstyle=\color{xdarkgray},
+	keywordstyle=\color{lila}\bfseries,
+	ndkeywordstyle=\color{editorGreen}\bfseries,
+	stringstyle=\color{mycyan}\ttfamily,
+	commentstyle=\color{mygreen}\ttfamily,
+	%
+	% German umlauts
+	literate=%
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+}
+
 % Listing Settings =========================================
 %
 \lstset{
@@ -168,7 +200,7 @@
 	escapeinside={\%*}{*\%},
 %	captionpos=b,
 	%
-	% General Design
+	% General Listings-Design
 	backgroundcolor=\color{xlightgray},
 	basicstyle={\footnotesize\ttfamily},   
 	numberstyle=\tiny\color{darkgray},
