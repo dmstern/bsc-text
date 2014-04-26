@@ -2,33 +2,43 @@
 
 % PACKAGES =================================================
 
+% ToDo-Notizen:
 \usepackage[
-	textwidth=3.7cm,	% Breite der Notizen
-	disable				% Nicht drucken 
-	]	{todonotes}		% ToDo-Notizen
+	textwidth=3.7cm,		% Breite der Notizen
+	disable					% Nicht drucken 
+	]	{todonotes}	
+
+% Übersetzungen ändern:
 \usepackage[
-	ngerman
-	]	{translator}	% Übersetzungen ändern
+	ngerman					% Neue deutsche Rechtschreibung
+	]	{translator}
+
+% Ein Glossar verwenden
 \usepackage[
-	nonumberlist,		% keine Seitenzahlen anzeigen
-%	acronym,			% ein Abkürzungsverzeichnis erstellen
-	toc,				% Einträge im Inhaltsverzeichnis
-	section				% im Inhaltsverzeichnis auf section-Ebene erscheinen
+	nonumberlist,			% keine Seitenzahlen anzeigen
+%	acronym,				% ein Abkürzungsverzeichnis erstellen
+	toc,					% Einträge im Inhaltsverzeichnis
+	section					% im Inhaltsverzeichnis auf section-Ebene erscheinen
 	]	{glossaries}
+
+% Abstände einstellen:
 \usepackage[
-	onehalfspacing		% Zeilen abstand ca. 1.25%
-	]	{setspace}		% Abstandseinstellungen
+	onehalfspacing			% Zeilen abstand ca. 1.25%
+	]	{setspace}
+
+% Fußnotenformatierung:
 \usepackage[
 	bottom,
 	hang
-	]	{footmisc}		% Fußnotenformatierung
-\usepackage{wrapfig}
+	]	{footmisc}
+
+% Zitat-Formatierungen:
 \usepackage[
 	font={
-		itshape,		% kursiv
-		singlespacing,	% Abstand: Einzeilig
-		raggedright		% linksbündig (rechtsflatternd)
-	}]	{quoting}		% Zitat-Formatierungen
+		itshape,			% kursiv
+		singlespacing,		% Abstand: Einzeilig
+		raggedright			% linksbündig (rechtsflatternd)
+	}]	{quoting}
 
 % METADATA =================================================
 
