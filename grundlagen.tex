@@ -34,7 +34,8 @@ Auch der Software- und Computer-Hersteller Apple bietet mit \gls{xcode} eine fir
 Anders als Google geht der iPhone-Hersteller hier allerdings etwas restriktiver vor. 
 So läuft die \gls{ide} \gls{xcode}, die man für die native \gls{ios}-Entwicklung benötigt, nur unter dem hauseigenen Betriebssystem \gls{osx} und das wiederum nur auf den firmeneigenen Mac-Rechnern \cite{Cordova_Documentation_iOS_Platform_Guide}.
 Darüber hinaus ist für \gls{ios}-Entwickler die Teilnahme am \gls{ios-dev-prog} erforderlich, um \glspl{app} für \gls{apple}-Geräte auszuliefern und auf Geräten installieren zu können, wofür der Konzern einen jährlichen Mitgliedsbeitrag von 99\,\$ im Jahr verlangt \cite{iOS_Developer_Program}.
-So sichert sich Apple, nicht nur durch die kostenpflichtige Mitgliedschaft im \gls{ios-dev-prog}, sondern allein schon durch deren exklusive Platformunterstützung ihres eigenen Mobilbetriebssystems, auch mit jedem Entwickler einen neuen Kunden. \todo{darf man so was hier anmerken, oder lieber weg?}
+So sichert sich Apple, nicht nur durch die kostenpflichtige Mitgliedschaft im \gls{ios-dev-prog}, sondern allein schon durch deren exklusive Platformunterstützung ihres eigenen Mobilbetriebssystems, auch mit jedem Entwickler einen neuen Kunden.\footnote{Diese Restriktion fällt allerdings auch in der unten beschriebenen plattformunabhängigen App-Entwicklung nicht unbedingt weg (\seeref{sec:hybrid-dev}).} \todo{darf man so was hier anmerken, oder lieber weg?}
+
 Ansonsten verläuft der Entwicklungsprozess bei der \gls{ios}-Entwicklung im Prinzip ähnlich zur \gls{android}-Entwicklung (\seeref{fig:hybrid-apps-schaubild}).
 Als Programmiersprache wird \gls{obj-c} verwendet, einer um objektorientierte Elemente erweiterte Variante der Programmiersprache \gls{c}.
 
@@ -238,7 +239,7 @@ Der Hauptfokus dieses Werkzeugs liegt im für die hybride App-Entwicklung grundl
 Dieser Ansatz bietet die breiteste Plattformunterstützung bei möglichst geringem Mehraufwand für unterschiedliche \glspl{plattform} und bildet damit die Grundlage für den hier hauptsächlich fokussierten Ansatz \cite{Cordova-Docs_CLI}.
 
 Soll nur eine bestimmte Zielplattform bedient werden, kann auch nach dem \emph{Nativen-Plattformansatz} entwickelt werden.
-Dabei wird das \gls{cli} in erster Linie für die Erstellung des Grundgerüsts der App verwendet, dessen Web-Teil dann mithilfe einer entsprechenden \gls{ide} in Kombination mit einem SDK der jeweiligen \gls{plattform} weiter verarbeitet und kompiliert werden kann. 
+Dabei wird das \gls{cli} in erster Linie für die Erstellung des Grundgerüsts der App verwendet, dessen Web-Oberfläche und nativer Kern dann mithilfe einer entsprechenden \gls{ide} in Kombination mit einem SDK der jeweiligen \gls{plattform} weiter verarbeitet und kompiliert werden können. 
 Dieser Ansatz kann beispielsweise sinnvoll sein, wenn Entwickler mobiler Apps ihre Kenntnisse im Web-Bereich für die mobile \gls{app}-Entwicklung nutzen möchten und sehr plattformspezifische Eigenschaften angepasst werden sollen, ist aber aufgrund des Mangels an entsprechenden Tools nicht oder nur gering für die Entwicklung plattformunabhängiger \glspl{app} geeignet \cite{Cordova-Docs_CLI}. 
 
 % Plattform- / Feature-Unterstützung -----------------------
@@ -254,7 +255,7 @@ Dieser Ansatz kann beispielsweise sinnvoll sein, wenn Entwickler mobiler Apps ih
 % Voraussetzungen ------------------------------------------
 
 \gls{cordova} stellt für die Verwendung von nativen Funktionalitäten des mobilen Betriebssystems mit seiner \gls{js}-Plattform-\gls{api} eine Verbindung von der Web-Anwendungsebene zu den jeweiligen \glspl{sdk} der Zielplattformen her.
-Somit müssen, um mit auf plattformspezifische Features zugreifen zu können, auf der Entwicklungsplattform alle \glspl{sdk} der gewünschten Zielplattformen installiert sein.
+Somit müssen, um auf plattformspezifische Features zugreifen zu können, auf der Entwicklungsplattform alle \glspl{sdk} der gewünschten Zielplattformen installiert sein.
 Da die \glspl{sdk} jedoch teilweise nur von bestimmten Desktop-Betriebssystemen unterstützt werden, muss das \gls{cli} unter Umständen auf mehreren Rechnern ausgeführt werden, die jeweils nur bestimmte mobile \glspl{plattform} bedienen (\seeref{fig:cordova-platform-support}).
 
 % Funktionsweise -------------------------------------------
@@ -263,7 +264,7 @@ Nachdem das \gls{cordova}-Framework auf dem Entwicklungsrechner installiert ist,
 Dazu muss auf der Kommandozeile in das Entwicklungsverzeichnis für das zu erstellende Projekt navigiert und das \gls{cordova}-Tool mit dem \lstinline|create|-Befehl aufgerufen werden (\seeref{lst:cordova-create}).
 
 \includebash{cordova-create}{
-	caption={Befehl zum erstellen einer Cordova-App.},
+	caption={Befehl zum Erstellen einer Cordova-App.},
 	}
 
 Das erste Argument \lstinline|hello-beuth| spezifiziert dabei den Namen des Ordners für das zu erstellende App-Projekt, der mit dem \lstinline|create|-Befehl angelegt wird.
@@ -272,7 +273,7 @@ Die anderen beiden Parameter sind optional und geben mit der \gls{id} in der rü
 Mit der Ausführung dieses Skripts erstellt das Tool in einem neuen Ordner ein Grundgerüst für die \gls{app}, das die nötige Struktur für den weiteren Entwicklungsprozess enthält (\seeref{fig:cordova-directory}).
 Auf oberster Ebene liegt die Konfigurationsdatei \filename{config.xml}, in der grundlegende Eigenschaften sowie Informationen für den Build-Prozess hinterlegt werden können (\seeref{lst:config.xml}).
 Daneben werden unter anderem (zu diesem Zeitpunkt noch leere) Ordner für Plugins und plattformspezifischen Code sowie ein \filename{www}-Ordner angelegt, der das Grundgerüst für den Web-Teil der \gls{hybrid-app} beinhaltet.
-Neben der Datei \filename{index.html}, die die Beschreibung der Web-Oberfläche für die Anwendung darstellt werden nach üblichen Konventionen in der Webentwicklung weiterhin die Unterordner \filename{js}, \filename{css} und \filename{img} angelegt, worin die zur \gls{app} gehörigen \gls{js}- und \gls{css}-Dateien bzw. Bilder gespeichert werden~\cite{Cordova-Docs_CLI}.
+Neben der Datei \filename{index.html}, die die Beschreibung der Web-Oberfläche für die Anwendung darstellt, werden nach üblichen Konventionen in der Webentwicklung weiterhin die Unterordner \filename{js}, \filename{css} und \filename{img} angelegt, worin die zur \gls{app} gehörigen \gls{js}- und \gls{css}-Dateien bzw. Bilder gespeichert werden~\cite{Cordova-Docs_CLI}.
 
 
 \image{cordova-directory}
@@ -430,7 +431,7 @@ Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \g
 		{Übersicht über die verschiedenen Bezahlpakete von \gls{pg-build}: Ab 9,99\,\$ im Monat können Entwickler bis zu 25 private \glspl{app} anlegen, in der kostenlosen Variante nur eine private, aber unbegrenzt öffentliche.}
 	{Eigener Screenshot \cite{Adobe_PhoneGap_Build_Plans}.}
 
-Nach dem Hochgeladen des Codes auf \gls{pg-build}, wird dort automatisch der Build-Prozess für die \glspl{hybrid-app} initiiert.
+Nach dem Hochladen des Codes auf \gls{pg-build}, wird dort automatisch der Build-Prozess für die \glspl{hybrid-app} initiiert.
 Dabei sorgt \gls{pg-build} dafür, dass für jede \gls{plattform} die entsprechende \gls{phonegap}-\gls{js}-Bibliothek injiziert wird, welche die \gls{api} zur nativen Betriebssystemebene enthält (\seeref{sec:cordova}) \cite{PhoneGap_Build_Documentation_getting-started}.
 Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format für die verschiedenen \glspl{plattform} als Direkt-Link oder per \gls{qr} heruntergeladen werden (\seeref{fig:phonegap_build_workflow} und \ref{fig:phonegap-build_apps}).
 
