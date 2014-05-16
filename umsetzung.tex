@@ -1,1 +1,63 @@
-%\chapter{Praktische Umsetzung}
+\chapter{Praktische Umsetzung} %  (mein Anteil)  verweis auf technische grundlagen.
+
+	\section{Beispiel-Anwendung} %	Zu Explorationszwecken zu implementierender Anwendungsfall (App-Prototyp)
+%		Idee, Anforderungen -> plattformunabhägig
+%		Funktionalitätsbeschreibung
+%		Design (Architektur)
+%		Bezug zur Technologie (Plattform(un)abhängige Anforderungen)
+
+	\section{Kriterien zur Bewertung}
+	%	(Aspekte / Vorüberlegungen (Sicherheit, Verfügbarkeit, plattformspezifische Anforderungen, Usability, ?Entwickler-Komfort?, ?Feature-Reichtum?, ...))
+
+\section{Umsetzung}
+
+\subsection{Ausgewählte Technologie} % Entscheidung und Begründung für 1-2 Frameworks/Lösungen zur genaueren Evaluation
+\subsection{Implementierung} % Beschreibung der konkreten Umsetzung, Implementierung der wesentlichen Features mithilfe der Technologien (Funktionsweise (Wie genau bewerkstelligt Framework die Plattformunabhängigkeit / Was steckt dahinter?))
+
+Um auf die wie in [theorie] beschrieben, 
+%TODO -> hinzufügen und verwenden von features / Bezug auf meine Implementierung / Quellcode / Weitere Möglichkeiten / Grenzen aus Plugin-Docs
+		
+\subsubsection{Zugriff auf die Kontakte-Verwaltung des Geräts}
+
+Im Anwendungsfall \emph{Liste Teilen} der oben beschriebenen Beispielanwendung\todo{Anwendungsfallbeschreibung einfügen.} soll auf das native Adressbuch des Geräts zugegriffen werden, um Kontakte anzuzeigen und auszuwählen, die dann als neue Listenmitglieder in das Listenobjekt der Anwendung eingetragen werden sollen.
+
+Mit dem \gls{cordova}-Plugin \emph{Contacts} lässt sich der Zugriff auf die native Kontaktverwaltung des jeweiligen Betriebssystems bewerkstelligen.
+Dieses bietet beispielsweise die Möglichkeit, nach bestimmten Kontakten im Adressbuch zu suchen, neue Kontakte zu erstellen und dem Adressbuch hinzuzufügen, sowie bestehende Kontakte zu entfernen oder zu duplizieren \cite{Cordova_Plugin_Registry_Contacts}.
+
+Hier sollte nun die Anforderung erfüllt werden, aus der Anwendung heraus die bestehenden Kontakte aus dem Adressbuch anzuzeigen, sodass diese vom Nutzer ausgewählt werden und an die Anwendung übergeben werden können.
+Dazu muss im Wesentlichen die Methode \lstinline|navigator.contacts.find(fields, onSuccess, onError, options)| ausgeführt werden, wobei \lstinline|fields| die anzuzeigenden Datenfelder repräsentiert, \lstinline|onSuccess| die Funktion angibt, die bei erfolgreicher Ausführung der \lstinline|find|-Methode ausgeführt werden soll, \lstinline|onError| den ErrorHandler bei Auftreten eines Fehlers beim Suchen der Kontakte und \lstinline|options| zusätzliche Optionen wie Suchfilter oder ein \lstinline|multiple|-Flag, das angibt, ob mehrere Kontakte zurückgegeben werden sollen.
+
+Da in diesem Beispiel (\seeref{lst:find-contacts}) keine bestimmten, sondern \emph{alle} Kontakte angezeigt werden sollen, wird der \lstinline|find|-Methode kein spezieller \lstinline|filter| übergeben (\linename 22). In der Oberfläche sollen der Name sowie der Anzeige-Name verfügbar sein, sodass der \lstinline|fields|-Parameter die entsprechenden Felder als Array beinhaltet (\linename 24). Bei erfolgreicher Ausführung der \lstinline|find|-Methode werden die zurückgegebenen Kontaktdaten als Parameter in Form eines Arrays, das die entsprechenden JavaScript-Objekte beinhaltet, an die \lstinline|onSuccess|-Methode übergeben und als Ergebnis zurückgeliefert.
+%TODO Am Ende nochmal checken, ob der Code wirklich so geblieben ist (Code + Beschreibung).
+
+	\includehtml{praxis/find-contacts.js} { label=lst:find-contacts, caption={Verwendung des \emph{Contacts}-Plugins von \gls{cordova}.}}
+
+Die in \autoref{lst:find-contacts} zurückgelieferten Daten werden vom ViewModel angefordert, sobald diese in der Oberfläche angezeigt werden sollen (\seeref{lst:ViewModel_Contacts}, \linename 14).
+Dies geschieht in der Methode Methode \lstinline|getContacts()| des \glspl{view-model} (\autoref{lst:ViewModel_Contacts}, \linename 8).
+
+\includehtml{praxis/ViewModel_Contacts.js}{label=lst:ViewModel_Contacts, caption={Wesentlicher Ausschnitt des \glspl{view-model}.},}
+
+Die Methode \lstinline|getContacts| wird hier per Event-Binding an die Kontakt-Komponente gebunden, sodass diese jedes mal aufgerufen wird, wenn die Kontaktliste auf- oder zugeklappt wird (\seeref{lst:contacts-ui}, \linename 3), um die Daten aus dem \gls{model} anzufordern.
+Durch die Bindung der Eigenschaft \lstinline|contacts| in Form eines \emph{Observable Arrays} des \glspl{view-model} (\autoref{lst:ViewModel_Contacts}) an die Listview der Oberfläche werden in dieser Liste alle Kontakte des Adressbuchs angezeigt (\seeref{lst:contacts-ui}, \linename 7).
+
+	\includehtml{praxis/contacts-ui.html}{label=lst:contacts-ui, caption={\gls{ui}-Komponente zur Darstellung der Kontaktliste und Auswahl einzelner Kontakte.},}
+		
+%TODO evtl. auch erst ans Ende des Abschnitts, also Bewertung, Grenzen u Möglichkeiten.
+Während bei nativen App-Entwicklung für \gls{ios} oder \gls{android} Komponenten für die Arbeit mit Kontakten bereitstehen, liefert die \gls{cordova}-\gls{api} hier lediglich Mechanismen für den Zugriff auf die Kontaktdaten, jedoch nicht die entsprechenden UI-Komponenten, da diese vom jeweiligen verwendeten \gls{gui}-Toolkit abhängen.
+Die hier verwendete Oberflächen-Bibliothek \gls{jqm} beinhaltet lediglich allgemeine \glspl{widget} wie Listen, Buttons, Tabellen etc., sodass die Erstellung einer \gls{ui}-Komponente für die Auswahl von Kontakten dem Entwickler überlassen bleibt.
+
+In Verbindung mit der Data-Binding-Bibliothek \gls{ko} kann eine solche Komponente jedoch relativ einfach erstellt werden.
+
+
+
+%			Explorationsergebnisse
+%			Grenzen und Möglichkeiten bei der Umsetzung (Nach jeder Feature-Beschreibung)
+%				Aha-Erlebnisse
+%				Konkrete Quellcode-Beispiele
+%				Ecken und Kanten, Spitzfindigkeiten zeigen 
+%				Eigenschaften, Was fällt auf ? Am Beispiel
+
+	\section{Fazit} % Zusammenfassung der Erfahrung Umsertzung
+%		Benutzung (Technik, Methodik, Entwicklerfreundlichkeit, Kompatibilität mit anderen Systemen / Software)
+%		Bewertung
+%		Vor-/Nachteile (zueinander / gegenüber nativer App-Entw.), Risiken, Chancen

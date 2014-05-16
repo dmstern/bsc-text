@@ -50,6 +50,7 @@
 % Layout ===================================================
 
 % Layout für Code-Listings ---------------------------------
+% (Wird weiter unten referenziert und weiter verfeinert)
 \newenvironment{code}{
 	\par\noindent\begin{minipage}{\linewidth}	% Code auf einer Seite zusammenhalten
 	\begin{singlespace}							% Einfacher Zeilenabstand
@@ -59,6 +60,7 @@
 }
 
 % Neuer Befehl für include-Code-Listings:
+% (Wird weiter unten referenziert und weiter verfeinert)
 \newcommand{\includecode}[3]{
 	\begin{code}
 		\lstinputlisting[#1,#2]{\pathtolistings#3} % #1: Weitere Optionen / #2: Code-Datei
