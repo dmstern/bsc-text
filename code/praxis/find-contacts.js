@@ -1,15 +1,14 @@
-function getContacts() {
-	var result = null;
-	
-	if ( ! this.deviceReady ) {
+function findContacts() {
+
+	if (!model.deviceReady) {
 		console.error('Gerät ist nicht bereit!');
-		return null;
+		return;
 	}
 
 	var onSuccess = function(contacts) {
 		var successMsg = contacts.length + ' Kontakte gefunden.';
 		console.log(successMsg);
-		result = contacts;
+		model.observerMap.notifyObservers(events.FOUND_CONTACTS, contacts);
 	};
 
 	var onError = function(contactError) {
@@ -23,6 +22,5 @@ function getContacts() {
 	options.multiple = true;
 	var fields = [ "displayName", "name" ];
 	navigator.contacts.find(fields, onSuccess, onError, options);
-	
-	return result;
+
 }

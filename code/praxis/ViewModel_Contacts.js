@@ -1,16 +1,23 @@
-function ErrandsViewModel(lists) {
-	console.log("Init ViewModel...");
-	
+function ErrandsView(lists) {
 	var self = this;
 
-	this.lists = ko.observableArray(lists);
-	this.newListName = ko.observable("");
-	this.contacts = ko.observableArray([ util.createDummyContact() ]);
+	self.lists = ko.observableArray(lists);
+	self.newListName = ko.observable("");
+	self.contacts = ko.observableArray([ util.createDummyContact() ]);
 
-	// [...] Der Übersichtlichkeit halber gekürzt.	
+	// [...] Der Übersichtlichkeit halber gekürzt.
 
-	this.getContacts = function(event, ui) {
+	self.getContacts = function(event, ui) {
 		console.debug("getContacts");
-		self.contacts(app.getContacts());
+		model.findContacts();
 	};
+
+	self.bindEvents = function() {
+		model.addEventListener(events.FOUND_CONTACTS, function(contacts) {
+			self.contacts(contacts);
+		});
+	};
+
+	console.log("Init View...");
+	self.bindEvents();
 }
