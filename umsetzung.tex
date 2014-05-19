@@ -17,36 +17,46 @@
 Um auf die wie in [theorie] beschrieben, 
 %TODO -> hinzufügen und verwenden von features / Bezug auf meine Implementierung / Quellcode / Weitere Möglichkeiten / Grenzen aus Plugin-Docs
 		
-\subsubsection{Zugriff auf die Kontakte-Verwaltung des Geräts}
+\subsubsection{Zugriff auf die Kontaktverwaltung des Geräts}
 
-Im Anwendungsfall \emph{Liste Teilen} der oben beschriebenen Beispielanwendung\todo{Anwendungsfallbeschreibung einfügen.} soll auf das native Adressbuch des Geräts zugegriffen werden, um Kontakte anzuzeigen und auszuwählen, die dann als neue Listenmitglieder in das Listenobjekt der Anwendung eingetragen werden sollen.
+%TODO Reihenfolge??
+Im Anwendungsfall \emph{Liste Teilen} der oben beschriebenen Beispielanwendung \todo{Anwendungsfallbeschreibung einfügen.} soll die Anforderung erfüllt werden, aus der Anwendung heraus auf das native Adressbuch des Geräts zuzugreifen, um die bestehenden Kontakte zu laden und anzuzeigen, sodass diese vom Nutzer ausgewählt werden, an die Anwendung übergeben und als neues Listenmitglied in ein Listenobjekt eingetragen werden können.
 
-Mit dem \gls{cordova}-Plugin \emph{Contacts} lässt sich der Zugriff auf die native Kontaktverwaltung des jeweiligen Betriebssystems bewerkstelligen.
+Nachdem das \gls{cordova}-Plugin \emph{Contacts}, wie in \autoref{sec:cordova} beschrieben, zur Anwendung hinzugefügt wurde, lässt sich damit der Zugriff auf die native Kontaktverwaltung des jeweiligen Betriebssystems bewerkstelligen.
 Dieses bietet beispielsweise die Möglichkeit, nach bestimmten Kontakten im Adressbuch zu suchen, neue Kontakte zu erstellen und dem Adressbuch hinzuzufügen, sowie bestehende Kontakte zu entfernen oder zu duplizieren \cite{Cordova_Plugin_Registry_Contacts}.
 
-Hier sollte nun die Anforderung erfüllt werden, aus der Anwendung heraus die bestehenden Kontakte aus dem Adressbuch anzuzeigen, sodass diese vom Nutzer ausgewählt werden und an die Anwendung übergeben werden können.
-Dazu muss im Wesentlichen die Methode \lstinline|navigator.contacts.find(fields, onSuccess, onError, options)| ausgeführt werden, wobei \lstinline|fields| die anzuzeigenden Datenfelder repräsentiert, \lstinline|onSuccess| die Funktion angibt, die bei erfolgreicher Ausführung der \lstinline|find|-Methode ausgeführt werden soll, \lstinline|onError| den ErrorHandler bei Auftreten eines Fehlers beim Suchen der Kontakte und \lstinline|options| zusätzliche Optionen wie Suchfilter oder ein \lstinline|multiple|-Flag, das angibt, ob mehrere Kontakte zurückgegeben werden sollen.
+Um Kontakte im Adressbuch zu suchen, muss im Wesentlichen die Methode \lstinline|navigator.contacts.find(fields, onSuccess, onError, options)| ausgeführt werden, wobei \lstinline|fields| die anzuzeigenden Datenfelder repräsentiert, \lstinline|onSuccess| die Funktion angibt, die bei erfolgreicher Ausführung der \lstinline|find|-Methode ausgeführt werden soll, \lstinline|onError| den \gls{errorhandler} bei Auftreten eines Fehlers beim Suchen der Kontakte und \lstinline|options| zusätzliche Optionen wie Suchfilter oder ein \lstinline|multiple|-\gls{flag}, das angibt, ob mehrere Kontakte zurückgegeben werden sollen (\seeref{lst:find-contacts}, \linename 26).
 
-Da in diesem Beispiel (\seeref{lst:find-contacts}) keine bestimmten, sondern \emph{alle} Kontakte angezeigt werden sollen, wird der \lstinline|find|-Methode kein spezieller \lstinline|filter| übergeben (\linename 21). In der Oberfläche sollen der Name sowie der Anzeige-Name verfügbar sein, sodass der \lstinline|fields|-Parameter die entsprechenden Felder als Array beinhaltet (\linename 23). Bei erfolgreicher Ausführung der \lstinline|find|-Methode werden die zurückgegebenen Kontaktdaten als Parameter in Form eines Arrays, das die entsprechenden JavaScript-Objekte beinhaltet, an die \lstinline|onSuccess|-Methode übergeben und vom \gls{model} an dessen \glspl{observer} (in diesem Fall das \gls{view-model}) versendet (\linename 11).
+Da in diesem Beispiel (\autoref{lst:find-contacts}) keine bestimmten, sondern \emph{alle} Kontakte angezeigt werden sollen, wird der \lstinline|find|-Methode kein spezieller \lstinline|filter| übergeben (\linename 23). In der Oberfläche soll der Name verfügbar sein, sodass der \lstinline|fields|-Parameter die entsprechenden Felder als Array beinhaltet (\linename 25). Bei erfolgreicher Ausführung der \lstinline|find|-Methode werden die zurückgegebenen Kontaktdaten als Parameter in Form eines Arrays, das die entsprechenden JavaScript-Objekte vom Typ \lstinline|Contact| beinhaltet, an die \lstinline|onSuccess|-Methode übergeben und vom \gls{model} an dessen \glspl{observer} (in diesem Fall das \gls{view-model}) versendet (\linename 13).
 %TODO Am Ende nochmal checken, ob der Code wirklich so geblieben ist (Code + Beschreibung).
 
 	\includehtml{praxis/find-contacts.js} { label=lst:find-contacts, caption={Verwendung des \emph{Contacts}-Plugins von \gls{cordova}.}}
 
-Die in \autoref{lst:find-contacts} per \gls{observer-pattern} versendeten Daten werden in der entsprechenden Handler-Methode an die \lstinline|contacts|-Eigenschaft des \glspl{view-model} übergeben (\autoref{lst:ViewModel_Contacts}, \linenamepl 16\,-\,18), die anschließend an eine ListView der \gls{ui} gebunden werden kann, sodass deren Elemente (also die Kontakt-Objekte) darin angezeigt werden (\seeref{lst:contacts-ui}, \linename 6). %TODO Steht auch schon im nächsten Absatz. -> Zusammenführen!!!
+Die in \autoref{lst:find-contacts} per \gls{observer-pattern} versendeten Daten werden in der entsprechenden Handler-Methode an die \lstinline|contacts|-Eigenschaft des \glspl{view-model} übergeben (\autoref{lst:ViewModel_Contacts}, \linenamepl 16\,-\,18), deren Elemente (also die Kontakt-Objekte) anschließend durch das Data-Binding in der Oberfläche angezeigt werden (\su).
 
 \includehtml{praxis/ViewModel_Contacts.js}{label=lst:ViewModel_Contacts, caption={Wesentlicher Ausschnitt des \glspl{view-model}.},}
 
-Die Methode \lstinline|getContacts| wird hier per Event-Binding an die Kontakt-Komponente gebunden, sodass diese jedes mal aufgerufen wird, wenn die Kontaktliste auf- oder zugeklappt wird (\seeref{lst:contacts-ui}, \linename 3), um die Daten aus dem \gls{model} anzufordern.
-Durch die Bindung der Eigenschaft \lstinline|contacts| in Form eines \emph{Observable Arrays} des \glspl{view-model} (\autoref{lst:ViewModel_Contacts}) an die Listview der Oberfläche werden in dieser Liste alle Kontakte des Adressbuchs angezeigt (\seeref{lst:contacts-ui}, \linename 7).
+Die Methode \lstinline|findContacts|, die den Aufruf zum Laden der Kontakte an das \gls{model} delegiert, wird hier per Event-Binding an die Kontakt-Komponente der Oberfläche gebunden, sodass diese jedes mal aufgerufen wird, wenn die Kontaktliste auf- oder zugeklappt wird, um die Daten aus dem \gls{model} anzufordern (\seeref{lst:contacts-ui}, \linename 3).
+Durch die Bindung der Eigenschaft \lstinline|contacts| in Form eines \emph{Observable Arrays} des \glspl{view-model} (\autoref{lst:ViewModel_Contacts}, \linename 6) an die \gls{listview} der Oberfläche werden in dieser Liste alle Kontakte des Adressbuchs angezeigt (\seeref{lst:contacts-ui}, \linename 7).
 
 	\includehtml{praxis/contacts-ui.html}{label=lst:contacts-ui, caption={\gls{ui}-Komponente zur Darstellung der Kontaktliste und Auswahl einzelner Kontakte.},}
 		
-%TODO evtl. auch erst ans Ende des Abschnitts, also Bewertung, Grenzen u Möglichkeiten.
-Während bei nativen App-Entwicklung für \gls{ios} oder \gls{android} Komponenten für die Arbeit mit Kontakten bereitstehen, liefert die \gls{cordova}-\gls{api} hier lediglich Mechanismen für den Zugriff auf die Kontaktdaten, jedoch nicht die entsprechenden UI-Komponenten, da diese vom jeweiligen verwendeten \gls{gui}-Toolkit abhängen.
+Einige Unterschiede ergeben sich bei der Verwendung des Contacts-Plugins zwischen den verschiedenen Zielplattformen.
+So können beispielsweise nicht alle Methoden der contacts-\gls{api} auf allen mobilen Plattformen gleichermaßen ausgeführt werden.
+Die hier verwendete \lstinline|find()|-Methode bietet mit der Unterstützung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios}, \gls{win-phone} und \gls{win8} eine relativ  breite Kompatibilität für alle größeren gängigen und mobilen Betriebssysteme.
+Auch werden einige Datentypen nicht von allen Plattformen unterstützt, so zum Beispiel das \lstinline|ContactOrganization|-Objekt, das lediglich bei der Entwicklung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios} und \gls{win-phone} zur Verfügung steht, damit aber immer noch alle großen Plattformen unterstützt \cite{Cordova_Plugin_Registry_Contacts}.
+
+Doch auch bei den unterstützten Plattformen sind einige Besonderheiten zu beachten, wenn es um die Verwendung einzelner Attribute der verschiedenen Objekttypen geht.
+%TODO -> bspw. displayName ios
+So ist beispielsweise das Feld \lstinline|displayName| des \lstinline|Contacts|-Objekts unter \gls{ios} und \gls{win-phone} nicht verfügbar und muss in diesem Fall durch das \lstinline|name|- oder \lstinline|nickname|-Feld ersetzt werden. %TODO Hier könnte man evtl. auch den direkten Link zu 'iOS Quirks' angeben. Aber wie in BiBTeX formatieren?
+Ähnliches gilt auch für weitere Objekte oder deren Methoden und Felder, die unter bestimmten Plattformen nicht oder nur teilweise unter Berücksichtigung bestimmter Besonderheiten funktionieren \cite{Cordova_Plugin_Registry_Contacts}.
+
+Während bei der nativen App-Entwicklung für \gls{ios} oder \gls{android} \gls{ui}-Komponenten für die Arbeit mit Kontakten bereitstehen, liefert die \gls{cordova}-\gls{api} hier lediglich Mechanismen für den Zugriff auf die Kontaktdaten, jedoch nicht die entsprechenden UI-Komponenten, da diese vom jeweiligen verwendeten \gls{gui}-Toolkit abhängen.
 Die hier verwendete Oberflächen-Bibliothek \gls{jqm} beinhaltet lediglich allgemeine \glspl{widget} wie Listen, Buttons, Tabellen etc., sodass die Erstellung einer \gls{ui}-Komponente für die Auswahl von Kontakten dem Entwickler überlassen bleibt.
 
-In Verbindung mit der Data-Binding-Bibliothek \gls{ko} kann eine solche Komponente jedoch relativ einfach erstellt werden.
+In Verbindung mit der Data-Binding-Bibliothek \gls{ko} kann eine solche Komponente jedoch relativ einfach erstellt werden, indem die Felder in der Oberfläche an Eigenschaften des \glspl{view-model} gebunden werden, welches durch Benachrichtigungen des Models, das den Zugriff auf die native Ebene des Betriebssystems abwickelt, die Daten der Anwendung und des Geräts anzeigen kann (\seeref{sec:ko}).
 
+Grundsätzlich bietet die \gls{cordova}-Plugins-\gls{api} trotz einiger Einschränkungen (\so) ein nützliches Werkzeug mit einem breiten Funktionsumfang für den grundlegenden Zugriff auf die Kontaktverwaltung aller großen mobilen Betriebssysteme.
 
 
 %			Explorationsergebnisse

@@ -1,7 +1,9 @@
 function findContacts() {
 
 	if (!model.deviceReady) {
-		console.error('Gerät ist nicht bereit!');
+		var errorMsg = 'Gerät ist nicht bereit!'; 
+		console.error(errorMsg);
+		alert(errorMsg);
 		return;
 	}
 
@@ -20,7 +22,7 @@ function findContacts() {
 	var options = new ContactFindOptions();
 	options.filter = "";
 	options.multiple = true;
-	var fields = [ "displayName", "name" ];
+	var fields = [ "name" ];
 	navigator.contacts.find(fields, onSuccess, onError, options);
 
 }

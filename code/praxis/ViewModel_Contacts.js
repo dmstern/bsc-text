@@ -3,7 +3,7 @@ function ErrandsView(lists) {
 
 	self.lists = ko.observableArray(lists);
 	self.newListName = ko.observable("");
-	self.contacts = ko.observableArray([ util.createDummyContact() ]);
+	self.contacts = ko.observableArray([ util.getDummyContact() ]);
 
 	// [...] Der Übersichtlichkeit halber gekürzt.
 
