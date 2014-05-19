@@ -8,7 +8,7 @@ function ErrandsView(lists) {
 	// [...] Der Übersichtlichkeit halber gekürzt.
 
 	self.getContacts = function(event, ui) {
-		console.debug("getContacts");
+		console.debug("Fordere Kontaktdaten an...");
 		model.findContacts();
 	};
 
