@@ -1,0 +1,3 @@
+[submodule "code/praxis/errands"]
+	path = code/praxis/errands
+	url = git@github.com:dmstern/errands.git
