@@ -218,6 +218,8 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \lstinline|class="ui-content"
 
 % Vorstellung ----------------------------------------------
 
+\subsubsection{Grundlegendes}
+
 \gls{phonegap} ist ein \gls{opensource}-Framework von \gls{adobe} zur Erstellung von hybriden \glspl{app} und bildet damit die Grundlage für den hier explorierten Ansatz zur plattformunabhängigen \gls{app}-Entwicklung.
 Die Software wurde ursprünglich unter dem Namen \gls{phonegap} von der Firma \gls{nitobi} entwickelt, die 2011 von \gls{adobe} aufgekauft wurde \cite{Adobe_Announces_Agreement_to_Acquire_Nitobi_Creator_of_PhoneGap}. 
 Später wurde die Code-Basis der \gls{apache} übergeben und dort in \gls{cordova} umbenannt, wodurch das Framework in den Quellen stellenweise unter beiden Namen erscheint.
@@ -370,12 +372,14 @@ Für letzteres müssen unter Umständen noch entsprechende Einstellungen auf dem
 	caption={Führt die \gls{app} auf einem angeschlossenen Mobilgerät aus.},
 	}
 
-\subsubsection{Schnittstelle zur mobilen Plattform mit Plugins}
+\subsubsection{Schnittstelle zur mobilen Plattform}
 
 Um den eigentlichen Mehrwert des \gls{cordova}-Frameworks zu nutzen, also auf native Features der Zielplattformen zuzugreifen, sind verschiedene Plugins nötig, die ebenfalls mit dem \gls{cli} verwaltet werden können.
 \gls{cordova} bietet von Haus aus eine ganze Reihe von Plugins an, es können aber auch eigene entwickelt werden.\footnote{So bietet \zB \gls{adobe} mit seiner \gls{phonegap}-Variante noch einige weitere Plugins wie beispielsweise den Zugriff auf einen angeschlossenen Barcode-Scanner an, die über die Grundausstattung von \gls{cordova} hinausgehen \cite{Cordova-Docs_CLI}.}
-
 Plugins bestehen aus einem zusätzlichen Stück Code, der die Kommunikation zu den nativen Komponenten herstellt.
+
+\paragraph{Einrichten von Plugins:}
+
 Das \gls{cordova}-\gls{cli} bietet auch die Möglichkeit, alle verfügbaren Plugins zu durchsuchen, hinzuzufügen, aufzulisten und zu entfernen (\seeref{lst:cordova-plugin-search}, \ref{lst:cordova-plugin-add}, \ref{lst:cordova-plugin-ls} und \ref{lst:cordova-plugin-rm}).
 
 
@@ -395,6 +399,10 @@ Das \gls{cordova}-\gls{cli} bietet auch die Möglichkeit, alle verfügbaren Plug
 	caption={Plugin entfernen.},
 	}
 	
+%TODO Corodva-Plugin Verwendung erklären: navigator / cordova.js
+\paragraph{Verwendung von Plugins:}
+
+%TODO Contacts-API und deren Methoden kurz erklären
 
 
 \subsection{PhoneGap\,Build}
