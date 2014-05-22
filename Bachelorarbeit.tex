@@ -8,37 +8,29 @@
 	disable					% Nicht drucken 
 	]	{todonotes}	
 
-% Übersetzungen ändern:
-\usepackage[
-	ngerman					% Neue deutsche Rechtschreibung
-	]	{translator}
+% Übersetzungen ändern (mit Neuer deutscher Rechtschreibung):
+\usepackage[ngerman]{translator}
 
 % Ein Glossar verwenden
-\usepackage[
-	nonumberlist,			% keine Seitenzahlen anzeigen
+% Options:
+%	nonumberlist,			% keine Seitenzahlen anzeigen
 %	acronym,				% ein Abkürzungsverzeichnis erstellen
-	toc,					% Einträge im Inhaltsverzeichnis
-	section					% im Inhaltsverzeichnis auf section-Ebene erscheinen
-	]	{glossaries}
+%	toc,					% Einträge im Inhaltsverzeichnis
+%	section					% im Inhaltsverzeichnis auf section-Ebene erscheinen
+\usepackage[nonumberlist, toc, section]{glossaries}
 
-% Abstände einstellen:
-\usepackage[
-	onehalfspacing			% Zeilen abstand ca. 1.25%
-	]	{setspace}
+% Zeilenabstände einstellen:
+% Standard-Zeilenabstand ca. 1.25%
+\usepackage[onehalfspacing]{setspace}
 
 % Fußnotenformatierung:
-\usepackage[
-	bottom,
-	hang
-	]	{footmisc}
+\usepackage[bottom,hang]{footmisc}
 
 % Zitat-Formatierungen:
-\usepackage[
-	font={
-		itshape,			% kursiv
-		singlespacing,		% Abstand: Einzeilig
-		raggedright			% linksbündig (rechtsflatternd)
-	}]	{quoting}
+\usepackage[font={itshape, singlespacing, raggedright}]{quoting}
+
+% Seitenränder
+\usepackage[margin=3.5cm]{geometry}
 
 % METADATA =================================================
 
@@ -64,6 +56,7 @@
 \include{languages}
 \graphicspath{{images/}}
 \listingpath{code/}
+\apppath{praxis/errands/www}
 \bibliography{literatur}
 \loadglsentries{glossar}
 %-----------------------------------------------------------
@@ -83,16 +76,20 @@
 %-----------------------------------------------------------
 \mainmatter			% Hauptteil (ab hier arab. Seitenzahlen)
 %-----------------------------------------------------------
-   
+
+\newgeometry{margin=\textbodymargin}
+
 \include{einleitung}
 \include{grundlagen}
 \include{umsetzung}
 \include{schluss}
 
-% Verzeichnisse --------------------------------------------
+\restoregeometry
+
+% Anhänge ==================================================
 
 %TODO Für alle ignored (und evtl. auch technologies)-Glossar-Begriffe: Hyperlinks entfernen.
-% Glossar
+% Glossar --------------------------------------------------
 \chapter*{\glossaryname} 	% Glossar-Überschrift ohne Nummerierung
 
 % Begriffe
@@ -102,6 +99,22 @@
 
 % Technologien
 \printglossary[type=technologies,style=long]
+
+% ----------------------------------------------------------
+
+%TODO Gliederung: an welche Stelle kommt Anhang?
+%TODO Gliederung: Glossar mit in Anhang??
+% Anhang
+
+\newgeometry{margin=\appendixmargin}
+%TODO Im Inhaltsverzeichnis sollte "Anhang" u. "Quellcode" stehen, nicht "A Quellcode"
+
+\appendix
+%\addcontentsline{toc}{section}{\protect\numberline{1}{Listings}}
+
+\include{anhang}
+
+\restoregeometry
 
 % ----------------------------------------------------------
 % Abbildungsverzeichnis

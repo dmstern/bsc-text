@@ -15,6 +15,18 @@
 	\renewcommand{\pathtolistings}{#1}
 }
 
+% Variable für Pfad zu Bsp-App-Code:
+\newcommand{\pathtoappcode}{app}
+\newcommand{\apppath}[1]{
+	\renewcommand{\pathtoappcode}{#1}
+}
+
+% Seitenränder ---------------------------------------------
+
+% Default Margin: siehe Master-Datei.
+\newcommand{\appendixmargin}{3cm}
+\newcommand{\textbodymargin}{4cm}
+
 % Image-Layout ---------------------------------------------
 
 \newcommand{\fullimagesize}{1\linewidth}
@@ -52,10 +64,18 @@
 % Layout für Code-Listings ---------------------------------
 % (Wird weiter unten referenziert und weiter verfeinert)
 \newenvironment{code}{
-	\par\noindent\begin{minipage}{\linewidth}	% Code auf einer Seite zusammenhalten
 	\begin{singlespace}							% Einfacher Zeilenabstand
 	}{
 	\end{singlespace}
+}
+
+% Layout für kleine Code-Listings auf einer Seite ----------
+% (Wird weiter unten referenziert und weiter verfeinert)
+\newenvironment{minicode}{
+	\par\noindent\begin{minipage}{\linewidth}	% Code auf einer Seite zusammenhalten
+	\begin{code}
+	}{
+	\end{code}
 	\end{minipage}\par\addvspace{\topskip}
 }
 
@@ -67,14 +87,27 @@
 	\end{code}
 }
 
+% Neuer Befehl für include-Code-Listings:
+% (Wird weiter unten referenziert und weiter verfeinert)
+\newcommand{\includeminicode}[3]{
+	\begin{minicode}
+		\lstinputlisting[#1,#2]{\pathtolistings#3} % #1: Weitere Optionen / #2: Code-Datei
+	\end{minicode}
+}
+
 % Neuer Befehl für HTML-Inludes:
 \newcommand{\includehtml}[2]{
+	\includeminicode{style=htmlcssjs}{#2}{#1}
+}
+
+% Neuer Befehl für HTML-Inludes:
+\newcommand{\includebightml}[2]{
 	\includecode{style=htmlcssjs}{#2}{#1}
 }
 
 % Neuer Befehl für Bash-Inlcudes:
 \newcommand{\includebash}[2]{
-	\includecode{
+	\includeminicode{
 		style=shellscript,
 		label=lst:#1
 	}{#2}{#1}
