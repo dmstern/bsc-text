@@ -4,25 +4,33 @@
 \section{Beispiel-Anwendung}\label{sec:bsp-app} 
 %	Zu Explorationszwecken zu implementierender Anwendungsfall (App-Prototyp)
 
-	\subsubsection{Konzeption}
+	\subsection{Konzeption}
 %		Idee, Anforderungen -> plattformunabhägig
 %		Funktionalitätsbeschreibung
 %		Design (Architektur)
 %		Bezug zur Technologie (Plattform(un)abhängige Anforderungen)
 
-	\subsubsection{Grundlegendes / Architektur} %TODO Gliederung?? Beispiel-Anwendung gibts doch schon oben.
+	\subsection{Grundlegendes / Architektur}
 	
 %TODO Architektur der Anwendung erklären: Model / ViewModel / Konstanten für Events etc.
 
 
-Grundlegend besteht die Anwendung aus den drei in \autoref{fig:mvvm} abgebildeten Teilen \emph{\gls{view}} in Form einer \gls{html}-Seite, dem \gls{js}-Objekt \emph{\gls{model}}, das den Zugriff auf das Gerät bewerkstelligt und dessen Daten bereitstellt und dem \emph{\gls{view-model}}, welches die Eigenschaften und anzuzeigenden Daten der \gls{view} beinhaltet.
-Das \gls{js}-Framework \gls{ko} hält dabei durch das \gls{data-binding} die Anzeige der Daten auf der \gls{view} mit dem Datenmodell im \gls{view-model} synchron (\seeref{sec:ko}).
+Grundlegend besteht die Anwendung aus den drei in \autoref{fig:mvvm-pattern} abgebildeten Teilen \emph{\gls{view}} in Form einer \gls{html}-Seite, dem \gls{js}-Objekt \emph{\gls{model}}, das den Zugriff auf das Gerät bewerkstelligt und dessen Daten bereitstellt und dem \emph{\gls{view-model}}, welches die Eigenschaften und anzuzeigenden Daten der \gls{view} beinhaltet.
+Das \gls{js}-\gls{framework} \gls{ko} hält dabei durch das \gls{data-binding} die Anzeige der Daten auf der \gls{view} mit den Daten im \gls{view-model} synchron (\seeref{sec:ko}).
 
 Die Anbindung vom \gls{model} an das \gls{view-model} wurde hier über das \gls{observer-pattern} realisiert, mit dem eine lose Kopplung zwischen einer Komponente und deren \glspl{observer} erzielt werden kann.
+Dabei registriert sich das \gls{view-model} bei dessen Initialisierung beim \gls{model} per Aufruf der Methode \lstinline|addEventListener(eventType, eventHandler)| (\seeref{lst:app:model.js}) und übergibt dabei als Parameter \enquote{\lstinline|eventType|} einen \gls{string}, der den Typ des Events angibt, auf dessen Aussendung sich das \gls{view-model} registriert sowie eine Funktion als \lstinline|eventHandler|, welche ausgeführt werden soll, sobald das Event empfangen wird (\seeref{lst:app:ViewModel.js}).
 
+Dazu hat das \gls{model} einen Verweis auf eine \lstinline|ObserverMap|, welche die registrierten \gls{event-handler} der \gls{observer} in Listen speichert, die dem jeweiligen Ereignistyp, der bei der Registrierung angegeben wird, zugeordnet werden (\seeref{lst:app:ObserverMap.js}).
 
+Statt also bei erfolgreicher Ausführung einer Operation die Daten direkt per Methodenaufruf an das \gls{view-model} zu übergeben, wird hier lediglich die Methode \lstinline|notifyObservers()| der \lstinline|ObserverMap| aufgerufen, wodurch die registrierten \gls{observer} über das Auftreten des Ereignisses benachrichtigt werden.
+Das \gls{model} muss dabei keinerlei Kenntnis vom \gls{view-model} haben, lediglich im \gls{view-model} ist bekannt, welche Methoden des \glspl{model} aufgerufen werden können, bzw. welche Events dieses aussendet.
 
+Durch diese lose Kopplung kann einerseits die Entwicklung erleichtert werden, da bei einer möglichen Aufteilung der Implementierung das Entwicklerteam, das für die Implementierung des \glspl{model} zuständig ist, keine Kenntnis über die Struktur des \glspl{view-model} oder gar der \gls{view} haben muss und darüber hinaus könnten auch weitere \gls{observer} auf Benachrichtigungen des \glspl{model} registriert werden, beispielsweise, um weitere Aktionen nach Auftreten eines Events durchzuführen.
 
+Neben diesen architektonischen Aspekten wurde hier das \gls{observer-pattern} für die Kopplung zwischen \gls{model} und \gls{view-model} gewählt, da bei Anforderung der Daten durch das \gls{view-model} noch nicht bekannt ist, wann diese Daten genau zurückgeliefert werden, da das \gls{cordova}-\gls{framework} nach Aufruf einer \gls{plugin}-\gls{api}-Methode\footnote{Beispielweise \lstinline|navigator.contacts.find()| zum Anfordern der Kontaktdaten aus dem Adressbuch (\seeref{lst:find-contacts}).} diese erst vom Gerät laden muss.
+Dazu dient auch die Übergabe eines \lstinline|onSuccess|-\glspl{handler}, der nach Erfolgreicher Ausführung der \og \gls{api}-Methode ausgeführt wird.
+%TODO Theoretische erläuterungen zu cordova in Theorie-Teil verschieben!
 
 \section{Kriterien zur Bewertung}\label{sec:kriterien}
 	%	(Aspekte / Vorüberlegungen (Sicherheit, Verfügbarkeit, plattformspezifische Anforderungen, Usability, ?Entwickler-Komfort?, ?Feature-Reichtum?, ...))
@@ -30,13 +38,13 @@ Die Anbindung vom \gls{model} an das \gls{view-model} wurde hier über das \gls{
 \section{Umsetzung} \label{sec:umsetzung}	%TODO Gliederung? Erklärung der Architekur-Impl ist ja auch Umsetzung
 
 \subsection{Ausgewählte Technologie} 
-% Entscheidung und Begründung für 1-2 Frameworks/Lösungen zur genaueren Evaluation
+% Entscheidung und Begründung für 1-2 \glspl{framework}/Lösungen zur genaueren Evaluation
 
-\subsection{Exploraion: Implementierung der Geräte-Schnittstelle}
-% Beschreibung der konkreten Umsetzung, Implementierung der wesentlichen Features mithilfe der Technologien (Funktionsweise (Wie genau bewerkstelligt Framework die Plattformunabhängigkeit / Was steckt dahinter?))
+\subsection{Exploration: Implementierung der Geräte-Schnittstelle}
+% Beschreibung der konkreten Umsetzung, Implementierung der wesentlichen Features mithilfe der Technologien (Funktionsweise (Wie genau bewerkstelligt \gls{framework} die Plattformunabhängigkeit / Was steckt dahinter?))
 
 		
-	\subsubsection{Zugriff auf die Kontaktverwaltung des Geräts}
+	\subsubsection{Zugriff auf die Kontaktverwaltung des Geräts} \label{sec:contacts}
 %TODO -> hinzufügen und verwenden von features / Bezug auf meine Implementierung / Quellcode / Weitere Möglichkeiten / Grenzen aus Plugin-Docs
 
 %TODO Reihenfolge??
