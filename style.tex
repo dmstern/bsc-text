@@ -8,6 +8,10 @@
 %TODO Als Option für neues Kommando "seelst" oder so. -> Siehe Seiten-Option bei Zitationen.
 \newcommand{\seeref}[1]{\seename\ \autoref{#1}}
 
+\renewcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \textit{\nameref*{#1}}}}
+\newcommand{\seefullref}[1]{\seename\ \fullref{#1}}
+\newcommand{\seefullpageref}[1]{\seefullref{#1}\ auf \pagename\ \pageref{#1}}
+
 % Style für Dateinamen:
 \newcommand{\filename}[1]{\textsf{#1}}
 

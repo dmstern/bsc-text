@@ -218,7 +218,7 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \lstinline|class="ui-content"
 
 % Vorstellung ----------------------------------------------
 
-\subsubsection{Grundlegendes}
+\subsubsection{Grundlegendes} \label{sec:cordova-grundlegendes}
 
 \gls{phonegap} ist ein \gls{opensource}-\gls{framework} von \gls{adobe} zur Erstellung von hybriden \glspl{app} und bildet damit die Grundlage für den hier explorierten Ansatz zur plattformunabhängigen \gls{app}-Entwicklung.
 Die Software wurde ursprünglich unter dem Namen \gls{phonegap} von der Firma \gls{nitobi} entwickelt, die 2011 von \gls{adobe} aufgekauft wurde \cite{Adobe_Announces_Agreement_to_Acquire_Nitobi_Creator_of_PhoneGap}. 
@@ -352,7 +352,7 @@ Anschließend kann mit dem \lstinline|build|-Befehl die \gls{app} gebaut werden:
 
 
 Der \lstinline|build|-Befehl stellt dabei eine Kurzform für die beiden Befehle \lstinline|prepare| und  \lstinline|compile| dar (\seeref{lst:cordova-prepare-compile}).
-Diese Aufteilung kann beispielsweise sinnvoll sein, um erst den \lstinline|prepare|- Befehl auszuführen und den plattformspezifischen Code, den Cordova in \filename{platforms/android} generiert, anschließend mit einer entsprechenden \gls{ide} (wie beispielsweise \gls{android-studio}) und deren nativem SDK anzupassen und zu kompilieren.\footnote{\vgl Nativ-Entwicklungsansatz, \so.}
+Diese Aufteilung kann beispielsweise sinnvoll sein, um erst den \lstinline|prepare|- Befehl auszuführen und den plattformspezifischen Code, den Cordova in \filename{platforms/android} generiert, anschließend mit einer entsprechenden \gls{ide} (wie beispielsweise \gls{android-studio}) und deren nativem SDK anzupassen und zu kompilieren.\footnote{\vgl Nativ-Entwicklungsansatz, \seeref{sec:cordova-grundlegendes}.}
 
 
 \includebash{cordova-prepare-compile}{
@@ -399,7 +399,7 @@ Das \gls{cordova}-\gls{cli} bietet auch die Möglichkeit, alle verfügbaren \gls
 	caption={\gls{plugin} entfernen.},
 	}
 
-\paragraph{Verwendung von Plugins:}
+\paragraph{Verwendung von Plugins}	\label{sec:cordova-plugins-verwendung}
 
 Für die Installation und Dokumentation von \glspl{plugin} bietet \gls{apache} mit der \gls{plugins-registry} ein Online-Portal an, in der sich zur Zeit 229 \glspl{plugin} für das \gls{cordova}-\gls{framework} finden, von denen nur ein kleiner Teil von ca. 17 \glspl{plugin} von \gls{apache} selbst veröffentlicht wird  \cite{Cordova_Docs_Plugin_APIs}, der überwiegende übrige Teil stammt von verschiedenen Entwicklern, die ihre nach dem \gls{plugin-dev-guide} entwickelten \glspl{plugin} diesem Portal hinzufügen können \cite{Cordova_Plugin_Development_Guide}, und bieten häufig spezielle Unterstützung für bestimmte mobile Plattformen an \cite{Cordova_Plugin_Registry_viewAll}.
 

@@ -74,15 +74,12 @@ Durch die Bindung der Eigenschaft \lstinline|contacts| in Form eines \emph{Obser
 Einige Unterschiede ergeben sich bei der Verwendung des Contacts-Plugins zwischen den verschiedenen Zielplattformen.
 So können beispielsweise nicht alle Methoden der contacts-\gls{api} auf allen mobilen Plattformen gleichermaßen ausgeführt werden.
 Die hier verwendete \lstinline|find()|-Methode bietet mit der Unterstützung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios}, \gls{win-phone} und \gls{win8} eine relativ  breite Kompatibilität für alle größeren gängigen und mobilen Betriebssysteme.
-Auch werden einige Datentypen nicht von allen Plattformen unterstützt, so zum Beispiel das \lstinline|ContactOrganization|-Objekt, %TODO erklären, was das ist!!
- das lediglich bei der Entwicklung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios} und \gls{win-phone} zur Verfügung steht, damit aber immer noch alle großen Plattformen unterstützt \cite{Cordova_Plugin_Registry_Contacts}.
+Auch werden einige Datentypen nicht von allen Plattformen unterstützt, so zum Beispiel das \lstinline|ContactOrganization|-Objekt\footnote{\seefullpageref{sec:cordova-grundlegendes}.}, das lediglich bei der Entwicklung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios} und \gls{win-phone} zur Verfügung steht, damit aber immer noch alle großen Plattformen unterstützt \cite{Cordova_Plugin_Registry_Contacts}.
 
 Doch auch bei den unterstützten Plattformen sind einige Besonderheiten zu beachten, wenn es um die Verwendung einzelner Attribute der verschiedenen Objekttypen geht.
-%TODO -> bspw. displayName ios
 So ist beispielsweise das Feld \lstinline|displayName| des \lstinline|Contacts|-Objekts unter \gls{ios} und \gls{win-phone} nicht verfügbar und muss in diesem Fall durch das \lstinline|name|- oder \lstinline|nickname|-Feld ersetzt werden. %TODO Hier könnte man evtl. auch den direkten Link zu 'iOS Quirks' angeben. Aber wie in BiBTeX formatieren?
 Ähnliches gilt auch für weitere Objekte oder deren Methoden und Felder, die unter bestimmten Plattformen nicht oder nur teilweise unter Berücksichtigung bestimmter Besonderheiten funktionieren \cite{Cordova_Plugin_Registry_Contacts}.
 %TODO Genauer erklären, nicht zu allgemein! -> Das ist Thema der Arbeit, also mehr Fokus hierauf.
-
 %TODO Genauer erklären, was diese Contacts-API kann und wie man sie verwendet.
 
 Während bei der nativen App-Entwicklung für \gls{ios} oder \gls{android} \gls{ui}-Komponenten für die Arbeit mit Kontakten bereitstehen, liefert die \gls{cordova}-\gls{api} hier lediglich Mechanismen für den Zugriff auf die Kontaktdaten, jedoch nicht die entsprechenden UI-Komponenten, da diese vom jeweiligen verwendeten \gls{gui}-Toolkit abhängen.
