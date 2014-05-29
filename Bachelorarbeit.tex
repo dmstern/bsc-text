@@ -32,15 +32,6 @@
 % Seitenränder
 \usepackage[margin=3.5cm]{geometry}
 
-% Anhang-Formatierungen:
-%Options:
-%	toc, 
-%	page, 
-%	titletoc,
-%	title,
-%	header
-\usepackage[page, header, title]{appendix}
-
 % METADATA =================================================
 
 \title{Plattformunabhängige App-Entwicklung für mobile Geräte \\--\\ Grenzen und Möglichkeiten}
@@ -97,10 +88,11 @@
 
 % Anhänge ==================================================
 
-%TODO Anhänge eher als Sections vom Meta-Kapitel "Anhang"??
-\begin{appendices}
+\appendix
+%\backmatter	% \backmatter => Anhang-Kapitel *ohne* Nummerierung.
+\addcontentsline{toc}{part}{\appendixname}
 
-\backmatter
+\part*{\appendixname}
 
 % Quellcode ------------------------------------------------
 \include{quellcode}
@@ -126,11 +118,8 @@
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 
-%TODO Code-Quellen evtl. unter Abschnitt "Software"
 % Literaturverzeichnis
 \MakeBibliography
-
-\end{appendices}
 
 %-----------------------------------------------------------
 
