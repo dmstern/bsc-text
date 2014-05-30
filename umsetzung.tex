@@ -1,25 +1,25 @@
-\chapter{Praktische Umsetzung} \label{chap:praxis} 
+\part{Praktische Umsetzung} \label{chap:praxis} 
 % (mein Anteil)  verweis auf technische grundlagen.
 
-\section{Beispiel-Anwendung}\label{sec:bsp-app} 
-%	Zu Explorationszwecken zu implementierender Anwendungsfall (App-Prototyp)
-
-\subsection{Konzeption}
+\chapter{Konzeption}
 %		Idee, Anforderungen -> plattformunabhägig
 %		Funktionalitätsbeschreibung
 %		Design (Architektur)
 %		Bezug zur Technologie (Plattform(un)abhängige Anforderungen)
 
-\subsubsection{Anforderungen} %TODO Evlt. auch nur als subsection und "konzeption" weg?
+\section{Beispiel-Anwendung}\label{sec:bsp-app} 
+%	Zu Explorationszwecken zu implementierender Anwendungsfall (App-Prototyp)
+
+\subsection{Anforderungen} %TODO Evlt. auch nur als subsection und "konzeption" weg?
 %		Eine einfache app, bei der plattformunabhängigkeit sinn macht (grenzen / möglichkeiten)
 %		Motivation, Idee
 
 
-\subsubsection{Funktionalitätsbeschreibung}	%TODO Gibts das wort überhaupt? Google kennt es nur ca. 400-fach.
+\subsection{Funktionalitätsbeschreibung}	%TODO Gibts das wort überhaupt? Google kennt es nur ca. 400-fach.
 % 		Anwendungsfalldiagramm
 %		Anwendungsfall beschreibung
 
-\subsubsection{Architektur}
+\subsection{Architektur}
 %		MVVM-Pattern 
 %TODO --> Das ja andererseits auch nur wegen Knockout, also muss das NACH "Ausgewählte Technologie" kommen.
 %		Komponenten-Diagramm
@@ -27,15 +27,15 @@
 \section{Kriterien zur Bewertung}\label{sec:kriterien}
 	%	(Aspekte / Vorüberlegungen (Sicherheit, Verfügbarkeit, plattformspezifische Anforderungen, Usability, ?Entwickler-Komfort?, ?Feature-Reichtum?, ...))
 
-\section{Umsetzung} \label{sec:umsetzung}	%TODO Gliederung bzw. Name des Abschnitts? Erklärung der Architekur-Impl ist ja auch Umsetzung --> Evtl. nochmal Strippgen fragen.
+\chapter{Umsetzung} \label{sec:umsetzung}	%TODO Gliederung bzw. Name des Abschnitts? Erklärung der Architekur-Impl ist ja auch Umsetzung --> Evtl. nochmal Strippgen fragen.
 %TODO Titel sowieso schwierig, weil kapitel ja schon "Praktische Umsetzung" heißt.
 
-\subsection{Ausgewählte Technologie} 
+\section{Ausgewählte Technologie} 
 %TODO Gehört das hier wirklich noch hin? In Theorie-Teil ist doch eigentlich schon klar, welche Technologie ausgewählt wurde.
 % --> VERMUTLICH DOCH. GEHÖT JA ZU EIGENEM ANTEIL, TECHNOLOGIEN AUSZUWÄHLEN.
 %TODO Aber: Ist das nicht eher auch Konzeption? 
 
-\subsection{Grundlegendes / Architektur}
+\section{Grundlegendes / Architektur}
 	
 Grundlegend besteht die Anwendung aus den drei in \autoref{fig:mvvm-pattern} abgebildeten Teilen \emph{\gls{view}} in Form einer \gls{html}-Seite, dem \gls{js}-Objekt \emph{\gls{model}}, das den Zugriff auf das Gerät bewerkstelligt und dessen Daten bereitstellt und dem \emph{\gls{view-model}}, welches die Eigenschaften und anzuzeigenden Daten der \gls{view} beinhaltet.
 Das \gls{js}-\gls{framework} \gls{ko} hält dabei durch das \gls{data-binding} die Anzeige der Daten auf der \gls{view} mit den Daten im \gls{view-model} synchron (\seeref{sec:ko}).
@@ -58,11 +58,11 @@ Neben diesen architektonischen Aspekten wurde hier das \gls{observer-pattern} f�
 
 
 
-\subsection{Exploration: Implementierung der Geräte-Schnittstelle}
+\section{Implementierung der Geräte-Schnittstelle}
 % Beschreibung der konkreten Umsetzung, Implementierung der wesentlichen Features mithilfe der Technologien (Funktionsweise (Wie genau bewerkstelligt \gls{framework} die Plattformunabhängigkeit / Was steckt dahinter?))
 
 		
-\subsubsection{Zugriff auf die Kontaktverwaltung des Geräts} \label{sec:contacts}
+\subsection{Zugriff auf die Kontaktverwaltung des Geräts} \label{sec:contacts}
 
 Im Anwendungsfall \emph{Liste Teilen} der in \autoref{chap:praxis} beschriebenen Beispielanwendung \todo{Anwendungsfallbeschreibung einfügen.} soll die Anforderung erfüllt werden, aus der Anwendung heraus auf das native Adressbuch des Geräts zuzugreifen, um die bestehenden Kontakte zu laden und anzuzeigen, sodass diese vom Nutzer ausgewählt werden, an die Anwendung übergeben und als neues Listenmitglied in ein Listenobjekt eingetragen werden können.
 
@@ -92,13 +92,12 @@ Die hier verwendete \lstinline|find()|-Methode bietet mit der Unterstützung fü
 Auch werden einige Datentypen nicht von allen Plattformen unterstützt, so zum Beispiel das \lstinline|ContactOrganization|-Objekt\footnote{\seefullpageref{sec:cordova-grundlegendes}.}, das lediglich bei der Entwicklung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios} und \gls{win-phone} zur Verfügung steht, damit aber immer noch alle großen Plattformen unterstützt \cite{Cordova_Plugin_Registry_Contacts}.
 
 Doch auch bei den unterstützten Plattformen sind einige Besonderheiten zu beachten, wenn es um die Verwendung einzelner Attribute der verschiedenen Objekttypen geht.
-So ist beispielsweise das Feld \lstinline|displayName| des \lstinline|Contacts|-Objekts unter \gls{ios} und \gls{win-phone} nicht verfügbar und muss in diesem Fall durch das \lstinline|name|- oder \lstinline|nickname|-Feld ersetzt werden. %%TODO Hier könnte man evtl. auch den direkten Link zu 'iOS Quirks' angeben. Aber wie in BiBTeX formatieren? --> Oder auch nicht! 
+So ist beispielsweise das Feld \lstinline|displayName| des \lstinline|Contacts|-Objekts unter \gls{ios} und \gls{win-phone} nicht verfügbar und muss in diesem Fall durch das \lstinline|name|- oder \lstinline|nickname|-Feld ersetzt werden. 
 Ähnliches gilt auch für weitere Objekte oder deren Methoden und Felder, die unter bestimmten Plattformen nicht oder nur teilweise unter Berücksichtigung bestimmter Besonderheiten funktionieren \cite{Cordova_Plugin_Registry_Contacts}.
 %TODO Genauer erklären, nicht zu allgemein! -> Das ist Thema der Arbeit, also mehr Fokus hierauf.
-%TODO Genauer erklären, was diese Contacts-API kann und wie man sie verwendet. ==> IN THEORIE-TEIL ODER HIER IN PRAXIS????
 %TODO Weitere Möglichkeiten / Grenzen aus Plugin-Docs
 
-Während bei der nativen App-Entwicklung für \gls{ios} oder \gls{android} \gls{ui}-Komponenten für die Arbeit mit Kontakten bereitstehen, liefert die \gls{cordova}-\gls{api} hier lediglich Mechanismen für den Zugriff auf die Kontaktdaten, jedoch nicht die entsprechenden UI-Komponenten, da diese vom jeweiligen verwendeten \gls{gui}-Toolkit abhängen.
+Während bei der nativen App-Entwicklung für \gls{ios} oder \gls{android} \gls{ui}-Kom\-po\-nen\-ten für die Arbeit mit Kontakten bereitstehen, liefert die \gls{cordova}-\gls{api} hier lediglich Mechanismen für den Zugriff auf die Kontaktdaten, jedoch nicht die entsprechenden UI-Komponenten, da diese vom jeweiligen verwendeten \gls{gui}-Toolkit abhängen.
 Die hier verwendete Oberflächen-Bibliothek \gls{jqm} beinhaltet lediglich allgemeine \glspl{widget} wie Listen, Buttons, Tabellen etc., sodass die Erstellung einer \gls{ui}-Komponente für die Auswahl von Kontakten dem Entwickler überlassen bleibt.
 
 In Verbindung mit der Data-Binding-Bibliothek \gls{ko} kann eine solche Komponente jedoch relativ einfach erstellt werden, indem die Felder in der Oberfläche an Eigenschaften des \glspl{view-model} gebunden werden, welches durch Benachrichtigungen des Models, das den Zugriff auf die native Ebene des Betriebssystems abwickelt, die Daten der Anwendung und des Geräts anzeigen kann (\seeref{sec:ko}).
@@ -113,7 +112,7 @@ Grundsätzlich bietet die \gls{cordova}-Plugins-\gls{api} trotz einiger Einschr�
 %				Ecken und Kanten, Spitzfindigkeiten zeigen 
 %				Eigenschaften, Was fällt auf ? Am Beispiel
 
-	\section{Fazit} % Zusammenfassung der Erfahrung Umsetzung
+\chapter{Fazit} % Zusammenfassung der Erfahrung Umsetzung
 %		Benutzung (Technik, Methodik, Entwicklerfreundlichkeit, Kompatibilität mit anderen Systemen / Software)
 %		Bewertung
 %		Vor-/Nachteile (zueinander / gegenüber nativer App-Entw.), Risiken, Chancen

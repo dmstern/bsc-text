@@ -1,4 +1,4 @@
-\chapter{Theoretische Grundlagen}
+\part{Theoretische Grundlagen}
 %1. Theoretische Grundlagen → als Grundlage für Implementierung
 % Was muss der Leser wissen, um die Realisierung zu verstehen? 
 %1. Konkreter, technologischer: Worum geht es bei Plattformunabhängigkeit, wie ist zu erreichen? → verschiedene grundsätzliche Konzepte
@@ -6,9 +6,9 @@
 %3. Verwendete Technologien → wie macht das phonegap?
 %1. Knockout, jquerymobile, etc.
 
-\section{Apps für mobile Geräte}
+\chapter{Apps für mobile Geräte}
 
-\subsection{Mobile (native) Apps} \label{sec:native}
+\section{Mobile (native) Apps} \label{sec:native}
 Unter mobilen \glspl{app} versteht man im Allgemeinen Anwendungssoftware für Tablet-Computer oder Smartphones. 
 Im Laufe der letzten Jahre haben sich auf dem Markt für Mobilgeräte durch viele konkurrierende Gerätehersteller eine Vielzahl von Smartphone- und Tablet-Betriebssystemen herausgebildet.
 Im Entwicklungsbereich wird in dem Zusammenhang auch von \glspl{plattform} gesprochen.
@@ -42,7 +42,7 @@ Als Programmiersprache wird \gls{obj-c} verwendet, einer um objektorientierte El
 Möchte ein Auftraggeber einer Software also statt seinen Kunden nur eine \gls{app} für ein Betriebssystem anzubieten, einen größeren Nutzerkreis erschließen, muss die zu entwickelnde \gls{app} für jede Zielplattform neu programmiert, getestet und gebaut werden, da jede mobile \gls{plattform} ihre eigenen Toolkits, Bibliotheken und Programmiersprachen verwendet, was die native \gls{app}-Entwicklung für potenzielle Auftraggeber zu einem sehr kostenaufwändigen Projekt werden lassen kann.
 Andererseits bietet die native \gls{app}-Entwicklung vollständige Unterstützung der betriebssystemeigenen Funktionalitäten wie den Zugriff auf Kamera, Adressbuch, Bewegungssensoren etc. der jeweiligen \gls{plattform}, sodass ein Softwareprojekt mit solchen besonders hardware- oder betriebssystemnahen Anforderungen die Entwicklung einer nativen (plattformspezifischen) \gls{app} notwendig erscheinen lassen kann.\footnote{Mehr dazu in \autoref{sec:hybrid-dev}}
 
-\subsection{Web-Anwendungen}\label{sec:web-app}
+\section{Web-Anwendungen}\label{sec:web-app}
 
 % Zuerst gab es Websites, dann dynamische Websites
 Eine \gls{web-app} ist eine Anwendungssoftware, die auf einem Web-Server läuft und auf die der Nutzer mittels eines Browsers zugreifen kann; also eine dynamische Website, wie man sie auch schon vor dem Aufkommen von Smartphones und modernen Tablets kannte. 
@@ -78,7 +78,7 @@ Für vollständigen Offline-Zugriff müsste der Entwickler die komplette Website
 Allgemein kann man sagen, dass der Zugriff auf native Funktionalitäten des Geräts respektive des Betriebssystems nicht oder nur gering unterstützt wird, sodass der geringere Entwicklungsaufwand einer solchen \gls{web-app} (\seename~ \autoref{fig:hybrid-apps-schaubild}) unter Umständen zu Lasten des Funktionsumfangs und der Usability der Anwendung geht.
 \todo{recherchieren: wird was unterstützt? gibt es Möglichkeiten, per Javascript etc.? Was wird \enquote{gering} unterstützt? sollte man das noch weiter ausführen? Touch-Gesten etc.?}
 
-\subsection{Hybride Apps} \label{sec:hybrid-app}
+\section{Hybride Apps} \label{sec:hybrid-app}
 
 Die \gls{hybrid-app} verbindet Eigenschaften der Nutzung einer nativen \gls{app} mit den Vorteilen der Web-Entwicklung mithilfe von Web-Technologien und entsprechenden \glspl{framework} und löst damit beispielsweise das Problem der mangelnden Offline-Fähigkeit einer \gls{web-app} sowie deren geringe Unterstützung von plattformspezifischen oder hardware-nahen Funktionalitäten. 
 Da jedes moderne mobile Betriebssystem für Entwickler auch die Möglichkeit bietet, eine Web-View in die zu entwickelnde App einzubinden, also eine \gls{gui}-Komponente, in die \gls{html}-Inhalte hinein geladen werden können, liegt der Ansatz für hybride Apps auf der Hand: Auf Entwicklungsebene wird die Anwendung als Web-App entwickelt, gleichzeitig mithilfe von entsprechenden \glspl{api} und \glspl{framework} zur Anbindung an die native Ebene der Zielplattform in eine App für die jeweiligen \glspl{plattform} integriert, sodass auf Benutzerseite die Nutzung einer Web-Anwendung, die in puncto Funktionsumfang, Usability und Look-And-Feel einer nativen mobilen App sehr nahe kommt, möglich wird.
@@ -99,15 +99,9 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 		{Entwicklungsstufen der verschiedenen Arten von \glspl{app}. Während bei der nativen \gls{app} der gesamte Entwicklungszyklus einmal pro \gls{plattform} durchlaufen werden muss, verringert sich der Aufwand für die \gls{web-app} erheblich. Bei der \gls{hybrid-app} muss die Anwendung zwar einmal für jede \gls{plattform} gebaut und ausgeliefert werden, um die Schnittstellen für die nativen \glspl{plattform} zu implementieren, aber der hauptsächliche Entwicklungsaufwand des Programmierens und Testens fällt aufgrund des generischen Charakters nur einmal an.}
 	{Eigene Grafik.}
 
-\begin{comment}
+\chapter{Plattformunabhängige App-Entwicklung}
 
-%TODO MUSS AUF JEDEN FALL NOCH REIN!!! ::::::::::::::::::::::::
-
-\section{Plattformunabhängige App-Entwicklung}
-
-%\subsection{Möglichkeiten des Erreichens von Plattformunabhängigkeit}
-
-\subsection[Lösungen]{Lösungen für die plattformunabhängige App-Entwicklung}
+\section[Überblick: Lösungen und Ansätze]{Überblick: Lösungen und Ansätze für die platt\-form\-un\-ab\-hängige App-Entwicklung}
 %TODO Ergebnisse aus GoogleDocs-Recherche Zusammentragen
 
 %TODO Gibts es andere Ansätze als den hybriden?
@@ -118,14 +112,13 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 %TODO Appcelarator
 %TODO Weitere Lösungen?
 
-\end{comment}
-
 \section{Entwicklung von hybriden Apps}\label{sec:hybrid-dev}
+% Dieses Kapitel dient dazu, den Leser über die Grundlagen der im Praxis-Teil verwendeten Technologien zu setzten. Da ich im Praxis-Teil nur Cordova ausprobiere, hier der Zusatz "mit Cordova" in der Übeschrift?
 
 Wie in \ref{sec:hybrid-app} beschrieben, bildet die hybride App-Entwicklung die Schnittmenge aus der nativen App-Entwicklung und der Web-Entwicklung mithilfe von Web-Technologien und zusätzlichen \glspl{framework} und Bibliotheken. 
 Hier soll mit \gls{cordova}\,/\,\gls{phonegap} die konkrete Nutzung eines dieser \glspl{framework} und weitere verwendete Technologien wie \gls{ko} oder \gls{jqm} erläutert werden.
 
-\subsection{JQuery}
+\subsection{Die JavaScript-Bibliothek jQuery}
 
 Bereits für die Entwicklung von reinen Web-Anwendungen stellen neben den grundlegenden Web-Technologien \gls{html}, \gls{css} und \gls{js} Erweiterungen wie die JavaScript-Bibliothek \gls{jq} nützliche Hilfsmittel dar, die viele Funktionen gegenüber der Verwendung von \enquote{reinem} \gls{js} deutlich vereinfacht.
 So ist beispielsweise der Programmieraufwand für den Zugriff auf Elemente einer \gls{html}-Seite durch \gls{jq} wesentlich geringer als ohne die Bibliothek.
@@ -144,7 +137,7 @@ Bei der reinen \gls{js}-Variante ist nach der Selektion aller Absätze zunächst
 		caption=Die gleiche Funktionalität wie in \autoref{lst:jq} mit reinem \gls{js}.,
 	}
 	
-\subsection{Knockout} \todo{evtl. andere Überschriften} \label{sec:ko}
+\subsection{Data-Binding mit Knockout} \todo{evtl. andere Überschriften} \label{sec:ko}
 
 Neben \gls{jq} bietet das \gls{ko}-\gls{framework} ein weiteres nützliches Hilfsmittel für die Entwicklung von Web-Anwendungen, das ebenso wie \gls{jq} und \gls{jqm} aus einer \gls{js}-Bibliothek besteht und die Verbindung der \gls{html}-Oberfläche mit der Programmlogik der Anwendung mittels \gls{data-binding}, also der dynamischen Anbindung von \gls{ui}-Komponenten zu Datenfeldern auf Programmebene, erheblich vereinfacht.
 Das \gls{data-binding} wird bei \gls{ko} durch das \gls{mvvm}-Pattern realisiert, das Entwicklern eine Trennung zwischen Benutzeroberfläche und \gls{ui}-Logik ermöglicht.
@@ -155,6 +148,7 @@ Diese Aufteilung dient unter anderem der Übersichtlichkeit des Codes und kann b
 	{\gls{mvvm}-Pattern}
 		{Schematische Darstellung des Entwurfsmusters \gls{mvvm}: Die View ist über das \gls{data-binding} mit dem ViewModel verbunden, indem die \gls{ui}-Logik implementiert ist und das mit der Geschäftslogik (Model) interagiert.}
 	{Wikimedia Commons \cite{MVVMPattern}.}
+	%TODO Das müsste doch mit citefield[organization] oder so gehen.
 
 
 Das \gls{mvvm}-Pattern stellt eine Gliederung der Software in drei Grundlegende Komponenten dar:
@@ -178,7 +172,9 @@ Stattdessen übernimmt das \gls{ko}-\gls{framework} die Durchreichung aller Änd
 		{\gls{ko}-Beispiel aus \autoref{lst:ko} im Browser. Links im Bild: Anzeige bei Initialisierung der Oberfläche, rechts: Benutzereingabe ins Eingabefeld: \enquote{Mars}. \\ Änderungen in der \gls{ui} (Hier: im Eingabefeld) werden sofort im \gls{view-model} registriert und automatisch an alle verknüpften Anzeigen weitergereicht (Hier an das fettgedruckte Begrüßungselement).}
 	{Eigener Screenshot.}
 
-\subsection{JQuery\,Mobile}
+\subsection{JQuery\,Mobile: Mobile Web-Oberflächen}
+
+%TODO Hier Evtl. auch nochmal Bezug nehmen auf Überblick: Was gibts für GUI-Libs?
 
 Um das Erscheinungsbild und Verhalten von Webseiten an eine bessere Benutzung für mobile Geräte anzupassen, bietet sich der Einsatz eines entsprechenden \gls{gui}-Toolkits an. 
 Die von der \gls{jq-foundation} entwickelte \gls{gui}-Bibliothek \gls{jqm} bietet hier Möglichkeiten für Entwickler von mobilen Webseiten, ihre Dokumente an verschiedene Eigenschaften anzupassen, die gemeinhin unter dem Begriff \gls{laf} zusammengefasst werden, wie dem äußeren Erscheinungsbild, der Fähigkeit, mit Touch-Gesten umzugehen, der Anpassung an die geringere Display-Größe sowie von vielen mobilen \glspl{app} gewohnten Animationen, und somit erwartungskonform zu gestalten.
@@ -420,7 +416,8 @@ Während bei einigen, wie \zB dem \gls{cordova}-\gls{plugin}, Schnittstellenmeth
 \includehtml{cordova-plugin-device.js}{label=lst:cordova-plugin-device, caption={Beispiel für die Verwendung des \emph{Device}-\glspl{plugin}. Bei Empfang des \emph{DeviceReady}-\glspl{event} wird die Modell-Bezeichnung des Geräts in der Konsole ausgegeben \cite{Cordova_Plugin_Registry_device}.},}
 
 
-\subsection{PhoneGap\,Build}
+\subsubsection{PhoneGap\,Build}
+%TODO Gliederung: Eher als Alternative zum lokalen Build?
 
 %TODO Noch grundsätzlicher einleiten: Es gibt auch Cloud-Build-Services wie zB.....
 

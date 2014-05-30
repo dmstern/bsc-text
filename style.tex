@@ -1,5 +1,12 @@
 % COMMANDS =================================================
 
+% Unnnumerierte Part-Überschrift
+\newcommand{\unnumberedPart}[1]{\phantomsection\part*{#1}
+\addcontentsline{toc}{part}{#1}}
+
+% Unnnumerierte Kapitel-Überschrift
+\newcommand{\unnumberedChapter}[1]{\phantomsection\chapter*{#1}\addcontentsline{toc}{chapter}{#1}}
+
 % Querverweise:
 \newcommand{\linename}{Zeile~}
 \newcommand{\linenamepl}{Zeilen~}
