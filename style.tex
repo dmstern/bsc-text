@@ -11,11 +11,15 @@
 \newcommand{\linename}{Zeile~}
 \newcommand{\linenamepl}{Zeilen~}
 %TODO Als Option für neues Kommando "seelst" oder so. -> Siehe Seiten-Option bei Zitationen.
+
+%\newcommand{\autopageref}{def}
 \newcommand{\seeref}[1]{\seename\ \autoref{#1}}
+\newcommand{\seepageref}[1]{\seename\ \autopageref{#1}}
+\newcommand{\seeautopageref}[1]{\seename\ \autoref{#1}, \autopageref{#1}}
 
 \newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \textit{\nameref*{#1}}}}
 \newcommand{\seefullref}[1]{\seename\ \fullref{#1}}
-\newcommand{\seefullpageref}[1]{\seefullref{#1}\ auf \pagename\ \pageref{#1}}
+\newcommand{\seefullpageref}[1]{\seefullref{#1},\ \autopageref{#1}}
 
 % Style für Dateinamen:
 \newcommand{\filename}[1]{\textsf{#1}}
