@@ -112,7 +112,9 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 %TODO Appcelarator
 %TODO Weitere Lösungen?
 
-\section{Entwicklung von hybriden Apps}\label{sec:hybrid-dev}
+\section{Entwicklung von hybriden Apps}	\label{sec:hybrid-dev}
+%TODO boxed?
+
 % Dieses Kapitel dient dazu, den Leser über die Grundlagen der im Praxis-Teil verwendeten Technologien zu setzten. Da ich im Praxis-Teil nur Cordova ausprobiere, hier der Zusatz "mit Cordova" in der Übeschrift?
 
 Wie in \ref{sec:hybrid-app} beschrieben, bildet die hybride App-Entwicklung die Schnittmenge aus der nativen App-Entwicklung und der Web-Entwicklung mithilfe von Web-Technologien und zusätzlichen \glspl{framework} und Bibliotheken. 
@@ -137,8 +139,8 @@ Bei der reinen \gls{js}-Variante ist nach der Selektion aller Absätze zunächst
 		caption=Die gleiche Funktionalität wie in \autoref{lst:jq} mit reinem \gls{js}.,
 	}
 	
-\subsection{Data-Binding mit Knockout} \todo{evtl. andere Überschriften} \label{sec:ko}
 
+\subsection{Data-Binding mit Knockout} \label{sec:ko}
 Neben \gls{jq} bietet das \gls{ko}-\gls{framework} ein weiteres nützliches Hilfsmittel für die Entwicklung von Web-Anwendungen, das ebenso wie \gls{jq} und \gls{jqm} aus einer \gls{js}-Bibliothek besteht und die Verbindung der \gls{html}-Oberfläche mit der Programmlogik der Anwendung mittels \gls{data-binding}, also der dynamischen Anbindung von \gls{ui}-Komponenten zu Datenfeldern auf Programmebene, erheblich vereinfacht.
 Das \gls{data-binding} wird bei \gls{ko} durch das \gls{mvvm}-Pattern realisiert, das Entwicklern eine Trennung zwischen Benutzeroberfläche und \gls{ui}-Logik ermöglicht.
 Diese Aufteilung dient unter anderem der Übersichtlichkeit des Codes und kann beispielsweise die Aufteilung der Entwicklung von Benutzerschnittstellen erleichtern, indem die \gls{ui}- und die Geschäftslogik von Softwareentwicklern übernommen werden kann, während Designer den Schwerpunkt auf die Gestaltung der Oberfläche legen können \cite{Model_View_ViewModel__Wikipedia}.
@@ -152,7 +154,7 @@ Diese Aufteilung dient unter anderem der Übersichtlichkeit des Codes und kann b
 
 
 Das \gls{mvvm}-Pattern stellt eine Gliederung der Software in drei Grundlegende Komponenten dar:
-Die \gls{view} Repräsentiert die Präsentationsschicht, also die Benutzeroberfläche, im Falle der Web-Anwendung also die \gls{html}-Seite, deren Elemente per \gls{data-binding} an Eigenschaften des \glspl{view-model} gebunden werden können. 
+Die \gls{view} repräsentiert die Präsentationsschicht, also die Benutzeroberfläche, im Falle der Web-Anwendung also die \gls{html}-Seite, deren Elemente per \gls{data-binding} an Eigenschaften des \glspl{view-model} gebunden werden können. 
 Das \gls{model} steht für die Geschäftslogik und beinhaltet das Datenmodell und die Funktionen, die vom \gls{view-model} angefragt werden können, um beispielsweise Benutzereingaben zu validieren oder Daten für die Anzeige in der Oberfläche zu erhalten (\seeref{fig:mvvm-pattern}).
 
 Ein wesentlicher Mechanismus für die Aktualisierung der Oberfläche bei einer Änderung des \glspl{view-model} von \gls{ko} ist die Verwendung von \glspl{obs}, also Objekten oder Datenfeldern, welche bei Änderungen ihres Inhalts eine Nachricht aussenden, sodass andere Objekte automatisch auf die Zustandsänderung des \glspl{obs} reagieren können, beispielsweise, um die Anzeige auf der Oberfläche zu aktualisieren.
