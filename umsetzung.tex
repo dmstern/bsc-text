@@ -30,7 +30,7 @@
 \section{Kriterien zur Bewertung}	\label{sec:kriterien}
 	%	(Aspekte / Vorüberlegungen (Sicherheit, Verfügbarkeit, plattformspezifische Anforderungen, Usability, ?Entwickler-Komfort?, ?Feature-Reichtum?, ...))
 
-\chapter{Umsetzung}	\label{sec:umsetzung}	%TODO Gliederung bzw. Name des Abschnitts? Erklärung der Architekur-Impl ist ja auch Umsetzung --> Evtl. nochmal Strippgen fragen.
+\chapter{Exploration}	\label{sec:explo}	%TODO Gliederung bzw. Name des Abschnitts? Erklärung der Architekur-Impl ist ja auch Umsetzung --> Evtl. nochmal Strippgen fragen.
 %TODO Titel sowieso schwierig, weil kapitel ja schon "Praktische Umsetzung" heißt.
 
 %\section{Ausgewählte Technologie} 
@@ -56,7 +56,7 @@ Das \gls{model} muss dabei keinerlei Kenntnis vom \gls{view-model} haben, ledigl
 
 Durch diese lose Kopplung kann einerseits die Entwicklung erleichtert werden, da bei einer möglichen Aufteilung der Implementierung das Entwicklerteam, das für die Implementierung des \glspl{model} zuständig ist, keine Kenntnis über die Struktur des \glspl{view-model} oder gar der \gls{view} haben muss und darüber hinaus könnten auch weitere \gls{observer} auf Benachrichtigungen des \glspl{model} registriert werden, beispielsweise, um weitere Aktionen nach Auftreten eines Events durchzuführen.
 
-Neben diesen architektonischen Aspekten wurde hier das \gls{observer-pattern} für die Kopplung zwischen \gls{model} und \gls{view-model} gewählt, da bei Anforderung der Daten durch das \gls{view-model} noch nicht bekannt ist, wann diese Daten genau zurückgeliefert werden, da das \gls{cordova}-\gls{framework} nach Aufruf einer \gls{plugin}-\gls{api}-Methode\footnote{Beispielweise \lstinline|navigator.contacts.find()| zum Anfordern der Kontaktdaten aus dem Adressbuch (\seeref{lst:find-contacts}).} diese erst vom Gerät laden muss und so das Zurückliefern der Daten per Rückgabewert zu einem \lstinline|null|-Wert führen kann, da bei Aufruf der Methode \lstinline|findContacts()| die Daten unter Umständen noch nicht verfügbar sind (\seeref{lst:find-contacts}).
+Neben diesen architektonischen Aspekten wurde hier das \gls{observer-pattern} für die Kopplung zwischen \gls{model} und \gls{view-model} gewählt, da bei Anforderung der Daten durch das \gls{view-model} noch nicht bekannt ist, wann diese Daten genau zurückgeliefert werden, da das \gls{cordova}-\gls{framework} nach Aufruf einer \gls{plugin}-\gls{api}-Methode\footnote{Beispielweise \lstinline|navigator.contacts.find()| zum Anfordern der Kontaktdaten aus dem Adressbuch} ausgeführt wird (\seeref{lst:find-contacts}).} diese erst vom Gerät laden muss und so das Zurückliefern der Daten per Rückgabewert zu einem \lstinline|null|-Wert führen kann, da bei Aufruf der Methode \lstinline|findContacts()| die Daten unter Umständen noch nicht verfügbar sind (\seeref{lst:find-contacts}).
 % Auskommentiert, da nicht sicher, ob das wirklich der Grund bei Cordova.
 %Dazu dient auch die Übergabe eines \lstinline|onSuccess|-\glspl{handler}, der nach Erfolgreicher Ausführung der \og \gls{api}-Methode ausgeführt wird. 
 %%TODO Theoretische erläuterungen zu cordova in Theorie-Teil verschieben!
@@ -76,10 +76,12 @@ Nachdem das \gls{cordova}-Plugin \emph{Contacts}, wie in \fullref{sec:cordova} b
 Dieses bietet beispielsweise die Möglichkeit, nach bestimmten Kontakten im Adressbuch zu suchen, neue Kontakte zu erstellen und dem Adressbuch hinzuzufügen, sowie bestehende Kontakte zu entfernen oder zu duplizieren \cite{Cordova_Plugin_Registry_Contacts}.
 
 Um Kontakte im Adressbuch zu suchen, muss im Wesentlichen die Methode \lstinline|navigator.contacts.find(fields, onSuccess, onError, options)| ausgeführt werden, wobei \lstinline|fields| die zu durchsuchenden Datenfelder repräsentiert, \lstinline|onSuccess| die Funktion angibt, die bei erfolgreicher Ausführung der \lstinline|find|-Methode ausgeführt werden soll, \lstinline|onError| den \gls{errorhandler} bei Auftreten eines Fehlers beim Suchen der Kontakte und \lstinline|options| zusätzliche Optionen wie Suchfilter oder ein \lstinline|multiple|-\gls{flag}, das angibt, ob mehrere Kontakte zurückgegeben werden sollen (\seeref{lst:find-contacts}, \linename 26).
+Die \lstinline|find|-Methode wird \gls{asynchron} ausgeführt, das heißt, dass der Aufrufer nicht wissen kann, wann das Ergebnis zurückgeliefert wird, also nicht als Rückgabewert zurückgegeben werden kann, sondern bei erfolgreicher Suche an den \og \lstinline|onSuccess|-\gls{handler} übergeben wird und dort weiter verarbeitet werden kann \cite{Cordova_Plugin_Registry_Contacts}.
 
 Da in diesem Beispiel (\autoref{lst:find-contacts}) keine bestimmten, sondern \emph{alle} Kontakte angezeigt werden sollen, wird der \lstinline|find|-Methode kein spezieller \lstinline|filter| übergeben (\linename 23). 
-Ebenso ist aus dem selben Grund hier keine Einschränkung der durchsuchten Felder nötig, sodass durch der \lstinline|fields|-Parameter den Wert \lstinline|"*"| hat, und so alle Felder des \emph{Contact}-Objekts durchsucht werden (\linename 25). 
+Ebenso ist aus dem selben Grund hier keine Einschränkung der durchsuchten Felder nötig, sodass durch der \lstinline|fields|-Parameter den Wert \lstinline|"*"| hat, und so alle Felder des \lstinline|Contact|-Objekts durchsucht werden (\linename 25).
 Bei erfolgreicher Ausführung der \lstinline|find|-Methode werden die zurückgegebenen Kontaktdaten als Parameter in Form eines Arrays, das die entsprechenden JavaScript-Objekte vom Typ \lstinline|Contact| beinhaltet, an die \lstinline|onSuccess|-Methode übergeben und vom \gls{model} an dessen \gls{observer} (in diesem Fall das \gls{view-model}) versendet (\linename 13). 
+
 Der Bezeichner \lstinline|events.FOUND_CONTACTS| stellt eine String-Konstante dar, die in einem globalen Konstanten-Objekt definiert wurde und den Typ des \glspl{event} identifiziert (\seeref{lst:app:consts.js}).
 
 	\includehtml{praxis/find-contacts.js} { label=lst:find-contacts, caption={Verwendung des \emph{Contacts}-Plugins von \gls{cordova}.}}
@@ -95,28 +97,41 @@ Durch die Bindung der Eigenschaft \lstinline|contacts| in Form eines \emph{Obser
 	
 %TODO Screenshot(s) einfügen!!
 		
-Einige Unterschiede ergeben sich bei der Verwendung des Contacts-Plugins zwischen den verschiedenen Zielplattformen.
-So können beispielsweise nicht alle Methoden der contacts-\gls{api} auf allen mobilen Plattformen gleichermaßen ausgeführt werden.
+Einige Unterschiede ergeben sich bei der Verwendung des \emph{Contacts}-\glspl{plugin} zwischen den verschiedenen Zielplattformen.
+So können beispielsweise nicht alle Methoden der \gls{contacts-api} auf allen mobilen Plattformen gleichermaßen ausgeführt werden.
 Die hier verwendete \lstinline|find()|-Methode bietet mit der Unterstützung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios}, \gls{win-phone} und \gls{win8} eine relativ  breite Kompatibilität für alle größeren gängigen und mobilen Betriebssysteme.
-Auch werden einige Datentypen nicht von allen Plattformen unterstützt, so zum Beispiel das \lstinline|ContactOrganization|-Objekt\footnote{\seefullpageref{sec:cordova-grundlegendes}.}, das lediglich bei der Entwicklung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios} und \gls{win-phone} zur Verfügung steht, damit aber immer noch alle großen Plattformen unterstützt \cite{Cordova_Plugin_Registry_Contacts}.
+Allerdings auch werden einige Datentypen \emph{nicht} von allen Plattformen unterstützt, so zum Beispiel das \lstinline|ContactOrganization|-Objekt\footnote{\seefullpageref{sec:cordova-grundlegendes}.}, das lediglich bei der Entwicklung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios} und \gls{win-phone} zur Verfügung steht, damit aber immer noch alle großen Plattformen unterstützt \cite{Cordova_Plugin_Registry_Contacts}.
 
 Doch auch bei den unterstützten Plattformen sind einige Besonderheiten zu beachten, wenn es um die Verwendung einzelner Attribute der verschiedenen Objekttypen geht.
-So ist beispielsweise das Feld \lstinline|displayName| des \lstinline|Contacts|-Objekts unter \gls{ios} und \gls{win-phone} nicht verfügbar und muss in diesem Fall durch das \lstinline|name|- oder \lstinline|nickname|-Feld ersetzt werden. 
+So ist beispielsweise das Feld \lstinline|displayName| des \lstinline|Contact|-Objekts unter \gls{ios} nicht verfügbar, sodass in diesem Fall auf das \lstinline|name|- oder \lstinline|nickname|-Feld zurückgegriffen werden muss.
 Ähnliches gilt auch für weitere Objekte oder deren Methoden und Felder, die unter bestimmten Plattformen nicht oder nur teilweise unter Berücksichtigung bestimmter Besonderheiten funktionieren \cite{Cordova_Plugin_Registry_Contacts}.
 
+So wird beispielsweise \lstinline|find|-Methode grundsätzlich mit \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios}, \gls{win-phone} und \gls{win8} von den wichtigsten mobilen \glspl{plattform} unterstützt, doch bei letzterer besteht die Einschränkung, dass aus der hybriden \gls{app} heraus nicht ohne weiteres auf die Kontaktdaten zugegriffen werden kann, wie es bei den anderen \glspl{plattform} der Fall ist (\so), sondern eine Nutzerinteraktion nötig ist, um Kontakte aus dem Adressbuch auszuwählen und weiter zu verarbeiten, sodass bei Anfrage von Kontaktdaten die \gls{app} für das native \gls{win8}-Adressbuch geöffnet wird und der Nutzer die gewünschten Kontakte selbst von Hand auswählen muss.
+Darüber hinaus bieten \gls{win8}-Kontakte lediglich einen Lesezugriff, sodass hier aus der Kontaktdatenbank geladene Objekte nicht verändert, gelöscht oder dupliziert werden können \cite{Cordova_Plugin_Registry_Contacts}.
 
-%TODO Genauer erklären, nicht zu allgemein! -> Das ist Thema der Arbeit, also mehr Fokus hierauf.
-%TODO Weitere Möglichkeiten / Grenzen aus Plugin-Docs
+Eine Kategorisierung von Kontakten über das \lstinline|cagegories|-Attribut wird bei \gls{ff-os} sowie \gls{ios} nicht unterstützt, sodass beim Versuch, diesen Wert anzufragen, \lstinline|null| zurückgegeben wird.
+In Bezug auf die Unterstützung des \lstinline|Contact|-Objekts ergeben sich die meisten Einschränkungen für die Plattform \gls{win-phone}.
+Hier finden sich in der \gls{contacts-api}-Dokumentation beispielsweise Informationen über ein teilweise leicht inkonsistentes Verhalten beim Erstellen bzw. Suchen von Kontakten.
+So unterscheidet sich beispielsweise der Wert des \lstinline|displayName|-Attributs, das bei Erstellung eines \lstinline|Contact|-Objekts angegeben wird von dem, das bei der Suche zurückgeliefert wird.
+Ebenso können bei der Erstellung eines \lstinline|Contact|-Objekts mehrere \glspl{url} angegeben werden, während bei den Objekten des Suchergebnisses nach Ausführung der \lstinline|find|-Methode lediglich \emph{eine} verfügbar ist.
 
+Einige Listenfelder des \lstinline|Contact|-Objekts besitzen ein Attribut mit dem Namen \lstinline|pref|, dem ein boolescher Wert zugewiesen kann, der angibt, ob das jeweilige Objekt innerhalb einer Liste\footnote{So beispielsweise bei den Feldern \lstinline|emails|, \lstinline|phoneNumbers| oder \lstinline|addresses|, denen jeweils mehrere E-Mail-Adressen, Telefonnummern bzw. Adressen zugewiesen werden können.} das vom Nutzer präferierte darstellt.
+Dieses \lstinline|pref|-Attribut wird ebenfalls unter einigen Plattformen nicht unterstützt, so \zB für \lstinline|phoneNumbers| und \lstinline|emails| unter \gls{win-phone} sowie beim \lstinline|addresses|-Feld unter \gls{android}\,2.X, \gls{blackberry-os}, \gls{ios} und \gls{win8}.
+Die \lstinline|Contact|-Felder \mbox{\lstinline|note|,} \mbox{\lstinline|ims|,} \lstinline|birthdays| und \lstinline|categories| werden für \gls{win-phone} gar nicht unterstützt.
 
+Das \og \lstinline|Contact|-Feld \lstinline|name| hat den Datentyp \lstinline|ContactName| besteht und besteht aus den weiteren \gls{string}-Attributen \mbox{\lstinline|formatted|,} \mbox{\lstinline|familyName|,} \mbox{\lstinline|code|,} \mbox{\lstinline|middelName|,} \lstinline|honorificPrefix| und \lstinline|code|.
+Grundlegend wird dieses Objekt zwar von allen elementaren Plattformen unterstützt, doch auch hier gibt es einige Einschränkungen.
+Das \lstinline|formatted|-Attribut wird unter \gls{android}, \gls{blackberry-os}, \gls{ff-os} und \gls{ios} nur teilweise unterstützt und bietet für \gls{android}, \gls{ios} sowie \gls{ff-os} lediglich einen Lesezugriff.
+Unter \gls{win8} stellt dieses das einzige Attribut des \lstinline|ContactName|-Objekts dar, alle anderen werden nicht unterstützt.
 
-
-Während bei der nativen App-Entwicklung für \gls{ios} oder \gls{android} \gls{ui}-Kom\-po\-nen\-ten für die Arbeit mit Kontakten bereitstehen, liefert die \gls{cordova}-\gls{api} hier lediglich Mechanismen für den Zugriff auf die Kontaktdaten, jedoch nicht die entsprechenden UI-Komponenten, da diese vom jeweiligen verwendeten \gls{gui}-Toolkit abhängen.
+Während bei der nativen App-Entwicklung für \gls{ios} oder \gls{android} \gls{ui}-Kom\-po\-nen\-ten für die Arbeit mit Kontakten bereitstehen, liefert die \gls{contacts-api} hier lediglich Mechanismen für den Zugriff auf die Kontaktdaten, jedoch nicht die entsprechenden UI-Komponenten, da diese vom jeweiligen verwendeten \gls{gui}-Toolkit abhängen.
 Die hier verwendete Oberflächen-Bibliothek \gls{jqm} beinhaltet lediglich allgemeine \glspl{widget} wie Listen, Buttons, Tabellen etc., sodass die Erstellung einer \gls{ui}-Komponente für die Auswahl von Kontakten dem Entwickler überlassen bleibt.
 
 In Verbindung mit der Data-Binding-Bibliothek \gls{ko} kann eine solche Komponente jedoch relativ einfach erstellt werden, indem die Felder in der Oberfläche an Eigenschaften des \glspl{view-model} gebunden werden, welches durch Benachrichtigungen des Models, das den Zugriff auf die native Ebene des Betriebssystems abwickelt, die Daten der Anwendung und des Geräts anzeigen kann (\seeref{sec:ko}).
 
-Grundsätzlich bietet die \gls{cordova}-Plugins-\gls{api} trotz einiger Einschränkungen (\so) ein nützliches Werkzeug mit einem breiten Funktionsumfang für den grundlegenden Zugriff auf die Kontaktverwaltung aller großen mobilen Betriebssysteme.
+Grundsätzlich bietet die \gls{contacts-api} trotz einiger Einschränkungen (\so) ein nützliches Werkzeug mit einem relativ breiten Funktionsumfang für den grundlegenden Zugriff auf die Kontaktverwaltung der meisten großen mobilen Betriebssysteme.
+Trotz des grundsätzlich plattformunabhängigen Ansatzes sollte allerdings bei der Entwicklung mithilfe dieser \gls{api} die Unterstützung der verwendeten Features und Attribute und deren Besonderheiten für die angestrebten Zielplattformen in der \gls{contacts-api}-Dokumentation überprüft werden.
+Somit ist eine Kenntnis über die angestrebten Zielplattformen für die Verwendung eines solchen \glspl{plugin} beinahe unabdingbar und die Entwicklung in gewisser Weise wieder ein Stück weit abhängiger von den verwendeten Plattformen. %TODO Den Satz evtl. auch ins Fazit!
 
 
 %			Explorationsergebnisse

@@ -244,6 +244,8 @@ Dieser Ansatz kann beispielsweise sinnvoll sein, wenn Entwickler mobiler Apps ih
 
 % Plattform- / Feature-Unterstützung -----------------------
 
+%TODO In \cite{Apache_Cordova_Contribute} werden noch einige Plattformen mehr aufgelistet. (wohl je nach cordova-version) -> evlt. hier auch noch erwähnen und auflisten.
+
 \image{cordova-platform-support}
 	{width=\fullimagesize}
 	{\gls{cordova} Plattform- und Feature-Unterstützung}
@@ -373,10 +375,13 @@ Für letzteres müssen unter Umständen noch entsprechende Einstellungen auf dem
 \subsubsection{Schnittstelle zur mobilen Plattform}
 
 Um den eigentlichen Mehrwert des \gls{cordova}-\glspl{framework} zu nutzen, also auf native Features der Zielplattformen zuzugreifen, sind verschiedene \glspl{plugin} nötig, die ebenfalls mit dem \gls{cli} verwaltet werden können.
-\gls{cordova} bietet von Haus aus eine ganze Reihe von \glspl{plugin} an, es können aber auch eigene entwickelt werden.\footnote{So bietet \zB \gls{adobe} mit seiner \gls{phonegap}-Variante noch einige weitere \glspl{plugin} wie beispielsweise den Zugriff auf einen angeschlossenen Barcode-Scanner an, die über die Grundausstattung von \gls{cordova} hinausgehen \cite{Cordova-Docs_CLI}.}
 \glspl{plugin} bestehen aus einem zusätzlichen Stück Code, der die Kommunikation zu den nativen Komponenten herstellt.
+\gls{cordova} bietet von Haus aus einen Basissatz von ca. 17 Kern-\glspl{plugin} an,\footnote{In den Quellen finden sich teilweise unterschiedliche Informationen über die Anzahl der Basis-\glspl{plugin}. In der offiziellen \gls{cordova}-Dokumentation werden folgende aufgelistet: \emph{Battery Status, Camera, Contacts, Device, Device Motion (Accelerometer), Device Orientation (Compass), Dialogs, FileSystem, File Transfer, Geolocation, Globalization, InAppBrowser, Media, Media Capture, Network Information (Connection), Splashscreen} und \emph{Vibration} \cite{Cordova_Docs_Plugin_APIs}. Auf der \gls{cordova}-Homepage finden sich zudem noch die beiden Einträge \emph{Console} und \emph{Statusbar} \cite{Apache_Cordova_Contribute}.} es können aber auch eigene entwickelt werden.\footnote{So bietet \zB \gls{adobe} mit seiner \gls{phonegap}-Variante noch einige weitere \glspl{plugin} wie beispielsweise den Zugriff auf einen angeschlossenen Barcode-Scanner an, die über die Grundausstattung von \gls{cordova} hinausgehen \cite{Cordova-Docs_CLI}.}
+Für die Erstellung und Veröffentlichung eigener \glspl{plugin} stellt \gls{apache} in seiner \gls{cordova}-Dokumentation eine Entwicklungsanleitung bereit \cite{Cordova_Plugin_Development_Guide}.
 
 \paragraph{Einrichten von Plugins:}
+
+Für die Installation und Dokumentation von \glspl{plugin} bietet \gls{apache} mit der \gls{plugin-registry} ein Online-Portal an, in der sich zur Zeit 229 \glspl{plugin} für das \gls{cordova}-\gls{framework} finden, darunter auch die \og Kern-\glspl{plugin} von \gls{apache} \cite{Cordova_Docs_Plugin_APIs}. Der überwiegende übrige Teil stammt von verschiedenen Entwicklern und Drittanbietern, die ihre nach dem \gls{plugin-dev-guide} entwickelten \glspl{plugin} diesem Portal hinzufügen können \cite{Cordova_Plugin_Development_Guide}, und bieten häufig spezielle Unterstützung für bestimmte mobile Plattformen an \cite{Cordova_Plugin_Registry_viewAll}.
 
 Das \gls{cordova}-\gls{cli} bietet auch die Möglichkeit, alle verfügbaren \glspl{plugin} zu durchsuchen, hinzuzufügen, aufzulisten und zu entfernen (\seeref{lst:cordova-plugin-search}, \ref{lst:cordova-plugin-add}, \ref{lst:cordova-plugin-ls} und \ref{lst:cordova-plugin-rm}).
 
@@ -399,26 +404,26 @@ Das \gls{cordova}-\gls{cli} bietet auch die Möglichkeit, alle verfügbaren \gls
 
 \paragraph{Verwendung von Plugins}	\label{sec:cordova-plugins-verwendung}
 
-Für die Installation und Dokumentation von \glspl{plugin} bietet \gls{apache} mit der \gls{plugins-registry} ein Online-Portal an, in der sich zur Zeit 229 \glspl{plugin} für das \gls{cordova}-\gls{framework} finden, von denen nur ein kleiner Teil von ca. 17 \glspl{plugin} von \gls{apache} selbst veröffentlicht wird  \cite{Cordova_Docs_Plugin_APIs}, der überwiegende übrige Teil stammt von verschiedenen Entwicklern, die ihre nach dem \gls{plugin-dev-guide} entwickelten \glspl{plugin} diesem Portal hinzufügen können \cite{Cordova_Plugin_Development_Guide}, und bieten häufig spezielle Unterstützung für bestimmte mobile Plattformen an \cite{Cordova_Plugin_Registry_viewAll}.
-
 \gls{cordova}-\glspl{plugin} können einen Satz von Methoden und Objekttypen mitbringen, mit deren Hilfe Entwickler die Funktionen der jeweiligen \glspl{plugin} nutzen können.
-So beinhaltet beispielsweise das \emph{contacts}-\gls{plugin} neben dem zentralen \emph{Contact}-Objekt, das eine Instanz eines Eintrags im Adressbuch des Geräts repräsentiert, die Typen \emph{ContactName}, \emph{ContactField}, \emph{ContactAddress}, \emph{ContactOrganization}, die die Attribute des Contact-Objekt darstellen sowie das Konfigurationsobjekt \emph{ContactFindOptions}, das bestimmte Optionen für den Zugriff auf das Adressbuch kapselt und einen \emph{ContactError}, welcher bei Auftreten eines Fehlers beispielsweise bei der Suche nach Kontakten behandelt werden kann \cite{Cordova_Plugin_Registry_Contacts}.
+So beinhaltet beispielsweise das \emph{contacts}-\gls{plugin} für den Zugriff auf die native Adressverwaltung des Geräts neben dem zentralen \lstinline|Contact|-Objekt, das eine Instanz eines Eintrags im Adressbuch des Geräts repräsentiert, die Typen \mbox{\lstinline|ContactName|,} \mbox{\lstinline|ContactField|,} \mbox{\lstinline|ContactAddress|,} \mbox{\lstinline|ContactOrganization|,} die einige der Attribute des \lstinline|Contact|-Objekts darstellen sowie das Konfigurationsobjekt \mbox{\lstinline|ContactFindOptions|,} das bestimmte Optionen für den Zugriff auf das Adressbuch kapselt und einen \mbox{\lstinline|ContactError|,} welcher bei Auftreten eines Fehlers, beispielsweise bei der Suche nach Kontakten, behandelt werden kann \cite{Cordova_Plugin_Registry_Contacts}.
 
 Darüber hinaus können hier die beiden Methoden \lstinline|navigator.contacts.create| und \lstinline|navigator.contacts.find| verwendet werden, um neue Kontaktobjekte zu erstellen bzw. zu suchen (\seeref{sec:contacts}).
 Das Präfix \lstinline|navigator| identifiziert ein elementares Objekt des \gls{js}-Kerns, das in der Webentwicklung Informationen über den verwendeten Webbrowser bereitstellt, wie beispielsweise den Namen oder dessen Version sowie Informationen über aktivierte Browserplugins \cite{selfhtml_navigator}.
-Das \gls{cordova}-\gls{framework} ersetzt mittels seiner zentralen, plattformspezifischen \gls{js}-Datei \filename{cordova.js} dieses \lstinline|navigator|-Objekt durch einen eigenen \emph{CordovaNavigator} \cite{cordova.js_replaceNavigator}, dem dann durch die verschieden \glspl{plugin} neue Eigenschaften und Methoden zugewiesen werden können über die der Zugriff auf verschiedene \glspl{plugin} bewerkstelligt werden kann, wie in diesem Beispiel das \lstinline|contacts|-Objekt, welches die beiden \gls{plugin}-Methoden \lstinline|create| und \lstinline|find| beinhaltet \cite{cordova-plugin-contacts}.
+Das \gls{cordova}-\gls{framework} ersetzt mittels seiner zentralen, plattformspezifischen \gls{js}-Datei \filename{cordova.js} das \gls{js}-Objekt \lstinline|navigator| durch einen eigenen \lstinline|CordovaNavigator| \cite{cordova.js_replaceNavigator}, dem dann durch die verschieden \glspl{plugin} neue Eigenschaften und Methoden zugewiesen werden können über die der Zugriff auf verschiedene \glspl{plugin} bewerkstelligt werden kann, wie in diesem Beispiel das \lstinline|contacts|-Objekt, welches die beiden \gls{plugin}-Methoden \lstinline|create| und \lstinline|find| beinhaltet.
+Der \og \gls{js}-Objekttyp \lstinline|Contact| ist in der \gls{contacts-api} definiert und beinhaltet die Felder \mbox{\lstinline|id|,} \mbox{\lstinline|displayName|,} \mbox{\lstinline|name|,} \mbox{\lstinline|nickname|,} \mbox{\lstinline|phoneNumbers|,} \mbox{\lstinline|code|,} \mbox{\lstinline|addresses|,} \mbox{\lstinline|ims|,} \mbox{\lstinline|organizations|,} \mbox{\lstinline|birthday|,} \mbox{\lstinline|note|,} \mbox{\lstinline|photos|,} \lstinline|categories| und \lstinline|urls| sowie die Methoden \lstinline|clone| zum duplizieren von Kontaktinstanzen, \mbox{\lstinline|remove|,} um Kontakte aus dem Adressbuch zu entfernen und \mbox{\lstinline|save|,} mit der sich neu erstellte Kontakte in der Adressverwaltung des Geräts abspeichern lassen \cite{cordova-plugin-contacts}.
+%TODO was sollte wohin? das sind doch schon wieder grenzen und möglichkeiten und sollte daher vielleicht eher umsetzung?
 
 Je nach Aufgabengebiet unterscheiden sich die verschiedenen \glspl{plugin} in ihrer Verwendung.
 Während bei einigen, wie \zB dem \gls{cordova}-\gls{plugin}, Schnittstellenmethoden über das \lstinline|navigator|-Objekt bereitgestellt werden (\seeref{lst:cordova-plugin-contacts}), bieten andere wie bspw. das \emph{Battery-Status}-\gls{plugin} die Behandlung verschiedener Events an,\footnote{Im Beispiel des \emph{Battery-Status}-\glspl{plugin} geben diese Auskunft über eine Statusänderung des Ladezustands oder den Anschluss an ans Stromnetz \cite{Cordova_Plugin_Registry_battery-status}.} die über das Hinzufügen eines \glspl{event-handler} zum \lstinline|window|-Objekt\footnote{Ähnlich wie das \lstinline|navigator|-Objekt ist auch das \lstinline|window|-Objekt Bestandteil der \gls{js}-Spezifikation, das Eigenschaften und Methoden zur Information und Steuerung des Browser-Fensters  bietet \cite{selfhtml_window}.} verarbeitet werden können (\seeref{lst:cordova-plugin-battery-status}) und wieder andere, wie \zB das \emph{Device}-\gls{plugin} stellen ein bestimmtes Objekt bereit, über das in diesem Fall Informationen abgefragt werden können \cite{Cordova_Plugin_Registry_Contacts, Cordova_Plugin_Registry_battery-status, Cordova_Plugin_Registry_device}.\footnote{In diesem Beispiel über das verwendete Gerät (\seeref{lst:cordova-plugin-device}).}
 
-\includehtml{cordova-plugin-contacts.js}{label=lst:cordova-plugin-contacts, caption={Beispiel für die Verwendung des \emph{Contacts}-\glspl{plugin} für die Erstellung eines neuen \emph{Contact}-Objekts \cite{Cordova_Plugin_Registry_Contacts}.},}
+\includehtml{cordova-plugin-contacts.js}{label=lst:cordova-plugin-contacts, caption={Beispiel für die Verwendung des \emph{Contacts}-\glspl{plugin} für die Erstellung eines neuen \lstinline|Contact|-Objekts \cite{Cordova_Plugin_Registry_Contacts}.},}
 
 \includehtml{cordova-plugin-battery-status.js}{label=lst:cordova-plugin-battery-status, caption={Beispiel für die Verwendung des \emph{Battery-Status}-\glspl{plugin} \cite{Cordova_Plugin_Registry_battery-status}.},}
 
 \includehtml{cordova-plugin-device.js}{label=lst:cordova-plugin-device, caption={Beispiel für die Verwendung des \emph{Device}-\glspl{plugin}. Bei Empfang des \emph{DeviceReady}-\glspl{event} wird die Modell-Bezeichnung des Geräts in der Konsole ausgegeben \cite{Cordova_Plugin_Registry_device}.},}
 
 
-\subsubsection{PhoneGap\,Build}
+\subsubsection{PhoneGap\,Build}	%TODO Evtl. umbenennen in "Remote Build Services" od. "Der Build-Prozess" oder so.
 %TODO Gliederung: Eher als Alternative zum lokalen Build?
 
 %TODO Noch grundsätzlicher einleiten: Es gibt auch Cloud-Build-Services wie zB.....
