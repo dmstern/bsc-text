@@ -1,12 +1,15 @@
 \part{Praktische Umsetzung} \label{chap:praxis} 
 % (mein Anteil)  verweis auf technische grundlagen.
 
-%TODO "Konzeption" und "Umsetzung" evtl. etwas ungünstige Überschriften, weil Teil schon Umsetzung heißt und die Aufteilung einfach nicht besonders sinnvoll ist?
+%TODO Aufteilung und Namensgebung der Kapitel etwas fragwürdig.
 \chapter{Konzeption}	
 %		Idee, Anforderungen -> plattformunabhägig
 %		Funktionalitätsbeschreibung
 %		Design (Architektur)
 %		Bezug zur Technologie (Plattform(un)abhängige Anforderungen)
+
+\section{Kriterien zur Bewertung}	\label{sec:kriterien}
+	%	(Aspekte / Vorüberlegungen (Sicherheit, Verfügbarkeit, plattformspezifische Anforderungen, Usability, ?Entwickler-Komfort?, ?Feature-Reichtum?, ...))
 
 \section{Beispiel-Anwendung}	\label{sec:bsp-app} 
 %	Zu Explorationszwecken zu implementierender Anwendungsfall (App-Prototyp)
@@ -27,17 +30,7 @@
 % 		Anwendungsfalldiagramm
 %		Anwendungsfall beschreibung
 
-\section{Kriterien zur Bewertung}	\label{sec:kriterien}
-	%	(Aspekte / Vorüberlegungen (Sicherheit, Verfügbarkeit, plattformspezifische Anforderungen, Usability, ?Entwickler-Komfort?, ?Feature-Reichtum?, ...))
-
-\chapter{Exploration}	\label{sec:explo}	%TODO Gliederung bzw. Name des Abschnitts? Erklärung der Architekur-Impl ist ja auch Umsetzung --> Evtl. nochmal Strippgen fragen.
-%TODO Titel sowieso schwierig, weil kapitel ja schon "Praktische Umsetzung" heißt.
-
-%\section{Ausgewählte Technologie} 
-%%TODO Gehört das hier wirklich noch hin? In Theorie-Teil ist doch eigentlich schon klar, welche Technologie ausgewählt wurde. % --> VERMUTLICH DOCH. GEHÖT JA ZU EIGENEM ANTEIL, TECHNOLOGIEN AUSZUWÄHLEN.
-%%TODO Evtl. einfach mit in folgenden Abschnitt verbacken, weil nicht mehr als eine Seite wird.	--> Zumal sowas wie obsever-pattern bzw. mvvm an cordova bzw. knockoout hängt.
-
-\section{Ausgewählte Technologie und Architektur}	%TODO ist das aber nicht auch irgendwie Konzeption? --> Kapitelüberschriften leicht seltsam.
+\section{Ausgewählte Technologie und Architektur}	%TODO ist das aber nicht auch irgendwie Konzeption?
 %TODO Zusammenhang zw. Knockout / MVVM bzw. Obsever-Pattern und Cordova erklären.
 
 %TODO		Komponenten-Diagramm
@@ -62,13 +55,22 @@ Neben diesen architektonischen Aspekten wurde hier das \gls{observer-pattern} f�
 %%TODO Theoretische erläuterungen zu cordova in Theorie-Teil verschieben!
 
 
+\chapter{Implementierung der Geräte-Schnittstelle}	\label{sec:explo}	%TODO Gliederung bzw. Name des Abschnitts? Erklärung der Architekur-Impl ist ja auch Umsetzung --> Evtl. nochmal Strippgen fragen.
+%TODO Titel sowieso schwierig, weil kapitel ja schon "Praktische Umsetzung" heißt.
+
+%\section{Ausgewählte Technologie} 
+%%TODO Gehört das hier wirklich noch hin? In Theorie-Teil ist doch eigentlich schon klar, welche Technologie ausgewählt wurde. % --> VERMUTLICH DOCH. GEHÖT JA ZU EIGENEM ANTEIL, TECHNOLOGIEN AUSZUWÄHLEN.
+%%TODO Evtl. einfach mit in folgenden Abschnitt verbacken, weil nicht mehr als eine Seite wird.	--> Zumal sowas wie obsever-pattern bzw. mvvm an cordova bzw. knockoout hängt.
 
 
-\section{Implementierung der Geräte-Schnittstelle}
+
+%\section{Implementierung der Geräte-Schnittstelle}
 % Beschreibung der konkreten Umsetzung, Implementierung der wesentlichen Features mithilfe der Technologien (Funktionsweise (Wie genau bewerkstelligt \gls{framework} die Plattformunabhängigkeit / Was steckt dahinter?))
 
 		
-\subsection{Zugriff auf die Kontaktverwaltung des Geräts} \label{sec:contacts}
+\section{Zugriff auf die Kontaktverwaltung des Geräts} \label{sec:contacts}
+
+\subsection{Funktionsweise}
 
 Im Anwendungsfall \emph{Liste Teilen} der in \autoref{sec:bsp-app} beschriebenen Beispielanwendung \todo{Anwendungsfallbeschreibung einfügen.} soll die Anforderung erfüllt werden, aus der Anwendung heraus auf das native Adressbuch des Geräts zuzugreifen, um die bestehenden Kontakte zu laden und anzuzeigen, sodass diese vom Nutzer ausgewählt werden, an die Anwendung übergeben und als neues Listenmitglied in ein Listenobjekt eingetragen werden können.
 
@@ -96,7 +98,8 @@ Durch die Bindung der Eigenschaft \lstinline|contacts| in Form eines \emph{Obser
 	\includehtml{praxis/contacts-ui.html}{label=lst:contacts-ui, caption={\gls{ui}-Komponente zur Darstellung der Kontaktliste und Auswahl einzelner Kontakte.},}
 	
 %TODO Screenshot(s) einfügen!!
-		
+
+\subsection{Explorationsergebnisse}
 Einige Unterschiede ergeben sich bei der Verwendung des \emph{Contacts}-\glspl{plugin} zwischen den verschiedenen Zielplattformen.
 So können beispielsweise nicht alle Methoden der \gls{contacts-api} auf allen mobilen Plattformen gleichermaßen ausgeführt werden.
 Die hier verwendete \lstinline|find()|-Methode bietet mit der Unterstützung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios}, \gls{win-phone} und \gls{win8} eine relativ  breite Kompatibilität für alle größeren gängigen und mobilen Betriebssysteme.
@@ -130,6 +133,7 @@ Die hier verwendete Oberflächen-Bibliothek \gls{jqm} beinhaltet lediglich allge
 In Verbindung mit der Data-Binding-Bibliothek \gls{ko} kann eine solche Komponente jedoch relativ einfach erstellt werden, indem die Felder in der Oberfläche an Eigenschaften des \glspl{view-model} gebunden werden, welches durch Benachrichtigungen des Models, das den Zugriff auf die native Ebene des Betriebssystems abwickelt, die Daten der Anwendung und des Geräts anzeigen kann (\seeref{sec:ko}).
 
 Grundsätzlich bietet die \gls{contacts-api} trotz einiger Einschränkungen (\so) ein nützliches Werkzeug mit einem relativ breiten Funktionsumfang für den grundlegenden Zugriff auf die Kontaktverwaltung der meisten großen mobilen Betriebssysteme.
+Der für dieses Feature definierte Anwendungsfall konnte mit den Mitteln der \gls{cordova}-\gls{api} und weiteren Technologien der Webentwicklung wie \gls{ko} oder \gls{jqm} gut umgesetzt werden.
 Trotz des grundsätzlich plattformunabhängigen Ansatzes sollte allerdings bei der Entwicklung mithilfe dieser \gls{api} die Unterstützung der verwendeten Features und Attribute und deren Besonderheiten für die angestrebten Zielplattformen in der \gls{contacts-api}-Dokumentation überprüft werden.
 Somit ist eine Kenntnis über die angestrebten Zielplattformen für die Verwendung eines solchen \glspl{plugin} beinahe unabdingbar und die Entwicklung in gewisser Weise wieder ein Stück weit abhängiger von den verwendeten Plattformen. %TODO Den Satz evtl. auch ins Fazit!
 
