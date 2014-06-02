@@ -29,7 +29,7 @@
 % Zitat-Formatierungen:
 \usepackage[font={itshape, singlespacing, raggedright}]{quoting}
 
-% Seitenränder
+% Seitenränder variabel einstellen (in Anhang wird ein anderer verwendet):
 \usepackage[margin=3.5cm]{geometry}
 
 %TODO Alle Quellen für CD-Abgabe runterladen
@@ -75,7 +75,11 @@
 \frontmatter		% Anfangsteil (Römische Seitenzahlen)
 \maketitle
 \tableofcontents
-%-----------------------------------------------------------
+
+% Abbildungsverzeichnis-------------------------------------
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
+%TODO Analog zu Abbildungsverzeichnis: Wie geht ein Listing-Verzeichnis?
 
 %-----------------------------------------------------------
 \mainmatter			% Hauptteil (ab hier arab. Seitenzahlen)
@@ -95,18 +99,13 @@
 \appendix
 %\backmatter	% \backmatter => Anhang-Kapitel *ohne* Nummerierung.
 \addcontentsline{toc}{part}{\appendixname}
-
 \part*{\appendixname}
 
 % Quellcode ------------------------------------------------
 \include{quellcode}
 
-%TODO Analog zu Abbildungsverzeichnis: Wie geht ein Listing-Verzeichnis?
-
-% ----------------------------------------------------------
-
-%TODO Für alle ignored (und evtl. auch technologies)-Glossar-Begriffe: Hyperlinks entfernen.
 % Glossar --------------------------------------------------
+%TODO Für alle ignored (und evtl. auch technologies)-Glossar-Begriffe: Hyperlinks entfernen.
 \chapter{\glossaryname}
 
 % Begriffe
@@ -116,13 +115,7 @@
 % Technologien
 \printglossary[type=technologies,style=long]
 
-% ----------------------------------------------------------
-
-% Abbildungsverzeichnis
-\addcontentsline{toc}{chapter}{\listfigurename}
-\listoffigures
-
-% Literaturverzeichnis
+% Literaturverzeichnis--------------------------------------
 \MakeBibliography
 
 %-----------------------------------------------------------
