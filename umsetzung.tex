@@ -30,18 +30,26 @@
 % 		Anwendungsfalldiagramm
 %		Anwendungsfall beschreibung
 
-\section{Ausgewählte Technologie und Architektur}	%TODO ist das aber nicht auch irgendwie Konzeption?
-%TODO Zusammenhang zw. Knockout / MVVM bzw. Obsever-Pattern und Cordova erklären.
+\doubleimage[contacts]{errands-home}
+	{errands-home-ios}{errands-list-ios}
+	{Startbildschirm \\ der Beispielanwendung}{Listenansicht \\der Beispielanwendung}
+	{Beispiel-Anwendung im iOS-Simulator}
+	{Startbildschirm und Listenansicht der Beispiel-Anwendung im \gls{ios-sim}.}
+	{\ownScreenshot}
 
-%TODO		Komponenten-Diagramm
+\section{Ausgewählte Technologie und Architektur}
 
+Da \gls{cordova} eins der meist genutzten \glspl{framework} zur plattformunabhängigen \gls{app}-Entwicklung darstellt, das kostenfrei, \gls{opensource} und gut dokumentiert ist und zudem den Vorteil bietet, vorhandene Kenntnisse der Web-Entwicklung für die Erstellung von mobilen \glspl{app} nutzbar zu machen, wurde dieses hier für die Implementierung der in \autoref{sec:bsp-app} beschriebenen Beispiel-Anwendung und zur näheren Beleuchtung ausgewählt.
+Weiterhin fand die auf \gls{jq} aufbauende Oberflächen-Bibliothek für mobile Web-Oberflächen \gls{jqm} sowie die \gls{data-binding}-Bibliothek \gls{ko} für die Umsetzung der hybriden \gls{app} hier Verwendung (\fullref{sec:hybrid-dev}).
+
+Wie in \autoref{sec:ko} beschrieben, stellt \gls{ko} ein recht mächtiges und hilfreiches Mittel für die einfache und gut strukturierte Programmierung unter \gls{js} dar.
+Der dadurch empfohlene und erleichterte Einsatz des \glspl{mvvm} und die damit einhergehende klare und leicht wartbare Struktur bildet die Grundlage für die Architektur der hier beispielhaft implementierten Anwendung.
 	
 Grundlegend besteht die Anwendung aus den drei in \autoref{fig:mvvm-pattern} abgebildeten Teilen \emph{\gls{view}} in Form einer \gls{html}-Seite, dem \gls{js}-Objekt \emph{\gls{model}}, das den Zugriff auf das Gerät bewerkstelligt und dessen Daten bereitstellt und dem \emph{\gls{view-model}}, welches die Eigenschaften und anzuzeigenden Daten der \gls{view} beinhaltet.
 Das \gls{js}-\gls{framework} \gls{ko} hält dabei durch das \gls{data-binding} die Anzeige der Daten auf der \gls{view} mit den Daten im \gls{view-model} synchron (\seeref{sec:ko}).
 
 Die Anbindung vom \gls{model} an das \gls{view-model} wurde hier über das \gls{observer-pattern} realisiert, mit dem eine lose Kopplung zwischen einer Komponente und deren \glspl{observer} erzielt werden kann.
 Dabei registriert sich das \gls{view-model} bei dessen Initialisierung beim \gls{model} per Aufruf der Methode \lstinline|addEventListener(eventType, eventHandler)| (\seeref{lst:app:model.js}) und übergibt dabei als Parameter \enquote{\lstinline|eventType|} einen \gls{string}, der den Typ des Events angibt, auf dessen Aussendung sich das \gls{view-model} registriert sowie eine Funktion als \lstinline|eventHandler|, welche ausgeführt werden soll, sobald das Event empfangen wird (\seeref{lst:app:ViewModel.js}).
-
 Dazu hat das \gls{model} einen Verweis auf eine \lstinline|ObserverMap|, welche die registrierten \gls{event-handler} der \gls{observer} in Listen speichert, die dem jeweiligen Ereignistyp, der bei der Registrierung angegeben wird, zugeordnet werden (\seeref{lst:app:ObserverMap.js}).
 
 Statt also bei erfolgreicher Ausführung einer Operation die Daten direkt per Methodenaufruf an das \gls{view-model} zu übergeben, wird hier lediglich die Methode \lstinline|notifyObservers()| der \lstinline|ObserverMap| aufgerufen, wodurch die registrierten \gls{observer} über das Auftreten des Ereignisses benachrichtigt werden.
@@ -82,7 +90,7 @@ Die \lstinline|find|-Methode wird \gls{asynchron} ausgeführt, das heißt, dass 
 
 Da in diesem Beispiel (\autoref{lst:find-contacts}) keine bestimmten, sondern \emph{alle} Kontakte angezeigt werden sollen, wird der \lstinline|find|-Methode kein spezieller \lstinline|filter| übergeben (\linename 23). 
 Ebenso ist aus dem selben Grund hier keine Einschränkung der durchsuchten Felder nötig, sodass durch der \lstinline|fields|-Parameter den Wert \lstinline|"*"| hat, und so alle Felder des \lstinline|Contact|-Objekts durchsucht werden (\linename 25).
-Bei erfolgreicher Ausführung der \lstinline|find|-Methode werden die zurückgegebenen Kontaktdaten als Parameter in Form eines Arrays, das die entsprechenden JavaScript-Objekte vom Typ \lstinline|Contact| beinhaltet, an die \lstinline|onSuccess|-Methode übergeben und vom \gls{model} an dessen \gls{observer} (in diesem Fall das \gls{view-model}) versendet (\linename 13). 
+Bei erfolgreicher Ausführung der \lstinline|find|-Methode werden die zurückgegebenen Kontaktdaten als Parameter in Form eines \glspl{array}, das die entsprechenden JavaScript-Objekte vom Typ \lstinline|Contact| beinhaltet, an die \lstinline|onSuccess|-Methode übergeben und vom \gls{model} an dessen \gls{observer} (in diesem Fall das \gls{view-model}) versendet (\linename 13). 
 
 Der Bezeichner \lstinline|events.FOUND_CONTACTS| stellt eine String-Konstante dar, die in einem globalen Konstanten-Objekt definiert wurde und den Typ des \glspl{event} identifiziert (\seeref{lst:app:consts.js}).
 
@@ -97,8 +105,35 @@ Durch die Bindung der Eigenschaft \lstinline|contacts| in Form eines \emph{Obser
 
 	\includehtml{praxis/contacts-ui.html}{label=lst:contacts-ui, caption={\gls{ui}-Komponente zur Darstellung der Kontaktliste und Auswahl einzelner Kontakte.},}
 	
-%TODO Screenshot(s) einfügen!!
-
+\doubleimage[contacts]{apps-overview}
+	{apps-overview-android}{apps-overview-ios}
+	{Die installierte App in der \gls{android}-\glspl{app}-Übersicht.}
+	{Die installierte App in der \gls{ios}-\glspl{app}-Übersicht.}
+	{Die installierte App in der App-Übersicht.}
+	{Nach der Ausführung des \lstinline|cordova emulate|-Befehls wird die zu testende \gls{cordova}-\gls{app} in der Übersicht des Betriebssystems im jeweiligen Emulator angezeigt.}
+	{Eigener Screenshot.}
+	
+\doubleimage[contacts]{contacts-app}
+	{contacts-android}{contacts-ios}
+	{\gls{android}-Adressbuch.}{\gls{ios}-Adressbuch.}
+	{Natives Adressbuch mit Beispiel-Kontakten}
+	{Anzeige des nativen Adressbuchs mit Beispiel-Kontakten.}
+	{\ownScreenshot}
+	
+\doubleimage[contacts]{errands-members}
+	{errands-members-expanded-android}{errands-members-expanded-ios}
+	{Auswahl-Dialog unter \gls{android}.}{Auswahl-Dialog unter \gls{ios}.}
+	{Kontakt-Auswahl in der Anwendung}
+	{Kontakt-Auswahl-Dialog für das Hinzufügen von Kontakten aus dem Adressbuch. Die Anwendung lädt die Kontakte aus dem Adressbuch des Geräts in die Auswahl-Box der Anwendung (\seeref{fig:contacts-app}).}
+	{\ownScreenshot}
+	
+\doubleimage[contacts]{errands-selected}
+	{errands-members-selected-android}{errands-members-selected-2-ios}
+	{Selektierte Kontakt-Einträge unter \gls{android}.}{Selektierte Kontakt-Einträge unter \gls{ios}.}
+	{Übergabe der Kontakte an die Anwendung}
+	{Übergabe der Kontakte an die Anwendung: Wird ein Kontakt ausgewählt, wird dieser dem \gls{obs}-\gls{array} \lstinline|contacts| des \glspl{view-model} (\seeref{lst:ViewModel-Contacts}) hinzugefügt und als \emph{ausgewählt} in der Oberfläche markiert.}
+	{\ownScreenshot}
+	
 \subsection{Explorationsergebnisse}
 Einige Unterschiede ergeben sich bei der Verwendung des \emph{Contacts}-\glspl{plugin} zwischen den verschiedenen Zielplattformen.
 So können beispielsweise nicht alle Methoden der \gls{contacts-api} auf allen mobilen Plattformen gleichermaßen ausgeführt werden.
@@ -133,7 +168,7 @@ Die hier verwendete Oberflächen-Bibliothek \gls{jqm} beinhaltet lediglich allge
 In Verbindung mit der Data-Binding-Bibliothek \gls{ko} kann eine solche Komponente jedoch relativ einfach erstellt werden, indem die Felder in der Oberfläche an Eigenschaften des \glspl{view-model} gebunden werden, welches durch Benachrichtigungen des Models, das den Zugriff auf die native Ebene des Betriebssystems abwickelt, die Daten der Anwendung und des Geräts anzeigen kann (\seeref{sec:ko}).
 
 Grundsätzlich bietet die \gls{contacts-api} trotz einiger Einschränkungen (\so) ein nützliches Werkzeug mit einem relativ breiten Funktionsumfang für den grundlegenden Zugriff auf die Kontaktverwaltung der meisten großen mobilen Betriebssysteme.
-Der für dieses Feature definierte Anwendungsfall konnte mit den Mitteln der \gls{cordova}-\gls{api} und weiteren Technologien der Webentwicklung wie \gls{ko} oder \gls{jqm} gut umgesetzt werden.
+Der für dieses Feature definierte Anwendungsfall konnte mit den Mitteln der \gls{cordova}-\gls{api} und weiteren Technologien der Webentwicklung wie \gls{ko} oder \gls{jqm} gut für die hier verwendeten Plattformen \gls{ios} und \gls{android} umgesetzt werden.
 Trotz des grundsätzlich plattformunabhängigen Ansatzes sollte allerdings bei der Entwicklung mithilfe dieser \gls{api} die Unterstützung der verwendeten Features und Attribute und deren Besonderheiten für die angestrebten Zielplattformen in der \gls{contacts-api}-Dokumentation überprüft werden.
 Somit ist eine Kenntnis über die angestrebten Zielplattformen für die Verwendung eines solchen \glspl{plugin} beinahe unabdingbar und die Entwicklung in gewisser Weise wieder ein Stück weit abhängiger von den verwendeten Plattformen. %TODO Den Satz evtl. auch ins Fazit!
 
@@ -149,3 +184,5 @@ Somit ist eine Kenntnis über die angestrebten Zielplattformen für die Verwendu
 %		Benutzung (Technik, Methodik, Entwicklerfreundlichkeit, Kompatibilität mit anderen Systemen / Software)
 %		Bewertung
 %		Vor-/Nachteile (zueinander / gegenüber nativer App-Entw.), Risiken, Chancen
+%TODO In \cite{Apache_Cordova_Contribute} werden noch einige Plattformen mehr aufgelistet. (wohl je nach cordova-version) -> evlt. hier auch noch erwähnen und/oder auflisten.
+

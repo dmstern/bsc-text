@@ -96,7 +96,7 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 \image{hybrid-apps-schaubild}
 	{width=\fullimagesize}
 	{Schaubild Hybrid Apps}
-		{Entwicklungsstufen der verschiedenen Arten von \glspl{app}. Während bei der nativen \gls{app} der gesamte Entwicklungszyklus einmal pro \gls{plattform} durchlaufen werden muss, verringert sich der Aufwand für die \gls{web-app} erheblich. Bei der \gls{hybrid-app} muss die Anwendung zwar einmal für jede \gls{plattform} gebaut und ausgeliefert werden, um die Schnittstellen für die nativen \glspl{plattform} zu implementieren, aber der hauptsächliche Entwicklungsaufwand des Programmierens und Testens fällt aufgrund des generischen Charakters nur einmal an.}
+		{Entwicklungsstufen der verschiedenen Arten von Apps. Während bei der nativen App der gesamte Entwicklungszyklus einmal pro \gls{plattform} durchlaufen werden muss, verringert sich der Aufwand für die \gls{web-app} erheblich. Bei der \gls{hybrid-app} muss die Anwendung zwar einmal für jede \gls{plattform} gebaut und ausgeliefert werden, um die Schnittstellen für die nativen \glspl{plattform} zu implementieren, aber der hauptsächliche Entwicklungsaufwand des Programmierens und Testens fällt aufgrund des generischen Charakters nur einmal an.}
 	{Eigene Grafik.}
 
 \chapter{Plattformunabhängige App-Entwicklung}
@@ -142,18 +142,16 @@ Bei der reinen \gls{js}-Variante ist nach der Selektion aller Absätze zunächst
 
 \subsection{Data-Binding mit Knockout} \label{sec:ko}
 Neben \gls{jq} bietet das \gls{ko}-\gls{framework} ein weiteres nützliches Hilfsmittel für die Entwicklung von Web-Anwendungen, das ebenso wie \gls{jq} und \gls{jqm} aus einer \gls{js}-Bibliothek besteht und die Verbindung der \gls{html}-Oberfläche mit der Programmlogik der Anwendung mittels \gls{data-binding}, also der dynamischen Anbindung von \gls{ui}-Komponenten zu Datenfeldern auf Programmebene, erheblich vereinfacht.
-Das \gls{data-binding} wird bei \gls{ko} durch das \gls{mvvm}-Pattern realisiert, das Entwicklern eine Trennung zwischen Benutzeroberfläche und \gls{ui}-Logik ermöglicht.
+Das \gls{data-binding} wird bei \gls{ko} durch das \gls{mvvm} realisiert, das Entwicklern eine Trennung zwischen Benutzeroberfläche und \gls{ui}-Logik ermöglicht.
 Diese Aufteilung dient unter anderem der Übersichtlichkeit des Codes und kann beispielsweise die Aufteilung der Entwicklung von Benutzerschnittstellen erleichtern, indem die \gls{ui}- und die Geschäftslogik von Softwareentwicklern übernommen werden kann, während Designer den Schwerpunkt auf die Gestaltung der Oberfläche legen können \cite{Model_View_ViewModel__Wikipedia}.
 
 \image{mvvm-pattern}
 	{width=1\textwidth}
-	{\gls{mvvm}-Pattern}
-		{Schematische Darstellung des Entwurfsmusters \gls{mvvm}: Die View ist über das \gls{data-binding} mit dem ViewModel verbunden, indem die \gls{ui}-Logik implementiert ist und das mit der Geschäftslogik (Model) interagiert.}
+	{MVVM-Pattern}
+		{Schematische Darstellung des Entwurfsmusters MVVM: Die View ist über das \gls{data-binding} mit dem ViewModel verbunden, indem die UI-Logik implementiert ist und das mit der Geschäftslogik (Model) interagiert.}
 	{Wikimedia Commons \cite{MVVMPattern}.}
-	%TODO Das müsste doch mit citefield[organization] oder so gehen.
 
-
-Das \gls{mvvm}-Pattern stellt eine Gliederung der Software in drei Grundlegende Komponenten dar:
+Das \gls{mvvm} stellt eine Gliederung der Software in drei Grundlegende Komponenten dar:
 Die \gls{view} repräsentiert die Präsentationsschicht, also die Benutzeroberfläche, im Falle der Web-Anwendung also die \gls{html}-Seite, deren Elemente per \gls{data-binding} an Eigenschaften des \glspl{view-model} gebunden werden können. 
 Das \gls{model} steht für die Geschäftslogik und beinhaltet das Datenmodell und die Funktionen, die vom \gls{view-model} angefragt werden können, um beispielsweise Benutzereingaben zu validieren oder Daten für die Anzeige in der Oberfläche zu erhalten (\seeref{fig:mvvm-pattern}).
 
@@ -170,8 +168,8 @@ Stattdessen übernimmt das \gls{ko}-\gls{framework} die Durchreichung aller Änd
 
 \image{ko-hello-world}
 	{width=1\textwidth}
-	{\gls{ko}-Beispiel im Browser.}
-		{\gls{ko}-Beispiel aus \autoref{lst:ko} im Browser. Links im Bild: Anzeige bei Initialisierung der Oberfläche, rechts: Benutzereingabe ins Eingabefeld: \enquote{Mars}. \\ Änderungen in der \gls{ui} (Hier: im Eingabefeld) werden sofort im \gls{view-model} registriert und automatisch an alle verknüpften Anzeigen weitergereicht (Hier an das fettgedruckte Begrüßungselement).}
+	{Knockout-Beispiel im Browser}
+		{Knockout-Beispiel aus \autoref{lst:ko} im Browser. Links im Bild: Anzeige bei Initialisierung der Oberfläche, rechts: Benutzereingabe ins Eingabefeld: \enquote{Mars}. \\ Änderungen in der UI (Hier: im Eingabefeld) werden sofort im \gls{view-model} registriert und automatisch an alle verknüpften Anzeigen weitergereicht (Hier an das fettgedruckte Begrüßungselement).}
 	{Eigener Screenshot.}
 
 \subsection{JQuery\,Mobile: Mobile Web-Oberflächen}
@@ -198,18 +196,18 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \lstinline|class="ui-content"
 
 \image{jqm}
 	{width=1\textwidth}
-	{\gls{jqm}-Beispiel}
-	{\gls{jqm}-Beispiel aus \autoref{lst:jqm} im Browser.}
+	{jQuery\,\-Mobile-Beispiel}
+	{jQuery\,\-Mobile-Beispiel aus \autoref{lst:jqm} im Browser.}
 	{Eigener Screenshot.}
 
 \image{without-ui-content-class}
 	{width=1\textwidth}
-	{Beispiel ohne class-Attribut}{Beispiel-Oberfläche wie in \autoref{fig:jqm}, ohne das class-Attribut in \autoref{lst:ko}, \linename 12.}
+	{Beispiel ohne \lstinline|class|-Attribut}{Beispiel-Oberfläche wie in \autoref{fig:jqm}, ohne das class-Attribut in \autoref{lst:ko}, \linename 12.}
 	{Eigener Screenshot.}
 
 \image{without-jqm}
 	{width=1\textwidth}
-	{Beispiel ohne \gls{jqm}}{Beispiel-Oberfläche wie in \autoref{fig:jqm}, aber ohne die \gls{jqm}-Bibliotheken.}
+	{Beispiel ohne jQuery\,\-Mobile}{Beispiel-Oberfläche wie in \autoref{fig:jqm}, aber ohne die \gls{jqm}-Bibliotheken.}
 	{Eigener Screenshot.}
 
 \subsection{Phonegap\,/\,Cordova} \label{sec:cordova}
@@ -244,11 +242,9 @@ Dieser Ansatz kann beispielsweise sinnvoll sein, wenn Entwickler mobiler Apps ih
 
 % Plattform- / Feature-Unterstützung -----------------------
 
-%TODO In \cite{Apache_Cordova_Contribute} werden noch einige Plattformen mehr aufgelistet. (wohl je nach cordova-version) -> evlt. hier auch noch erwähnen und auflisten.
-
 \image{cordova-platform-support}
 	{width=\fullimagesize}
-	{\gls{cordova} Plattform- und Feature-Unterstützung}
+	{Cordova Plattform- und Feature-Unterstützung}
 		{Plattform- und Feature-Unterstützung des \gls{cordova}-\glspl{framework}: \\ 
 		Bis auf wenige (\enquote{kleinere}) mobile Betriebssysteme bietet \gls{cordova} auch über die am weitesten verbreiteten \glspl{plattform} wie \gls{android}, \gls{ios} und \gls{win-phone} hinaus die volle Feature-Unterstützung für \gls{amazon-fireos}, \gls{ubuntu-phone} und eine fast vollständige für \gls{blackberry-os}.\\
 		Für Entwickler von hybriden \glspl{app} dürfte hier auch vor allem die erste Zeile \emph{cordova CLI} interessant sein, da durch die Kompatibilität der jeweiligen Plattform-\glspl{sdk} nur bestimmte Kombinationen von Entwicklungs- und Zielplattform möglich sind.}
@@ -281,7 +277,7 @@ Neben der Datei \filename{index.html}, die die Beschreibung der Web-Oberfläche 
 
 \image{cordova-directory}
 	{resolution=\screenshotRes}
-	{\gls{cordova}-Dateistruktur}
+	{Cordova-Dateistruktur}
 		{Dateistruktur einer mit \gls{cordova} erstellten \gls{app}. Das Grundgerüst für die \gls{hybrid-app} wird automatisch angelegt und entspricht den üblichen Web-Entwicklungskonventionen.}
 	{Eigener Screenshot.}
 
@@ -316,14 +312,14 @@ Dafür muss die Anwendung entweder direkt auf einem mobilen Gerät, dessen \gls{
 
 \image{cordova-app-browser}
 	{resolution=\screenshotRes}
-	{\gls{cordova}-Beispiel-\gls{app} im Browser}
-		{Die Startseite der Beispiel-\gls{app} aus \autoref{lst:index.html} lässt sich auch im Desktop-Browser öffnen und anzeigen, allerdings kann hier kein \lstinline|deviceready|-Event empfangen werden.}
+	{Cordova-Beispiel-App im Browser}
+		{Die Startseite der Beispiel-App aus \autoref{lst:index.html} lässt sich auch im Desktop-Browser öffnen und anzeigen, allerdings kann hier kein \lstinline|deviceready|-Event empfangen werden.}
 	{Eigener Screenshot.}
 
 \image{android_emulate_install}
 	{width=1\textwidth}
-	{\gls{cordova}-Beispiel-\gls{app} im \gls{android}-Emulator}
-		{Anzeige in der \glspl{app}-Übersicht (links) und Ausführung der \gls{cordova}-Beispiel-\gls{app} in einem \gls{android}-Emulator (rechts). Das grüne Label zeigt den Empfang des \lstinline|deviceready|-Events an.}
+	{Cordova-Beispiel-App im Android-Emulator}
+		{Anzeige in der App-Übersicht (links) und Ausführung der Cordova-Beispiel-App in einem Android-Emulator (rechts). Das grüne Label zeigt den Empfang des \lstinline|deviceready|-Events an.}
 	{\gls{cordova}-Dokumentation \cite{android_emulate_install.png}}
 
 Bevor die \gls{hybrid-app} mit \gls{cordova} zum Laufen gebracht werden kann, muss sie, wie die meisten Computerprogramme, in ein ausführbares Format überführt, also \emph{gebaut} werden.
@@ -422,7 +418,6 @@ Während bei einigen, wie \zB dem \gls{cordova}-\gls{plugin}, Schnittstellenmeth
 
 \includehtml{cordova-plugin-device.js}{label=lst:cordova-plugin-device, caption={Beispiel für die Verwendung des \emph{Device}-\glspl{plugin}. Bei Empfang des \emph{DeviceReady}-\glspl{event} wird die Modell-Bezeichnung des Geräts in der Konsole ausgegeben \cite{Cordova_Plugin_Registry_device}.},}
 
-
 \subsubsection{PhoneGap\,Build}	%TODO Evtl. umbenennen in "Remote Build Services" od. "Der Build-Prozess" oder so.
 %TODO Gliederung: Eher als Alternative zum lokalen Build?
 
@@ -451,7 +446,7 @@ Während private \glspl{app} entweder als Zip-Paket hochgeladen oder als Link zu
 
 \image{phonegap-build_create-public}
 	{width=1\textwidth}
-	{Erstellung einer neuen App auf \gls{pg-build}}
+	{Erstellung einer neuen App auf PhoneGap\,Build}
 		{Dialog für die Erstellung einer neuen privaten \gls{app} auf \gls{pg-build}. Links das Eingabefeld zum Eintragen eines \gls{git}-Repository-Links und rechts der Button zum Hochladen von Zip-Archiven.}
 	{Eigener Screenshot.}
 
@@ -460,7 +455,7 @@ Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \g
 
 \image{phonegap-build_plans}
 	{width=1\textwidth}
-	{\gls{pg-build}-Pakete}
+	{PhoneGap\,Build-Pakete}
 		{Übersicht über die verschiedenen Bezahlpakete von \gls{pg-build}: Ab 9,99\,\$ im Monat können Entwickler bis zu 25 private \glspl{app} anlegen, in der kostenlosen Variante nur eine private, aber unbegrenzt öffentliche.}
 	{Eigener Screenshot \cite{Adobe_PhoneGap_Build_Plans}.}
 
@@ -472,7 +467,7 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 
 \image{phonegap_build_workflow}
 	{width=1\textwidth}
-	{\gls{pg-build}-Workflow}
+	{PhoneGap\,Build-Workflow}
 		{Schematische Darstellung eines möglichen Entwicklungsworkflows mit \gls{pg-build}: Der Code wird als Web-Anwendung auf \gls{github} hochgeladen, bei \gls{pg-build} über das \gls{github}-Repository aktualisiert und für die jeweiligen \glspl{plattform} gebaut, sodass die plattformspezifischen \glspl{app} heruntergeladen und auf den Zielgeräten installiert werden können.}
 	{Eigene Grafik.}
 
@@ -481,12 +476,12 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 
 \image{phonegap-build_apps}
 	{width=1\textwidth}
-	{\gls{pg-build}-Oberfläche}
+	{PhoneGap\,Build-Oberfläche}
 		{Oberfläche des \gls{pg-build}-Portals: Detailansicht für eine Beispiel-\gls{app}. Hier können verschiedene Einstellungen vorgenommen werden, sowie der Code aus einem Repository aktualisiert und die fertig gebaute \gls{app} per Download-Button oder \gls{qr} heruntergeladen werden.}
 	{Eigener Screenshot.}
 
 \image{screenshot_app_android}
 	{width=1\textwidth}
-	{Tablet-Screenshot mit installierter \gls{phonegap}-\gls{app}}
+	{Tablet-Screenshot mit installierter PhoneGap\,Build-App}
 	{Die Beispiel-App (\enquote{HelloWorld}) aus \autoref{fig:phonegap-build_apps} aus \gls{pg-build} auf einem \gls{android}-Gerät installiert.}
 	{Eigener Screenshot.}
