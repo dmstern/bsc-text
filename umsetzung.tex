@@ -23,10 +23,21 @@
 % 		Anwendungsfalldiagramm
 %		Anwendungsfall beschreibung
 
+Für die praktische Erprobung und Untersuchung einer Technologie zur plattformunabhängigen \gls{app}-Entwicklung sollte hier mit \gls{cordova} ansatzweise eine Beispiel-Anwendung in Form einer plattformunabhängigen mobilen \gls{app} entwickelt werden.
+Für die Auswahl eines geeigneten Anwendungsgebiets war ein Kriterium die Maßgabe, möglichst solche Anforderungen der Anwendung zu identifizieren, die eine gewisse plattformspezifische Anforderung haben, also (\enquote{plattformkritische}) Features benötigen, die sich beispielsweise nicht ohne weiteres mit einer reinen Web-Anwendung umsetzen lassen, um den eigentlichen Mehrwert eines entsprechenden Cross-Plattform-Frameworks nutzen zu können und aufzuzeigen.
 
+Dabei soll der Fokus nicht speziell auf der Umsetzung eines möglichst breiten Funktionsumfangs der Anwendung selbst oder deren Usability liegen, sondern vielmehr anhand einer beispielhaften Implementierung weniger grundlegender plattformkritischer Features die Verwendung der Cross-Plattform-Technologie erläutert werden, um Möglichkeiten und Grenzen aus Sicht des Entwicklers aufzuzeigen.
 
+Die Beispiel-App trägt den Titel \enquote{Besorgungen}, soll also für den Anwender ein Hilfswerkzeug für die Erledigung alltäglicher Aufgaben darstellen.
+Letztendlich handelt es sich um eine etwas komplexere ToDo-Liste, in der sogenannte \enquote{Tasks} (also Aufgaben, Besorgungen) in Listen kategorisiert und verwaltet werden können.
+Diese Listen können vom Nutzer selbst angelegt, gelöscht und verändert werden.
+Um von der Schnittstelle zum Geräte-Adressbuch gebraucht zu machen, können Listen mit im Adressbuch vorhandenen Kontakten geteilt werden, d.\,h. es sollen Kontakte aus dem Adressbuch geladen und einer Liste als neues Listenmitglied hinzugefügt werden.
 
-
+Weiterhin soll ein grundlegendes Prinzip darin bestehen, dass Tasks vielerlei Eigenschaften zugewiesen bekommen können.
+So zum Beispiel Fotos, die von der Kamera des Geräts aufgenommen werden sollen, Ortsangaben, um GPS-Daten zu empfangen und zu verarbeiten sowie Datumsangaben für die Interaktion mit dem nativen Kalender.
+Außerdem soll die Anwendung Benachrichtigungen über das Erreichen eines angegebenen Datums oder Ortes per nativem Benachrichtigungsmechanismus des jeweiligen Betriebssystems aussenden können.
+%TODO nochmal überprüfen, ob das alles so sinn macht.
+Der Entwicklungsstand des hier beschriebenen Beispiel-Codes beschränkt sich jedoch auf die Umsetzung der \og Funktionalität, Listen zu teilen, also neue Listenmitglieder anhand der Daten aus der Kontaktverwaltung des Geräts zu Listenobjekten hinzuzufügen.
 
 \doubleimage[contacts]{errands-home}
 	{errands-home-ios}{errands-list-ios}
