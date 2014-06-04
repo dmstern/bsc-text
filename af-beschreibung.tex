@@ -1,6 +1,8 @@
 
 \chapter{Anwendungsfälle der Beispiel-Anwendung}
 
+%TODO Kurz ein paar erläuternde Sätze zum Stand dieser Beschreibung und dem Stand der implementierung.
+
 \pagebreak
 \newgeometry{margin=\bigcodemargin}
 \section{Anwendungsfalldiagramm}
@@ -12,9 +14,7 @@
 
 \section{Anwendungsfallbeschreibung}
 
-%TODO extend durch nameref ergänzen.
-
-\usecase{Listen verwalten}
+\usecase{Listen verwalten}	\label{manageLists}
 
 	\begin{description}
 	
@@ -26,21 +26,21 @@
 		\item Das System zeigt eine Übersicht der gespeicherten Listen, derer der aktive Benutzer Mitglied ist.
 		\item Für alle Listen hat er hier die Möglichkeit,
 			\begin{enumerate}
-			\item sich den Listeninhalt anzeigen zu lassen (extend Tasks verwalten\,/\,Listeninhalt anzeigen) und 
-			\item Listen zu teilen (extend Liste teilen). 
+			\item sich den Listeninhalt anzeigen zu lassen \\ (\extend{showList}) und 
+			\item Listen zu teilen (\extend{shareList}). 
 			\end{enumerate}
 		\item Für alle Listen, deren er darüber hinaus Eigentümer ist, hat er die Möglichkeit, diese 
 			\begin{enumerate}
-			\item zu löschen (extend Liste löschen), 
-			\item umzubenennen (extend Liste umbenennen) und
-			\item zu erstellen (extend Liste erstellen).
+			\item zu löschen (\extend{deleteList}), 
+			\item umzubenennen (\extend{renameList}) und
+			\item zu erstellen (\extend{createList}).
 			\end{enumerate}
-		\item Das System prüft den verfügbaren Bildschirmplatz und initiiert, sofern der Platz dafür ausreicht, automatisch den Anwendungsfall Tasks verwalten\,/\,Listeninhalt anzeigen für die erste Standardliste.
+		\item Das System prüft den verfügbaren Bildschirmplatz und initiiert, sofern der Platz dafür ausreicht, automatisch den Anwendungsfall \namerefH{showList} anzeigen für die erste Standardliste.
 		\end{verlauf}
 	
 	\end{description}
 
-\usecase{Liste erstellen}
+\usecase{Liste erstellen}	\label{createList}
 	\begin{description}
 	
 		\actors{Initiiert vom Listeneigentümer}
@@ -48,24 +48,22 @@
 		
 		
 		\item Der Nutzer signalisiert dem System, dass er eine neue Liste erstellen möchte.
-		\item Weiter mit Liste benennen.
+		\item Weiter mit \namerefH{nameList}.
 		\end{verlauf}
 	\end{description}
 
-
-\usecase{Liste umbenennen}
+\usecase{Liste umbenennen}	\label{renameList}
 	\begin{description}
 		
 		\actors{Initiiert vom Listeneigentümer}
 		\begin{verlauf}
 		
 			\item Der Nutzer signalisiert dem System, dass er eine Liste umbenennen möchte.
-			\item Weiter mit Liste benennen.
+			\item Weiter mit \namerefH{nameList}.
 		\end{verlauf}
 	\end{description}
 
-
-\usecase{Liste benennen}
+\usecase{Liste benennen}	\label{nameList}
 	\begin{description}
 	
 		\actors{Initiiert vom Listeneigentümer}
@@ -78,18 +76,18 @@
 		\end{verlauf}
 	\end{description}
 	
-\usecase{Liste löschen}
+\usecase{Liste löschen}		\label{deleteList}
 	\begin{description}
 		\actors{Initiiert vom Listeneigentümer}
 		\begin{verlauf}
 		
 		\item Der Nutzer signalisiert dem System, dass er eine Liste löschen möchte.
-		\item Weiter mit Objekt löschen.
+		\item Weiter mit \namerefH{deleteObject}.
 		
 		\end{verlauf}
 	\end{description}
 
-\usecase{Objekt löschen}
+\usecase{Objekt löschen}	\label{deleteObject}
 	Teil-Anwendungsfall. 
 	\begin{description}
 		\begin{verlauf}
@@ -103,7 +101,7 @@
 
 	\end{description}
 
-\usecase{Liste teilen}
+\usecase{Liste teilen}		\label{shareList}
 	\begin{description}
 		\actors{Initiiert vom Listenmitglied}
 		\begin{verlauf}
@@ -119,7 +117,7 @@
 		\end{verlauf}
 	\end{description}
 	
-\usecase{Tasks verwalten\,/\,Listeninhalt anzeigen}
+\usecase{Tasks verwalten\,/\,Listeninhalt anzeigen} \label{showList}
 	\begin{description}
 		\actors{initiiert vom Listenmitglied}
 		\begin{verlauf}
@@ -128,28 +126,28 @@
 		\item Das System zeigt neben den vorher schon angezeigten Listen nun auch den Inhalt der selektierten Liste, also die darin enthaltenen Tasks an. 
 		\item Von hier aus hat der Nutzer folgende Interaktionsmöglichkeiten (extend):
 			\begin{enumerate}
-		\item Liste teilen
-		\item Task erstellen
-		\item Task löschen
-		\item Task bearbeiten \\
-		Außerdem werden dem Nutzer je nach verfügbarem Bildschirmplatz auch für alle Tasks Shortcuts zu allen Extend-Anwendungsfälle von Task bearbeiten angezeigt.
+				\item \namerefH{shareList}
+				\item \namerefH{createTask}
+				\item \namerefH{delegateTask}
+				\item \namerefH{editTask} \\
+				Außerdem werden dem Nutzer je nach verfügbarem Bildschirmplatz auch für alle Tasks Shortcuts zu allen Extend-Anwendungsfälle von \namerefH{editTask} angezeigt.
 			\end{enumerate}
 		
 		\end{verlauf}
 	\end{description}
 	
-\usecase{Task löschen}
+\usecase{Task löschen}		\label{deleteTask}
 	\begin{description}
 		\actors{Initiiert vom Listenmitglied}
 		\begin{verlauf}
 		
 			\item Der Nutzer signalisiert dem System, dass er einen Task löschen möchte.
-			\item Weiter mit Objekt löschen.
+			\item Weiter mit \namerefH{deleteObject}.
 			
 		\end{verlauf}
 	\end{description}
 	
-\usecase{Task erstellen}
+\usecase{Task erstellen}	\label{createTask}
 	\begin{description}
 		\actors{Initiiert vom Listenmitglied}
 		\begin{verlauf}
@@ -162,7 +160,7 @@
 		\end{verlauf}
 		
 	\end{description}
-\usecase{Task umbenennen}
+\usecase{Task umbenennen}	\label{renameTask}
 	\begin{description}
 		\actors{Initiiert vom Listenmitglied}
 		\begin{verlauf}
@@ -174,7 +172,7 @@
 		
 		\end{verlauf}
 	\end{description}
-\usecase{Task bearbeiten}
+\usecase{Task bearbeiten}	\label{editTask}
 	\begin{description}
 		\actors{initiiert vom Listenmitglied}
 		\begin{verlauf}
@@ -183,38 +181,37 @@
 		\item Das System öffnet den Bearbeiten-Dialog für den ausgewählten Task.\\
 		Der Nutzer hat folgende Interaktionsmöglichkeiten:
 			\begin{enumerate}
-				\item Bild an Task hängen
-				\item Task terminieren
-				\item Task verorten
-				\item Task zuweisen
-				\item Task abschließen
-				\item Erledigung abbrechen (Task zurückgeben)
-				\item Task umbenennen
+				\item \namerefH{addImage}
+				\item \namerefH{terminateTask}
+				\item \namerefH{locateTask}
+				\item \namerefH{delegateTask}
+				\item \namerefH{finishTask}
+				\item \namerefH{abortTask}
+				\item \namerefH{renameTask}
 			\end{enumerate}
 		
 		\end{verlauf}
 	\end{description}
 	
-\usecase{Bild an Task hängen}
+\usecase{Bild an Task hängen}	\label{addImage}
 	\begin{description}
 		\actors{Initiiert vom Listenmitglied}
 		\begin{verlauf}
 		
 			\item Der Nutzer signalisiert dem System, dass er ein Bild an einen Task hängen möchte.
 			\item (In der Prototyp-Version deaktiviert) Das System öffnet einen Dialog, in dem gefragt wird, ob ein Bild mit der Kamera aufgenommen oder ein Bild aus der Galerie ausgewählt werden soll.
-			\item Der Nutzer wählt die Option „Von der Kamera“.
+			\item Der Nutzer wählt die Option \enquote{Von der Kamera}.
 			\item Das System wechselt zur Kamera-Anwendung des Betriebssystems.
-			\item Der Nutzer nimmt ein Foto auf und bestätigt die Eingabe mit „Fertig“.
+			\item Der Nutzer nimmt ein Foto auf und bestätigt die Eingabe mit \enquote{Fertig}.
 			\item Das System wechselt wieder zur Besorgungen-App und zeigt in einem Dialog das aufgenommene Foto.
-			\item Der Nutzer bestätigt die Eingabe mit „Anhängen“.
+			\item Der Nutzer bestätigt die Eingabe mit \enquote{Anhängen}.
 			\item Das System speichert das Foto zum ausgewählten Task ab.
 				
 		\end{verlauf}
 		
 	\end{description}
 
-
-\usecase{Task terminieren}
+\usecase{Task terminieren}	\label{terminateTask}
 	\begin{description}
 		\actors{Initiiert vom Listenmitglied}
 		\begin{verlauf}
@@ -230,8 +227,7 @@
 		
 	\end{description}
 
-
-\usecase{Task verorten}
+\usecase{Task verorten}		\label{locateTask}
 	\begin{description}
 		\actors{Initiiert vom Listenmitglied }
 		\begin{verlauf}
@@ -245,8 +241,7 @@
 		
 	\end{description}
 
-
-\usecase{Task zuweisen}
+\usecase{Task zuweisen}		\label{delegateTask}
 	\begin{description}
 		\actors{Initiiert vom Listenmitglied}
 		\begin{verlauf}
@@ -260,45 +255,42 @@
 		
 	\end{description}
 
-
-\usecase{Erledigung abbrechen (Task zurückgeben)}
+\usecase{Erledigung abbrechen (Task zurückgeben)}	\label{abortTask}
 	\begin{description}
 		\actors{Initiiert vom Task-Inhaber}
 		\initcondition{Der Task wurde einem Nutzer zugewiesen, der dadurch zum Task-Inhaber wird.}
 		\begin{verlauf}
 		
-			\item Verlauf wie bei Task zuweisen.
-			\item Statt 3.: Der Nutzer wählt aus der Liste den Default-Wert „(kein)“ aus.
+			\item Verlauf wie bei \namerefH{delegateTask}.
+			\item Statt 3.: Der Nutzer wählt aus der Liste den Default-Wert \enquote{(kein)} aus.
 				
 		\end{verlauf}
 	\end{description}
 
-\usecase{Task übernehmen}
+\usecase{Task übernehmen}	\label{takeTask}
 	\begin{description}
 		\actors{Initiiert vom  Listenmitglied}
 		\begin{verlauf}
 		
-			\item Verlauf wie bei Task zuweisen.
+			\item Verlauf wie bei \namerefH{delegateTask}.
 			\item Statt 3.: Der Nutzer wählt aus der Liste sich selbst aus.
 		
 		\end{verlauf}
 		
 	\end{description}
 
-
-\usecase{Task abschließen}
+\usecase{Task abschließen}	\label{finishTask}
 	\begin{description}
 		\actors{Initiiert vom Listenmitglied}
 		\begin{verlauf}
 		
 			\item Der Nutzer signalisiert dem System, dass ein Task erledigt ist.
-			\item Das System speichert den Task als erledigt ab und stellt dieses visuell dar (Bspw. Durchgestrichen, auf Erledigt-Liste verschoben).
+			\item Das System speichert den Task als erledigt ab und stellt dieses visuell dar (Bspw. durchgestrichen, auf Erledigt-Liste verschoben).
 				
 		\end{verlauf}
 	\end{description}
 
-
-\usecase{Erinnern}
+\usecase{Erinnern}			\label{notify}
 	\begin{description}
 		\actors{Initiiert vom Controller; Listenmitglied ist beteiligt.}
 		\begin{verlauf}
@@ -319,10 +311,10 @@
 %		\end{altVerlauf}
 	\end{description}
 
-\usecase{Karte anzeigen}
+\usecase{Karte anzeigen}	\label{showMap}
 	\begin{description}
 		\actors{Initiiert vom Listenmitglied}
-		\initcondition{Es wurde ein Ort für den betreffenden Task hinterlegt (Task verorten).}
+		\initcondition{Es wurde ein Ort für den betreffenden Task hinterlegt (\namerefH{locateTask}).}
 		\begin{verlauf}
 		
 			\item Der Nutzer signalisiert dem System, dass er den Ort eines bestimmten Tasks auf der Karte ansehen möchte.
