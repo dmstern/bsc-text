@@ -1,11 +1,16 @@
 % COMMANDS =================================================
 
 % Unnnumerierte Part-Überschrift
-\newcommand{\unnumberedPart}[1]{\phantomsection\part*{#1}
-\addcontentsline{toc}{part}{#1}}
+\newcommand{\unnumberedPart}[1]{
+	\phantomsection\part*{#1}
+	\addcontentsline{toc}{part}{#1}
+}
 
 % Unnnumerierte Kapitel-Überschrift
-\newcommand{\unnumberedChapter}[1]{\phantomsection\chapter*{#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\unnumberedChapter}[1]{
+	\phantomsection\chapter*{#1}
+	\addcontentsline{toc}{section}{#1}
+}
 
 % Querverweise:
 \newcommand{\linename}{Zeile~}
@@ -45,6 +50,7 @@
 % Image-Layout ---------------------------------------------
 
 \newcommand{\fullimagesize}{1\linewidth}
+\newcommand{\halfimagesize}{.5\linewidth}
 \newcommand{\screenshotRes}{140}
 
 % Bildunterschrift für Quellenangabe:
@@ -53,24 +59,54 @@
 \newcommand{\imagesourcename}{Quelle}
 \newcommand{\imagesourcelabel}{\imagesourcename:\ }
 
+\newcommand{\ownScreenshot}{Eigener Screenshot.}
+\newcommand{\ownGraphic}{Eigene Grafik.}
+
 % Neuer Befehl für Bilder:
-\newcommand{\image}[5]{
-	\begin{figure}[]
+\newcommand{\image}[6][.]{
+	\begin{figure}[!h]
 	\centering
 	\includegraphics[
-		#2,								% 	#4:	Größe: entweder 
+		#3,								% 	#3:	Größe: entweder 
 										% 			'width=1\textwidth,' = gesamte Breite 
 										% 			'resolution=\screenshotRes' = Orig.-gr.
 		natwidth=1,						% 		Parameter für latexmk
 		natheight=1						% 		Parameter für latexmk
-		]{#1}							%	#1: Label und Dateiname
+		]{#1/#2}							%	#1/#2: Unterordner / Label und Dateiname
 		\caption
-			[#3]						%	#2: Kurzbeschriftung (im Verzeichnis)
-			{#4}						%	#3: Beschriftung (am Bild)
-		\label{fig:#1}					% 		Label: 'fig:' + 'DATEINAME'
+			[#4]						%	#4: Kurzbeschriftung (im Abbildungsverzeichnis)
+			{#5}						%	#5: Beschriftung (am Bild)
+		\label{fig:#2}					% 		Label: 'fig:' + 'DATEINAME'
 		\vspace{\imagesourcespace}		% 		Abstand zur Quellenangabe
 		\imagesourcefont{}				% 		Schrift f. Quellenangabe
-		\caption*{\imagesourcelabel #5}	%	#5: Quellenangabe
+		\caption*{\imagesourcelabel #6}	%	#6: Quellenangabe
+			%TODO Quelle: Das müsste doch mit citefield[organization] oder so gehen.
+	\end{figure}
+}
+
+\newcommand{\doubleimage}[9][.]{
+
+	\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{.45\textwidth}
+	  \centering
+	  \includegraphics[width=1\linewidth]{#1/#3}
+	  \caption{#5}
+	  \label{fig:#3}
+	\end{subfigure}%
+	\begin{subfigure}{.45\textwidth}
+	  \centering
+	  \includegraphics[width=1\linewidth]{#1/#4}
+	  \caption{#6}
+	  \label{fig:#4}
+	\end{subfigure}
+		\caption
+			[#7]						%	#7: Kurzbeschriftung (im Abbildungsverzeichnis)
+			{#8}						%	#8: Beschriftung (am Bild)
+		\label{fig:#2}					% 		Label: 'fig:' + 'DATEINAME'
+		\vspace{\imagesourcespace}		% 		Abstand zur Quellenangabe
+		\imagesourcefont{}				% 		Schrift f. Quellenangabe
+		\caption*{\imagesourcelabel #9}	%	#9: Quellenangabe
 	\end{figure}
 }
 
