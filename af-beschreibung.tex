@@ -1,0 +1,333 @@
+
+\chapter{Anwendungsfälle der Beispiel-Anwendung}
+
+\pagebreak
+\newgeometry{margin=\bigcodemargin}
+\section{Anwendungsfalldiagramm}
+
+\image{af-diagramm}{width=\fullimagesize}{Anwendungsfalldiagramm der Beispielanwendung}{Anwendungsfalldiagramm der Beispielanwendung. }{\ownGraphic}
+
+\restoregeometry
+\pagebreak
+
+\section{Anwendungsfallbeschreibung}
+
+%TODO extend durch nameref ergänzen.
+
+\usecase{Listen verwalten}
+
+	\begin{description}
+	
+		\actors{initiiert vom Listenmitglied}
+		\initcondition{Es existieren Listen für den angemeldeten Benutzer. (Das System legt für jeden Benutzer mindestens eine Standardliste an.)}
+		
+		\begin{verlauf}
+		
+		\item Das System zeigt eine Übersicht der gespeicherten Listen, derer der aktive Benutzer Mitglied ist.
+		\item Für alle Listen hat er hier die Möglichkeit,
+			\begin{enumerate}
+			\item sich den Listeninhalt anzeigen zu lassen (extend Tasks verwalten\,/\,Listeninhalt anzeigen) und 
+			\item Listen zu teilen (extend Liste teilen). 
+			\end{enumerate}
+		\item Für alle Listen, deren er darüber hinaus Eigentümer ist, hat er die Möglichkeit, diese 
+			\begin{enumerate}
+			\item zu löschen (extend Liste löschen), 
+			\item umzubenennen (extend Liste umbenennen) und
+			\item zu erstellen (extend Liste erstellen).
+			\end{enumerate}
+		\item Das System prüft den verfügbaren Bildschirmplatz und initiiert, sofern der Platz dafür ausreicht, automatisch den Anwendungsfall Tasks verwalten\,/\,Listeninhalt anzeigen für die erste Standardliste.
+		\end{verlauf}
+	
+	\end{description}
+
+\usecase{Liste erstellen}
+	\begin{description}
+	
+		\actors{Initiiert vom Listeneigentümer}
+		\begin{verlauf}
+		
+		
+		\item Der Nutzer signalisiert dem System, dass er eine neue Liste erstellen möchte.
+		\item Weiter mit Liste benennen.
+		\end{verlauf}
+	\end{description}
+
+
+\usecase{Liste umbenennen}
+	\begin{description}
+		
+		\actors{Initiiert vom Listeneigentümer}
+		\begin{verlauf}
+		
+			\item Der Nutzer signalisiert dem System, dass er eine Liste umbenennen möchte.
+			\item Weiter mit Liste benennen.
+		\end{verlauf}
+	\end{description}
+
+
+\usecase{Liste benennen}
+	\begin{description}
+	
+		\actors{Initiiert vom Listeneigentümer}
+		\begin{verlauf}
+			\item Das System zeigt ein Eingabefeld, in dem der neue Listenname eingegeben werden kann.
+			\item Der Nutzer gibt den Namen für die neue Liste ein und bestätigt die Eingabe.
+			\item Das System speichert die Liste mit dem eingegebenen Namen ab (je nach Kontext eine neu angelegte oder die alte mit neuem Namen).
+			\item Die Ansicht wechselt wieder zur Listenansicht, in der jetzt auch die neu angelegte Liste erscheint.
+		
+		\end{verlauf}
+	\end{description}
+	
+\usecase{Liste löschen}
+	\begin{description}
+		\actors{Initiiert vom Listeneigentümer}
+		\begin{verlauf}
+		
+		\item Der Nutzer signalisiert dem System, dass er eine Liste löschen möchte.
+		\item Weiter mit Objekt löschen.
+		
+		\end{verlauf}
+	\end{description}
+
+\usecase{Objekt löschen}
+	Teil-Anwendungsfall. 
+	\begin{description}
+		\begin{verlauf}
+		\item Das System öffnet einen Dialog, in dem der Nutzer gefragt wird, ob er sicher ist, dass er das ausgewählte Objekt löschen möchte.
+		\item Der Nutzer bestätigt den Dialog zum Löschen.
+		\item Das System löscht das gewählte Objekt aus dem System und wechselt wieder zur vorherigen Ansicht.
+		\end{verlauf}
+		\begin{altVerlauf}
+			\setcounter{enumi}{1}\item Der Nutzer bricht den Vorgang ab.
+		\end{altVerlauf}
+
+	\end{description}
+
+\usecase{Liste teilen}
+	\begin{description}
+		\actors{Initiiert vom Listenmitglied}
+		\begin{verlauf}
+		
+			\item Der Nutzer signalisiert dem System, dass er andere Nutzer zu einer Liste einladen möchte.
+			\item Das System wechselt zum Adressbuch des Betriebssystems.
+			\item Der Nutzer wählt einen oder mehrere Kontakte aus seinem Adressbuch aus und bestätigt die Eingabe mit \enquote{Fertig}.
+			\item Das System wechselt wieder zur Besorgungen-App und zeigt einen Dialog, in dem die ausgewählten Kontakte noch einmal aufgelistet werden.
+			\item Der Nutzer bestätigt die Eingabe mit \enquote{Liste teilen}.
+			\item Das System speichert die Information der neuen Listenmitglieder ab.
+			\item Das System versendet Benachrichtigungen an die eingeladenen Nutzer, dass eine Liste mit ihnen geteilt wurde.
+		
+		\end{verlauf}
+	\end{description}
+	
+\usecase{Tasks verwalten\,/\,Listeninhalt anzeigen}
+	\begin{description}
+		\actors{initiiert vom Listenmitglied}
+		\begin{verlauf}
+		
+		\item Der Nutzer signalisiert dem System mit der Auswahl einer Liste, dass er deren Inhalt anzeigen oder verwalten möchte.
+		\item Das System zeigt neben den vorher schon angezeigten Listen nun auch den Inhalt der selektierten Liste, also die darin enthaltenen Tasks an. 
+		\item Von hier aus hat der Nutzer folgende Interaktionsmöglichkeiten (extend):
+			\begin{enumerate}
+		\item Liste teilen
+		\item Task erstellen
+		\item Task löschen
+		\item Task bearbeiten \\
+		Außerdem werden dem Nutzer je nach verfügbarem Bildschirmplatz auch für alle Tasks Shortcuts zu allen Extend-Anwendungsfälle von Task bearbeiten angezeigt.
+			\end{enumerate}
+		
+		\end{verlauf}
+	\end{description}
+	
+\usecase{Task löschen}
+	\begin{description}
+		\actors{Initiiert vom Listenmitglied}
+		\begin{verlauf}
+		
+			\item Der Nutzer signalisiert dem System, dass er einen Task löschen möchte.
+			\item Weiter mit Objekt löschen.
+			
+		\end{verlauf}
+	\end{description}
+	
+\usecase{Task erstellen}
+	\begin{description}
+		\actors{Initiiert vom Listenmitglied}
+		\begin{verlauf}
+		
+			\item Der Nutzer signalisiert dem System, dass er einen Task erstellen möchte.
+			\item Das System öffnet ein Eingabefeld, in das der Name für den neuen Task eingetragen werden kann.
+			\item Der Nutzer trägt den Namen für den Task ein und bestätigt die Eingabe.
+			\item Das System speichert den neuen Task in die ausgewählte Liste ab.
+		
+		\end{verlauf}
+		
+	\end{description}
+\usecase{Task umbenennen}
+	\begin{description}
+		\actors{Initiiert vom Listenmitglied}
+		\begin{verlauf}
+		
+			\item Der Nutzer signalisiert dem System, dass er einen Task umbenennen möchte.
+			\item Das System öffnet ein Eingabefeld, in das der neue Name für den Task eingetragen werden kann.
+			\item Der Nutzer trägt den Namen für den Task ein und bestätigt die Eingabe.
+			\item Das System ändert den Namen des Tasks und speichert ihn ab.
+		
+		\end{verlauf}
+	\end{description}
+\usecase{Task bearbeiten}
+	\begin{description}
+		\actors{initiiert vom Listenmitglied}
+		\begin{verlauf}
+		
+		\item Der Nutzer signalisiert dem System, dass er einen Task bearbeiten möchte.
+		\item Das System öffnet den Bearbeiten-Dialog für den ausgewählten Task.\\
+		Der Nutzer hat folgende Interaktionsmöglichkeiten:
+			\begin{enumerate}
+				\item Bild an Task hängen
+				\item Task terminieren
+				\item Task verorten
+				\item Task zuweisen
+				\item Task abschließen
+				\item Erledigung abbrechen (Task zurückgeben)
+				\item Task umbenennen
+			\end{enumerate}
+		
+		\end{verlauf}
+	\end{description}
+	
+\usecase{Bild an Task hängen}
+	\begin{description}
+		\actors{Initiiert vom Listenmitglied}
+		\begin{verlauf}
+		
+			\item Der Nutzer signalisiert dem System, dass er ein Bild an einen Task hängen möchte.
+			\item (In der Prototyp-Version deaktiviert) Das System öffnet einen Dialog, in dem gefragt wird, ob ein Bild mit der Kamera aufgenommen oder ein Bild aus der Galerie ausgewählt werden soll.
+			\item Der Nutzer wählt die Option „Von der Kamera“.
+			\item Das System wechselt zur Kamera-Anwendung des Betriebssystems.
+			\item Der Nutzer nimmt ein Foto auf und bestätigt die Eingabe mit „Fertig“.
+			\item Das System wechselt wieder zur Besorgungen-App und zeigt in einem Dialog das aufgenommene Foto.
+			\item Der Nutzer bestätigt die Eingabe mit „Anhängen“.
+			\item Das System speichert das Foto zum ausgewählten Task ab.
+				
+		\end{verlauf}
+		
+	\end{description}
+
+
+\usecase{Task terminieren}
+	\begin{description}
+		\actors{Initiiert vom Listenmitglied}
+		\begin{verlauf}
+		
+			\item Der Nutzer signalisiert dem System, dass ein Task an einem bestimmten Datum erledigt werden soll.
+			\item Das System zeigt ein Datumsauswahlfeld an.
+			\item Der Nutzer gibt das entsprechende Darum in das Feld ein.
+			\item Das System fragt in einem Dialog, ob der Task auch in den Kalender des Betriebssystems eingetragen werden soll.
+			\item Der Nutzer bestätigt den Dialog.
+			\item Das System speichert den Task als ganztägigen Termin in den Kalender des Betriebssystems ab und gibt eine entsprechende Meldung über das erfolgreiche Speichern zurück.
+				
+		\end{verlauf}
+		
+	\end{description}
+
+
+\usecase{Task verorten}
+	\begin{description}
+		\actors{Initiiert vom Listenmitglied }
+		\begin{verlauf}
+		
+			\item Der Nutzer signalisiert dem System, dass ein Task an einem bestimmten Ort erledigt werden soll.
+			\item Das System zeigt ein Eingabefeld, um den Ort einzugeben.
+			\item Der Nutzer trägt den Ort in das Eingabefeld ein (entweder gleich als Freitextsuche oder vorerst nur als reine GPS-Koordinaten).
+			\item Das System speichert den angegebenen Ort zum betreffenden Task ab.
+				
+		\end{verlauf}
+		
+	\end{description}
+
+
+\usecase{Task zuweisen}
+	\begin{description}
+		\actors{Initiiert vom Listenmitglied}
+		\begin{verlauf}
+		
+			\item Der Nutzer signalisiert dem System, dass er einen Benutzer für einen Task zuständig zuweisen möchte.
+			\item Das System zeigt eine Liste der Listenmitglieder der aktuellen Besorgungsliste. 
+			\item Der Nutzer wählt einen Nutzer aus dieser Liste aus.
+			\item Das System speichert den ausgewählten Nutzer als neuen Task-Inhaber ab und zeigt mit einem kleinen Icon am Task an, wem dieser Task zugewiesen ist.
+		
+		\end{verlauf}
+		
+	\end{description}
+
+
+\usecase{Erledigung abbrechen (Task zurückgeben)}
+	\begin{description}
+		\actors{Initiiert vom Task-Inhaber}
+		\initcondition{Der Task wurde einem Nutzer zugewiesen, der dadurch zum Task-Inhaber wird.}
+		\begin{verlauf}
+		
+			\item Verlauf wie bei Task zuweisen.
+			\item Statt 3.: Der Nutzer wählt aus der Liste den Default-Wert „(kein)“ aus.
+				
+		\end{verlauf}
+	\end{description}
+
+\usecase{Task übernehmen}
+	\begin{description}
+		\actors{Initiiert vom  Listenmitglied}
+		\begin{verlauf}
+		
+			\item Verlauf wie bei Task zuweisen.
+			\item Statt 3.: Der Nutzer wählt aus der Liste sich selbst aus.
+		
+		\end{verlauf}
+		
+	\end{description}
+
+
+\usecase{Task abschließen}
+	\begin{description}
+		\actors{Initiiert vom Listenmitglied}
+		\begin{verlauf}
+		
+			\item Der Nutzer signalisiert dem System, dass ein Task erledigt ist.
+			\item Das System speichert den Task als erledigt ab und stellt dieses visuell dar (Bspw. Durchgestrichen, auf Erledigt-Liste verschoben).
+				
+		\end{verlauf}
+	\end{description}
+
+
+\usecase{Erinnern}
+	\begin{description}
+		\actors{Initiiert vom Controller; Listenmitglied ist beteiligt.}
+		\begin{verlauf}
+		
+			\item Das System erkennt durch den permanenten GPS-Abgleich der zugeordneten Listenmitglieder mit den verorteten Tasks, dass sich ein Nutzer gerade in der Nähe des Ortes eines Tasks befindet.
+			\item Das System sendet eine Benachrichtigung an den nativen Benachrichtigungsmechanismus des Betriebssystems, aus der hervorgeht, dass der Nutzer sich gerade in der Nähe eines Ortes eines zu erledigenden Tasks befindet.
+		\end{verlauf}
+%		\begin{altVerlauf}
+%
+%
+%			\item Der Nutzer wählt das Benachrichtigungselement aus.
+%			\item [Alternativ:]
+%				\begin{itemize}
+%					\item Weiter mit Karte anzeigen.		
+%					\item Das System wechselt zur Detailansicht (Task bearbeiten) des Tasks.
+%				\end{itemize}
+%
+%		\end{altVerlauf}
+	\end{description}
+
+\usecase{Karte anzeigen}
+	\begin{description}
+		\actors{Initiiert vom Listenmitglied}
+		\initcondition{Es wurde ein Ort für den betreffenden Task hinterlegt (Task verorten).}
+		\begin{verlauf}
+		
+			\item Der Nutzer signalisiert dem System, dass er den Ort eines bestimmten Tasks auf der Karte ansehen möchte.
+			\item Das System wechselt zur nativen Kartenanwendung des Betriebssystems und zeigt (neben dem aktuellen Standort) den Ort des Tasks mit einer Markierung auf der Karte an.
+		
+		\end{verlauf}
+	\end{description}
+	
