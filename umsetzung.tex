@@ -7,8 +7,12 @@
 %		Design (Architektur)
 %		Bezug zur Technologie (Plattform(un)abhängige Anforderungen)
 
-\section{Kriterien zur Bewertung}	\label{sec:kriterien}
+\section{Vorüberlegungen}	\label{sec:kriterien}
 	%	(Aspekte / Vorüberlegungen (Sicherheit, Verfügbarkeit, plattformspezifische Anforderungen, Usability, ?Entwickler-Komfort?, ?Feature-Reichtum?, ...))
+	
+	
+	
+	
 
 \section{Beispiel-Anwendung}	\label{sec:bsp-app} 
 %	Zu Explorationszwecken zu implementierender Anwendungsfall (App-Prototyp)
@@ -22,6 +26,13 @@
 % Funktionalitätsbeschreibung 
 % 		Anwendungsfalldiagramm
 %		Anwendungsfall beschreibung
+
+\doubleimage[contacts]{errands-home}
+	{errands-home-ios}{errands-list-ios}
+	{Startbildschirm \\ der Beispielanwendung}{Listenansicht \\der Beispielanwendung}
+	{Beispiel-Anwendung im iOS-Simulator}
+	{Startbildschirm und Listenansicht der Beispiel-Anwendung im \gls{ios-sim}.}
+	{\ownScreenshot}
 
 Für die praktische Erprobung und Untersuchung einer Technologie zur plattformunabhängigen \gls{app}-Entwicklung sollte hier mit \gls{cordova} ansatzweise eine Beispiel-Anwendung in Form einer plattformunabhängigen mobilen \gls{app} entwickelt werden.
 Für die Auswahl eines geeigneten Anwendungsgebiets war ein Kriterium die Maßgabe, möglichst solche Anforderungen der Anwendung zu identifizieren, die eine gewisse plattformspezifische Anforderung haben, also (\enquote{plattformkritische}) Features benötigen, die sich beispielsweise nicht ohne weiteres mit einer reinen Web-Anwendung umsetzen lassen, um den eigentlichen Mehrwert eines entsprechenden Cross-Plattform-Frameworks nutzen zu können und aufzuzeigen.
@@ -39,14 +50,7 @@ Außerdem soll die Anwendung Benachrichtigungen über das Erreichen eines angege
 %TODO nochmal überprüfen, ob das alles so sinn macht.
 Der Entwicklungsstand des hier beschriebenen Beispiel-Codes beschränkt sich jedoch auf die Umsetzung der \og Funktionalität, Listen zu teilen, also neue Listenmitglieder anhand der Daten aus der Kontaktverwaltung des Geräts zu Listenobjekten hinzuzufügen.
 
-\doubleimage[contacts]{errands-home}
-	{errands-home-ios}{errands-list-ios}
-	{Startbildschirm \\ der Beispielanwendung}{Listenansicht \\der Beispielanwendung}
-	{Beispiel-Anwendung im iOS-Simulator}
-	{Startbildschirm und Listenansicht der Beispiel-Anwendung im \gls{ios-sim}.}
-	{\ownScreenshot}
-
-\section{Ausgewählte Technologie und Architektur}
+\section{Ausgewählte Technologie und Architektur für die Implementierung}
 
 Da \gls{cordova} eins der meist genutzten \glspl{framework} zur plattformunabhängigen \gls{app}-Entwicklung darstellt, das kostenfrei, \gls{opensource} und gut dokumentiert ist und zudem den Vorteil bietet, vorhandene Kenntnisse der Web-Entwicklung für die Erstellung von mobilen \glspl{app} nutzbar zu machen, wurde dieses hier für die Implementierung der in \autoref{sec:bsp-app} beschriebenen Beispiel-Anwendung und zur näheren Beleuchtung ausgewählt.
 Weiterhin fand die auf \gls{jq} aufbauende Oberflächen-Bibliothek für mobile Web-Oberflächen \gls{jqm} sowie die \gls{data-binding}-Bibliothek \gls{ko} für die Umsetzung der hybriden \gls{app} hier Verwendung (\fullref{sec:hybrid-dev}).
