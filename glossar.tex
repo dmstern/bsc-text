@@ -31,9 +31,9 @@
 	firstplural = {Web-Apps (oder dt. \enquote{Web-Anwendungen})}
 }
 
-\newglossaryentry{hybrid-app}{
+\newglossaryentry{hybrid-app}{  %S
 	name = Hybrid-App,
-	description = {},
+	description = {Anwendungssoftware, die Web-Technologien verwendet},
 }
 
 \newglossaryentry{html}{
@@ -42,9 +42,9 @@
 	type = technologies
 }
 
-\newglossaryentry{xml}{
+\newglossaryentry{xml}{ %S
 	name = XML,
-	description = {},	%TODO Beschreibung einfuegen!
+	description = {Extensible Markup Language (dt. \enquote{erweiterbare Auszeichnungssprache}). Eine Auszeichnugssprache zur Darstellung hirachischer Inhalte in Textform},	%TODO Beschreibung einfuegen!
 	type = technologies
 }
 
@@ -60,19 +60,20 @@
 	type = \acronymtype,
 }
 
-\newglossaryentry{listview}{
+\newglossaryentry{listview}{ %S
 	name = Listview,
-	description = {},
+	description = {Ein scrollbarer Container zur Anzeige von Elementen in einer Liste},
 }
 
-\newglossaryentry{errorhandler}{
+\newglossaryentry{errorhandler}{%S
 	name = Error-Handler,
-	description = {},
+	description = {dt. \enquote{Fehlerbehandler}. Spezieller Teil im Programmcode, der aufgerufen wird, wenn ein Fehler zur Laufzeit auftritt.},
+	%Quelle: http://dictionary.reference.com/browse/exception+handler
 }
 
-\newglossaryentry{flag}{
+\newglossaryentry{flag}{%S
 	name = Flag,
-	description = {},
+	description = {Statusvariable zur Kennzeichnung bestimmter Zustände},
 }
 
 \newglossaryentry{css}{
@@ -97,29 +98,34 @@
 	description = {Eine Zeichenkette in der Informatik.},
 }
 
-\newglossaryentry{framework}{
+\newglossaryentry{framework}{%S
 	name = Framework,
-	description = {},
+	description = {dt. \enquote{Rahmenstruktur}. Ein Rahmenwerk zur Erstellung von Anwendungssoftware.},
+	%Eine halbvollständige Application, die zur Erstellung weiter Applicationen als wiederverwendbarer Rahmen dient
+	%Quelle: http://www.itwissen.info/definition/lexikon/Framework-framework.html
 }
 
-\newglossaryentry{event}{
+\newglossaryentry{event}{%S
 	name = Event,
-	description = {},
+	description = {dt. \enquote{Ereignis}. Eine plötzliche Veränderung eines Zustands oder Parameters, auf die ein Programm reagiert.},
+	%Fast wörtlich übernommen, Quellenangabe also wohl wichig
+	%Quelle: http://www.itwissen.info/definition/lexikon/Ereignis-event.html
 }
 
-\newglossaryentry{handler}{
+\newglossaryentry{handler}{%S
 	name = Handler,
-	description = {},
+	description = {dt. \enquote{Behandler}},
 }
 
-\newglossaryentry{event-handler}{
+\newglossaryentry{event-handler}{%S
 	name = Event-Handler,
-	description = {},
+	description = {dt. \enquote{Ereignisbehandler}. Spezieller Teil im Programmcode, der aufgerufen wird, wenn ein Event ausgelöst wird.},
 }
 
-\newglossaryentry{observer-pattern}{
+\newglossaryentry{observer-pattern}{%S
 	name = Observer-Pattern,
-	description = {},
+	description = {Ein Entwurfsmuster (engl. \enquote{pattern}) in der Softwareentwicklung, bei dem Objekte zueinander in Beziehung stehen um konsisten gehalten zu werden. Ändert sich der Zustand eines Objekts, werden alle davon abhängigen Objekte (observer) benachrichtigt und entsprechend aktualisiert.},
+	%Quelle: meine alte Software-Entwicklungs Vorlesung, 7. Vorlesung, 29. Folie
 }
 
 \newglossaryentry{observer}{
@@ -137,14 +143,14 @@
 
 \newglossaryentry{mvvm}{
 	name = MVVM-Pattern,
-	description = {Model-View-ViewModel-Pattern. Ein Entwurfsmuster (engl. \enquote{Pattern}) der Informatik zur Trennung von Benutzeroberfl\"ache und \gls{ui}-Logik},
+	description = {Model-View-ViewModel-Pattern. Ein Entwurfsmuster (engl. \enquote{pattern}) der Informatik zur Trennung von Benutzeroberfl\"ache und \gls{ui}-Logik},
 	first = {Model-View-ViewModel\,-\-Pattern (MVVM)},
 	type = \acronymtype,
 }
 
-\newglossaryentry{mvc}{
+\newglossaryentry{mvc}{%S
 	name = MVC,
-	description = {},
+	description = {Model-View-Controller},
 	type = \acronymtype,
 }
 
@@ -163,125 +169,132 @@
 	description = {},
 }
 
+\newglossaryentry{viewCtrl}{
+	name = ViewController,
+	description = {},
+}
+
 \newglossaryentry{web-view}{
 	name = WebView,
 	description = {},
 }
 
-\newglossaryentry{cross-compiling}{
+\newglossaryentry{cross-compiling}{%S
 	name = Cross-Compiling,
-	description = {},
+	description = {Kompiliervorgang, bei dem Builts für andere Plattformen als diejenige, auf der der Compiler läuft, hergestellt werden},
 }
 
-\newglossaryentry{built}{
+\newglossaryentry{built}{%S
 	name = Built,
-	description = {},
+	description = {Ein ausführbares Programm},
 }
 
-\newglossaryentry{frontend}{
+\newglossaryentry{frontend}{%S
 	name = Frontend,
-	description = {},
+	description = {Softwareschicht, die nahe der Benutzerschnittstelle liegt.},
 }
 
-\newglossaryentry{mono}{
+\newglossaryentry{mono}{%S
 	name = Mono,
-	description = {},
+	description = {Open source Implementierung von Microsofts .NET Framework.},
 	type = technologies
+	%Quelle: http://www.mono-project.com/Main_Page
 }
 
-\newglossaryentry{bytecode}{
+\newglossaryentry{bytecode}{%S
 	name = Bytecode,
-	description = {},
+	description = {Kompilierter Code, der auf einer virutellen Maschine ausgeführt werden kann.},
 	type = technologies
 }
 
-\newglossaryentry{nekovm}{
+\newglossaryentry{nekovm}{%S
 	name = NekoVM,
-	description = {},
+	description = {Programmiersprache},
 	type = technologies
 }
 
 \newglossaryentry{lime}{
 	name = Lime,
-	description = {},
+	description = {Haxe Bibliothek},
 	type = technologies
 }
 
-\newglossaryentry{osgi}{
+\newglossaryentry{osgi}{%S
 	name = OSGi,
-	description = {},
+	description = {Open Services Gateway initiative. Eine auf der JVM aufbauende hardwareunabhängige Softwareplattform},
 	type = technologies
 }
 
-\newglossaryentry{titanium}{
+\newglossaryentry{titanium}{%S
 	name = Titanium,
-	description = {},
+	description = {Entwicklungsumgebung der Firma Appcelerator},
 	type = technologies
 }
 
-\newglossaryentry{appcelerator}{
+\newglossaryentry{appcelerator}{%S
 	name = Appcelerator,
-	description = {},
+	description = {Amerikanische Softwarefirma},
 	type = technologies
 }
 
-\newglossaryentry{alloy}{
+\newglossaryentry{alloy}{%S
 	name = Alloy,
-	description = {},
+	description = {Framework zu Erstellung von Benutzeroberflächen},
 	type = technologies
 }
 
-\newglossaryentry{openfl}{
+\newglossaryentry{openfl}{%S
 	name = OpenFL,
-	description = {},
+	description = {Haxe Bibliothek},
 	type = technologies
 }
 
-\newglossaryentry{flash-editing-environment}{
+\newglossaryentry{flash-editing-environment}{%S
 	name = Flash-Editing-Environment,
-	description = {},
+	description = {Entwicklungsumgebung für Flash-Software},
 	type = technologies
 }
 
-\newglossaryentry{cocao-touch-widgets}{
-	name = Cocao Touch Widgets,
-	description = {},
+%war ein Rechtschreibfehler drin: nicht cocao
+\newglossaryentry{cocoa-touch-widgets}{%S
+	name = Cocoa Touch Widgets,
+	description = {Benutzeroberflächenframework der Firma Apple},
 	type = technologies
 }
 
-\newglossaryentry{xmlvm}{
+\newglossaryentry{xmlvm}{%S
 	name = XMLVM,
-	description = {},
+	description = {Projektname eines Cross-Compilers},
 	type = technologies
 }
 
-\newglossaryentry{monotouch}{
+\newglossaryentry{monotouch}{%S
 	name = MonoTouch,
-	description = {},
+	description = {Framework zu Erstllung von iOS Apps},
 	type = technologies
 }
 
-\newglossaryentry{xamarin}{
+\newglossaryentry{xamarin}{%S
 	name = Xamarin,
-	description = {},
+	description = {Amerikanische Softwarefirma},
 	type = technologies
 }
 
-\newglossaryentry{c-sharp}{
+\newglossaryentry{c-sharp}{%S
 	name = C\#,
-	description = {},
+	description = {Eine von Microsoft entwickelte objektorientierte Programmiersprache},
 	type = technologies
 }
 
-\newglossaryentry{cpp}{
+\newglossaryentry{cpp}{%S
 	name = C++,
-	description = {},
+	description = {Eine objektorientierte Erweiterung der Programmiersprache C},
 	type = technologies
 }
 
-\newglossaryentry{look-and-feel}{
+\newglossaryentry{look-and-feel}{%S
 	name = Look-And-Feel,
-	description = {},
+	description = {Standartisierte Design-Aspekte einer Software},
 }
 
 \newglossaryentry{intel}{
@@ -302,24 +315,26 @@
 	type = ignored
 }
 
-\newglossaryentry{swf}{
+\newglossaryentry{swf}{%S
 	name = SWF,
-	description = {},
+	description = {Shockwave Flash. Ein Dateiformat.},
+	type = \acronymtype,
 }
 
-\newglossaryentry{swt}{
+\newglossaryentry{swt}{%S
 	name = SWT,
-	description = {},
+	description = {Standard Widget Toolkit. Eine Benutzeroberflächenbibliothek für Java},
+	type = \acronymtype,
 }
 
-\newglossaryentry{jface}{
+\newglossaryentry{jface}{%S
 	name = JFace,
-	description = {},
+	description = {Ein auf SWT aufbauendes Benutzeroberflächen-Toolkit},
 }
 
-\newglossaryentry{flash}{
+\newglossaryentry{flash}{%S
 	name = Flash,
-	description = {},
+	description = {Plattform zur Darstellung und Programmierung multimedlier Inhalte der Firma Adobe},
 	type = ignored
 }
 
@@ -349,13 +364,13 @@
 
 \newglossaryentry{ios}{
 	name = iOS,
-	description = {Smartphone- und Tablet-Betriebssytem von \gls{apple}},
+	description = {Smartphone- und Tablet-Betriebssytem der Firma \gls{apple}},
 	type = technologies
 }
 
-\newglossaryentry{ios-sim}{
+\newglossaryentry{ios-sim}{%S
 	name = iOS-Simulator,
-	description = {},
+	description = {Eine Software für Apples OSX zur Simulation von iOS},
 	type = technologies
 }
 
@@ -365,23 +380,23 @@
 	type = technologies
 }
 
-\newglossaryentry{ubuntu-phone}{
+\newglossaryentry{ubuntu-phone}{%S
 	name = U\-bun\-tu \mbox{Phone},
-	description = {},
+	description = {Ein Smartphone-Betriebsystem der Firma Cononical},
 	type = technologies
 }
 
 
-\newglossaryentry{webos}{
+\newglossaryentry{webos}{%S
 	name = webOS,
-	description = {},
+	description = {Ein open source Smartphone- und Tablet-Betriebssystem},
 	type = technologies
 }
 
 
-\newglossaryentry{symbian}{
+\newglossaryentry{symbian}{%S
 	name = Symbian,
-	description = {},
+	description = {Handy- und Smartphone-Betriebsystem der Firma Nokia},
 	type = technologies
 }
 
@@ -395,7 +410,7 @@
 \newglossaryentry{win8}{
 	name = Windows\,8,
 	first = Microsoft~Windows~8,
-	description = {Aktuelles Desktop-\,/\,Hybrid-Betriebssystem von Microsoft},
+	description = {Aktuelles Desktop-\,/\,Hybrid-Betriebssystem der Firma Microsoft},
 	type = technologies
 }
 
@@ -423,26 +438,21 @@
 	type = ignored
 }
 
-\newglossaryentry{javaee}{
+\newglossaryentry{javaee}{%S
 	name = JavaEE,
-	first = {JavaEE (Java Plattform Enterprise Edition)},
-	description = {},
+	first = {JavaEE (Java Platform Enterprise Edition)},
+	description = {Java Plattform der Firma Oracle},
 }
 
-\newglossaryentry{tabris}{
+\newglossaryentry{tabris}{%S
 	name = Tabris,
-	description = {},
+	description = {Framework zur Erstellung plattformunabhängiger Client-Server Mobilanwendungen mit Java.},
 }
 
-\newglossaryentry{tabris-ui}{
+\newglossaryentry{tabris-ui}{%S
 	name = Tabris UI,
 	first = {Tabris User Interface Framework (Tabris UI)},
-	description = {},
-}
-
-\newglossaryentry{viewCtrl}{
-	name = ViewController,
-	description = {},
+	description = {Framework zur Erstellung von Benutzeroberflächen mit Tabris.},
 }
 
 \newglossaryentry{actionbar}{
@@ -450,14 +460,14 @@
 	description = {Eine vierteilige Menüleiste am oberen Bildschirmrand des mobilen Betriebssystems \gls{android}},
 }
 
-\newglossaryentry{xamarin-android}{
+\newglossaryentry{xamarin-android}{%S
 	name = Xamarin.Android,
-	description = {},
+	description = {Framework zur Programmierung von Android Apps in \gls{c-sharp}},
 }
 
-\newglossaryentry{xamarin-ios}{
+\newglossaryentry{xamarin-ios}{%S
 	name = Xamarin.iOS,
-	description = {},
+	description = {Framework zur Programmierung von iOS Apps in \gls{c-sharp}.},
 }
 
 \newglossaryentry{netbeans}{
@@ -607,20 +617,20 @@
 	type = technologies
 }
 
-\newglossaryentry{git}{
+\newglossaryentry{git}{%S
 	name = {Git},
-	description = {},
+	description = {Eine Versionsverwaltungssoftware},
 	type = technologies
 }
 
-\newglossaryentry{qr}{
+\newglossaryentry{qr}{%S
 	name = {QR-Code},
-	description = {},
+	description = {Eine zweidimensionale Darstellung von Zeichenketten},
 }
 
-\newglossaryentry{plugin}{
+\newglossaryentry{plugin}{%S
 	name = {Plugin},
-	description = {},
+	description = {Eine Erweiterung für eine Software.},
 }
 
 \newglossaryentry{id}{
@@ -642,9 +652,9 @@
 	type = ignored
 }
 
-\newglossaryentry{ff-os}{
+\newglossaryentry{ff-os}{%S
 	name = {Firefox\,OS},
-	description = {},
+	description = {Ein Smartphone- und Tablet-Betriebsystem der Mozilla Corporation},
 	type = technologies
 }
 
@@ -751,19 +761,21 @@
 	description = {Verbindung von \gls{ui}-Komponenten mit Datenfeldern auf Programmebene},
 }
 
-\newglossaryentry{obs}{
+\newglossaryentry{obs}{%S
 	name = {Observable},
-	description = {},
+	description = {dt. \enquote{beobachtbar}},
 }
 
-\newglossaryentry{asynchron}{
+\newglossaryentry{asynchron}{%S
 	name = {asynchron},
 	description = {},
+	type = ignored
 }
 
-\newglossaryentry{array}{
+\newglossaryentry{array}{%S
 	name = {Array},
-	description = {},
+	description = {Eine Datenstruktur},
+	type = ignored
 }
 
 \newglossaryentry{opensource}{
