@@ -11,8 +11,26 @@
 	%	(Aspekte / Vorüberlegungen (Sicherheit, Verfügbarkeit, plattformspezifische Anforderungen, Usability, ?Entwickler-Komfort?, ?Feature-Reichtum?, ...))
 	%TODO Wenn der Abschnitt keine ganze Seite gibt, dann als Absatz am Anfang des Kapitels!
 	
+	%TODO Irgendwo erwähnen, welche Test-Zielplattformen ich verwendet habe. --> Evlt. auch in [impl].
 	
-	
+ 	Um nachfolgend die Exploration der ausgewählten Cross-Plattform-Technologie zu erläutern und die Eignung für die Praxis zu erörtern, sollen hier einige Vorüberlegungen getroffen werden.
+ 	
+ 	Die Anforderungen an mobile Anwendungen, sowie deren Einsatzgebiete bilden ein breites Spektrum ab. Verschiedene SDKs adressieren teilweise gezielt bestimmte Einsatzgebiete der späteren Applikation. Das führt zu der Frage, inwieweit die verwendeten Technologien für unterschiedlich motivierte Entwickler und Softwarefirmen, sowie deren Kunden, brauchbar sind. Hat ein Unternehmen beispielsweise bereits eine bestehende Software-Infrastruktur, sollte sich eine plattformunabhängige App gut in das bestehende System integrieren lassen.
+ 	
+ 	Für Entwickler und Unternehmen wiederum, kann eine plattformunabhängige Entwicklung Ressourcen sparen und somit potentiell kleineren Unternehmen den Einstieg in den Markt für mobile Anwendungen erleichtern. 
+ 	Ein solches Ressourcenersparnis stellt sich allerdings nur ein, wenn der Aufwand zur Einrichtung und Benutzung des Frameworks kleiner ist, als der für die Entwicklung einer separaten App für jede Plattform. 
+ 	Hier fließt mit ein, wie viele Zielplattformen für die Auslieferung der App angestrebt sind, sowie die Benutzerfreundlichkeit des Frameworks aus Entwicklersicht, also die Frage, wie komfortabel sich Anwendungen entwickeln lassen.
+ 	
+ 	Ein offensichtliches Kriterium zur Beurteilung des Frameworks anhand eines gegebenen Anwendungszwecks sind die zur Verfügung stehenden Features, die auf dem Mobilgerät genutzt werden können. Stimmt dieser nicht mit denen der nativen App-Entwicklung überein, ist zu klären, welche Features fehlen und auf welche der Entwickler eventuell verzichten kann oder muss.
+ 	
+ 	Weiter ist interessant, ob sich weitere potentielle Nachteile durch die Nutzung eines Frameworks zur hybriden App-Entwicklung ergeben und welche Vorteile sich heraus kristallisieren. 
+ 	Es ließe sich beispielsweise die Frage stellen, ob die verwendeten Web-Technologien einer hybriden App prinzipielle Stärken und Schwächen in puncto Performance haben. 
+ 	Hierüber wird die Beispiel-Anwendung allerdings wenig Aufschluss geben, da eine native Implementierung der gleichen Funktionen zur Vergleichbarkeit fehlt. Die Performance einer Hybrid-App ließe sich als einen Punkt der Nutzerfreundlichkeit bzw. Vor- und Nachteilen für den Endanwender sehen, was gerade für Consumer-Apps von großer Bedeutung ist.
+ 	
+ 	Weitere Vor- und Nachteile hybrider Apps ließen sich an den Fragen der Stabilität einer solchen App, also deren Fehleranfälligkeit und damit verbundenen Abstürzen der Software, sowie der Sicherheit der Software erörtern. Dies schließt die Punkte mit ein, bspw. durch Manipulation des bestehenden Codes, so dass Schadcode in externe Systeme oder auch Client-Geräte eingeschleust werden kann, sowie der Verschlüsselung von Datenübertragungen. 
+ 	Wichtig ist unter anderem die Verschlüsselung von Nutzerdaten auf dem Gerät, sowie die sichere Kommunikation der App mit externen Diensten und Geräten.
+ 	
+ 	Gerade für Client-Server-Anwendungen ist eine verschlüsselte Datenübertragung oft ein zentraler Punkt. Es lässt sich aber auch allgemeiner Fragen, wie gut sich solche Anwendungen durch hybride Apps umsetzen lassen. Gerade für eingangs erwähnte Firmen mit bestehender Infrastruktur kann dies eine wichtige Anforderung sein.
 
 \section{Beispiel-Anwendung}	\label{sec:bsp-app} 
 %	Zu Explorationszwecken zu implementierender Anwendungsfall (App-Prototyp)
@@ -76,7 +94,7 @@ Neben diesen architektonischen Aspekten wurde hier das \gls{observer-pattern} f�
 %%TODO Theoretische erläuterungen zu cordova in Theorie-Teil verschieben!
 
 
-\chapter{Implementierung der Geräte-Schnittstelle}	\label{sec:explo}	%TODO Gliederung bzw. Name des Abschnitts? Erklärung der Architekur-Impl ist ja auch Umsetzung --> Evtl. nochmal Strippgen fragen.
+\chapter{Implementierung der Geräte-Schnittstelle}	\label{sec:impl}	%TODO Gliederung bzw. Name des Abschnitts? Erklärung der Architekur-Impl ist ja auch Umsetzung --> Evtl. nochmal Strippgen fragen.
 %TODO Titel sowieso schwierig, weil kapitel ja schon "Praktische Umsetzung" heißt.
 
 %\section{Ausgewählte Technologie} 
@@ -93,7 +111,7 @@ Neben diesen architektonischen Aspekten wurde hier das \gls{observer-pattern} f�
 
 \subsection{Funktionsweise}
 
-Im Anwendungsfall \emph{Liste Teilen} der in \autoref{sec:bsp-app} beschriebenen Beispielanwendung \todo{Anwendungsfallbeschreibung einfügen.} soll die Anforderung erfüllt werden, aus der Anwendung heraus auf das native Adressbuch des Geräts zuzugreifen, um die bestehenden Kontakte zu laden und anzuzeigen, sodass diese vom Nutzer ausgewählt werden, an die Anwendung übergeben und als neues Listenmitglied in ein Listenobjekt eingetragen werden können.
+Im Anwendungsfall \namerefH{shareList} der in \autoref{sec:bsp-app} und \fullref{sec:af} beschriebenen Beispielanwendung soll die Anforderung erfüllt werden, aus der Anwendung heraus auf das native Adressbuch des Geräts zuzugreifen, um die bestehenden Kontakte zu laden und anzuzeigen, sodass diese vom Nutzer ausgewählt werden, an die Anwendung übergeben und als neues Listenmitglied in ein Listenobjekt eingetragen werden können.
 
 Nachdem das \gls{cordova}-Plugin \emph{Contacts}, wie in \fullref{sec:cordova} beschrieben, zur Anwendung hinzugefügt wurde, lässt sich damit der Zugriff auf die native Kontaktverwaltung des jeweiligen Betriebssystems bewerkstelligen.
 Dieses bietet beispielsweise die Möglichkeit, nach bestimmten Kontakten im Adressbuch zu suchen, neue Kontakte zu erstellen und dem Adressbuch hinzuzufügen, sowie bestehende Kontakte zu entfernen oder zu duplizieren \cite{Cordova_Plugin_Registry_Contacts}.
@@ -117,6 +135,8 @@ Die Methode \lstinline|findContacts()|, die den Aufruf zum Laden der Kontakte an
 Durch die Bindung der Eigenschaft \lstinline|contacts| in Form eines \emph{Observable Arrays} des \glspl{view-model} (\autoref{lst:ViewModel-Contacts}, \linename 6) an die \gls{listview} der Oberfläche werden in dieser Liste alle Kontakte des Adressbuchs angezeigt (\seeref{lst:contacts-ui}, \linename 7).
 
 	\includehtml{praxis/contacts-ui.html}{label=lst:contacts-ui, caption={\gls{ui}-Komponente zur Darstellung der Kontaktliste und Auswahl einzelner Kontakte.},}
+	
+	\pagebreak
 	
 \doubleimage[contacts]{apps-overview}
 	{apps-overview-android}{apps-overview-ios}
@@ -146,6 +166,8 @@ Durch die Bindung der Eigenschaft \lstinline|contacts| in Form eines \emph{Obser
 	{Übergabe der Kontakte an die Anwendung}
 	{Übergabe der Kontakte an die Anwendung: Wird ein Kontakt ausgewählt, wird dieser dem \gls{obs}-\gls{array} \lstinline|contacts| des \glspl{view-model} (\seeref{lst:ViewModel-Contacts}) hinzugefügt und als \emph{ausgewählt} in der Oberfläche markiert.}
 	{\ownScreenshot}
+	
+	\pagebreak
 	
 \subsection{Explorationsergebnisse} \label{sec:contacts-ergebnis}
 Einige Unterschiede ergeben sich bei der Verwendung des \emph{Contacts}-\glspl{plugin} zwischen den verschiedenen Zielplattformen.
@@ -185,6 +207,8 @@ Der für dieses Feature definierte Anwendungsfall konnte mit den Mitteln der \gl
 Trotz des grundsätzlich plattformunabhängigen Ansatzes sollte allerdings bei der Entwicklung mithilfe dieser \gls{api} die Unterstützung der verwendeten Features und Attribute und deren Besonderheiten für die angestrebten Zielplattformen in der \gls{contacts-api}-Dokumentation überprüft werden.
 Somit ist eine Kenntnis über die angestrebten Zielplattformen für die Verwendung eines solchen \glspl{plugin} beinahe unabdingbar und die Entwicklung spezieller Funktionalitäten in gewisser Weise wieder ein Stück weit abhängiger von den verwendeten Plattformen. %TODO Den Satz evtl. auch ins Fazit!
 
+%TODO Dopplungen / Gliederung checken!!
+\todo{Was hiervon sollte in den nächsten Abschnitt, was ist doppelt erörtert?}
 
 %			Explorationsergebnisse
 %			Grenzen und Möglichkeiten bei der Umsetzung (Nach jeder Feature-Beschreibung)
@@ -199,7 +223,6 @@ Somit ist eine Kenntnis über die angestrebten Zielplattformen für die Verwendu
 %		Vor-/Nachteile (zueinander / gegenüber nativer App-Entw.), Risiken, Chancen
 %TODO In \cite{Apache_Cordova_Contribute} werden noch einige Plattformen mehr aufgelistet. (wohl je nach cordova-version) -> evlt. hier auch noch erwähnen und/oder auflisten.
 
-An dem Implementierungsbeispiel der Schnittstelle zur Adressverwaltung konnte gezeigt werden, dass die \gls{cordova}-\gls{api} grundsätzlich einen grundlegenden Funktionsumfang für die Interaktion zwischen der hybriden App und nativen Betriebssystemfunktionalitäten bietet.
 
 
 
