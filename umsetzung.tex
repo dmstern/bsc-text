@@ -9,7 +9,7 @@
 
 \section{Vorüberlegungen}	\label{sec:kriterien}
 	%	(Aspekte / Vorüberlegungen (Sicherheit, Verfügbarkeit, plattformspezifische Anforderungen, Usability, ?Entwickler-Komfort?, ?Feature-Reichtum?, ...))
-	
+	%TODO Wenn der Abschnitt keine ganze Seite gibt, dann als Absatz am Anfang des Kapitels!
 	
 	
 	
@@ -147,7 +147,7 @@ Durch die Bindung der Eigenschaft \lstinline|contacts| in Form eines \emph{Obser
 	{Übergabe der Kontakte an die Anwendung: Wird ein Kontakt ausgewählt, wird dieser dem \gls{obs}-\gls{array} \lstinline|contacts| des \glspl{view-model} (\seeref{lst:ViewModel-Contacts}) hinzugefügt und als \emph{ausgewählt} in der Oberfläche markiert.}
 	{\ownScreenshot}
 	
-\subsection{Explorationsergebnisse}
+\subsection{Explorationsergebnisse} \label{sec:contacts-ergebnis}
 Einige Unterschiede ergeben sich bei der Verwendung des \emph{Contacts}-\glspl{plugin} zwischen den verschiedenen Zielplattformen.
 So können beispielsweise nicht alle Methoden der \gls{contacts-api} auf allen mobilen Plattformen gleichermaßen ausgeführt werden.
 Die hier verwendete \lstinline|find()|-Methode bietet mit der Unterstützung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios}, \gls{win-phone} und \gls{win8} eine relativ  breite Kompatibilität für alle größeren gängigen und mobilen Betriebssysteme.
@@ -170,7 +170,7 @@ Einige Listenfelder des \lstinline|Contact|-Objekts besitzen ein Attribut mit de
 Dieses \lstinline|pref|-Attribut wird ebenfalls unter einigen Plattformen nicht unterstützt, so \zB für \lstinline|phoneNumbers| und \lstinline|emails| unter \gls{win-phone} sowie beim \lstinline|addresses|-Feld unter \gls{android}\,2.X, \gls{blackberry-os}, \gls{ios} und \gls{win8}.
 Die \lstinline|Contact|-Felder \mbox{\lstinline|note|,} \mbox{\lstinline|ims|,} \lstinline|birthdays| und \lstinline|categories| werden für \gls{win-phone} gar nicht unterstützt.
 
-Das \og \lstinline|Contact|-Feld \lstinline|name| hat den Datentyp \lstinline|ContactName| besteht und besteht aus den weiteren \gls{string}-Attributen \mbox{\lstinline|formatted|,} \mbox{\lstinline|familyName|,} \mbox{\lstinline|code|,} \mbox{\lstinline|middelName|,} \lstinline|honorificPrefix| und \lstinline|code|.
+Das \og \lstinline|Contact|-Feld \lstinline|name| hat den Datentyp \lstinline|ContactName| und besteht aus den weiteren \gls{string}-Attributen \mbox{\lstinline|formatted|,} \mbox{\lstinline|familyName|,} \mbox{\lstinline|code|,} \mbox{\lstinline|middelName|,} \lstinline|honorificPrefix| und \lstinline|code|.
 Grundlegend wird dieses Objekt zwar von allen elementaren Plattformen unterstützt, doch auch hier gibt es einige Einschränkungen.
 Das \lstinline|formatted|-Attribut wird unter \gls{android}, \gls{blackberry-os}, \gls{ff-os} und \gls{ios} nur teilweise unterstützt und bietet für \gls{android}, \gls{ios} sowie \gls{ff-os} lediglich einen Lesezugriff.
 Unter \gls{win8} stellt dieses das einzige Attribut des \lstinline|ContactName|-Objekts dar, alle anderen werden nicht unterstützt.
@@ -183,7 +183,7 @@ In Verbindung mit der Data-Binding-Bibliothek \gls{ko} kann eine solche Komponen
 Grundsätzlich bietet die \gls{contacts-api} trotz einiger Einschränkungen (\so) ein nützliches Werkzeug mit einem relativ breiten Funktionsumfang für den grundlegenden Zugriff auf die Kontaktverwaltung der meisten großen mobilen Betriebssysteme.
 Der für dieses Feature definierte Anwendungsfall konnte mit den Mitteln der \gls{cordova}-\gls{api} und weiteren Technologien der Webentwicklung wie \gls{ko} oder \gls{jqm} gut für die hier verwendeten Plattformen \gls{ios} und \gls{android} umgesetzt werden.
 Trotz des grundsätzlich plattformunabhängigen Ansatzes sollte allerdings bei der Entwicklung mithilfe dieser \gls{api} die Unterstützung der verwendeten Features und Attribute und deren Besonderheiten für die angestrebten Zielplattformen in der \gls{contacts-api}-Dokumentation überprüft werden.
-Somit ist eine Kenntnis über die angestrebten Zielplattformen für die Verwendung eines solchen \glspl{plugin} beinahe unabdingbar und die Entwicklung in gewisser Weise wieder ein Stück weit abhängiger von den verwendeten Plattformen. %TODO Den Satz evtl. auch ins Fazit!
+Somit ist eine Kenntnis über die angestrebten Zielplattformen für die Verwendung eines solchen \glspl{plugin} beinahe unabdingbar und die Entwicklung spezieller Funktionalitäten in gewisser Weise wieder ein Stück weit abhängiger von den verwendeten Plattformen. %TODO Den Satz evtl. auch ins Fazit!
 
 
 %			Explorationsergebnisse
@@ -193,9 +193,32 @@ Somit ist eine Kenntnis über die angestrebten Zielplattformen für die Verwendu
 %				Ecken und Kanten, Spitzfindigkeiten zeigen 
 %				Eigenschaften, Was fällt auf ? Am Beispiel
 
-\chapter{Fazit} % Zusammenfassung der Erfahrung Umsetzung
+\chapter{Auswertung und Eignung für die Praxis} % Zusammenfassung der Erfahrung Umsetzung
 %		Benutzung (Technik, Methodik, Entwicklerfreundlichkeit, Kompatibilität mit anderen Systemen / Software)
-%		Bewertung
+%		Generelle Bewertung des Frameworks und der Technologie sowie 
 %		Vor-/Nachteile (zueinander / gegenüber nativer App-Entw.), Risiken, Chancen
 %TODO In \cite{Apache_Cordova_Contribute} werden noch einige Plattformen mehr aufgelistet. (wohl je nach cordova-version) -> evlt. hier auch noch erwähnen und/oder auflisten.
+
+An dem Implementierungsbeispiel der Schnittstelle zur Adressverwaltung konnte gezeigt werden, dass die \gls{cordova}-\gls{api} grundsätzlich einen grundlegenden Funktionsumfang für die Interaktion zwischen der hybriden App und nativen Betriebssystemfunktionalitäten bietet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
