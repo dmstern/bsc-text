@@ -106,7 +106,7 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 
 \chapter{Plattformunabhängige App-Entwicklung}
 
-\section[Überblick: Lösungen und Ansätze]{Überblick: Lösungen und Ansätze für die platt\-form\-un\-ab\-hängige App-Entwicklung} \label{sec:overview}
+\section[Überblick: Lösungen und Ansätze]{Überblick: Lösungen und Ansätze für die \\ platt\-form\-un\-ab\-hängige App-Entwicklung} \label{sec:overview}
 
 %TODO Schöneren Einleitungssatz finden.
 Es gibt sehr viele Frameworks und Lösungen zum Erreichen einer plattformunabhängigen App-Entwicklung.\todo{Schöneren Einleitungssatz finden.} Die unterschiedlichen Ansätze begründen sich in unterschiedlichen Anforderungen an die zu entwickelnde App, unterschiedliche vorhandene Ressourcen und Infrastruktur der Entwickler und App-Betreiber sowie dem Ziel, bestehendes Know-How der Entwickler einbringen zu können.
@@ -129,7 +129,9 @@ Ein Beispiel eines Frameworks, bei dem der gemeinsame Code in einer integrierten
 Ein \gls{cross-compiling} Beispiel ist das von \gls{xamarin} gesponserte Projekt \gls{mono}. \gls{mono} ist eine \gls{opensource}-Cross-Plattform-Implementierung der Programmiersprache \gls{c-sharp}. Mit den \gls{mono} nutzenden \glspl{sdk} \gls{xamarin-ios} (\gls{monotouch}) und \gls{xamarin-android} können so native \glspl{app} für \gls{ios} und \gls{android} gebaut werden. Für \gls{win-phone} wird standardmäßig in \gls{c-sharp} programmiert, so dass sich viele Bestandteile des Codes für alle drei Plattformen nutzen lassen.
 \gls{xamarin} bildet so ein Komplettpaket, dass einen gemeinsamen Code für die Funktionslogik, sowie durch eine entsprechende \gls{api}, für die Benutzeroberfläche ermöglicht. Dabei wird durch den Kompiliervorgang auf die jeweiligen nativen Benutzeroberflächenelemente zurückgegriffen \cite{Mono_Projekt}.
 
-Im Bereich \gls{cross-compiling} gibt es etwas allgemeiner Programmiersprachen, die sich in ausführbare Dateien vieler Plattformen, sowie andere Programmiersprachen übersetzten lassen. Ein Beispiel hierfür ist die \gls{opensource}-Multiplattform-Programmiersprache Haxe, deren Code sich in \gls{js} .js-Dateien, \glspl{flash} .swf-Dateien, \gls{nekovm}-\gls{bytecode}, \gls{php}-Dateien, \gls{cpp}, \gls{c-sharp} und \gls{java}-Dateien übersetzten lässt. Zusammen mit den Bibliotheken \gls{lime} und \gls{openfl} kann auf die gesamte \gls{flash}-\gls{api} zugegriffen, und durch integrierte Unterstützung für \gls{swf}-Dateien die Möglichkeit der Nutzung der \gls{flash-editing-environment} für alle gängigen Plattformen ermöglicht werden. Das Projekt richtet sich hauptsächlich an Spieleentwickler, die so die relativ einfach zu erstellenden \gls{flash}-Spiele auf alle Plattformen bringen können \cite{Haxe, OpenFL}.
+Im Bereich \gls{cross-compiling} gibt es etwas allgemeiner Programmiersprachen, die sich in ausführbare Dateien vieler Plattformen, sowie andere Programmiersprachen übersetzten lassen. Ein Beispiel hierfür ist die \gls{opensource}-Multiplattform-Programmiersprache Haxe, deren Code sich in \gls{js} .js-Dateien, \glspl{flash} .swf-Dateien, \gls{nekovm}-\gls{bytecode}, \gls{php}-Dateien, \gls{cpp}, \gls{c-sharp} und \gls{java}-Dateien übersetzten lässt. 
+Zusammen mit den Bibliotheken \gls{lime} und \gls{openfl} kann auf die gesamte \gls{flash}-\gls{api} zugegriffen, und durch integrierte Unterstützung für \gls{swf}-Dateien die Möglichkeit der Nutzung der \gls{flash-editing-environment} für alle gängigen Plattformen ermöglicht werden. 
+Das Projekt richtet sich hauptsächlich an Spieleentwickler, die so die relativ einfach zu erstellenden \gls{flash}-Spiele auf alle Plattformen bringen können \cite{Haxe, OpenFL}.
 
 Ist bereits eine bestehende native \gls{app} für eine Plattform vorhanden, die für andere Plattformen verfügbar gemacht werden soll, liegt der Ansatz nahe, zu versuchen, den bestehenden Quellcode für eine andere Plattform zu kompilieren. Ein solches Projekt ist \gls{xmlvm}, was durch eine Reihe von Umwandlungsprozessen native \gls{ios}-\glspl{built} aus bestehendem Java-\gls{android}-Code erstellt \cite{XMLVM}.
 
@@ -169,8 +171,10 @@ Hier soll mit \gls{cordova}\,/\,\gls{phonegap} die konkrete Nutzung eines dieser
 
 Bereits für die Entwicklung von reinen Web-Anwendungen stellen neben den grundlegenden Web-Technologien \gls{html}, \gls{css} und \gls{js} Erweiterungen wie die \gls{js}-Bibliothek \gls{jq} nützliche Hilfsmittel dar, die viele Funktionen gegenüber der Verwendung von \enquote{reinem} \gls{js} deutlich vereinfachen.
 So ist beispielsweise der Programmieraufwand für den Zugriff auf Elemente einer \gls{html}-Seite durch \gls{jq} wesentlich geringer als ohne die Bibliothek.
+
 Besonders deutlich wird dies an den unten aufgeführten Code-Beispielen, in denen ein Button exemplarisch die Funktionalität übernehmen soll, alle Absätze einer \gls{html}-Seite auszublenden.
 Während bei herkömmlichem \gls{js} für die Selektion aller Elemente die Funktion \lstinline|getElementsByTagName()| aufgerufen werden muss (\seeref{lst:js}), ist bei \gls{jq} der Zugriff auf alle Elemente eines \glspl{tag} per Dollar(\lstinline|$|)-Notation deutlich verkürzt (\seeref{lst:jq}).
+
 Auch die nächste Anweisung zur Ausführung einer Operation für alle ausgewählten Elemente (hier: \lstinline|hide()|, also \textit{ausblenden}) fällt bei \gls{jq} wesentlich kürzer aus, indem die Funktion noch in der selben Zeile wie der vorherige Selektor aufgerufen werden kann (\lstinline|$("p").hide();|).
 Bei der reinen \gls{js}-Variante ist nach der Selektion aller Absätze zunächst einmal ein Array ausgewählt, sodass, um auf den einzelnen Elementen Operationen ausführen zu können, durch alle Elemente des Arrays iteriert und die Funktion für jedes Element aufgerufen werden muss (\seeref{lst:js}, \linenamepl 5\,-\,7).
 
@@ -521,15 +525,3 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 
 %TODO Als SVG einbinden! -> Funktioniert noch nicht.
 %TODO Bildquellen (auch die *innerhalb* des Bilder angeben.)
-
-\image{phonegap-build_apps}
-	{width=1\textwidth}
-	{PhoneGap\,Build-Oberfläche}
-		{Oberfläche des \gls{pg-build}-Portals: Detailansicht für eine Beispiel-\gls{app}. Hier können verschiedene Einstellungen vorgenommen werden, sowie der Code aus einem Repository aktualisiert und die fertig gebaute \gls{app} per Download-Button oder \gls{qr} heruntergeladen werden.}
-	{Eigener Screenshot.}
-
-\image{screenshot_app_android}
-	{width=1\textwidth}
-	{Tablet-Screenshot mit installierter PhoneGap\,Build-App}
-	{Die Beispiel-App (\enquote{HelloWorld}) aus \autoref{fig:phonegap-build_apps} aus \gls{pg-build} auf einem \gls{android}-Gerät installiert.}
-	{Eigener Screenshot.}

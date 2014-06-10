@@ -6,7 +6,7 @@
 % Optionen:
 %	textwidth=3.7cm,		% Breite der Notizen
 %	disable					% Nicht drucken 
-\usepackage[textwidth=3.7cm]{todonotes}
+\usepackage[textwidth=3.7cm,disable]{todonotes}
 
 % Übersetzungen ändern (mit Neuer deutscher Rechtschreibung):
 \usepackage[ngerman]{translator}
@@ -104,10 +104,8 @@
 \addcontentsline{toc}{part}{\appendixname}
 \part*{\appendixname}
 
-% Anwendungsfallbeschreibung -------------------------------
+\include{bilder}
 \include{af-beschreibung}
-
-% Quellcode ------------------------------------------------
 \include{quellcode}
 
 % Glossar --------------------------------------------------
