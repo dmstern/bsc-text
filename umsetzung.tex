@@ -97,9 +97,9 @@ Neben diesen architektonischen Aspekten wurde hier das \gls{observer-pattern} f�
 % Beschreibung der konkreten Umsetzung, Implementierung der wesentlichen Features mithilfe der Technologien (Funktionsweise (Wie genau bewerkstelligt \gls{framework} die Plattformunabhängigkeit / Was steckt dahinter?))
 
 		
-\section{Zugriff auf die Kontaktverwaltung des Geräts} \label{sec:contacts}
+%\section{Zugriff auf die Kontaktverwaltung des Geräts} \label{sec:contacts}
 
-\subsection{Funktionsweise}
+\section{Funktionsweise}
 
 Im Anwendungsfall \namerefH{shareList} der in \autoref{sec:bsp-app} und \fullref{sec:af} beschriebenen Beispielanwendung soll die Anforderung erfüllt werden, aus der Anwendung heraus auf das native Adressbuch des Geräts zuzugreifen, um die bestehenden Kontakte zu laden und anzuzeigen, sodass diese vom Nutzer ausgewählt werden, an die Anwendung übergeben und als neues Listenmitglied in ein Listenobjekt eingetragen werden können.
 
@@ -159,7 +159,7 @@ Durch die Bindung der Eigenschaft \lstinline|contacts| in Form eines \emph{Obser
 	
 	\pagebreak
 	
-\subsection{Explorationsergebnisse} \label{sec:contacts-ergebnis}
+\section{Explorationsergebnisse} \label{sec:contacts-ergebnis}
 Einige Unterschiede ergeben sich bei der Verwendung des \emph{Contacts}-\glspl{plugin} zwischen den verschiedenen Zielplattformen.
 So können beispielsweise nicht alle Methoden der \gls{contacts-api} auf allen mobilen Plattformen gleichermaßen ausgeführt werden.
 Die hier verwendete \lstinline|find()|-Methode bietet mit der Unterstützung für \gls{android}, \gls{blackberry-os}, \gls{ff-os}, \gls{ios}, \gls{win-phone} und \gls{win8} eine relativ  breite Kompatibilität für alle größeren gängigen und mobilen Betriebssysteme.
@@ -198,7 +198,6 @@ Trotz des grundsätzlich plattformunabhängigen Ansatzes sollte allerdings bei d
 Somit ist eine Kenntnis über die angestrebten Zielplattformen für die Verwendung eines solchen \glspl{plugin} beinahe unabdingbar und die Entwicklung spezieller Funktionalitäten in gewisser Weise wieder ein Stück weit abhängiger von den verwendeten Plattformen. %TODO Den Satz evtl. auch ins Fazit!
 
 %TODO Dopplungen / Gliederung checken!!
-\todo{Was hiervon sollte in den nächsten Abschnitt, was ist doppelt erörtert?}
 
 %			Explorationsergebnisse
 %			Grenzen und Möglichkeiten bei der Umsetzung (Nach jeder Feature-Beschreibung)
@@ -265,28 +264,28 @@ Besteht also nicht die Anforderung einer Offline-Nutzbarkeit der zu entwickelnde
 % [Spezielle Geräte- und Peripherie-Anforderungen, die evtl. nicht vom Standard-Funktionsumfang von Cordova abgedeckt werden]
 
 Durch das offene und modulare Prinzip von Cordova, je nach benötigtem Feature das entsprechende Plugin aus der Cordova-Plugin-Registry, PlugReg oder ähnlichen Pools, die durch viele Dritt-Entwickler mit Plugins versorgt werden, zu laden und der Anwendung hinzuzufügen, kann bereits ein sehr breites Spektrum an Gerätespezifischen Anforderungen erfüllt werden.
-Besteht darüber hinaus Bedarf an der Nutzung von bisher nicht unterstützten Geräteeigenschaften und Funktionalitäten, können Entwickler die entsprechenden Schnittstellen mithilfe des in der Cordova-Dokumentation bereitgestellten Plugin-Development-Guides in Form von weiteren selbst erstellten Plugins implementieren. 
+Besteht darüber hinaus Bedarf an der Nutzung von bisher nicht unterstützten Geräteeigenschaften und Funktionalitäten, können Entwickler die entsprechenden Schnittstellen mithilfe des in der Cordova-Dokumentation bereitgestellten \gls{plugin-dev-guide} in Form von weiteren selbst erstellten Plugins implementieren. 
 
 % Feature-Reichtum: Wieviel geht überhaupt damit?
 
 % Auch hier wieder: im zweifelsfalls können plugins selbst geschrieben werden.
 
-allerdings haben selbst die von cordova mitgelieferten kern-plugins, die großteils bereits ein breites spektrum an betriebsystemen bedienen, teilweise ihre einschränkungen in der nutzbarkeit auf unterschielchen plattformen, es kann also die Vermutung angestellt werden, dass auch bei der Entwicklung eigener Plugins schwierigkeiten in der Unterstüzung von detaillierten Objekteigenschaften und Geräte-Features auftreten können, die sich nicht ohne weiteres mit \gls{js} umsetzen lassen. 
-Als Ursache für diese Einschränkungen liegt allerdings vor allem auch die Vermutung nahe, dass bei der Definition von Datentypen, die Objekte verschiedener Plattformen abbilden sollen, stets nur der kleinste gemeinsame Nenner gefunden werden kann und so beispielsweise Datenfelder, die nur Objekttypen einer bestimmten Plattform beinhalten, bei anderen Plattformen entweder auf andere Attibute gemappt werden müssen oder schlicht nicht zur verfügung stehen. 
+allerdings haben selbst die von cordova mitgelieferten Kern-Plugins, die großteils bereits ein breites Spektrum an Betriebssystemen bedienen, teilweise ihre Einschränkungen in der Nutzbarkeit auf unterschiedlichen Plattformen, es kann also die Vermutung angestellt werden, dass auch bei der Entwicklung eigener Plugins Schwierigkeiten in der Unterstützung von detaillierten Objekteigenschaften und Geräte-Features auftreten können, die sich nicht ohne weiteres mit \gls{js} umsetzen lassen. 
+Als Ursache für diese Einschränkungen liegt allerdings vor allem auch die Vermutung nahe, dass bei der Definition von Datentypen, die Objekte verschiedener Plattformen abbilden sollen, stets nur der kleinste gemeinsame Nenner gefunden werden kann und so beispielsweise Datenfelder, die nur Objekttypen einer bestimmten Plattform beinhalten, bei anderen Plattformen entweder auf andere Attribute gemappt werden müssen oder schlicht nicht zur Verfügung stehen. 
 
 % Ist der Vergleichbar mit der nativen App-Entwicklung?
 
 Das kommt wieder sehr stark darauf an, was man vorhat (siehe oben, hiervor).
-Grundsätzlich lässt sich festhalten, dass durch das modular erweiterbare Prinzip der Cordova-Plugins eine nahezu vollständige Unterstützung einer speziellen Zielplattform durch die Hybrid-App mit eventuellem Zusatzuaufwand durchaus bewerkstelligen lässt. 
+Grundsätzlich lässt sich festhalten, dass durch das modular erweiterbare Prinzip der Cordova-Plugins eine nahezu vollständige Unterstützung einer speziellen Zielplattform durch die Hybrid-App mit eventuellem Zusatzaufwand durchaus bewerkstelligen lässt. 
 Durch unterschiedliche Datenmodelle der verschiedenen Plattformen müssen jedoch bei der Verarbeitung von komplexeren Datenobjekten Attribute auf unterschiedliche Strukturen der jeweiligen Plattformen gemappt und in einen möglichst generischen Objektraum von \gls{js}-Objekten abstrahiert werden, sodass hier wieder Einschränkungen in der vollständigen Nutzbarkeit von Datentypen entstehen können (siehe oben, “Feature-Reichtum” / [sec:contacts]).
 
 % Für Entwickler und kleine Unternehmen, die sich mit möglichst geringem Aufwand am Markt für mobile Anwendungen etablieren wollen
 
-Für Entwickler und kleine Unternehmen, die sich mit möglichst gerinem Aufwand am Markt für mobile Anwendungen etwablieren wollen, stellt sich die Frage nach der Eignung der Verwendung einer solchen Cross-Plattform-Technologie vor allem anhand der Zielsetzung bzgl. der Vielfalt von zu bedienenden Zielplattformen.
+Für Entwickler und kleine Unternehmen, die sich mit möglichst geringem Aufwand am Markt für mobile Anwendungen etablieren wollen, stellt sich die Frage nach der Eignung der Verwendung einer solchen Cross-Plattform-Technologie vor allem anhand der Zielsetzung bzgl. der Vielfalt von zu bedienenden Zielplattformen.
 
-Soll ohnehin nur eine Plattform erreicht werden,\footnote{beispielsweise in dem Fall, dass mit bereits vorhandenen Kenntnissen in der Web-Entwicklung eine mobile App entwickelt werden soll oder die möglichkeit offen gehalten werden soll, die App zu einem späteren Zeitpunkt auch für mehrere Plattformen angeboten werden soll} so ist der Entwicklungsaufwand vermutlich vergleichbar dem für die Entwicklung einer nativen App, da der Code in beiden Fällen (sowohl bei der nativen als auch für die Hybrid-App) einmal geschrieben werden muss (siehe auch unten “welche nachteil ergeben sich” -> wenn schon eine app da, müsste die als hybrid-app nochmal geschrieben werden).
+Soll ohnehin nur eine Plattform erreicht werden,\footnote{beispielsweise in dem Fall, dass mit bereits vorhandenen Kenntnissen in der Web-Entwicklung eine mobile App entwickelt werden soll oder die möglichkeit offen gehalten werden soll, die App zu einem späteren Zeitpunkt auch für mehrere Plattformen angeboten werden soll} so ist der Entwicklungsaufwand vermutlich vergleichbar dem für die Entwicklung einer nativen App, da der Code in beiden Fällen (sowohl bei der nativen als auch für die Hybrid-App) einmal geschrieben werden muss %TODO (siehe auch unten “welche nachteil ergeben sich” -> wenn schon eine app da, müsste die als hybrid-app nochmal geschrieben werden).
 Bei einer Zielsetzung möglichst breiter Plattformunterstützung sowie relativ geringer geräte- und plattformspezifischer Anforderungen ist 
-Selbst mit der Maßgabe einer Implementierung von Schnittstellen zu Gerätefunktionalitäten ist in vielen Fällen die entwicklung einer Hybriden App lohneswert, da, wie [oben] beschrieben, durch die Vielfalt an Cordova-Plugins die meisten grundlegenden Features auf verschiedenen Plattformen umsetzbar sind. 
+Selbst mit der Maßgabe einer Implementierung von Schnittstellen zu Gerätefunktionalitäten ist in vielen Fällen die Entwicklung einer Hybriden App lohnenswert, da, wie [oben] beschrieben, durch die Vielfalt an Cordova-Plugins die meisten grundlegenden Features auf verschiedenen Plattformen umsetzbar sind. 
 
 % Welche Nachteile ergeben sich durch die hybride App-Entwicklung?
 

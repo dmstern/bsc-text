@@ -9,26 +9,28 @@
 
 Mit der Beschreibung von verschiedenen Lösungen und Produkten zur Erstellung von Cross-Plattform-Apps konnte ein Überblick über die grundsätzlichen Möglichkeiten und unterschiedlichen Ansätze im Bereich der plattformunabhängigen App-Entwicklung gegeben werden.
 Hierbei wurden neben dem Ansatz von hybriden Apps mittels Web-Technologien weitere Ansätze erläutert, die das plattformunabhängige Erstellen nativer Apps ermöglichen. 
-Für die Implementierung einer plattformübergreifenden App innerhalb einer bestehenden (beispielsweise java-basierten) Client-Server-Anwendung bieten Frameworks wir Tabris einen vielversprechenden Ansatz, bei dem native mobile Clients mit der eigentlichen Anwendung auf dem Server kommunizieren können.
+Für die Implementierung einer plattformübergreifenden App innerhalb einer bestehenden (beispielsweise \gls{java}-basierten) Client-Server-Anwendung bieten Frameworks wir Tabris einen vielversprechenden Ansatz, bei dem native mobile Clients mit der eigentlichen Anwendung auf dem Server kommunizieren können.
 Durch die Abstraktion der Oberflächenbeschreibung kann so auf native Elemente des Betriebssystems zugriffen werden, was vor allem für einen Fokus auf ein möglichst natives \gls{look-and-feel} interessant scheint.
 
 In der Beschreibung der Implementierung eines beispielhaften Anwendungsfalls mithilfe des Cordova-Frameworks konnte gezeigt werden, dass sich plattformspezifische Anforderungen durchaus gut mit einer hybriden App umsetzten lassen.
 Somit konnte mit relativ geringem Entwicklungsaufwand auf einer Code-Basis eine Funktionalität, die den Zugriff auf Gerätefunktionen verlangt, für mehrere Plattformen realisiert werden.
+
 % Besonderheiten
 Durch die Auslegung der Geräte-APIs auf mehrere unterschiedliche Plattformen müssen die verarbeiteten Daten abstrahiert werden, sodass zwar nicht alle, aber doch die meisten Plattform-Features auch plattformunabhängig umgesetzt werden können.
 In konkreten Anwendungsfällen ergeben also sich teilweise Besonderheiten wie die Verwendbarkeit von bestimmten Objekten und Schnittstellenmethoden.
+
 % Auswertung und Eignung für die Praxsis
 Durch die Erweiterbarkeit mithilfe von Plugins stellt die Entwicklung von hybriden Apps eine vielfältig einsetzbare Technologie für eine plattformübergreifende  Umsetzung gerätespezifischer Anforderungen dar.
-% Auf Praxis-Eignung eingehen.
 Auch hybride Apps lassen sich grundsätzlich in bestehende Systeme eingliedern, durch die hauptsächliche Verwendung von Web-Technologien ist jedoch ein entsprechendes Know-How und eine grundsätzliche Kompatibilität (beispielsweise mithilfe entsprechender Server-Schnittstellen) nötig.
 Aufgrund des kombinierenden Ansatzes von nativen und web-basierten Technologien ist die Entwicklung von hybriden Apps besonders interessant für die Ausweitung einer Web-Anwendung auf verschiedene mobile Betriebssysteme.
 
 % Ergebnis: (Wo sind denn jetzt die Grenzen und Möglichkeiten?)
 
 Durch den wachsenden Markt und die breite Vielfalt an angebotenen Lösungen sowie deren diversen Erweiterungsmöglichkeiten und meist guter Dokumentation bietet die plattformunabhängige App-Entwicklung zwar technisch einen deutlich anderen Entwicklungsansatz als die herkömmliche Herangehensweise für die plattformspezifische Realisierung nativer Apps, der jedoch kaum Möglichkeiten offen zu lassen scheint.
-Dass der Markt für Apps in den nächsten Jahren weiter wachsen wird, scheint außer Zweifel zu stehen. Die Deutsch-Amerikanische Handelskammer beispielsweise prognostiziert bis 2016 einen Anstieg der App-Downloads für 2016 auf 310 Mrd. weltweit \cite{Mobile_Apps_Download-Zahlen}.
 
+Dass der Markt für Apps in den nächsten Jahren weiter wachsen wird, scheint außer Zweifel zu stehen. Die Deutsch-Amerikanische Handelskammer beispielsweise prognostiziert bis 2016 einen Anstieg der App-Downloads für 2016 auf 310 Mrd. weltweit \cite{Mobile_Apps_Download-Zahlen}.
 Aufgrund mehrerer unterschiedlicher Plattformen ist es für Anbieter von mobilen Apps wünschenswert, ihre Produkte für alle Plattformen anbieten zu können. Eine plattformunabhängige Realisierung mobiler Anwendungen scheint hier eine naheliegende Lösung zu sein. 
+
 Abschließend kann man festhalten, dass die plattformunabhängige \gls{app}-Entwicklung in vielen Fällen eine lohnenswerte Alternative zur Erstellung mobiler Anwendungen bietet.
 Die Eignung für den jeweiligen Entwickler und den konkreten Anwendungsfall muss jedoch unter Umständen im Einzelfall abgewogen werden.
 
@@ -39,11 +41,13 @@ Die Eignung für den jeweiligen Entwickler und den konkreten Anwendungsfall muss
 Um genauere Aussagen über die Besonderheiten, Grenzen und Möglichkeiten  der im Praxis-Teil verwendeten Technologie machen zu können, wäre eine Implementierung von weiteren der spezifizierten plattformkritischen Anwendungsfälle sinnvoll.
 Außerdem könnte mit der Exploration mehrerer unterschiedlicher Lösungen zur plattformunabhängigen App-Entwicklung eine Abwägung über die Vor- und Nachteile sowie passende Einsatzgebiete erörtert werden.
 Darüber hinaus könnte für die technische Weiterentwicklung der vorgestellten Software eine genauere Untersuchung der dahinterliegenden technischen Funktionsweisen anstelle des starken Fokus auf die Entwickler-Sicht stattfinden.
+
 Es finden sich eine Vielzahl von Lösungen zur Cross-Plattform-Entwicklung und Quellen, aus denen ein rasch wachsender Markt für mobile Apps unterschiedlicher Plattformen hervorgeht. Die darauf abgeleitete Relevanz des Themas für den praktischen Einsatz könnte durch Evaluationen wie Befragungen von Firmen und Entwicklern gestützt oder relativiert werden.
+
 Die Vielfalt an Plugins für das Cordova-Framework bietet bereits ein sehr breites Spektrum an Möglichkeiten, geräte- und plattformspezifische Anforderungen umzusetzen. Da auch die Entwicklung solcher Plugins mit weiteren Technologien um das Cordova-Framework und eine entsprechende Dokumentation unterstützt wird, könnte ein eigenes Plugin entwickelt werden, das eine spezifische Anforderung realisiert, die bis dato nicht oder nur schwer mit den zur Verfügung stehenden Lösungen realisierbar ist.
+
 Dabei könnten die Grenzen der Technologie genauer ausgelotet werden, indem beispielhaft gezeigt wird, ob durch die modulare Erweiterbarkeit eines Frameworks wie Cordova der plattformunabhängigen App-Entwicklung tatsächlich keine Grenzen in der Machbarkeit, sondern eher in der Abwägung, ob sich der Implementierungsaufwand lohnt, gesetzt sind.
-Für den Produktiv-Betrieb, bspw. in größeren Unternehmen oder kritischen Anwendungsbereichen, könnten Sicherheitsaspekte, wie in {sec:praxis} beschrieben, genauer beleuchtet werden. 
-Welche Auswirkungen können sich aus der Arbeit ggf. ergeben?
+Für den Produktiv-Betrieb, beispielsweise in größeren Unternehmen oder kritischen Anwendungsbereichen, könnten Sicherheitsaspekte, wie in {sec:praxis} beschrieben, genauer beleuchtet werden. 
 
 % Welche Auswirkungen können sich aus der Arbeit ggf. ergeben?
 
