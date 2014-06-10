@@ -32,7 +32,7 @@
 
 \newglossaryentry{web-app}{
 	name = Web-App,
-	description = {},
+	description = {Kurzform für Webanwendung. Oft im Kontext mobiler Apps verwendet.},
 	first = {Web-App (oder dt. \enquote{Web-Anwendung})},
 	firstplural = {Web-Apps (oder dt. \enquote{Web-Anwendungen})}
 }
@@ -73,7 +73,7 @@
 
 \newglossaryentry{errorhandler}{%S
 	name = Error-Handler,
-	description = {dt. \enquote{Fehlerbehandler}. Spezieller Teil im Programmcode, der aufgerufen wird, wenn ein Fehler zur Laufzeit auftritt},
+	description = {Spezieller Teil im Programmcode, der aufgerufen wird, wenn ein Fehler zur Laufzeit auftritt},
 	%Quelle: http://dictionary.reference.com/browse/exception+handler
 }
 
@@ -102,6 +102,7 @@
 \newglossaryentry{string}{
 	name = String,
 	description = {Eine Zeichenkette in der Informatik},
+	type = ignored
 }
 
 \newglossaryentry{framework}{%S
@@ -138,7 +139,7 @@
 	name = Observer,
 	first = {Observer (engl. \enquote{Beobachter})},
 	firstplural = {Observers (engl. \enquote{Beobachter})},
-	description = {},
+	description = {Dt. \enquote{Beobachter}. Das Objekt, das bspw. innerhalb des \glspl{observer-pattern} ein anderes Überwacht und so über dessen Änderungen und Nachrichten informiert werden kann},
 }
 
 \newglossaryentry{gui}{
@@ -156,33 +157,34 @@
 
 \newglossaryentry{mvc}{%S
 	name = MVC,
-	description = {Model-View-Controller},
+	description = {Model-View-Controller. Ein Entwurfsmuster in der Informatik},
 	type = \acronymtype,
 }
 
 \newglossaryentry{view-model}{
 	name = ViewModel,
-	description = {},
+	description = {Mittlerer Teil im \gls{mvvm}-Pattern. Vermittelt zwischen der \gls{view} und dem \gls{model}},
 }
 
 \newglossaryentry{model}{
 	name = Model,
-	description = {},
+	description = {Enthält das eigentliche Datenmodell der Anwendung und die wesentliche Verarbeitungslogik},
 }
 
 \newglossaryentry{view}{
 	name = View,
-	description = {},
+	description = {Die Oberfläche oder eine Anzeige einer grafischen Anwendung},
 }
 
 \newglossaryentry{viewCtrl}{
 	name = ViewController,
 	description = {},
+	type = ignored
 }
 
 \newglossaryentry{web-view}{
 	name = WebView,
-	description = {},
+	description = {Eine \gls{gui}-Komponente innerhalb einer Anwendung, in die \gls{html}-Inhalte hinein geladen werden können},
 }
 
 \newglossaryentry{cross-compiling}{%S
@@ -202,7 +204,7 @@
 
 \newglossaryentry{mono}{%S
 	name = Mono,
-	description = {Open source Implementierung von Microsofts .NET Framework},
+	description = {Open source Implementierung von Microsofts .NET-Framework},
 	type = technologies
 	%Quelle: http://www.mono-project.com/Main_Page
 }
@@ -220,7 +222,7 @@
 
 \newglossaryentry{lime}{
 	name = Lime,
-	description = {Haxe Bibliothek},
+	description = {Eine Haxe-Bibliothek},
 	type = technologies
 }
 
@@ -250,7 +252,7 @@
 
 \newglossaryentry{openfl}{%S
 	name = OpenFL,
-	description = {Haxe Bibliothek},
+	description = {Eine Haxe- Bibliothek},
 	type = technologies
 }
 
@@ -263,7 +265,7 @@
 %war ein Rechtschreibfehler drin: nicht cocao
 \newglossaryentry{cocoa-touch-widgets}{%S
 	name = Cocoa Touch Widgets,
-	description = {Benutzeroberflächenframework der Firma Apple},
+	description = {Benutzeroberflächen-Framework der Firma Apple},
 	type = technologies
 }
 
@@ -399,25 +401,26 @@
 
 \newglossaryentry{amazon-fireos}{
 	name = Amazon Fire\-OS,
-	description = {},
+	description = {Mobiles Betriebssystem der Firma Amazon},
 	type = technologies
 }
 
 \newglossaryentry{ubuntu-phone}{%S
 	name = U\-bun\-tu \mbox{Phone},
-	description = {Ein Smartphone-Betriebsystem der Firma Cononical},
+	description = {Ein Smartphone-Betriebssystem der Firma Cononical},
 	type = technologies
 }
 
 \newglossaryentry{tizen}{
 	name = Tizen,
-	description = {},
-	type = technologies
+	description = {Mobiles}, %TODO
+	type = ignored
 }
 
 \newglossaryentry{webos}{%S
 	name = webOS,
-	description = {Ein open source Smartphone- und Tablet-Betriebssystem},
+	description = {Ein \gls{opensource}-Smartphone- und Tablet-Betriebssystem},
+	description = {Ein \gls{opensource}-Smartphone- und Tablet-Betriebssystem},
 	type = technologies
 }
 
@@ -584,37 +587,37 @@
 
 \newglossaryentry{indexed-db}{
 	name = Indexed\-DB,
-	description = {Eine Datenbank..}, %TODO ERKL\"ARUNG EINF\"UGEN!
+	description = {Eine Datenbanktechnologie für Webanwendungen}, %TODO ERKL\"ARUNG EINF\"UGEN!
 	type = technologies
 }
 
 \newglossaryentry{websql}{
 	name = Web\-SQL,
-	description = {}, %TODO ERKL\"ARUNG EINF\"UGEN!
+	description = {Eine Datenbanktechnologie für Webanwendungen}, %TODO ERKL\"ARUNG EINF\"UGEN!
 	type = technologies
 }
 
 \newglossaryentry{phonegap}{
 	name = Phone\-Gap,
-	description = {}, %TODO ERKL\"ARUNG EINF\"UGEN!
+	description = {Ein Framework zur Erstellung von plattformunabhängigen Apps auf der Basis von Web-Technologien (s. \gls{cordova})}, %TODO ERKL\"ARUNG EINF\"UGEN!
 	type = technologies
 }
 
 \newglossaryentry{cordova}{
 	name = Cordova,
-	description = {}, %TODO ERKL\"ARUNG EINF\"UGEN!
+	description = {Ein Framework zur Erstellung von plattformunabhängigen Apps auf der Basis von Web-Technologien (s. \gls{phonegap})}, %TODO ERKL\"ARUNG EINF\"UGEN!
 	type = technologies
 }
 
 \newglossaryentry{app-framework}{
 	name = App Framework,
-	description = {}, %TODO ERKL\"ARUNG EINF\"UGEN!
+	description = {Ein UI-Framework für mobile Anwendungen der Firma Intel}, %TODO ERKL\"ARUNG EINF\"UGEN!
 	type = technologies
 }
 
 \newglossaryentry{plugin-registry}{
 	name = Cordova Plugin Registry,
-	description = {}, %TODO ERKL\"ARUNG EINF\"UGEN!
+	description = {},
 	first = Apache Cordova Plugin Registry,
 	type = ignored
 }
@@ -635,7 +638,7 @@
 \newglossaryentry{plugin-dev-guide}{
 	name = Plugin Development Guide,
 	description = {}, %TODO ERKL\"ARUNG EINF\"UGEN!
-	type = technologies
+	type = ignored
 }
 
 \newglossaryentry{cli}{
@@ -759,19 +762,19 @@
 
 \newglossaryentry{jqm}{
 	name = {jQuery\,\-Mobile},
-	description = {},
+	description = {Eine Oberflächen-Bibliothek für mobile Webseiten},
 	type = technologies
 }
 
 \newglossaryentry{jq}{
 	name = {\mbox{jQuery}},
-	description = {},
+	description = {Eine vielseitige \gls{js}-Bibliothek für die Vereinfachung von \gls{js}-Programmierung},
 	type = technologies
 }
 
 \newglossaryentry{ko}{
 	name = {\mbox{Knockout}},
-	description = {},
+	description = {Ein \gls{js}-Framework für \gls{data-binding} und \gls{dep-tracking}},
 	type = technologies
 }
 
@@ -782,7 +785,7 @@
 
 \newglossaryentry{widget}{
 	name = {Widget},
-	description = {},
+	description = {Window Gadget. Ein Element einer grafischen Benutzeroberfläche},
 }
 
 \newglossaryentry{laf}{
