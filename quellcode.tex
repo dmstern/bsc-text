@@ -4,25 +4,25 @@
 
 \includebightml{\pathtoappcode/index.html}{label=lst:app:index.html, caption={HTML-Oberflächenbeschreibung der hier implementierten Beispiel-Anwendung.},}
 
-\includebightml{\pathtoappcode/css/style.css}{label=lst:app:style.css, caption={style.css.},}
+\includebightml{\pathtoappcode/css/style.css}{label=lst:app:style.css, caption={\filename{style.css}. Einige Style-Definitionen für die Anzeige der Task-Listen-App.},}
 
-\includebightml{\pathtoappcode/js/types/List.js}{label=lst:app:List.js, caption={List.js.},}
+\includebightml{\pathtoappcode/js/types/List.js}{label=lst:app:List.js, caption={\filename{List.js}. Listenobjekt der Beispielanwendung. Diese Listenobjekte halten eine Liste von Tasks sowie einen Namen und eine Liste von Listenmitgliedern.},}
 
-\includebightml{\pathtoappcode/js/types/Task.js}{label=lst:app:Task.js, caption={Task.js.},}
+\includebightml{\pathtoappcode/js/types/Task.js}{label=lst:app:Task.js, caption={\filename{Task.js}. Objektbeschreibung des Task-Objekts für die Beispielanwendung.},}
 
-\includebightml{\pathtoappcode/js/ObserverMap.js}{label=lst:app:ObserverMap.js, caption={ObserverMap.js.},}
+\includebightml{\pathtoappcode/js/ObserverMap.js}{label=lst:app:ObserverMap.js, caption={\filename{ObserverMap.js}. In diesem Hilfsobjekt werden die möglichen \gls{observer} für die Realisierung des \gls{mvvm}-Patterns registriert. Diese werden hier in Listen einsortiert, je nach dem \lstinline|eventType|, das bei der Registrierung angegeben wurde.},}
 
 \includebightml{\pathtoappcode/js/consts.js}{label=lst:app:consts.js, caption={In der Datei \filename{consts.js} werden allgemeine String-Konstanten sowie \gls{event}-Bezeichner definiert, die in der gesamten Anwendung nach Laden dieses Skripts (\seeref{lst:app:index.html}) verwendet werden können, um Tipp-Fehler zu vermeiden und die Lesbarkeit des Codes zu erleichtern.},}
 
-\includebightml{\pathtoappcode/js/util.js}{label=lst:app:util.js, caption={util.js.},}
+\includebightml{\pathtoappcode/js/util.js}{label=lst:app:util.js, caption={\filename{util.js}. Einige Hilfsfunktionen für die Anwendung. Quelle für die UUID-Berechnung: \cite{uuid-code}.},}
 
-\includebightml{\pathtoappcode/js/model/model.js}{label=lst:app:model.js, caption={model.js.},}
+\includebightml{\pathtoappcode/js/model/model.js}{label=lst:app:model.js, caption={\filename{model.js}. Von Cordova standardmäßig erzeugte, umbenannte Datei \filename{index.js} (\seeautopageref{lst:index.js}). Das \gls{model} realisiert den Zugriff auf die Geräte-Schnittstelle.},}
 
-\includebightml{\pathtoappcode/js/viewModel/ViewModel.js}{label=lst:app:ViewModel.js, caption={ViewModel.js.},}
+\includebightml{\pathtoappcode/js/viewModel/ViewModel.js}{label=lst:app:ViewModel.js, caption={\filename{ViewModel.js}. Das \gls{view-model} beinhaltet alle wesentlichen Objekte der Oberfläche und die Interaktionslogik.},}
 
-\includebightml{\pathtoappcode/js/viewModel/bindingHandlers.js}{label=lst:app:bindingHandlers.js, caption={bindingHandlers.js.},}
+\includebightml{\pathtoappcode/js/viewModel/bindingHandlers.js}{label=lst:app:bindingHandlers.js, caption={\filename{bindingHandlers.js}. Wird zum erneuten Rendern der \gls{jqm}-Komponenten nach einer Manipulation durch \gls{ko} benötigt.},}
 
-\includebightml{\pathtoappcode/js/index.js}{label=lst:app:index.js, caption={index.js.},}
+\includebightml{\pathtoappcode/js/index.js}{label=lst:app:index.js, caption={\filename{index.js}. Start-Script für die Cordova-Anwendung.},}
 
 
 \restoregeometry
