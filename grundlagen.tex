@@ -10,7 +10,7 @@
 
 \section{Mobile (native) Apps} \label{sec:native}
 Unter mobilen \glspl{app} versteht man im Allgemeinen Anwendungssoftware für Tablet-Computer oder Smartphones. 
-Einige Gerätehersteller nutzen zum Ausführen dieser \glspl{app} die gleichen Betriebssysteme (wie bspw. \gls{android} oder \gls{win-phone}), die sich unter den verschiedenen Installationen auf dem Mobilgeräten nur in einigen herstellereigenen Anpassungen unterscheiden, grundlegend gibt es aber diverse Betriebssysteme für Mobilgeräte von unterschiedlichen Herstellern und Entwicklern.
+Einige Gerätehersteller nutzen zum Ausführen dieser \glspl{app} die gleichen Betriebssysteme (wie beispielsweise \gls{android} oder \gls{win-phone}), die sich unter den verschiedenen Installationen auf dem Mobilgeräten nur in einigen herstellereigenen Anpassungen unterscheiden, grundlegend gibt es aber diverse Betriebssysteme für Mobilgeräte von unterschiedlichen Herstellern und Entwicklern.
 Im Entwicklungsbereich wird in dem Zusammenhang auch von \glspl{plattform} gesprochen.
 
 Zu den \glspl{plattform} mit dem höchsten Marktanteil zählen \glspl{google} Betriebssystem \gls{android}, \gls{ios} von \gls{apple}, \gls{win-phone} und \gls{blackberry-os} des gleichnamigen Smartphone-Herstellers \gls{blackberry-inc} \cite{platforms-marketshare}.
@@ -98,7 +98,7 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 	{width=\fullimagesize}
 	{Schaubild Hybrid Apps}
 		{Entwicklungsstufen der verschiedenen Arten von Apps. Während bei der nativen App der gesamte Entwicklungszyklus einmal pro \gls{plattform} durchlaufen werden muss, verringert sich der Aufwand für die \gls{web-app} erheblich. Bei der \gls{hybrid-app} muss die Anwendung zwar einmal für jede \gls{plattform} gebaut und ausgeliefert werden, um die Schnittstellen für die nativen \glspl{plattform} zu implementieren, aber der hauptsächliche Entwicklungsaufwand des Programmierens und Testens fällt aufgrund des generischen Charakters nur einmal an.}
-	{Eigene Grafik.}
+	{\ownGraphicComposed{\cite{HTML, Windows, GooglePlay, AppStore, AvailableAppStore, Chrome, FullBuild, Gear, Android, Java, MacAppStore, Firefox, Pen, GooglePlayStore, Server, WindowsStore}}}
 
 \chapter{Plattformunabhängige App-Entwicklung}
 
@@ -112,7 +112,7 @@ Wie in \autoref{sec:web-app} erwähnt, sind \glspl{web-app} durch die Client-Ser
 
 Wie in \autoref{sec:hybrid-app} beschrieben, stellen Hybrid-Apps einen naheliegenden Ansatz zur plattformunabhängigen App-Entwicklung dar. Durch den Einsatz von Standard-Web-Technologien wie \gls{html}, CSS und \gls{js} in Verbindung mit einer in einer nativen Container-App erzeugten \gls{web-view}, lassen sich schnell viele Plattformen erreichen. Hierzu gibt es Frameworks, die die nativen Container-Apps erstellen und zusätzlich \glspl{api} für Hardware-Zugriffe und Geräte- und Systemfunktionen, die nicht durch \gls{html} abgedeckt werden, bereit stellen. Ein häufig genutztes Beispiel hierfür ist das in \autoref{sec:cordova} beschriebene \gls{phonegap}\,/\,\gls{cordova}.
 
-Eine Problematik, die sich bei allen Ansätzen zur plattformunabhängigen App-Entwicklung stellt, sind die in \autoref{sec:native} erwähnten unterschiedlichen Designs und Designrichtlinien sowie unterschiedlichen Bedienkonzepte. Soll die hybride App also dem \gls{look-and-feel} einer nativen sehr nahekommen, so muss zu einem gewissen Grat die Benutzeroberfläche für jede Plattform bspw. mithilfe von Stylesheets separat angepasst werden.
+Eine Problematik, die sich bei allen Ansätzen zur plattformunabhängigen App-Entwicklung stellt, sind die in \autoref{sec:native} erwähnten unterschiedlichen Designs und Designrichtlinien sowie unterschiedlichen Bedienkonzepte. Soll die hybride App also dem \gls{look-and-feel} einer nativen sehr nahekommen, so muss zu einem gewissen Grat die Benutzeroberfläche für jede Plattform beispielsweise mithilfe von Stylesheets separat angepasst werden.
 
 Durch den konsequenten Ansatz von \gls{html}, Design-Elemente über Stylesheets auszulagern, hat der Entwickler hier die Möglichkeit, seine Benutzeroberfläche für jedes System über das laden unterschiedlicher Stylesheets anzupassen.
 Hierzu bietet beispielsweise \gls{intel} mit seinem \gls{app-framework} eine \gls{js}-Oberflächenbibliothek, der entsprechende Stylesheets für jede große Plattform zugrunde liegen. So wird diese Arbeit dem Entwickler abgenommen und die App soll sich so gut in das native Design einfügen \cite{IntelAppFramework}.
@@ -139,8 +139,18 @@ So steht für die Software die volle \gls{javaee} zur Verfügung.
 Die Clients greifen auf die Server-Anwendung über eine URL zu, über die sie die Benutzeroberfläche als \gls{json} Repräsentation empfangen. Aus dieser wird dann durch den Client mit nativen Komponenten die Benutzeroberfläche gerendert. Diese sind \gls{cocoa-touch-widgets} in \gls{ios}, Java-basierte Widgets in \gls{android} und \gls{html}5 in Webbrowsern.
 Der Anwendungsentwickler muss sich um diesen Mechanismus allerdings nicht weiter kümmern. Das Programm wird als herkömmliche Java-Applikation entwickelt, wobei für die Benutzerschnittstelle das \gls{tabris-ui} zum Einsatz kommt.
 
-\gls{tabris-ui} baut auf \gls{swt}, \gls{jface} und \gls{osgi} auf und ermöglicht es, im Gegensatz zu reinem \gls{swt}, auf viele native Bedien- und Navigationselemente zuzugreifen. Solche sind zum Beispiel die \gls{actionbar} von \gls{android}, die \glspl{viewCtrl} von Apple (welche für die Verwaltung angezeigten Inhalte in \gls{ios} zuständig sind) oder das Gesten-gesteuerte Blättern zwischen Seiten durch eine Wisch-Geste auf dem Display (engl. \enquote{swipe}). Weiter erhält der Entwickler über entsprechende \glspl{api} einfachen Zugriff auf viele Geräte-Funktionen und Interaktionen mit anderen Systemfunktionen wie beispielsweise Geolokalisierung oder Verknüpfung des Programms mit den Kommunikationsschnittstellen (Telefonieren, SMS, E-Mail, etc.) \cite{Tabris_Doc}.
+%TODO Kurz erklären, was das ist!
+\gls{tabris-ui} baut auf \textit{\gls{swt},} \gls{jface} und \gls{osgi} auf und ermöglicht es, im Gegensatz zu reinem \gls{swt}, auf viele native Bedien- und Navigationselemente zuzugreifen. Solche sind zum Beispiel die \gls{actionbar} von \gls{android}, die \glspl{viewCtrl} von Apple\footnote{Diese sind für die Verwaltung der angezeigten Inhalte in \gls{ios} zuständig.} oder das gestengesteuerte Blättern zwischen Seiten durch eine Wisch-Geste auf dem Display (engl. \enquote{swipe}). Weiter erhält der Entwickler über entsprechende \glspl{api} einfachen Zugriff auf viele Geräte-Funktionen und Interaktionen mit anderen Systemfunktionen wie beispielsweise Geolokalisierung oder Verknüpfung des Programms mit den Kommunikationsschnittstellen (Telefonieren, SMS, E-Mail, etc.) \cite{Tabris_Doc}.
 %TODO Geeigneten Schlusssatz finden!
+
+%Vorschlag für Fazit (evtl. ins Resümee):
+%Hierbei wurden neben dem Ansatz von hybriden Apps mittels Web-Technologien weitere Ansätze erläutert, die das plattformunabhängige Erstellen nativer Apps ermöglichen. 
+%Durch die Abstraktion der Oberflächenbeschreibung kann mit den entsprechenden Schnittstellen so auf native Elemente des Betriebsystems zugeriffen werden, was vor allem für einen Fokus auf die User Experience und ein möglichst natives \gls{look-and-feel} interessant scheint.
+%[ Die Trennung in native und hybride Apps verschwimmt dabei etwas, da bei solchen Frameworks teilweise eine integrierte Runtime-Environment mitgeliefter wird und so wie beim Beispiel Titanium ebenfalls in JavaSkript programmiert werden kann. Im Gegensatz zu hybriden Apps versuchen diese Frameworks aber gerade bei der Benutzeroberfläche den Code zu abstrahieren und von dieser Abstraktion auf der jeweiligen Platform auf die nativen Methoden zuzugreifen. ]
+%Weiter wurde der Ansatz beschrieben, ausgehend von einer Programmiersprache und somit eines Codes, native Builts für verschiedene Plattformen herzustellen. Dabei wird Teilweise gar nicht der Anspruch eines vollständig plattformunhabhängigen Code verfolgt, aber immerhin das Bestreben, gemeinsame Funktionen in einem gemeinsamen Code abzubilden.
+%Weiter wurden mit der kompletten Portierung einer bestehenden App auf ein anderes System und einer Client-Server Konzeption der Application, jedoch nicht als Web-App, weitere Möglichkeiten genannt.
+%
+
 
 %TODO Evtl. Seitenmbruch!
 \section{Entwicklung von hybriden Apps}	\label{sec:hybrid-dev}
@@ -151,7 +161,7 @@ Der Anwendungsentwickler muss sich um diesen Mechanismus allerdings nicht weiter
 Wie in \ref{sec:hybrid-app} beschrieben, bildet die hybride App-Entwicklung die Schnittmenge aus der nativen App-Entwicklung und der Web-Entwicklung mithilfe von Web-Technologien und zusätzlichen \glspl{framework} und Bibliotheken. 
 Hier soll mit \gls{cordova}\,/\,\gls{phonegap} die konkrete Nutzung eines dieser \glspl{framework} und weitere verwendete Technologien wie \gls{ko} oder \gls{jqm} erläutert werden.
 
-\subsection{Die \gls{js}-Bibliothek jQuery}
+\subsection{Die JavaScript-Bibliothek jQuery}
 
 Bereits für die Entwicklung von reinen Web-Anwendungen stellen neben den grundlegenden Web-Technologien \gls{html}, \gls{css} und \gls{js} Erweiterungen wie die \gls{js}-Bibliothek \gls{jq} nützliche Hilfsmittel dar, die viele Funktionen gegenüber der Verwendung von \enquote{reinem} \gls{js} deutlich vereinfacht.
 So ist beispielsweise der Programmieraufwand für den Zugriff auf Elemente einer \gls{html}-Seite durch \gls{jq} wesentlich geringer als ohne die Bibliothek.
@@ -442,7 +452,7 @@ Der \og \gls{js}-Objekttyp \lstinline|Contact| ist in der \gls{contacts-api} def
 %TODO was sollte wohin? das sind doch schon wieder grenzen und möglichkeiten und sollte daher vielleicht eher umsetzung?
 
 Je nach Aufgabengebiet unterscheiden sich die verschiedenen \glspl{plugin} in ihrer Verwendung.
-Während bei einigen, wie \zB dem \gls{cordova}-\gls{plugin}, Schnittstellenmethoden über das \lstinline|navigator|-Objekt bereitgestellt werden (\seeref{lst:cordova-plugin-contacts}), bieten andere wie bspw. das \emph{Battery-Status}-\gls{plugin} die Behandlung verschiedener Events an,\footnote{Im Beispiel des \emph{Battery-Status}-\glspl{plugin} geben diese Auskunft über eine Statusänderung des Ladezustands oder den Anschluss an ans Stromnetz \cite{Cordova_Plugin_Registry_battery-status}.} die über das Hinzufügen eines \glspl{event-handler} zum \lstinline|window|-Objekt\footnote{Ähnlich wie das \lstinline|navigator|-Objekt ist auch das \lstinline|window|-Objekt Bestandteil der \gls{js}-Spezifikation, das Eigenschaften und Methoden zur Information und Steuerung des Browser-Fensters  bietet \cite{selfhtml_window}.} verarbeitet werden können (\seeref{lst:cordova-plugin-battery-status}) und wieder andere, wie \zB das \emph{Device}-\gls{plugin} stellen ein bestimmtes Objekt bereit, über das in diesem Fall Informationen abgefragt werden können \cite{Cordova_Plugin_Registry_Contacts, Cordova_Plugin_Registry_battery-status, Cordova_Plugin_Registry_device}.\footnote{In diesem Beispiel über das verwendete Gerät (\seeref{lst:cordova-plugin-device}).}
+Während bei einigen, wie \zB dem \gls{cordova}-\gls{plugin}, Schnittstellenmethoden über das \lstinline|navigator|-Objekt bereitgestellt werden (\seeref{lst:cordova-plugin-contacts}), bieten andere wie beispielsweise das \emph{Battery-Status}-\gls{plugin} die Behandlung verschiedener Events an,\footnote{Im Beispiel des \emph{Battery-Status}-\glspl{plugin} geben diese Auskunft über eine Statusänderung des Ladezustands oder den Anschluss an ans Stromnetz \cite{Cordova_Plugin_Registry_battery-status}.} die über das Hinzufügen eines \glspl{event-handler} zum \lstinline|window|-Objekt\footnote{Ähnlich wie das \lstinline|navigator|-Objekt ist auch das \lstinline|window|-Objekt Bestandteil der \gls{js}-Spezifikation, das Eigenschaften und Methoden zur Information und Steuerung des Browser-Fensters  bietet \cite{selfhtml_window}.} verarbeitet werden können (\seeref{lst:cordova-plugin-battery-status}) und wieder andere, wie \zB das \emph{Device}-\gls{plugin} stellen ein bestimmtes Objekt bereit, über das in diesem Fall Informationen abgefragt werden können \cite{Cordova_Plugin_Registry_Contacts, Cordova_Plugin_Registry_battery-status, Cordova_Plugin_Registry_device}.\footnote{In diesem Beispiel über das verwendete Gerät (\seeref{lst:cordova-plugin-device}).}
 
 \includehtml{cordova-plugin-contacts.js}{label=lst:cordova-plugin-contacts, caption={Beispiel für die Verwendung des \emph{Contacts}-\glspl{plugin} für die Erstellung eines neuen \lstinline|Contact|-Objekts \cite{Cordova_Plugin_Registry_Contacts}.},}
 
@@ -501,7 +511,8 @@ Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format fü
 	{width=1\textwidth}
 	{PhoneGap\,Build-Workflow}
 		{Schematische Darstellung eines möglichen Entwicklungsworkflows mit \gls{pg-build}: Der Code wird als Web-Anwendung auf \gls{github} hochgeladen, bei \gls{pg-build} über das \gls{github}-Repository aktualisiert und für die jeweiligen \glspl{plattform} gebaut, sodass die plattformspezifischen \glspl{app} heruntergeladen und auf den Zielgeräten installiert werden können.}
-	{Eigene Grafik.}
+	{\ownGraphicComposed{\cite{BuildHero, GitHub, Web, Laptop}}}
+	%TODO Hand und Logos fehlen noch in den Quellen.
 
 %TODO Als SVG einbinden! -> Funktioniert noch nicht.
 %TODO Bildquellen (auch die *innerhalb* des Bilder angeben.)
