@@ -24,7 +24,7 @@
  	Es ließe sich beispielsweise die Frage stellen, ob die verwendeten Web-Technologien einer hybriden App prinzipielle Stärken und Schwächen in puncto Performance haben. 
  	Hierüber wird die Beispiel-Anwendung allerdings wenig Aufschluss geben, da eine native Implementierung der gleichen Funktionen zur Vergleichbarkeit fehlt. Die Performance einer Hybrid-App ließe sich als einen Punkt der Nutzerfreundlichkeit bzw. Vor- und Nachteilen für den Endanwender sehen, was gerade für Consumer-Apps von großer Bedeutung ist.
  	
- 	Weitere Vor- und Nachteile hybrider Apps ließen sich an den Fragen der Stabilität einer solchen App, also deren Fehleranfälligkeit und damit verbundenen Abstürzen der Software, sowie der Sicherheit der Software erörtern. Dies schließt die Punkte mit ein, bspw. durch Manipulation des bestehenden Codes, so dass Schadcode in externe Systeme oder auch Client-Geräte eingeschleust werden kann, sowie der Verschlüsselung von Datenübertragungen. 
+ 	Weitere Vor- und Nachteile hybrider Apps ließen sich an den Fragen der Stabilität einer solchen App, also deren Fehleranfälligkeit und damit verbundenen Abstürzen der Software, sowie der Sicherheit der Software erörtern. Dies schließt die Punkte mit ein, beispielsweise durch Manipulation des bestehenden Codes, so dass Schadcode in externe Systeme oder auch Client-Geräte eingeschleust werden kann, sowie der Verschlüsselung von Datenübertragungen. 
  	Wichtig ist unter anderem die Verschlüsselung von Nutzerdaten auf dem Gerät, sowie die sichere Kommunikation der App mit externen Diensten und Geräten.
  	
  	Gerade für Client-Server-Anwendungen ist eine verschlüsselte Datenübertragung oft ein zentraler Punkt. Es lässt sich aber auch allgemeiner Fragen, wie gut sich solche Anwendungen durch hybride Apps umsetzen lassen. Gerade für eingangs erwähnte Firmen mit bestehender Infrastruktur kann dies eine wichtige Anforderung sein.
@@ -213,18 +213,21 @@ Somit ist eine Kenntnis über die angestrebten Zielplattformen für die Verwendu
 %		Vor-/Nachteile (zueinander / gegenüber nativer App-Entw.), Risiken, Chancen
 %TODO In \cite{Apache_Cordova_Contribute} werden noch einige Plattformen mehr aufgelistet. (wohl je nach cordova-version) -> evlt. hier auch noch erwähnen und/oder auflisten.
 
+%TODO Kommentare aus GoogleDocs einfügen!
+
 %TODO Evtl. eher ins Resümee?
 An dem Implementierungsbeispiel der Schnittstelle zur Adressverwaltung konnte gezeigt werden, dass die \gls{cordova}-\gls{api} grundsätzlich einen grundlegenden Funktionsumfang für die Interaktion zwischen der hybriden App und nativen Betriebssystemfunktionalitäten bietet.
 
 So konnte der zuvor gesetzte Anwendungsfall \nameref{shareList}, in dem primär Kontakte aus dem Adressbuch des Geräts geladen und der Anwendung hinzugefügt werden sollten, für beide getestete Betriebssysteme \gls{android} und \gls{ios} gut umgesetzt werden. 
 Allerdings sind, wie in \autoref{sec:impl} beschrieben, auch einige Besonderheiten bzgl. des Umgangs mit verschiedenen \gls{js}-Objekten, die die api mitbringt, sowie der Verwendung von verschiedenen Attributen auf unterschiedlichen Plattformen angeht, zu beachten.
 
-Im hier implementierten Praxis-Beispiel konnte bspw. nicht auf das displayName-Attribut des Contact-Objekts zugegriffen werden, da die Anwendung sowohl unter android als auch unter ios laufen sollte und wie in \autoref{sec:contacts-ergebnis} beschrieben, dieses unter ios nicht zur Verfügung steht. Unter anderem mit dem name-Attribut bietet die contacts-api jedoch Ausweichmöglichkeiten, sodass diese Einschränkung kein Problem für Umsetzung des Anwendungsfalls darstellte.
-Soll also sehr detailliert mit Objekten größerer Geräteschnittstellen wie \zB Kontakten gearbeitet werden, ist mindestens eine vorherige genaue Prüfung der unterstützten Eigenschaften nötig. In speziellen Fällen können bestimmte Anfdorderungen auch nicht umgesetzt werden, wie beispielsweise die Bearbeitung vieler oder einiger Kontakt-Details unter bestimmten mobilen Plattformen (\seeref{sec:contacts-ergebnis}).
+Im hier implementierten Praxis-Beispiel konnte beispielsweise nicht auf das displayName-Attribut des Contact-Objekts zugegriffen werden, da die Anwendung sowohl unter android als auch unter ios laufen sollte und wie in \autoref{sec:contacts-ergebnis} beschrieben, dieses unter ios nicht zur Verfügung steht. Unter anderem mit dem name-Attribut bietet die contacts-api jedoch Ausweichmöglichkeiten, sodass diese Einschränkung kein Problem für Umsetzung des Anwendungsfalls darstellte.
+Soll also sehr detailliert mit Objekten größerer Geräteschnittstellen wie \zB Kontakten gearbeitet werden, ist mindestens eine vorherige genaue Prüfung der unterstützten Eigenschaften nötig. In speziellen Fällen können bestimmte Anforderungen auch nicht umgesetzt werden, wie beispielsweise die Bearbeitung vieler oder einiger Kontakt-Details unter bestimmten mobilen Plattformen (\seeref{sec:contacts-ergebnis}).
 
-Ein Nachteil der Implementierung als Hybrid-App gegenüber der nativen Entwicklung ist sicherlich das in \fullref{sec:contacts-ergebnis} erwähnte Fehlen von entsprechenden \gls{gui}-Komponenten für einen konkreten Anwendungsfall (bswp. \emph{Kontakte auswählen}). 
+Ein Nachteil der Implementierung als Hybrid-App gegenüber der nativen Entwicklung ist sicherlich das in \fullref{sec:contacts-ergebnis} erwähnte Fehlen von entsprechenden \gls{gui}-Komponenten für einen konkreten Anwendungsfall (beispielsweise \emph{Kontakte auswählen}). 
 Diese ist jedoch auch durch die flexible Einsetzbarkeit der Hybrid-Technologie mit deren Kombination aus verschiedensten durch den Entwickler ausgewählten Web-Technologien begründet. 
 So entsteht hier zumindest dadurch ein Mehraufwand, dass Entwickler mehr als bei der nativen App-Entwicklung, wo verschiedenste Widgets der jeweiligen Plattform für die Umsetzung konkreter Anwendungsfälle bereit stehen, in die Auswahl von geeigneten GUI-Bibliotheken und anderen Hilfsmitteln oder gar die Entwicklung eigener UI-Komponenten investieren müssen.
+
 Wie in \autoref{sec:contacts-ergebnis} erwähnt, kann unter \gls{win8} nicht programmatisch auf das Adressbuch für die Auswahl von Kontakten zugegriffen werden, diese müssen also vom Nutzer in der \gls{win8}-Adressbuch-Applikation händisch ausgewählt werden.
 In der Dokumentation findet sich allerdings kein Hinweis, ob dieses Prozedere auch unter anderen Plattformen als Workaround für die Auswahl von Kontakten genutzt werden kann, erscheint für eine bloße Auswahl von Kontaktobjekten durch den Nutzer diese Interaktion mit einer anderen nativen App doch durchaus praktikabel, gerade vor dem Hintergrund des Ziels eines möglichst erwartungskonformen (hier also möglichst nativen) \glspl{look-and-feel}. 
 
@@ -243,7 +246,7 @@ Dabei lässt sich keine klare Aussage über die Performance von Hybrid-Apps mach
 \image{performance}
 	{width=\fullimagesize}
 	{Vergleich Ausführungsgeschwindigkeit}
-	{Vergleich Ausführungsgeschwindigkeit.}	%TODO Beschriftung hinzufügen!!!
+	{Vergleich der Ausführungsgeschwindigkeit von Berechnungen durch nativen und \gls{js}- bzw. Ruby-Code auf unterschiedlichen mobilen Plattformen. In diesem Test zeigt \gls{js} vor allem auf \gls{android}-Geräten eine besonders gute Performance (schneller als nativ), bei \gls{ios} und vor allem \gls{win-phone} dagegen ist der native Code deutlich schneller.}
 	{Swiss IT Magazine \cite{PerformanceTabelle}.}
 
 % Brauchbarkeit für unterschiedlich motivierte Entwickler / Unternehmen
@@ -256,7 +259,7 @@ Muss dieses Know-How erst noch aufgebaut werden, wird hier eine Kosten-Nutzen-Ab
 % Kann eine solche plattformunabhängie App einfach und gut in das bestehende System intergriert werden?
 
 Eine Hybride-App durchaus in ein bestehenden System integriert werden, sofern die Verarbeitungslogik Anfragen verarbeiten kann, die mit \gls{js} erstellt werden können, wie, im \zB bei der integration in eine Client-Server-Anwendung, mittels der \gls{ajax}-Technologie zur asynchronen Datenübertragung.
-Besteht also nicht die Anforderung einer Offline-Nutzbarkeit der zu entwickelnden App, so muss nicht, wie in dem hier aufgezeigten Praxis-Beispiel angedeutet, die Verabeitungslogik in \gls{js} neu implementiert werden, sondern kann als bestehende Client-Server-Architektur weiter genutzt werden, indem die mit Cordova und entsprechenden Web-Technologien entwickelte App den Client darstellt und (bspw. per \gls{ajax}-Anfragen) mit der Server-Anwendung kommuniziert.
+Besteht also nicht die Anforderung einer Offline-Nutzbarkeit der zu entwickelnden App, so muss nicht, wie in dem hier aufgezeigten Praxis-Beispiel angedeutet, die Verabeitungslogik in \gls{js} neu implementiert werden, sondern kann als bestehende Client-Server-Architektur weiter genutzt werden, indem die mit Cordova und entsprechenden Web-Technologien entwickelte App den Client darstellt und (beispielsweise per \gls{ajax}-Anfragen) mit der Server-Anwendung kommuniziert.
 
 
 % [Spezielle Geräte- und Peripherie-Anforderungen, die evtl. nicht vom Standard-Funktionsumfang von Cordova abgedeckt werden]
@@ -269,7 +272,7 @@ Besteht darüber hinaus Bedarf an der Nutzung von bisher nicht unterstützten Ge
 % Auch hier wieder: im zweifelsfalls können plugins selbst geschrieben werden.
 
 allerdings haben selbst die von cordova mitgelieferten kern-plugins, die großteils bereits ein breites spektrum an betriebsystemen bedienen, teilweise ihre einschränkungen in der nutzbarkeit auf unterschielchen plattformen, es kann also die Vermutung angestellt werden, dass auch bei der Entwicklung eigener Plugins schwierigkeiten in der Unterstüzung von detaillierten Objekteigenschaften und Geräte-Features auftreten können, die sich nicht ohne weiteres mit \gls{js} umsetzen lassen. 
-Als Ursache für diese Einschränkungen liegt allerdings vor allem auch die Vermutung nahe, dass bei der Definition von Datentypen, die Objekte verschiedener Plattformen abbilden sollen, stets nur der kleinste gemeinsame Nenner gefunden werden kann und so bspw. Datenfelder, die nur Objekttypen einer bestimmten Plattform beinhalten, bei anderen Plattformen entweder auf andere Attibute gemappt werden müssen oder schlicht nicht zur verfügung stehen. 
+Als Ursache für diese Einschränkungen liegt allerdings vor allem auch die Vermutung nahe, dass bei der Definition von Datentypen, die Objekte verschiedener Plattformen abbilden sollen, stets nur der kleinste gemeinsame Nenner gefunden werden kann und so beispielsweise Datenfelder, die nur Objekttypen einer bestimmten Plattform beinhalten, bei anderen Plattformen entweder auf andere Attibute gemappt werden müssen oder schlicht nicht zur verfügung stehen. 
 
 % Ist der Vergleichbar mit der nativen App-Entwicklung?
 
@@ -281,7 +284,7 @@ Durch unterschiedliche Datenmodelle der verschiedenen Plattformen müssen jedoch
 
 Für Entwickler und kleine Unternehmen, die sich mit möglichst gerinem Aufwand am Markt für mobile Anwendungen etwablieren wollen, stellt sich die Frage nach der Eignung der Verwendung einer solchen Cross-Plattform-Technologie vor allem anhand der Zielsetzung bzgl. der Vielfalt von zu bedienenden Zielplattformen.
 
-Soll ohnehin nur eine Plattform erreicht werden,\footnote{bspw. in dem Fall, dass mit bereits vorhandenen Kenntnissen in der Web-Entwicklung eine mobile App entwickelt werden soll oder die möglichkeit offen gehalten werden soll, die App zu einem späteren Zeitpunkt auch für mehrere Plattformen angeboten werden soll} so ist der Entwicklungsaufwand vermutlich vergleichbar dem für die Entwicklung einer nativen App, da der Code in beiden Fällen (sowohl bei der nativen als auch für die Hybrid-App) einmal geschrieben werden muss (siehe auch unten “welche nachteil ergeben sich” -> wenn schon eine app da, müsste die als hybrid-app nochmal geschrieben werden).
+Soll ohnehin nur eine Plattform erreicht werden,\footnote{beispielsweise in dem Fall, dass mit bereits vorhandenen Kenntnissen in der Web-Entwicklung eine mobile App entwickelt werden soll oder die möglichkeit offen gehalten werden soll, die App zu einem späteren Zeitpunkt auch für mehrere Plattformen angeboten werden soll} so ist der Entwicklungsaufwand vermutlich vergleichbar dem für die Entwicklung einer nativen App, da der Code in beiden Fällen (sowohl bei der nativen als auch für die Hybrid-App) einmal geschrieben werden muss (siehe auch unten “welche nachteil ergeben sich” -> wenn schon eine app da, müsste die als hybrid-app nochmal geschrieben werden).
 Bei einer Zielsetzung möglichst breiter Plattformunterstützung sowie relativ geringer geräte- und plattformspezifischer Anforderungen ist 
 Selbst mit der Maßgabe einer Implementierung von Schnittstellen zu Gerätefunktionalitäten ist in vielen Fällen die entwicklung einer Hybriden App lohneswert, da, wie [oben] beschrieben, durch die Vielfalt an Cordova-Plugins die meisten grundlegenden Features auf verschiedenen Plattformen umsetzbar sind. 
 
@@ -306,8 +309,8 @@ Gerade für Entwickler, die mit ihren Kenntnissen in der mobilen App-Entwicklung
 %TODO Ein Knackpunkt ist die auswhal einer geeignete IDE:
 %TODO Gibt sehr viele, auch teilweise unterschiedliche ansätze
 außerdem muss für die App-Entwicklung mit Web-Technologien einr geeignete GUI-Bibliothek ausgewählt und integriert werden, wo wieder viele verschiedene Lösungen zur Verfügung stehen.
-Darüber hinaus ist es ratsam, für eine klare und gut wartbare Struktur des \gls{js}-Codes auf weitere Bibliotheken wie bspw. [ko] zurückzugreifen, die Mechanismen wie Data-Binding oder Dependency Tracking übernehmen, da der eigentliche \gls{js}-Kern zwar einige aus vielen Programmiersprachen bekannte Konzepte wie eine ansatzweise Objektorientierung beinhaltet und generell durch seine mit vielen anderen Programmiersprachen wie bspw. Java oder \gls{c-sharp} ähnlichen Syntax und weiten Verbreitung grundsätzlich gut programmieren lässt, jedoch auch einige Mechanismen, \zB für größere Projekte, vermissen lässt.
-So ist \gls{js} beispielsweise nicht typsicher [gls], sodass bei der Verwendung von Schnittstellenmethoden bspw. nicht durch einen Compiler angezeigt werden kann, welchen Typ eine Rückgabewert hat, der ausschließliche zugriff auf Schnittstellen-Eiegnschaften also nicht durch den compiller erzwungen werden kann und der Programmierer eine sehr genauer Kenntnis über Eigenschaften von verwendeten Objekten haben muss.
+Darüber hinaus ist es ratsam, für eine klare und gut wartbare Struktur des \gls{js}-Codes auf weitere Bibliotheken wie beispielsweise [ko] zurückzugreifen, die Mechanismen wie Data-Binding oder Dependency Tracking übernehmen, da der eigentliche \gls{js}-Kern zwar einige aus vielen Programmiersprachen bekannte Konzepte wie eine ansatzweise Objektorientierung beinhaltet und generell durch seine mit vielen anderen Programmiersprachen wie beispielsweise Java oder \gls{c-sharp} ähnlichen Syntax und weiten Verbreitung grundsätzlich gut programmieren lässt, jedoch auch einige Mechanismen, \zB für größere Projekte, vermissen lässt.
+So ist \gls{js} beispielsweise nicht typsicher [gls], sodass bei der Verwendung von Schnittstellenmethoden beispielsweise nicht durch einen Compiler angezeigt werden kann, welchen Typ eine Rückgabewert hat, der ausschließliche zugriff auf Schnittstellen-Eiegnschaften also nicht durch den compiller erzwungen werden kann und der Programmierer eine sehr genauer Kenntnis über Eigenschaften von verwendeten Objekten haben muss.
 
 Doch auch hier gibt es wieder alternativen und Hilfmittel wie \zB die in [sec:uebersicht] beschriebene Multiplattform-Programmiersprache Haxe, die es dem Entwickler erlauben, Mechanismen wie Typsicherheit,Vererbung, Enumaerations etc. zu verwenden, die dann in herkömmlichen \gls{js}-Code übersetzt werden und somit allen gängigen Browsern bzw. WebViews kompatiblen Code interpretiert und ausgeführt werden kann.
 
@@ -315,11 +318,11 @@ Die Erstellung von hybriden Apps mithilfe des Cordova-Frameworks ist durch die [
 
 %TODO Außerdem: Verwaltungsaufwand für die unterschiedlichen SDKs der jeweiligen Zielplattformen!
 %TODO -> Dazu: Abhilfe: Build-Server oder Cloud-Build-Services wie PhoneGap Build. 
-%TODO Aber auch hier gibt es wieder Einschränkungen, was bspw. die Unterstützung bestimmter oder vieler verschiedener Plattformen. 
+%TODO Aber auch hier gibt es wieder Einschränkungen, was beispielsweise die Unterstützung bestimmter oder vieler verschiedener Plattformen. 
 
 Der Standard-Workflow für die hybride App-Entwicklung mit Cordova sieht keine spezielle IDE für die Entwicklung des Codes vor, was den Vorteil hat, dass Entwickler sehr flexibel entscheiden können, welche Entwicklungs-Werkzeuge verwendet werden sollen und sicherlich for allem darin begründet ist, dass, im Gegensatz zu reinen SDKs für die native App-Entwicklung, Cordova lediglich die Schnittstelle zwischen der entwickelten Web-App und dem Gerät bildet und bis auf die Festlegung auf den weit verbreiteten \gls{js}-Standard ansonsten relativ unabhängig von weiteren verwendeten Technologien ist.
 
-Dies bietet Entwicklern zwar ein hohes Maß an Flexibilität und Entscheidungsfreiheit, andererseits müssen dadurch nützliche Werkzeuge für die Software-Entwicklung sozusagen stets selbst zusammen gestellt werden, indem bspw. neben einer IDE, unter Umständen mit entsprechenden Plugins für die verwendeten Web-Technologien, weitere geeignete Werkzeuge wie bspw. das Debugging-Tool Weinre für das Remote-Debuggen einer hybriden App in einem Emulator oder einem entfernten Gerät, den browser-basierten Emulator für das Test von mit Cordova erstellten Hybrid-Apps oder grafische GUI-Designer einzeln recherchiert, installiert und verwendet werden müssen. 
+Dies bietet Entwicklern zwar ein hohes Maß an Flexibilität und Entscheidungsfreiheit, andererseits müssen dadurch nützliche Werkzeuge für die Software-Entwicklung sozusagen stets selbst zusammen gestellt werden, indem beispielsweise neben einer IDE, unter Umständen mit entsprechenden Plugins für die verwendeten Web-Technologien, weitere geeignete Werkzeuge wie beispielsweise das Debugging-Tool Weinre für das Remote-Debuggen einer hybriden App in einem Emulator oder einem entfernten Gerät, den browser-basierten Emulator für das Test von mit Cordova erstellten Hybrid-Apps oder grafische GUI-Designer einzeln recherchiert, installiert und verwendet werden müssen. 
 
 Darüber hinaus gibt es aber auch Lösungen, die die verschiedenen Tools zusammenführen und so eine Art Komplett-SDK schaffen, sodass Entwickler hybrider Apps nicht zwangsläufig aus verschiedensten Tool wie Code-Editoren, IDE-Plugins, Debugging-Tools und Emulatoren und die passendsten auswählen müssen, sondern mit Komnbinationsläsungen sofort eine Art ”Werkzeugkasten”  Mit allen oder zumindest vielen wichtigen Tools, wie den oben genannten und sogar grafische GUI-Design-Werkzeuge, vorfinden.
 
@@ -347,7 +350,7 @@ Allerdings haben sich die hier im Praxis-Test ansatzweise ausprobierten SDKs tro
 % Gibt es Verschlüsselungsmechanismen für die Datenübertragung bei den Verwendeten Technologien?
 % TODO Bisher nichts gefunden.
 
-% Wie leicht lassen sich Hybrid-Apps hacken (also bspw. den bestehenden Code, so verändern, dass Schadcode in externe Systeme oder auch Clientgeräte eingeschleust werden kann)?
+% Wie leicht lassen sich Hybrid-Apps hacken (also beispielsweise den bestehenden Code, so verändern, dass Schadcode in externe Systeme oder auch Clientgeräte eingeschleust werden kann)?
 
 %TODO Durch offenen \gls{js}-Code evtl. schon -> Quelle????
 
