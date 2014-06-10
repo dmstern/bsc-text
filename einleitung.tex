@@ -3,21 +3,21 @@
 
 \section{Motivation und Aufgabenstellung}
 
-Im Laufe der letzten Jahre haben sich auf dem Markt für mobile Endgeräte wie Tablet-Computer oder Smartphones durch viele konkurrierende Gerätehersteller eine Vielzahl von unterschiedlichen Gerätetypen und diversen mobilen Betriebssystemen herausgebildet.
-Durch diesem wachsenden Markt wird hier für viele Anbieter mobiler Anwendungen immer wichtiger, ihre Apps für verschiedene Betriebssysteme anzubieten, um möglichst viele Nutzer unterschiedlicher Gerätesoftware zu erreichen. %TODO Quelle??
+Im Laufe der letzten Jahre hat sich auf dem Markt für mobile Endgeräte wie Tablet-Computer oder Smartphones durch viele konkurrierende Gerätehersteller eine Vielzahl von unterschiedlichen Gerätetypen und diversen mobilen Betriebssystemen herausgebildet.
+Durch diesen wachsenden Markt wird es hier für viele Anbieter mobiler Anwendungen immer wichtiger, ihre \mbox{Apps} für verschiedene Betriebssysteme anzubieten, um möglichst viele Nutzer unterschiedlicher Gerätesoftware zu erreichen. %TODO Quelle??
 
 Viele Webseiten-Betreiber bieten ihre Online-Dienste vermehrt auch als mobile App an und müssen, um einen breiten Nutzer- und Kundenstamm zu gewinnen, diese gleich für verschiedene mobile Betriebssysteme anbieten.
-Aufgrund der verschiedenen Technologien und Programmiersprachen der einzelnen Plattformen bedeutet dies jedoch im Normalfall einen hohen Mehraufwand, sodass viele Apps zum großen Teil lediglich Versionen für die beiden größten mobilen Plattformen \gls{ios} oder \gls{android} angeboten werden und dadurch ein Teil der Nutzer von anderen Systemen wie \gls{win-phone}, \gls{blackberry} oder kleinere wie \gls{tizen} oder \gls{ubuntu-phone} nicht erreicht werden können. 
+Aufgrund der verschiedenen Technologien und Programmiersprachen der einzelnen Plattformen bedeutet dies jedoch im Normalfall einen hohen Mehraufwand, sodass viele Apps zum großen Teil lediglich in Versionen für die beiden größten mobilen Plattformen \gls{ios} oder \gls{android} angeboten werden und dadurch ein Teil der Nutzer von anderen Systemen wie \gls{win-phone}, \gls{blackberry} oder kleinere wie \gls{tizen} oder \gls{ubuntu-phone} nicht erreicht werden können. 
 Für viele Firmen und Anwendungsentwickler bleibt da oft allenfalls die Erstellung einer mobilen Website, mit der zwar grundsätzlich alle mobilen Plattformen internetfähiger Mobilgeräte erreicht werden können, der Mehrwert einer installierten App wie die Nutzung verschiedener Geräte-Features oder die leichtere Kundenbindung durch die feste Platzierung von Icons in der App-Übersicht der Nutzers, die mit der Installation einer mobilen App einhergeht, jedoch ausbleibt.
 
-Da viele Frameworks und Lösungen für die Entwicklung von plattformunabhängigen Apps standardisierte Webtechnologien wie \gls{html5} in Kombination mit \gls{js} etc. verwenden, kann eine solche Web-App mit entsprechenden Hilfsmitteln unter Umständen relativ leicht als mobile App portiert werden, sodass gerade für Anwendungsentwickler, die schon gewisse Vorkenntnisse im Bereich der Web-Entwicklung mitbringen, mit relativ geringem personellen wie finanziellen Aufwand ihre Software oder ihren Online-Dienst auf mehrere mobile Plattformen bringen können.
+Da viele Frameworks und Lösungen für die Entwicklung von plattformunabhängigen Apps standardisierte Webtechnologien wie \gls{html5} in Kombination mit \gls{js} etc. verwenden, kann eine solche Web-App mit entsprechenden Hilfsmitteln unter Umständen relativ leicht als mobile App portiert werden. Gerade Anwendungsentwickler, die schon gewisse Vorkenntnisse im Bereich der Web-Entwicklung mitbringen, können dadurch mit relativ geringem personellen wie finanziellen Aufwand ihre Software oder ihren Online-Dienst auf mehrere mobile Plattformen bringen. 
 Die breite Vielfalt an entsprechenden Technologien deutet auf einen regen Markt für die Cross-Plattform-Entwicklung hin und zeugt von der Aktualität des Themas.
 
 In dieser Arbeit soll ein kurzer Überblick über verschiedene Ansätze gegeben und anhand von theoretischen Erläuterungen sowie mit der Implementierung eines Praxis-Beispiels mithilfe einer ausgewählte Technologie Grenzen und Möglichkeiten für die plattformunabhängige App-Entwicklung aufgezeigt werden.
 
 % Literatur und Quellenlage
 %	Viele Quellen (Webseiten) verschiedener Lösungen und Produkte zur plattformunabhängige App-Entwicklung, teilweise ähnliche Ansätze, die ein mehr oder weniger detailliertes Bild der Ansätze und Vorteile für Entwickler zeichnen. 
-%	Als primäre Quelle wurden hier die einschlägigen Online-Dokumentationen der aufgezeigten und verwendeten Technologien sowie weitere Internet-Quellen verwendet. 
+	Als primäre Quellen wurden hier die einschlägigen Online-Dokumentationen der aufgezeigten und verwendeten Technologien sowie weitere Internet-Quellen verwendet. 
 %	Zwar lässt sich auch vereinzelt Printliteratur finden, auf diese wird hier jedoch aufgrund des praktischen Charakters der Arbeit nicht näher eingegangen, da gerade in diesen modernen und schnelllebigen Technologien die wichtigsten und aktuellsten Informationen aus den aktuellen Online-Quellen wie Hersteller-Seiten und Dokumentationen zu beziehen sind.
 %	\todo{Online-Quellen-Gequatsche auch evtl. auch lieber weg??}
 	
@@ -27,20 +27,21 @@ In dieser Arbeit soll ein kurzer Überblick über verschiedene Ansätze gegeben 
 Der Hauptteil der vorliegenden Arbeit gliedert sich grundlegend in zwei Teile.
 
 Im ersten Teil \namerefH{sec:grundlagen} soll ein Überblick über verschiedene Arten von mobilen Apps und deren prinzipielle Entwicklung gegeben werden. 
-		Dazu wird zunächst auf den üblichen Weg, mobile Apps für das jeweilige Betriebssystem zu entwickeln, eingegangen sowie Schwierigkeiten, die bei besonderen Anforderungen, insbesondere der Bedienung mehrerer Zielplattformen, auftreten können, aufgezeigt.
-		Mit Web- und Hybrid-Apps werden zwei weitere Mechanismen für die mobile App-Entwicklung beschrieben, deren grundlegende Herangehensweise und Technologien dargelegt sowie Vor- und Nachteile erörtert werden.
+Dazu wird zunächst auf den üblichen Weg, mobile Apps für das jeweilige Betriebssystem zu entwickeln, eingegangen. 
+Weiterhin werden Schwierigkeiten, die bei besonderen Anforderungen, insbesondere der Bedienung mehrerer Zielplattformen, auftreten können, aufgezeigt.
+Mit Web- und Hybrid-Apps werden zwei weitere Mechanismen für die mobile App-Entwicklung beschrieben, deren grundlegende Herangehensweise und Technologien dargelegt sowie Vor- und Nachteile erörtert werden.
 
 	Im \namerefH{sec:overview} soll ein Überblick über verschiedene konkrete Lösungen und Produkte wie Frameworks, Code-Generatoren und deren Funktions- und Herangehensweise gegeben werden.
-	Mit Cordova, Knockout, etc. werden die Grundlagen der für die Implementierung verwendeten und im Praxis-Teil erwähnten Technologien erläutert. 
-	Im \fullref{sec:cordova}, der hier den elementaren Teil darstellt, da diese Technologie die Grundlage für die Umsetzung plattformspezifischer Anforderungen im Praxis-Teil bildet, soll ein Einblick in die Verwendung eines konkreten Ansatzes zur plattformunabhängigen App-Entwicklung mithilfe von sogenannten \glspl{hybrid-app} gegeben und grundlegende Möglichkeiten des Frameworks aufgezeigt werden werden.
-	Außerdem wird die grundlegende Funktionsweise und Verwendung des Frameworks und der Geräte-Schnittstellen erläutert sowie einige weitere Möglichkeiten, die die Software bietet.
+	Mit Cordova, Knockout etc. werden die Grundlagen der für die Implementierung verwendeten und im Praxis-Teil erwähnten Technologien erläutert. 
+	Der \nameref{sec:cordova} stellt hier den elementaren Teil dar, da diese Technologie die Grundlage für die Umsetzung plattformspezifischer Anforderungen im Praxis-Teil bildet. Es wird ein Einblick in die Verwendung eines konkreten Ansatzes zur plattformunabhängigen App-Entwicklung mithilfe von sogenannten \glspl{hybrid-app} gegeben. Grundlegende Möglichkeiten des Frameworks werden aufgezeigt. Außerdem werden die Funktionsweise und Verwendung des Frameworks und der Geräte-Schnittstellen und weitere Möglichkeiten der Software erläutert.
 
  Im zweiten Teil \namerefH{sec:praxis} folgt die Beschreibung der Implementierung einer Beispiel-Anwendung mithilfe des Cordova-Frameworks, um Möglichkeiten des Frameworks zu erproben und Besonderheiten in dessen Verwendung aufzuzeigen.
 	Hier soll zunächst die grobe Konzeption und Idee der zu implementierenden Beispiel-App beschrieben, die Herangehensweise und Struktur anhand von verwendeten Technologien und verwendeten Entwurfsmustern erläutert sowie Kriterien und Vorüberlegungen für die Bewertung der verwendeten Cross-Platform-Technologie aufgestellt werden.
 	
-	In der Beschreibung der \namerefH{sec:impl} soll mithilfe der Verwendung eines Cordova-Plugins die Umsetzung eines Anwendungsfalls der vorher spezifizierten Beispiel-Anwendung, für den die Interaktion mit einer speziellen Funktionalität des Betriebssystems erforderlich ist, beschrieben werden.
+	In der Beschreibung der \namerefH{sec:impl} wird mithilfe der Verwendung eines Cordova-Plugins die Umsetzung eines Anwendungsfalls der vorher spezifizierten Beispiel-Anwendung, für den die Interaktion mit einer speziellen Funktionalität des Betriebssystems erforderlich ist, beschrieben.
 	Dabei soll insbesondere auf die Möglichkeiten eingegangen werden, die die API für die Interaktion zwischen Anwendung und Betriebssystem bietet, sowie Grenzen und Besonderheiten in der Verwendung der implementierten Schnittstelle aufgezeigt werden.
-	Abschließend soll unter anderem anhand der vorher festgelegten Vorüberlegungen sowie aus weiteren Informationen aus der jeweiligen Dokumentation eine Auswertung der explorierten Technologie vorgenommen werden und eine Abwägung über deren Vor- und Nachteile und Eignung für die Praxis stattfinden.
 
-Im letzten Teil \namerefH{sec:schluss} sollen die erarbeiteten Inhalte aus dem Überblick sowie der praktischen Umsetzung und deren hervorstechende Merkmale und Besonderheiten aufgezeigt werden sowie diskutiert werden, wo die Grenzen und Möglichkeiten von aktuellen Lösungen und Ansätzen liegen und inwieweit diese einen Mehrwert für Unternehmen und Entwickler verschiedener Motivation bietet.	%TODO Gliederung überprüfen! Ist das nicht eher in "Eignung für die Praxis"??????
-Außerdem soll ein Ausblick gegeben werden, wo die Untersuchung des Themas und Erprobung verschiedener Technologien erweitert werden könnte.
+	Abschließend wird unter anderem anhand der vorher angestellten Vorüberlegungen sowie aus weiteren Informationen aus der jeweiligen Dokumentation eine Auswertung der explorierten Technologie vorgenommen und deren Vor- und Nachteile und Eignung für die Praxis erörtert.
+	Dabei soll diskutiert werden, wo die Grenzen und Möglichkeiten von aktuellen Lösungen und Ansätzen liegen und inwieweit diese einen Mehrwert für Unternehmen und Entwickler verschiedener Motivation bietet.
+
+Im letzten Teil \namerefH{sec:schluss} werden die erarbeiteten Inhalte aus dem Überblick sowie der praktischen Umsetzung und deren hervorstechende Merkmale und Besonderheiten aufgezeigt. Außerdem soll ein Ausblick gegeben werden, wo die Untersuchung des Themas und Erprobung verschiedener Technologien erweitert werden könnte.
