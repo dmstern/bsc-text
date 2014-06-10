@@ -214,7 +214,7 @@ Stattdessen übernimmt das \gls{ko}-\gls{framework} die Durchreichung aller Änd
 		{Knockout-Beispiel aus \autoref{lst:ko} im Browser. Links im Bild: Anzeige bei Initialisierung der Oberfläche, rechts: Benutzereingabe ins Eingabefeld: \enquote{Mars}. \\ Änderungen in der UI (Hier: im Eingabefeld) werden sofort im \gls{view-model} registriert und automatisch an alle verknüpften Anzeigen weitergereicht (Hier an das fettgedruckte Begrüßungselement).}
 	{Eigener Screenshot.}
 
-\subsection{JQuery\,Mobile: Mobile Web-Oberflächen}
+\subsection{JQuery\,Mobile: Mobile Web-Oberflächen} \label{sec:jqm}
 
 %TODO Hier Evtl. auch nochmal Bezug nehmen auf Überblick: Was gibts für GUI-Libs?
 
@@ -420,6 +420,7 @@ Für die Erstellung und Veröffentlichung eigener \glspl{plugin} stellt \gls{apa
 \paragraph{Einrichten von Plugins:}
 
 Für die Installation und Dokumentation von \glspl{plugin} bietet \gls{apache} mit der \gls{plugin-registry} ein Online-Portal an, in der sich zur Zeit 229 \glspl{plugin} für das \gls{cordova}-\gls{framework} finden, darunter auch die \og Kern-\glspl{plugin} von \gls{apache} \cite{Cordova_Docs_Plugin_APIs}. Der überwiegende übrige Teil stammt von verschiedenen Entwicklern und Drittanbietern, die ihre nach dem \gls{plugin-dev-guide} entwickelten \glspl{plugin} diesem Portal hinzufügen können \cite{Cordova_Plugin_Development_Guide}, und bieten häufig spezielle Unterstützung für bestimmte mobile Plattformen an \cite{Cordova_Plugin_Registry_viewAll}.
+Darüber hinaus gibt es auch weitere Portale dieser Art, wie beispielsweise \gls{plug-reg} des \gls{opensource}-Entwicklers Lee Crossley, das zur Zeit 843 \glspl{plugin} von 585 verschiedenen Entwicklern listet \cite{PlugReg}.
 
 Das \gls{cordova}-\gls{cli} bietet auch die Möglichkeit, alle verfügbaren \glspl{plugin} zu durchsuchen, hinzuzufügen, aufzulisten und zu entfernen (\seeref{lst:cordova-plugin-search}, \ref{lst:cordova-plugin-add}, \ref{lst:cordova-plugin-ls} und \ref{lst:cordova-plugin-rm}).
 
@@ -460,7 +461,7 @@ Während bei einigen, wie \zB dem \gls{cordova}-\gls{plugin}, Schnittstellenmeth
 
 \includehtml{cordova-plugin-device.js}{label=lst:cordova-plugin-device, caption={Beispiel für die Verwendung des \emph{Device}-\glspl{plugin}. Bei Empfang des \emph{DeviceReady}-\glspl{event} wird die Modell-Bezeichnung des Geräts in der Konsole ausgegeben \cite{Cordova_Plugin_Registry_device}.},}
 
-\subsubsection{PhoneGap\,Build}	%TODO Evtl. umbenennen in "Remote Build Services" od. "Der Build-Prozess" oder so.
+\subsubsection{PhoneGap\,Build}	\label{sec:pg-build}		%TODO Evtl. umbenennen in "Remote Build Services" od. "Der Build-Prozess" oder so.
 %TODO Gliederung: Eher als Alternative zum lokalen Build?
 
 %TODO Noch grundsätzlicher einleiten: Es gibt auch Cloud-Build-Services wie zB.....
