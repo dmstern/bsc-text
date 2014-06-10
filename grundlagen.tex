@@ -10,7 +10,7 @@
 
 \section{Mobile (native) Apps} \label{sec:native}
 Unter mobilen \glspl{app} versteht man im Allgemeinen Anwendungssoftware für Tablet-Computer oder Smartphones. 
-Einige Gerätehersteller nutzen zum Ausführen dieser \glspl{app} die gleichen Betriebssysteme (wie beispielsweise \gls{android} oder \gls{win-phone}), die sich unter den verschiedenen Installationen auf dem Mobilgeräten nur in einigen herstellereigenen Anpassungen unterscheiden, grundlegend gibt es aber diverse Betriebssysteme für Mobilgeräte von unterschiedlichen Herstellern und Entwicklern.
+Einige Gerätehersteller nutzen zum Ausführen dieser \glspl{app} die gleichen Betriebssysteme (wie beispielsweise \gls{android} oder \gls{win-phone}), die sich unter den verschiedenen Installationen auf den Mobilgeräten nur in einigen herstellereigenen Anpassungen unterscheiden, grundlegend gibt es aber diverse Betriebssysteme für Mobilgeräte von unterschiedlichen Herstellern und Entwicklern.
 Im Entwicklungsbereich wird in dem Zusammenhang auch von \glspl{plattform} gesprochen.
 
 Zu den \glspl{plattform} mit dem höchsten Marktanteil zählen \glspl{google} Betriebssystem \gls{android}, \gls{ios} von \gls{apple}, \gls{win-phone} und \gls{blackberry-os} des gleichnamigen Smartphone-Herstellers \gls{blackberry-inc} \cite{platforms-marketshare}.
@@ -38,17 +38,17 @@ Darüber hinaus ist für \gls{ios}-Entwickler die Teilnahme am \gls{ios-dev-prog
 So sichert sich Apple, nicht nur durch die kostenpflichtige Mitgliedschaft im \gls{ios-dev-prog}, sondern allein schon durch deren exklusive Plattformunterstützung durch den Entwicklungsrechner ihres eigenen Mobilbetriebssystems, auch mit jedem Entwickler einen neuen Kunden.\footnote{Diese Restriktion gilt allerdings auch für die unten beschriebene plattformunabhängigen App-Entwicklung, da \gls{ios}-\glspl{app} mit einem gültigen \gls{dev-profile} signiert werden müssen, um für die Plattform gebaut und ausgeliefert werden zu können (\seeref{sec:hybrid-dev}).}
 
 Ansonsten verläuft der Entwicklungsprozess bei der \gls{ios}-Entwicklung im Prinzip ähnlich zur \gls{android}-Entwicklung (\seeref{fig:hybrid-apps-schaubild}).
-Als Programmiersprache wird \gls{obj-c} verwendet, einer um objektorientierte Elemente erweiterte Variante der Programmiersprache \gls{c}.
+Als Programmiersprache wird \gls{obj-c} verwendet, eine um objektorientierte Elemente erweiterte Variante der Programmiersprache \gls{c}.
 
 Möchte ein Auftraggeber einer Software also statt seinen Kunden nur eine \gls{app} für ein Betriebssystem anzubieten, einen größeren Nutzerkreis erschließen, muss die zu entwickelnde \gls{app} für jede Zielplattform neu programmiert, getestet und gebaut werden, was die native \gls{app}-Entwicklung für potenzielle Auftraggeber zu einem sehr kostenaufwändigen Projekt werden lassen kann.
-Andererseits bietet die native \gls{app}-Entwicklung vollständige Unterstützung der betriebssystemeigenen Funktionalitäten wie den Zugriff auf Kamera, Adressbuch, Bewegungssensoren etc. der jeweiligen \gls{plattform}, sodass ein Softwareprojekt mit solchen besonders hardware- oder betriebssystemnahen Anforderungen die Entwicklung einer nativen (plattformspezifischen) \gls{app} notwendig erscheinen lassen kann.\footnote{Mehr dazu in \autoref{sec:hybrid-dev}}
+Andererseits bietet die native \gls{app}-Entwicklung vollständige Unterstützung der betriebssystemeigenen Funktionalitäten wie den Zugriff auf Kamera, Adressbuch, Bewegungssensoren etc. der jeweiligen \gls{plattform}, sodass ein Softwareprojekt mit solchen besonders hardware- oder betriebssystemnahen Anforderungen die Entwicklung einer nativen (plattformspezifischen) \gls{app} notwendig erscheinen lassen kann.\footnote{Mehr dazu in \autoref{sec:hybrid-dev}.}
 
 \section{Web-Anwendungen}\label{sec:web-app}
 
 % Zuerst gab es Websites, dann dynamische Websites
 Eine \gls{web-app} ist eine Anwendungssoftware, die auf einem Web-Server läuft und auf die der Nutzer mittels eines Browsers zugreifen kann; also eine dynamische Website, wie man sie auch schon vor dem Aufkommen von Smartphones und modernen Tablets kannte. 
 
-Die Grundlage für die Entwicklung von Internetseiten bildet der langjährige Standard \gls{html}, mit dem deren Aussehen, Inhalt und Struktur textuell beschrieben werden kann. 
+Die Grundlage für die Entwicklung von Internetseiten bildet der langjährige Standard \gls{html}, mit dem Aussehen, Inhalt und Struktur der Oberflächen textuell beschrieben werden kann. 
 In Kombination mit \gls{css} für die modulare Gestaltung einer Website sowie \gls{js}, einer Skriptsprache zur \gls{dom}-Manipulation, bietet die \gls{html}-Spezifikation in ihrer neusten Version \textit{(\gls{html5})} im Grunde alles, was für die Entwicklung einer modernen grafischen Benutzerschnittstelle notwendig ist. 
 Die Fachlogik liegt, neben den Oberflächen-Komponenten in Form von \mbox{\gls{html}-,} \gls{css}- und Javascript-Dokumenten, auf einem Webserver und verarbeitet und reagiert auf Anfragen des Clients.\footnote{Die Rolle des Clients übernimmt hier also der Browser.}
 Als Server-Technologie ist ein breites Spektrum an Programmiersprachen und Umgebungen einsetzbar.\footnote{Einige sind beispielsweise \gls*{php}, \gls*{java}, \gls*{asp} u.\,v.\,a.\,m.}
@@ -57,13 +57,17 @@ Somit bietet die Entwicklung einer \gls{web-app} (abgesehen von einigen Browser-
 Zwar müssen Entwickler in bestimmten Details bei der Erstellung des Codes auf die teilweise unterschiedliche Unterstützung (beispielsweise von \gls{html}-Elementen) durch die verschiedenen Browser achten, aber darüber hinaus wird der Entwicklungsaufwand für eine \gls{web-app} nicht von der Anzahl der Zielplattformen bestimmt, da von Client-Seite aus verschiedene Browser durch die Verbreitung und Beachtung von Web-Standards weitgehend einheitliche \gls{html}-Dokumente lesen und interpretieren können und das Back\-end nicht auf Clients mit unterschiedlichen \glspl{plattform}, sondern auf Webservern liegt, deren \gls{plattform} bei der Entwicklung entweder schon bekannt oder nicht relevant ist.\footnote{Beispielsweise weil auch die Fachlogik plattformunabhängig mit \gls*{php} oder \gls*{java} realisiert wurde.}
 
 % Dann für sämtliche Internet-Dienste auch noch eine \gls{app}
-Obwohl es, durch damals eher im Business-Bereich verortete Internet-Handys und Palmtops, auch vor den heute üblichen mobilen Touch-Geräten bereits mobile Internetseiten gab, die speziell für die Darstellung auf kleinen Displays ausgerichtet waren, boten mit der massenhaften Verbreitung von mobilen, internetfähigen Geräten und deren (im Folgenden erläuterten) stark anwendungsorientierten Bedien-Konzepten viele herkömmliche Internet-Dienste nun auch zusätzlich eine native \gls{app} für verschiedene mobile \glspl{plattform} an.
-So sind beispielsweise auch E-Mail-Dienste wie \gls{gmx}, \gls{web-de} oder \gls{gmail} seit der Verbreitung von Smartphones und Tablets auch in Form einer eigenen \gls{app} für \gls{android} und \gls{ios} vertreten, sodass der Nutzer, statt, wie von der Desktop-Computer-Nutzung gewohnt, einen anbieterunabhängigen Mail-Client zu konfigurieren, über den er seine E-Mails abruft, unter Umständen gleich die jeweilige \gls{app} des E-Mail-Anbieters startet \cite{gmx, web.de, gmail}.
-Das heißt, der Nutzer folgt einem geänderten Bedienungsmuster seines Mobilgeräts gegenüber der herkömmlichen Computer-Nutzung: um zu einem bestimmten Ergebnis zu gelangen (beispielsweise \emph{Nachrichten lesen}) also die Frage zu beantworten, \emph{wie} er dahin gelangt (Einen Browser öffnen und zur gewünschten Seite navigieren: www.tagesschau.de), ist es für Anwender heutiger Mobilsysteme naheliegend, gleich die passende \gls{app} zu starten (Hier \zB die Tagesschau-\gls{app}).
+Auch vor den heute üblichen mobilen Touch-Geräten gab es Internet-Handys und Palmtops, die damals allerdings eher auf den Business-Bereich und speziell auf die Darstellung auf kleinen Displays ausgerichtet waren.
+Mit der massenhaften Verbreitung von mobilen, internetfähigen Geräten und deren (im Folgenden erläuterten) stark anwendungsorientierten Bedien-Konzepten boten viele herkömmliche Internet-Dienste nun auch zusätzlich eine native \gls{app} für verschiedene mobile \glspl{plattform} an.
+So sind beispielsweise auch E-Mail-Dienste wie \gls{gmx}, \gls{web-de} oder \gls{gmail} seit der Verbreitung von Smartphones und Tablets auch in Form einer eigenen \gls{app} für \gls{android} und \gls{ios} vertreten, sodass der Nutzer, statt, wie von der Desktop-Computer-Nutzung gewohnt, einen anbieterunabhängigen Mail-Client zu konfigurieren, über den er seine E-Mails abruft, gleich die jeweilige \gls{app} des E-Mail-Anbieters starten kann \cite{gmx, web.de, gmail}.
+Das heißt, der Nutzer folgt einem gegenüber der herkömmlichen Computer-Nutzung geänderten Bedienungsmuster seines Mobilgeräts: 
+Um beispielsweise Nachrichten zu lesen, ist es für Anwender heutiger Mobilsysteme naheliegend,
+gleich die passende App zu starten (\zB die Tagesschau-App). 
+Er muss er also nicht mehr die Frage beantworten, wie er zu einem bestimmten Ergebnis gelangt (einen Browser öffnen und zur gewünschten Seite navigieren (www.tagesschau.de)).
 
 % Gründe für App statt Web-Anwendung
-Dafür gibt es verschiedene mögliche Gründe. Zum Einen muss im Gegensatz zu einer Website bei der mobilen \gls{app} nicht die komplette Oberfläche\footnote{\gls{html}-, \gls{css}- und \gls{js}-Dokumente sowie Grafiken} übertragen werden, sondern lediglich die Nutzdaten,\footnote{Also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform.} was dem Nutzer ein höheres Maß an Performanz einbringt.
-Zum Anderen können trotz Vollbildmodus in bestimmten Fällen \gls{gui}-Elemente des Webbrowsers bei der Benutzung einer Web-Anwendung störend sein, so ist beispielsweise die Adresszeile am Rand nicht unbedingt erwünscht, wenn der Nutzer statt im Internet zu surfen dort eigentlich eine bestimmte Anwendung nutzen möchte. 
+Dafür gibt es verschiedene mögliche Gründe. Zum einen muss im Gegensatz zu einer Website bei der mobilen \gls{app} nicht die komplette Oberfläche\footnote{\gls{html}-, \gls{css}- und \gls{js}-Dokumente sowie Grafiken} übertragen werden, sondern lediglich die Nutzdaten,\footnote{Also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform.} was dem Nutzer ein höheres Maß an Performanz einbringt.
+Zum anderen können trotz Vollbildmodus in bestimmten Fällen \gls{gui}-Elemente des Webbrowsers bei der Benutzung einer Web-Anwendung störend sein, so ist beispielsweise die Adresszeile am Rand nicht unbedingt erwünscht, wenn der Nutzer statt im Internet zu surfen dort eigentlich eine bestimmte Anwendung nutzen möchte. 
 Ein anderes Beispiel für ein eventuell unerwünschtes Verhalten der Benutzerschnittstelle ist das der \emph{Menü}-Taste bei \gls{android}-Geräten, die im Falle der Nutzung einer Web-Anwendung über den Browser nicht den Kontext der eigentlich benutzten Anwendung anzeigt,\footnote{hier also der Website} sondern lediglich den des Browsers.
 
 In bestimmten Fällen kann eine nützliche Funktion einer \gls{app} die Offline-Nutzung sein, wenn beispielsweise durch die abgedeckten Anwendungsfälle keine Verbindung oder Synchronisation mit einem Server nötig ist. Beispiele hierfür könnten, um nur einige zu nennen, ein Taschenrechner, kleine Spiele, oder eine Bildverarbeitungs-\gls{app} sein. 
@@ -90,7 +94,7 @@ Da allerdings auf dem mobilen Gerät für das Backend, also die Verarbeitungsins
 %TODO Recherchieren! Kann man Perl oder Python oder so auf einem \gls{android} laufen lassen?
 Anschließend muss die Anwendung für die verschiedenen Zielplattformen gebaut werden, um in das jeweilige Container-Format für Apps der verschiedenen \glspl{plattform} eingebunden werden zu können und den Zugriff auf die plattformspezifischen Toolkits durch die Cross-Platform-\glspl{api} zu ermöglichen (\autoref{fig:hybrid-apps-schaubild}).
 Hierfür kann es erforderlich sein, dass auf der Entwicklungsplattform die jeweiligen \glspl{sdk} installiert sind, was gegenüber der Web-Entwicklung einen administrativen Mehraufwand darstellt.
-Eine andere Variante ist die Auslagerung des Bauprozesses auf einen externen Build-Server, beispielsweise mithilfe eines externen Web-Service eines Drittanbieters, was den Vorteil hat, die \glspl{sdk} für die Zielplattformen nicht auf jedem Entwicklungsrechner verwalten zu müssen. 
+Eine andere Variante ist die Auslagerung des Bauprozesses auf einen externen Build-Server, beispielsweise mithilfe eines externen Web-Service eines Dritt\-an\-bie\-ters, was den Vorteil hat, die \glspl{sdk} für die Zielplattformen nicht auf jedem Entwicklungsrechner verwalten zu müssen. 
 Allerdings hat der Entwickler durch die Herausgabe des Codes an einen solchen Dienstleister nicht mehr die vollständige Kontrolle über den Code, sodass die Variante der Auslagerung des Build-Prozesses gerade für Closed-Source-Projekte unter Umständen nicht in Frage kommt. 
 Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktionen bezüglich der Plattformunterstützung erteilen, wodurch eventuell eine geringere Anzahl von Zielplattformen unterstützt wird, als von Entwicklerseite gewünscht oder erfordert.\footnote{Beispielsweise unterstützt \gls{pg-build} in der neusten Version 3 nur noch die drei großen Mobilplattformen \gls{android}, \gls{ios}, und \gls{win-phone}.}
 
@@ -105,16 +109,16 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 \section[Überblick: Lösungen und Ansätze]{Überblick: Lösungen und Ansätze für die platt\-form\-un\-ab\-hängige App-Entwicklung} \label{sec:overview}
 
 %TODO Schöneren Einleitungssatz finden.
-Es gibt sehr viele Frameworks und Lösungen zum Erreichen einer plattformunabhängigen App-Entwicklung.\todo{Schöneren Einleitungssatz finden.} Die Unterschiedlichen Ansätze begründen sich in unterschiedlichen Anforderungen an die zu entwickelnde App, unterschiedliche vorhandene Ressourcen und Infrastruktur der Entwickler und App-Betreiber sowie dem Ziel, bestehendes Know-How der Entwickler einbringen zu können.
+Es gibt sehr viele Frameworks und Lösungen zum Erreichen einer plattformunabhängigen App-Entwicklung.\todo{Schöneren Einleitungssatz finden.} Die unterschiedlichen Ansätze begründen sich in unterschiedlichen Anforderungen an die zu entwickelnde App, unterschiedliche vorhandene Ressourcen und Infrastruktur der Entwickler und App-Betreiber sowie dem Ziel, bestehendes Know-How der Entwickler einbringen zu können.
 Im Folgenden soll ein Überblick über verschiedene Ansätze gegeben und konkrete Beispiele genannt werden. Dabei wird die im vorherigen Abschnitt vorgenommenen Gruppierung in native Apps, \glspl{web-app} und hybride-Apps beibehalten.
 
 Wie in \autoref{sec:web-app} erwähnt, sind \glspl{web-app} durch die Client-Server-Konzeption, in Verbindung mit Web-Standards, die jeder moderne Browser unterstützt, in gewisser Weise per se plattformunabhängig. Die fehlende Offline-Nutzbarkeit, der eingeschränkte Zugriff auf Hardwarekomponenten wie Gerätetasten, Kamera, GPS-Modul, Mikrofon,\footnote{Diese ist teilweise im noch nicht von allen Browsern voll umgesetzten \gls{html5}-Standard begründet.} der fehlende Zugriff auf Systemdaten wie das Adressbuch, Speicherkarten und das nicht native Systemdesign sind dabei offenkundige Nachteile der \glspl{web-app}, die sie für manche Anwendungsgebiete nicht in Frage kommen lassen.
 
 Wie in \autoref{sec:hybrid-app} beschrieben, stellen Hybrid-Apps einen naheliegenden Ansatz zur plattformunabhängigen App-Entwicklung dar. Durch den Einsatz von Standard-Web-Technologien wie \gls{html}, CSS und \gls{js} in Verbindung mit einer in einer nativen Container-App erzeugten \gls{web-view}, lassen sich schnell viele Plattformen erreichen. Hierzu gibt es Frameworks, die die nativen Container-Apps erstellen und zusätzlich \glspl{api} für Hardware-Zugriffe und Geräte- und Systemfunktionen, die nicht durch \gls{html} abgedeckt werden, bereit stellen. Ein häufig genutztes Beispiel hierfür ist das in \autoref{sec:cordova} beschriebene \gls{phonegap}\,/\,\gls{cordova}.
 
-Eine Problematik, die sich bei allen Ansätzen zur plattformunabhängigen App-Entwicklung stellt, sind die in \autoref{sec:native} erwähnten unterschiedlichen Designs und Designrichtlinien sowie unterschiedlichen Bedienkonzepte. Soll die hybride App also dem \gls{look-and-feel} einer nativen sehr nahekommen, so muss zu einem gewissen Grat die Benutzeroberfläche für jede Plattform beispielsweise mithilfe von Stylesheets separat angepasst werden.
+Eine Problematik, die sich bei allen Ansätzen zur plattformunabhängigen App-Entwicklung stellt, sind die in \autoref{sec:native} erwähnten unterschiedlichen Designs und Designrichtlinien sowie unterschiedlichen Bedienkonzepte. Soll die hybride App also dem \gls{look-and-feel} einer nativen sehr nahekommen, so muss zu einem gewissen Grad die Benutzeroberfläche für jede Plattform beispielsweise mithilfe von Stylesheets separat angepasst werden.
 
-Durch den konsequenten Ansatz von \gls{html}, Design-Elemente über Stylesheets auszulagern, hat der Entwickler hier die Möglichkeit, seine Benutzeroberfläche für jedes System über das laden unterschiedlicher Stylesheets anzupassen.
+Durch den konsequenten Ansatz von \gls{html}, Design-Elemente über Stylesheets auszulagern, hat der Entwickler hier die Möglichkeit, seine Benutzeroberfläche für jedes System über das Laden unterschiedlicher Stylesheets anzupassen.
 Hierzu bietet beispielsweise \gls{intel} mit seinem \gls{app-framework} eine \gls{js}-Oberflächenbibliothek, der entsprechende Stylesheets für jede große Plattform zugrunde liegen. So wird diese Arbeit dem Entwickler abgenommen und die App soll sich so gut in das native Design einfügen \cite{IntelAppFramework}.
 Es sei allerdings erwähnt, dass weiterhin keine GUI-Elemente nativ gerendert werden, sondern lediglich versucht wird, durch das Anpassen von Farbe, Form und Schrift einen nativen Look zu erzeugen.
 
@@ -129,7 +133,7 @@ Im Bereich \gls{cross-compiling} gibt es etwas allgemeiner Programmiersprachen, 
 
 Ist bereits eine bestehende native \gls{app} für eine Plattform vorhanden, die für andere Plattformen verfügbar gemacht werden soll, liegt der Ansatz nahe, zu versuchen, den bestehenden Quellcode für eine andere Plattform zu kompilieren. Ein solches Projekt ist \gls{xmlvm}, was durch eine Reihe von Umwandlungsprozessen native \gls{ios}-\glspl{built} aus bestehendem Java-\gls{android}-Code erstellt \cite{XMLVM}.
 
-Eine weitere Möglichkeit, ein Programm plattformunabhängig zu nutzen, ist, mittels einer Client-Server Konzeption, ähnlich den \glspl{web-app}. Dieser Ansatz setzt natürlich eine Server-Infrastruktur voraus, ist aber beispielsweise für Firmen, die bereits eine Serveranwendung haben, die auf Mobilgeräten nutzbar gemacht werden soll, interessant.
+Eine weitere Möglichkeit, ein Programm plattformunabhängig zu nutzen, besteht in einer Client-Server Konzeption, ähnlich den \glspl{web-app}. Dieser Ansatz setzt natürlich eine Server-Infrastruktur voraus, ist aber beispielsweise für Firmen, die bereits eine Serveranwendung haben, die auf Mobilgeräten nutzbar gemacht werden soll, interessant.
 Hier soll \gls{tabris} vorgestellt werden.
 
 \gls{tabris} ist ein Framework, mit dem mobile Apps komplett in Java geschrieben werden können und dennoch native Bedienelemente von \gls{android}, \gls{ios} und \gls{html5} beinhalten.
@@ -163,11 +167,11 @@ Hier soll mit \gls{cordova}\,/\,\gls{phonegap} die konkrete Nutzung eines dieser
 
 \subsection{Die JavaScript-Bibliothek jQuery}
 
-Bereits für die Entwicklung von reinen Web-Anwendungen stellen neben den grundlegenden Web-Technologien \gls{html}, \gls{css} und \gls{js} Erweiterungen wie die \gls{js}-Bibliothek \gls{jq} nützliche Hilfsmittel dar, die viele Funktionen gegenüber der Verwendung von \enquote{reinem} \gls{js} deutlich vereinfacht.
+Bereits für die Entwicklung von reinen Web-Anwendungen stellen neben den grundlegenden Web-Technologien \gls{html}, \gls{css} und \gls{js} Erweiterungen wie die \gls{js}-Bibliothek \gls{jq} nützliche Hilfsmittel dar, die viele Funktionen gegenüber der Verwendung von \enquote{reinem} \gls{js} deutlich vereinfachen.
 So ist beispielsweise der Programmieraufwand für den Zugriff auf Elemente einer \gls{html}-Seite durch \gls{jq} wesentlich geringer als ohne die Bibliothek.
 Besonders deutlich wird dies an den unten aufgeführten Code-Beispielen, in denen ein Button exemplarisch die Funktionalität übernehmen soll, alle Absätze einer \gls{html}-Seite auszublenden.
 Während bei herkömmlichem \gls{js} für die Selektion aller Elemente die Funktion \lstinline|getElementsByTagName()| aufgerufen werden muss (\seeref{lst:js}), ist bei \gls{jq} der Zugriff auf alle Elemente eines \glspl{tag} per Dollar(\lstinline|$|)-Notation deutlich verkürzt (\seeref{lst:jq}).
-Auch die nächste Anweisung zur Ausführung einer Operation für alle ausgewählten Elemente (hier: \lstinline|hide()|, also \textit{ausblenden}) fällt bei \gls{jq} wesentlich kürzer aus, indem die Funktion noch in der selben Zeile wie der vorherigen Selektor aufgerufen werden kann (\lstinline|$("p").hide();|).
+Auch die nächste Anweisung zur Ausführung einer Operation für alle ausgewählten Elemente (hier: \lstinline|hide()|, also \textit{ausblenden}) fällt bei \gls{jq} wesentlich kürzer aus, indem die Funktion noch in der selben Zeile wie der vorherige Selektor aufgerufen werden kann (\lstinline|$("p").hide();|).
 Bei der reinen \gls{js}-Variante ist nach der Selektion aller Absätze zunächst einmal ein Array ausgewählt, sodass, um auf den einzelnen Elementen Operationen ausführen zu können, durch alle Elemente des Arrays iteriert und die Funktion für jedes Element aufgerufen werden muss (\seeref{lst:js}, \linenamepl 5\,-\,7).
 
 \includehtml{jquery.html}{
@@ -193,14 +197,14 @@ Diese Aufteilung dient unter anderem der Übersichtlichkeit des Codes und kann b
 		{Schematische Darstellung des Entwurfsmusters MVVM: Die View ist über das \gls{data-binding} mit dem ViewModel verbunden, indem die UI-Logik implementiert ist und das mit der Geschäftslogik (Model) interagiert.}
 	{Wikimedia Commons \cite{MVVMPattern}.}
 
-Das \gls{mvvm} stellt eine Gliederung der Software in drei Grundlegende Komponenten dar:
+Das \gls{mvvm} stellt eine Gliederung der Software in drei grundlegende Komponenten dar:
 Die \gls{view} repräsentiert die Präsentationsschicht, also die Benutzeroberfläche, im Falle der Web-Anwendung also die \gls{html}-Seite, deren Elemente per \gls{data-binding} an Eigenschaften des \glspl{view-model} gebunden werden können. 
 Das \gls{model} steht für die Geschäftslogik und beinhaltet das Datenmodell und die Funktionen, die vom \gls{view-model} angefragt werden können, um beispielsweise Benutzereingaben zu validieren oder Daten für die Anzeige in der Oberfläche zu erhalten (\seeref{fig:mvvm-pattern}).
 
 Ein wesentlicher Mechanismus für die Aktualisierung der Oberfläche bei einer Änderung des \glspl{view-model} von \gls{ko} ist die Verwendung von \glspl{obs}, also Objekten oder Datenfeldern, welche bei Änderungen ihres Inhalts eine Nachricht aussenden, sodass andere Objekte automatisch auf die Zustandsänderung des \glspl{obs} reagieren können, beispielsweise, um die Anzeige auf der Oberfläche zu aktualisieren.
 
 Im Code-Beispiel unten (\autoref{lst:ko}) wird ein einfaches \gls{view-model} mit drei Eigenschaften erstellt: \lstinline|firstName|, \lstinline|lastName|, und \lstinline|fullName|, wobei die ersten beiden \emph{\glspl{obs}} darstellen und letztere aus den anderen beiden Feldern generiert wird (\linenamepl 10\,-\,13).
-Durch den Aufruf der \gls{ko}-Funktion \lstinline|observable()| ist es nicht notwendig, bei einer Änderung der Daten an der Oberfläche, die Änderung der Anzeige der Daten (\linename 27) explizit anzustoßen (Beispielsweise per EventListener auf einer \gls{ui}-Komponente).
+Durch den Aufruf der \gls{ko}-Funktion \lstinline|observable()| ist es nicht notwendig, bei einer Änderung der Daten an der Oberfläche die Änderung der Anzeige der Daten (\linename 27) explizit anzustoßen.\footnote{Beispielsweise per EventListener auf einer \gls{ui}-Komponente.}
 Stattdessen übernimmt das \gls{ko}-\gls{framework} die Durchreichung aller Änderungen im \gls{view-model}, sodass bei einer Benutzereingabe in eines der \lstinline|<input>|-Felder eine Änderung der Daten im \gls{view-model} registriert wird und automatisch alle damit verbundenen \glspl{view} aktualisiert werden (\seeref{fig:ko-hello-world}).\footnote{Hier das \texttt{<h2>}-Element, das mit der \gls{view-model}-Eigenschaft \texttt{fullName} verknüpft ist.}
 
 \includehtml{ko.html}{
@@ -252,7 +256,7 @@ Beispielsweise sorgt im obigen Beispiel der Zusatz \lstinline|class="ui-content"
 	{Beispiel ohne jQuery\,\-Mobile}{Beispiel-Oberfläche wie in \autoref{fig:jqm}, aber ohne die \gls{jqm}-Bibliotheken.}
 	{Eigener Screenshot.}
 
-\subsection{Phonegap\,/\,Cordova} \label{sec:cordova}
+\subsection{PhoneGap\,/\,Cordova} \label{sec:cordova}
 
 % Vorstellung ----------------------------------------------
 
@@ -275,7 +279,7 @@ Das \gls{cordova}-\gls{framework} besteht darüber hinaus im Wesentlichen aus ei
 
 In der Cordova-Dokumentation werden zwei grundlegende Entwicklungsszenarien beschrieben, für die das \gls{framework} verwendet werden kann. 
 Mit der Version 3.0 wurde das \gls{cli} Teil des Software-Paktes, das viele Arbeitsschritte automatisiert ausführt und damit den Cordova-Entwicklungsprozess vereinfacht. 
-Der Hauptfokus dieses Werkzeugs liegt im für die hybride App-Entwicklung grundlegenden Entwicklungsworkflows, dem \emph{Web-Ent\-wick\-lungs\-an\-satz}.
+Der Hauptfokus dieses Werkzeugs liegt im für die hybride App-Entwicklung grundlegenden Entwicklungsworkflow, dem \emph{Web-Ent\-wick\-lungs\-an\-satz}.
 Dieser Ansatz bietet die breiteste Plattformunterstützung bei möglichst geringem Mehraufwand für unterschiedliche \glspl{plattform} und bildet damit die Grundlage für den hier hauptsächlich fokussierten Ansatz \cite{Cordova-Docs_CLI}.
 
 Soll nur eine bestimmte Zielplattform bedient werden, kann auch nach dem \emph{Nativen-Plattformansatz} entwickelt werden.
@@ -493,7 +497,7 @@ Während private \glspl{app} entweder als Zip-Paket hochgeladen oder als Link zu
 		{Dialog für die Erstellung einer neuen privaten \gls{app} auf \gls{pg-build}. Links das Eingabefeld zum Eintragen eines \gls{git}-Repository-Links und rechts der Button zum Hochladen von Zip-Archiven.}
 	{Eigener Screenshot.}
 
-Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \gls{app} beinhaltet, bei der kostenpflichtigen Variante sind bis zu 25 private App enthalten.
+Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \gls{app} beinhaltet, bei der kostenpflichtigen Variante sind bis zu 25 private \glspl{app} enthalten.
 \gls{opensource}-\glspl{app} können bei allen Paketen unbegrenzt angelegt werden (\seeref{fig:phonegap-build_plans}).
 
 \image{phonegap-build_plans}
@@ -502,7 +506,7 @@ Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \g
 		{Übersicht über die verschiedenen Bezahlpakete von \gls{pg-build}: Ab 9,99\,\$ im Monat können Entwickler bis zu 25 private \glspl{app} anlegen, in der kostenlosen Variante nur eine private, aber unbegrenzt öffentliche.}
 	{Eigener Screenshot \cite{Adobe_PhoneGap_Build_Plans}.}
 
-Nach dem Hochladen des Codes auf \gls{pg-build}, wird dort automatisch der Build-Prozess für die \glspl{hybrid-app} initiiert.
+Nach dem Hochladen des Codes auf \gls{pg-build} wird dort automatisch der Build-Prozess für die \glspl{hybrid-app} initiiert.
 Dabei sorgt \gls{pg-build} dafür, dass für jede \gls{plattform} die entsprechende \gls{phonegap}-\gls{js}-Bibliothek %TODO Checken (auch im Rest vom Text): cordova.js ist glaub ich gar keine Bibliothek!
  injiziert wird, welche die \gls{api} zur nativen Betriebssystemebene enthält (\seeref{sec:cordova}) \cite{PhoneGap_Build_Documentation_getting-started}.
 Ist der Build-Prozess abgeschlossen, kann die \gls{app} im jeweiligen Format für die verschiedenen \glspl{plattform} als Direkt-Link oder per \gls{qr} heruntergeladen werden (\seeref{fig:phonegap_build_workflow} und \ref{fig:phonegap-build_apps}).
