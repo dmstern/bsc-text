@@ -195,7 +195,7 @@ Unter \gls{win8} stellt dieses das einzige Attribut des \lstinline|ContactName|-
 Während bei der nativen App-Entwicklung für \gls{ios} oder \gls{android} \gls{ui}-Kom\-po\-nen\-ten für die Arbeit mit Kontakten bereitstehen, liefert die \gls{contacts-api} hier lediglich Mechanismen für den Zugriff auf die Kontaktdaten, jedoch nicht die entsprechenden UI-Komponenten, da diese vom jeweiligen verwendeten \gls{gui}-Toolkit abhängen.
 Die hier verwendete Oberflächen-Bibliothek \gls{jqm} beinhaltet lediglich allgemeine \glspl{widget} wie Listen, Buttons, Tabellen etc., sodass die Erstellung einer \gls{ui}-Komponente für die Auswahl von Kontakten dem Entwickler überlassen bleibt.
 
-In Verbindung mit der Data-Binding-Bibliothek \gls{ko} kann eine solche Komponente jedoch relativ einfach erstellt werden, indem die Felder in der Oberfläche an Eigenschaften des \glspl{view-model} gebunden werden, welches durch Benachrichtigungen des Models, das den Zugriff auf die native Ebene des Betriebssystems abwickelt, die Daten der Anwendung und des Geräts anzeigen kann (\seeref{sec:ko}).
+In Verbindung mit der Data-Binding-Bibliothek \gls{ko} kann eine solche Komponente jedoch relativ einfach erstellt werden, indem die Felder in der Oberfläche an Eigenschaften des \glspl{view-model} gebunden werden, welches durch Benachrichtigungen des Models, das den Zugriff auf die native Ebene des Betriebssystems abwickelt, die Daten der Anwendung und des Geräts anzeigen kann (\seefullref{sec:ko}).
 
 Grundsätzlich bietet die \gls{contacts-api} trotz einiger Einschränkungen (\so) ein nützliches Werkzeug mit einem relativ breiten Funktionsumfang für den grundlegenden Zugriff auf die Kontaktverwaltung der meisten großen mobilen Betriebssysteme.
 Der für dieses Feature definierte Anwendungsfall konnte mit den Mitteln der \gls{cordova}-\gls{api} und weiteren Technologien der Webentwicklung wie \gls{ko} oder \gls{jqm} gut für die hier verwendeten Plattformen \gls{ios} und \gls{android} umgesetzt werden.
@@ -234,7 +234,7 @@ Diese ist jedoch auch durch die flexible Einsetzbarkeit der Hybrid-Technologie m
 So entsteht hier zumindest dadurch ein Mehraufwand, dass Entwickler mehr als bei der nativen App-Entwicklung, wo verschiedenste Widgets der jeweiligen Plattform für die Umsetzung konkreter Anwendungsfälle bereit stehen, in die Auswahl von geeigneten GUI-Bibliotheken und anderen Hilfsmitteln oder gar die Entwicklung eigener UI-Komponenten investieren müssen.
 
 Wie in \autoref{sec:contacts-ergebnis} erwähnt, kann unter \gls{win8} nicht programmatisch auf das Adressbuch für die Auswahl von Kontakten zugegriffen werden, diese müssen also vom Nutzer in der \gls{win8}-Adressbuch-Applikation händisch ausgewählt werden.
-In der Dokumentation findet sich allerdings kein Hinweis, ob dieses Prozedere auch unter anderen Plattformen als Workaround für die Auswahl von Kontakten genutzt werden kann, erscheint für eine bloße Auswahl von Kontaktobjekten durch den Nutzer diese Interaktion mit einer anderen nativen App doch durchaus praktikabel, gerade vor dem Hintergrund des Ziels eines möglichst erwartungskonformen (hier also möglichst nativen) \glspl{look-and-feel}. 
+In der Dokumentation findet sich allerdings kein Hinweis, ob dieses Prozedere auch unter anderen Plattformen als Workaround für die Auswahl von Kontakten genutzt werden kann, erscheint für eine bloße Auswahl von Kontaktobjekten durch den Nutzer diese Interaktion mit einer anderen nativen App doch durchaus praktikabel, gerade vor dem Hintergrund des Ziels eines möglichst erwartungskonformen (hier also möglichst nativen) \glspl{laf}. 
 
 \section{Eignung der Hybrid-App-Technologie \\ für die Praxis}
 
@@ -295,7 +295,7 @@ In konkreten Fällen kann hierdurch ein mit Zusatzaufwand entstehen.
 
 Für Entwickler und kleine Unternehmen, die sich mit möglichst geringem Aufwand am Markt für mobile Anwendungen etablieren wollen, stellt sich die Frage nach der Eignung der Verwendung einer solchen Cross-Plattform-Technologie vor allem anhand der Zielsetzung bzgl. der Vielfalt von zu bedienenden Zielplattformen.
 
-Soll ohnehin nur eine Plattform erreicht werden,\footnote{Beispielsweise in dem Fall, dass mit bereits vorhandenen Kenntnissen in der Web-Entwicklung eine mobile App entwickelt werden soll oder die Möglichkeit offen gehalten werden soll, die App zu einem späteren Zeitpunkt auch für mehrere Plattformen anzubieten.} so ist der Entwicklungsaufwand vermutlich vergleichbar dem für die Entwicklung einer nativen App, da der Code in beiden Fällen (sowohl bei der nativen als auch für die Hybrid-App) einmal geschrieben werden muss %TODO (siehe auch unten “welche nachteil ergeben sich” -> wenn schon eine app da, müsste die als hybrid-app nochmal geschrieben werden).
+Soll ohnehin nur eine Plattform erreicht werden,\footnote{Beispielsweise in dem Fall, dass mit bereits vorhandenen Kenntnissen in der Web-Entwicklung eine mobile App entwickelt werden soll oder die Möglichkeit offen gehalten werden soll, die App zu einem späteren Zeitpunkt auch für mehrere Plattformen anzubieten.} so ist der Entwicklungsaufwand vermutlich vergleichbar dem für die Entwicklung einer nativen App, da der Code in beiden Fällen (sowohl bei der nativen als auch für die Hybrid-App) einmal geschrieben werden muss. %TODO (siehe auch unten “welche nachteil ergeben sich” -> wenn schon eine app da, müsste die als hybrid-app nochmal geschrieben werden).
 Bei einer Zielsetzung möglichst breiter Plattformunterstützung und geringer geräte- und plattformspezifischer Anforderungen liegt der Mehrwert der hybriden App-Entwicklung auf der Hand.
 Und selbst mit der Maßgabe einer Implementierung von Schnittstellen zu Gerätefunktionalitäten kann die Entwicklung einer hybriden App in vielen Fällen lohnenswert sein, da, wie oben beschrieben, durch die Vielfalt an Cordova-Plugins die meisten grundlegenden Features auf verschiedenen Plattformen umsetzbar sind. 
 
@@ -315,7 +315,7 @@ Für Entwickler, die mit ihren Kenntnissen in der mobilen App-Entwicklung bereit
 %TODO + Durch breitere Plattformunterstützung ist für viele Anwender die wahrscheinlichkeit höher, dass die entwickelte App auch für ihr Betriebssystem zur Verfügung steht
 % TODO [....] evlt. noch mehr? 
 
-Für den Endanwender kann die Nutzung einer Hybrid-App bedeuten, dass das \gls{look-and-feel} der Anwendung nicht dem auf der jeweiligen Plattform üblichen ist, da dieses allenfalls mit entsprechenden Stylesheets angepasst werden kann.
+Für den Endanwender kann die Nutzung einer Hybrid-App bedeuten, dass das \gls{laf} der Anwendung nicht dem auf der jeweiligen Plattform üblichen ist, da dieses allenfalls mit entsprechenden Stylesheets angepasst werden kann.
 Doch durch die breite Plattformunterstützung besteht für viele Anwender die größere Chance, dass die entwickelte App auch für ihr Betriebssystem zur Verfügung steht.
 
 % Benutzerfreundlichkeit aus Entwicklersicht: Lässt sich mithilfe den verwendeten Technologien gut eine Anwendung entwickeln?
@@ -347,7 +347,7 @@ Entscheidend hierfür ist sicherlich, im Gegensatz zu reinen SDKs für die nativ
 Dies bietet Entwicklern zwar ein hohes Maß an Flexibilität und Entscheidungsfreiheit, andererseits müssen dadurch nützliche Werkzeuge für die Software-Entwicklung sozusagen stets selbst zusammen gestellt werden.
  So müssen beispielsweise neben einer IDE unter Umständen die entsprechenden Plugins für die verwendeten Web-Technologien und weitere geeignete Werkzeuge das Web-Debugging-Tool \gls{weinre} für das Remote-Debuggen einer hybriden App auf einem entfernten Testgerät, den Browser-basierten Emulator \gls{ripple} für das Testen von Hybrid-Apps einzeln recherchiert und installiert werden. 
 
-Darüber hinaus gibt es aber auch Lösungen, die die verschiedenen Tools zusammenführen und so eine Art Komplett-SDK schaffen, sodass Entwickler hybrider Apps nicht zwangsläufig aus verschiedensten Tools die passendsten auswählen müssen, sondern mit kombinierten Lösungen sofort eine Art ”Werkzeugkasten”  mit vielen wichtigen Tools, wie den oben genannten und sogar grafische GUI-Design-Werkzeuge, vorfinden \cite{DaVinci, xdk, sencha}.
+Darüber hinaus gibt es aber auch Lösungen, die die verschiedenen Tools zusammenführen und so eine Art Komplett-SDK schaffen, sodass Entwickler hybrider Apps nicht zwangsläufig aus verschiedensten Tools die passendsten auswählen müssen, sondern mit kombinierten Lösungen sofort eine Art \enquote{Werkzeugkasten}  mit vielen wichtigen Tools, wie den oben genannten und sogar grafische GUI-Design-Werkzeuge, vorfinden \cite{DaVinci, xdk, sencha}.
 
 %TODO Evtl. noch kurz erwähnen: 
 %TODO	Sencha

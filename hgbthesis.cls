@@ -387,27 +387,60 @@ This work is published under the conditions of the
 %------------------ Betreuer-Seite -------------------
 
 \newcommand{\@babetreuerseite}{%
-\newpage
-\setcounter{page}{2}
-\thispagestyle{plain}
-\rule{0mm}{1mm}
-\begin{center}
-%
-\vspace{40mm} 
-{Diese Arbeit entstand im Rahmen des Gegenstands}\\
-\vspace{6mm} 
-{\Large\sf \@gegenstand\\ \mbox{}}\\
-\medskip
-im\\
-\bigskip
-{\@semester}\\
-%
-\vspace{45mm} 
-%{Betreuer:}\\
-{\@betreuerBez:}\\
-\vspace{3mm} 
-{\Large\sf \@betreuerName\\ \mbox{}}
-\end{center}
+	\newpage
+	\setcounter{page}{2}
+	\thispagestyle{plain}
+	\rule{0mm}{1mm}
+	\begin{center}
+		%
+		\vspace{40mm} 
+		{Diese Arbeit entstand im Rahmen des Gegenstands}\\
+		\vspace{6mm} 
+		{\Large\sf \@gegenstand\\ \mbox{}}\\
+		\medskip
+		im\\
+		\bigskip
+		{\@semester}\\
+		%
+		\vspace{45mm} 
+		%{Betreuer:}\\
+		{\@betreuerBez:}\\
+		\vspace{3mm} 
+		{\Large\sf \@betreuerName\\ \mbox{}}
+	\end{center}
+}
+
+%------------------ Ausgabe-Seite -------------------
+
+\newcommand{\@ausgabeseite}{%
+	\newpage
+	\setcounter{page}{0}
+	\thispagestyle{plain}
+	\rule{0mm}{1mm}
+	\begin{center}
+		%
+		\vspace{40mm} 
+		{Formal überarbeitete Fassung.\\}
+		\vspace{6mm} 
+		{Die an der Hochschule vorgelegte Originalausgabe ist einsehbar in der Bibliothek der \@hochschule.\\}
+		\vspace{45mm}
+		{\@author, im Juni 2014}
+%		
+%		\vspace{40mm} 
+%		{Diese Arbeit entstand im Rahmen des Gegenstands}\\
+%		\vspace{6mm} 
+%		{\Large\sf \@gegenstand\\ \mbox{}}\\
+%		\medskip
+%		im\\
+%		\bigskip
+%		{\@semester}\\
+%		%
+%		\vspace{45mm} 
+%		%{Betreuer:}\\
+%		{\@betreuerBez:}\\
+%		\vspace{3mm} 
+%		{\Large\sf \@betreuerName\\ \mbox{}}
+	\end{center}
 }
 
 %% -------------- Erklärung / Declaration ---------
@@ -476,6 +509,7 @@ acknowledged. I further declare that this or similar work has not been submitted
 
 \renewcommand{\@batitelseiten}{
 \@batitel
+\@ausgabeseite
 %\@babetreuerseite
 %\@erklaerungsseite
 }

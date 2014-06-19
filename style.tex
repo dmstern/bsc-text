@@ -1,5 +1,32 @@
 % COMMANDS =================================================
 
+% Workaround for Glossaries Bug to much space:
+\makeatletter
+\renewcommand*{\defglsdisplayfirst}[2][\glsdefaulttype]{%
+	\GlossariesWarning{\string\defglsdisplayfirst\space is now obsolete.^^J
+		Use \string\defglsentryfmt\space instead}%
+	\expandafter\def\csname gls@#1@displayfirst\endcsname##1##2##3##4{#2}%
+	\edef\@gls@doentrydef{%
+		\noexpand\defglsentryfmt[#1]{%
+			\noexpand\ifcsdef{gls@#1@display}%
+			{%
+				\noexpand\@@gls@default@entryfmt
+				{\noexpand\csuse{gls@#1@displayfirst}}
+				{\noexpand\csuse{gls@#1@display}}%
+			}%
+			{%
+				\noexpand\@@gls@default@entryfmt
+				{\noexpand\csuse{gls@#1@displayfirst}}%
+				{\noexpand\glsdisplay}% without unwanted space
+			}%
+		}%  
+	}%
+	\@gls@doentrydef
+}
+\makeatother
+
+%--------------------------------------------------------------------
+
 \newcommand{\usecase}[1]{\subsection*{\large#1}}
 \newcommand{\actors}[1]{\item[Akteure] \hfill \\ #1}
 \newcommand{\initcondition}[1]{\item[Anfangsbedingung] \hfill \\ #1}

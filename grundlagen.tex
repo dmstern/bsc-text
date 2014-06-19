@@ -41,7 +41,7 @@ Ansonsten verläuft der Entwicklungsprozess bei der \gls{ios}-Entwicklung im Pri
 Als Programmiersprache wird \gls{obj-c} verwendet, eine um objektorientierte Elemente erweiterte Variante der Programmiersprache \gls{c}.
 
 Möchte ein Auftraggeber einer Software also statt seinen Kunden nur eine \gls{app} für ein Betriebssystem anzubieten, einen größeren Nutzerkreis erschließen, muss die zu entwickelnde \gls{app} für jede Zielplattform neu programmiert, getestet und gebaut werden, was die native \gls{app}-Entwicklung für potenzielle Auftraggeber zu einem sehr kostenaufwändigen Projekt werden lassen kann.
-Andererseits bietet die native \gls{app}-Entwicklung vollständige Unterstützung der betriebssystemeigenen Funktionalitäten wie den Zugriff auf Kamera, Adressbuch, Bewegungssensoren etc. der jeweiligen \gls{plattform}, sodass ein Softwareprojekt mit solchen besonders hardware- oder betriebssystemnahen Anforderungen die Entwicklung einer nativen (plattformspezifischen) \gls{app} notwendig erscheinen lassen kann.\footnote{Mehr dazu in \autoref{sec:hybrid-dev}.}
+Andererseits bietet die native \gls{app}-Entwicklung vollständige Unterstützung der betriebssystemeigenen Funktionalitäten wie den Zugriff auf Kamera, Adressbuch, Bewegungssensoren etc. der jeweiligen \gls{plattform}, sodass ein Softwareprojekt mit solchen besonders hardware- oder betriebssystemnahen Anforderungen die Entwicklung einer nativen (plattformspezifischen) \gls{app} notwendig erscheinen lassen kann.\footnote{Mehr dazu in \fullref{sec:hybrid-dev}.}
 
 \section{Web-Anwendungen}\label{sec:web-app}
 
@@ -66,7 +66,7 @@ gleich die passende App zu starten (\zB die Tagesschau-App).
 Er muss er also nicht mehr die Frage beantworten, wie er zu einem bestimmten Ergebnis gelangt (einen Browser öffnen und zur gewünschten Seite navigieren (www.tagesschau.de)).
 
 % Gründe für App statt Web-Anwendung
-Dafür gibt es verschiedene mögliche Gründe. Zum einen muss im Gegensatz zu einer Website bei der mobilen \gls{app} nicht die komplette Oberfläche\footnote{\gls{html}-, \gls{css}- und \gls{js}-Dokumente sowie Grafiken} übertragen werden, sondern lediglich die Nutzdaten,\footnote{Also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform.} was dem Nutzer ein höheres Maß an Performanz einbringt.
+Dafür gibt es verschiedene mögliche Gründe. Zum einen muss im Gegensatz zu einer Website bei der mobilen \gls{app} nicht die komplette Oberfläche\footnote{\gls{html}-, \gls{css}- und \gls{js}-Dokumente sowie Grafiken.} übertragen werden, sondern lediglich die Nutzdaten,\footnote{Also beispielsweise, um beim obigen Beispiel zu bleiben, die Nachrichten in Textform.} was dem Nutzer ein höheres Maß an Performanz einbringt.
 Zum anderen können trotz Vollbildmodus in bestimmten Fällen \gls{gui}-Elemente des Webbrowsers bei der Benutzung einer Web-Anwendung störend sein, so ist beispielsweise die Adresszeile am Rand nicht unbedingt erwünscht, wenn der Nutzer statt im Internet zu surfen dort eigentlich eine bestimmte Anwendung nutzen möchte. 
 Ein anderes Beispiel für ein eventuell unerwünschtes Verhalten der Benutzerschnittstelle ist das der \emph{Menü}-Taste bei \gls{android}-Geräten, die im Falle der Nutzung einer Web-Anwendung über den Browser nicht den Kontext der eigentlich benutzten Anwendung anzeigt,\footnote{hier also der Website} sondern lediglich den des Browsers.
 
@@ -100,7 +100,7 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 
 \image{hybrid-apps-schaubild}
 	{width=\fullimagesize}
-	{Schaubild Hybrid Apps}
+	{Schaubild Hybrid-Apps}
 		{Entwicklungsstufen der verschiedenen Arten von Apps. Während bei der nativen App der gesamte Entwicklungszyklus einmal pro \gls{plattform} durchlaufen werden muss, verringert sich der Aufwand für die \gls{web-app} erheblich. Bei der \gls{hybrid-app} muss die Anwendung zwar einmal für jede \gls{plattform} gebaut und ausgeliefert werden, um die Schnittstellen für die nativen \glspl{plattform} zu implementieren, aber der hauptsächliche Entwicklungsaufwand des Programmierens und Testens fällt aufgrund des generischen Charakters nur einmal an.}
 	{\ownGraphicComposed{\cite{HTML, Windows, GooglePlay, AppStore, AvailableAppStore, Chrome, FullBuild, Gear, Android, Java, MacAppStore, Firefox, Pen, GooglePlayStore, Server, WindowsStore}}}
 
@@ -109,14 +109,14 @@ Des Weiteren kann der Betreiber des Build-Services unter Umständen Restriktione
 \section[Überblick: Lösungen und Ansätze]{Überblick: Lösungen und Ansätze für die \\ platt\-form\-un\-ab\-hängige App-Entwicklung} \label{sec:overview}
 
 %TODO Schöneren Einleitungssatz finden.
-Es gibt sehr viele Frameworks und Lösungen zum Erreichen einer plattformunabhängigen App-Entwicklung.\todo{Schöneren Einleitungssatz finden.} Die unterschiedlichen Ansätze begründen sich in unterschiedlichen Anforderungen an die zu entwickelnde App, unterschiedliche vorhandene Ressourcen und Infrastruktur der Entwickler und App-Betreiber sowie dem Ziel, bestehendes Know-How der Entwickler einbringen zu können.
+Es gibt sehr viele Frameworks und Lösungen zum Erreichen einer plattformunabhängigen App-Entwicklung.\todo{Schöneren Einleitungssatz finden.}\ Die unterschiedlichen Ansätze begründen sich in unterschiedlichen Anforderungen an die zu entwickelnde App, unterschiedliche vorhandene Ressourcen und Infrastruktur der Entwickler und App-Betreiber sowie dem Ziel, bestehendes Know-How der Entwickler einbringen zu können.
 Im Folgenden soll ein Überblick über verschiedene Ansätze gegeben und konkrete Beispiele genannt werden. Dabei wird die im vorherigen Abschnitt vorgenommenen Gruppierung in native Apps, \glspl{web-app} und hybride-Apps beibehalten.
 
 Wie in \autoref{sec:web-app} erwähnt, sind \glspl{web-app} durch die Client-Server-Konzeption, in Verbindung mit Web-Standards, die jeder moderne Browser unterstützt, in gewisser Weise per se plattformunabhängig. Die fehlende Offline-Nutzbarkeit, der eingeschränkte Zugriff auf Hardwarekomponenten wie Gerätetasten, Kamera, GPS-Modul, Mikrofon,\footnote{Diese ist teilweise im noch nicht von allen Browsern voll umgesetzten \gls{html5}-Standard begründet.} der fehlende Zugriff auf Systemdaten wie das Adressbuch, Speicherkarten und das nicht native Systemdesign sind dabei offenkundige Nachteile der \glspl{web-app}, die sie für manche Anwendungsgebiete nicht in Frage kommen lassen.
 
 Wie in \autoref{sec:hybrid-app} beschrieben, stellen Hybrid-Apps einen naheliegenden Ansatz zur plattformunabhängigen App-Entwicklung dar. Durch den Einsatz von Standard-Web-Technologien wie \gls{html}, CSS und \gls{js} in Verbindung mit einer in einer nativen Container-App erzeugten \gls{web-view}, lassen sich schnell viele Plattformen erreichen. Hierzu gibt es Frameworks, die die nativen Container-Apps erstellen und zusätzlich \glspl{api} für Hardware-Zugriffe und Geräte- und Systemfunktionen, die nicht durch \gls{html} abgedeckt werden, bereit stellen. Ein häufig genutztes Beispiel hierfür ist das in \autoref{sec:cordova} beschriebene \gls{phonegap}\,/\,\gls{cordova}.
 
-Eine Problematik, die sich bei allen Ansätzen zur plattformunabhängigen App-Entwicklung stellt, sind die in \autoref{sec:native} erwähnten unterschiedlichen Designs und Designrichtlinien sowie unterschiedlichen Bedienkonzepte. Soll die hybride App also dem \gls{look-and-feel} einer nativen sehr nahekommen, so muss zu einem gewissen Grad die Benutzeroberfläche für jede Plattform beispielsweise mithilfe von Stylesheets separat angepasst werden.
+Eine Problematik, die sich bei allen Ansätzen zur plattformunabhängigen App-Entwicklung stellt, sind die in \autoref{sec:native} erwähnten unterschiedlichen Designs und Designrichtlinien sowie unterschiedlichen Bedienkonzepte. Soll die hybride App also dem \gls{laf} einer nativen sehr nahekommen, so muss zu einem gewissen Grad die Benutzeroberfläche für jede Plattform beispielsweise mithilfe von Stylesheets separat angepasst werden.
 
 Durch den konsequenten Ansatz von \gls{html}, Design-Elemente über Stylesheets auszulagern, hat der Entwickler hier die Möglichkeit, seine Benutzeroberfläche für jedes System über das Laden unterschiedlicher Stylesheets anzupassen.
 Hierzu bietet beispielsweise \gls{intel} mit seinem \gls{app-framework} eine \gls{js}-Oberflächenbibliothek, der entsprechende Stylesheets für jede große Plattform zugrunde liegen. So wird diese Arbeit dem Entwickler abgenommen und die App soll sich so gut in das native Design einfügen \cite{IntelAppFramework}.
@@ -151,13 +151,13 @@ Der Anwendungsentwickler muss sich um diesen Mechanismus allerdings nicht weiter
 
 %Vorschlag für Fazit (evtl. ins Resümee):
 %Hierbei wurden neben dem Ansatz von hybriden Apps mittels Web-Technologien weitere Ansätze erläutert, die das plattformunabhängige Erstellen nativer Apps ermöglichen. 
-%Durch die Abstraktion der Oberflächenbeschreibung kann mit den entsprechenden Schnittstellen so auf native Elemente des Betriebsystems zugeriffen werden, was vor allem für einen Fokus auf die User Experience und ein möglichst natives \gls{look-and-feel} interessant scheint.
+%Durch die Abstraktion der Oberflächenbeschreibung kann mit den entsprechenden Schnittstellen so auf native Elemente des Betriebsystems zugeriffen werden, was vor allem für einen Fokus auf die User Experience und ein möglichst natives \gls{laf} interessant scheint.
 %[ Die Trennung in native und hybride Apps verschwimmt dabei etwas, da bei solchen Frameworks teilweise eine integrierte Runtime-Environment mitgeliefter wird und so wie beim Beispiel Titanium ebenfalls in JavaSkript programmiert werden kann. Im Gegensatz zu hybriden Apps versuchen diese Frameworks aber gerade bei der Benutzeroberfläche den Code zu abstrahieren und von dieser Abstraktion auf der jeweiligen Platform auf die nativen Methoden zuzugreifen. ]
 %Weiter wurde der Ansatz beschrieben, ausgehend von einer Programmiersprache und somit eines Codes, native Builts für verschiedene Plattformen herzustellen. Dabei wird Teilweise gar nicht der Anspruch eines vollständig plattformunhabhängigen Code verfolgt, aber immerhin das Bestreben, gemeinsame Funktionen in einem gemeinsamen Code abzubilden.
 %Weiter wurden mit der kompletten Portierung einer bestehenden App auf ein anderes System und einer Client-Server Konzeption der Application, jedoch nicht als Web-App, weitere Möglichkeiten genannt.
 %
 
-
+\pagebreak
 %TODO Evtl. Seitenmbruch!
 \section{Entwicklung von hybriden Apps}	\label{sec:hybrid-dev}
 %TODO boxed?
@@ -368,9 +368,9 @@ Dafür muss die Anwendung entweder direkt auf einem mobilen Gerät, dessen \gls{
 
 \image{android_emulate_install}
 	{width=1\textwidth}
-	{Cordova-Beispiel-App im \gls{android}-Emulator}
-		{Anzeige in der App-Übersicht (links) und Ausführung der Cordova-Beispiel-App in einem \gls{android}-Emulator (rechts). Das grüne Label zeigt den Empfang des \lstinline|deviceready|-Events an.}
-	{\gls{cordova}-Dokumentation \cite{android_emulate_install.png}}
+	{Cordova-Beispiel-App im Android-Emulator}
+		{Anzeige in der App-Übersicht (links) und Ausführung der Cordova-Beispiel-App in einem Android-Emulator (rechts). Das grüne Label zeigt den Empfang des \lstinline|deviceready|-Events an.}
+	{\gls{cordova}-Dokumentation \cite{android_emulate_install.png}.}
 
 Bevor die \gls{hybrid-app} mit \gls{cordova} zum Laufen gebracht werden kann, muss sie, wie die meisten Computerprogramme, in ein ausführbares Format überführt, also \emph{gebaut} werden.
 Im Falle der \gls{hybrid-app} bedeutet das, dass diejenigen plattformspezifischen Komponenten der \gls{app} hinzugefügt werden, die nötig sind, um die Verbindung zwischen der plattformunabhängigen Web-Schicht und der nativen Schicht des jeweiligen Zielbetriebssystems herzustellen.
@@ -498,7 +498,7 @@ Während private \glspl{app} entweder als Zip-Paket hochgeladen oder als Link zu
 \image{phonegap-build_create-public}
 	{width=1\textwidth}
 	{Erstellung einer neuen App auf PhoneGap\,Build}
-		{Dialog für die Erstellung einer neuen privaten \gls{app} auf \gls{pg-build}. Links das Eingabefeld zum Eintragen eines \gls{git}-Repository-Links und rechts der Button zum Hochladen von Zip-Archiven.}
+		{Dialog für die Erstellung einer neuen privaten App auf \gls{pg-build}. Links das Eingabefeld zum Eintragen eines Git-Repository-Links und rechts der Button zum Hochladen von Zip-Archiven.}
 	{Eigener Screenshot.}
 
 Neben der Bezahlvariante gibt es auch ein kostenloses Paket, das eine private \gls{app} beinhaltet, bei der kostenpflichtigen Variante sind bis zu 25 private \glspl{app} enthalten.
